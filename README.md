@@ -30,7 +30,7 @@ for more information on installing and updating pods.
 
 ## Downloads
 
-Please check out [releases](https://github.com/PubMatic/android-sdk-samples/releases)
+Please check out [releases](https://github.com/PubMatic/ios-sdk-samples/releases)
 for the latest downloads of sample apps.
 
 ## License
