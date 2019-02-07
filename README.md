@@ -20,10 +20,8 @@ for documentation on using OpenBid SDK.
 Each iOS sample application includes a Podfile for integrating dependencies.
 
 **Installation steps:**
-1. Run `pod install` in the same directory where the Podfile is.
+1. Run `pod install --repo-update` in the same directory where the Podfile is.
 1. Open the .xcworkspace file with Xcode and run the app.
-
-> Run `pod update` to get the latest version of the SDK. 
 
 See the [CocoaPods Guides](https://guides.cocoapods.org/)
 for more information on installing and updating pods.
