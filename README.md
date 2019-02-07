@@ -13,8 +13,8 @@ for documentation on using OpenBid SDK.
 
 | Language | Samples |
 | ------------- | ------------- |
-|   Swift    | [Banner/Interstitial Samples](./OpenBid/DFP/Swift/) |
-|   Objective-C    | [Banner/Interstitial Samples](./OpenBid/DFP/ObjectiveC/) |
+|   Swift    | [Banner/Interstitial Samples](./OpenBid/DFP/Swift/SampleApp/) |
+|   Objective-C    | [Banner/Interstitial Samples](./OpenBid/DFP/ObjectiveC/SampleApp/) |
 
 
 Each iOS sample application includes a Podfile for integrating dependencies.
