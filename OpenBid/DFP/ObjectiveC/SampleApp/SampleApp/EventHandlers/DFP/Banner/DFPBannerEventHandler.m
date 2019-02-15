@@ -48,6 +48,8 @@ GADAdSizeDelegate>
     
     self = [super init];
     if (self) {
+        
+        // Create DFPBannerView and set ad unit and ad sizes
         _bannerView = [[DFPBannerView alloc] init];
         _bannerView.adUnitID = adUnitId;
         
@@ -55,6 +57,7 @@ GADAdSizeDelegate>
         [_bannerView setValidAdSizes:validSizes];
         _dfpAdSize = _bannerView.adSize.size;
         
+        // Set delegates on DFPBannerView instance, these should not be removed/overridden else event handler will not work as expected.
         _bannerView.delegate = self;
         _bannerView.appEventDelegate = self;
         _bannerView.adSizeDelegate = self;
@@ -65,24 +68,47 @@ GADAdSizeDelegate>
 - (void)dealloc {
     _bannerView.delegate = nil;
     _bannerView = nil;
+    _configBlock = nil;
 }
+
+#pragma mark - POBBannerEvent methods
 
 - (void)setDelegate:(id<POBBannerEventDelegate>)delegate {
     _delegate = delegate;
 }
 
+// OpenBid SDK passes its bids through this method
 - (void)requestAdWithBid:(POBBid *)bid {
     _notified = NO;
     _isAppEventExpected = NO;
     _bannerView.rootViewController = [self.delegate viewControllerForPresentingModal];
+    
+    // Create DFP ad request
     DFPRequest *dfpRequest = [[DFPRequest alloc] init];
+    
+    // Call configuration block if set. it can be used to configure DFP banner and ad request
+    if (self.configBlock) {
+        self.configBlock(_bannerView, dfpRequest);
+    }
+    
+    if (!(_bannerView.appEventDelegate == self &&
+        _bannerView.delegate == self)) {
+        NSLog(@"Do not set DFP delegates. These are used by DFPBannerEventHandler internally.");
+    }
+    
+    // If bid is valid, add bid related custom targetting on DFP ad request
     if (bid) {
         if (bid.status.boolValue) {
             _isAppEventExpected = YES;
         }
-        [dfpRequest setCustomTargeting:[bid targetingInfo]];
-        NSLog(@"Bid details : %@", [bid.targetingInfo description]);
+        
+        NSMutableDictionary * customTargeting = [NSMutableDictionary dictionaryWithDictionary:dfpRequest.customTargeting];
+        [customTargeting addEntriesFromDictionary:[bid targetingInfo]];
+        [dfpRequest setCustomTargeting:[NSDictionary dictionaryWithDictionary:customTargeting]];
+        NSLog(@"Custom targeting : %@", [customTargeting description]);
     }
+    
+    // Load ad request
     [_bannerView loadRequest:dfpRequest];
 }
 
@@ -98,6 +124,8 @@ GADAdSizeDelegate>
     }
     return [NSArray arrayWithArray:sizes];
 }
+
+#pragma mark - GADAppEventDelegate methods
 
 // Called when the banner receives an app event.
 - (void)adView:(DFPBannerView *)banner
@@ -119,6 +147,8 @@ didReceiveAppEvent:(NSString *)name
     }
 }
 
+#pragma mark - GADBannerViewDelegate methods
+
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
     
     // If already notifed, skip waiting for app event
@@ -126,7 +156,7 @@ didReceiveAppEvent:(NSString *)name
         return;
     }
     
-    // If PubMatic have provided non-zero bir price, expect for app event for fixed time interval, otherwise consider as DFP has won & serving its own ad
+    // If OpenBid SDK have provided non-zero bid price, expect for app event for fixed time interval, otherwise consider as DFP has won & serving its own ad
     if (!_isAppEventExpected) {
         [self.delegate adServerDidWin:bannerView];
         self.notified = YES;
@@ -134,14 +164,6 @@ didReceiveAppEvent:(NSString *)name
         // Timer to synchronize did recieve and app event callback as their sequence is not fixed
         [self.timer invalidate];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:SYNC_TIMEOUT_INTEREVAL target:self selector:@selector(syncTimetAction) userInfo:nil repeats:NO];
-    }
-}
-
-- (void)syncTimetAction{
-    if (!self.notified) {
-        [self.delegate
-         adServerDidWin:_bannerView];
-        self.notified = YES;
     }
 }
 
@@ -208,9 +230,20 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
     [_delegate willLeaveApp];
 }
 
+#pragma mark - GADAdSizeDelegate methods
+
 - (void)adView:(nonnull GADBannerView *)bannerView
 willChangeAdSizeTo:(GADAdSize)size {
     _dfpAdSize = size.size;
+}
+#pragma mark -
+
+- (void)syncTimetAction{
+    if (!self.notified) {
+        [self.delegate
+         adServerDidWin:_bannerView];
+        self.notified = YES;
+    }
 }
 
 @end

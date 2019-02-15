@@ -28,6 +28,10 @@
 import UIKit
 import GoogleMobileAds
 
+/*!
+ This class is responsible for communication between OpenBid interstitial and DFP interstitial .
+ It implements the POBInterstitialEvent protocol. it notifies event back to OpenBid SDK using POBInterstitialEventDelegate methods
+ */
 class DFPInterstitialEventHandler: NSObject,POBInterstitialEvent,GADAppEventDelegate,GADInterstitialDelegate {
 
     let SYNC_TIMEOUT_INTEREVAL = 0.8
@@ -38,6 +42,12 @@ class DFPInterstitialEventHandler: NSObject,POBInterstitialEvent,GADAppEventDele
     var timer: Timer?
     var notified = false
     var isAppEventExpected = false
+    
+    /*!
+     A configBlock that is called before event handler makes ad request call to DFP SDK. It passes DFPInterstitial & DFPRequest which will be used to make ad request.
+     */
+    var configBlock: ((_ view: DFPInterstitial, _ request: DFPRequest)->Void)?
+
     init(_ adUnitId: String) {
         super.init()
         self.adUnitId = adUnitId
@@ -61,12 +71,23 @@ class DFPInterstitialEventHandler: NSObject,POBInterstitialEvent,GADAppEventDele
         interstitial?.appEventDelegate = self
         
         let dfpRequest = DFPRequest()
+        
+        self.configBlock?(interstitial!,dfpRequest)
+        
+        if !(interstitial?.appEventDelegate is DFPInterstitialEventHandler
+            && interstitial?.delegate is DFPInterstitialEventHandler) {
+            NSLog("Do not set DFP delegates. These are used by DFPInterstitialEventHandler internally.");
+        }
+
         if bid != nil {
             if bid?.status.boolValue ?? false {
                 isAppEventExpected = true
             }
-            dfpRequest.customTargeting = bid?.targetingInfo()
-            print("Bid details : \(String(describing: bid?.targetingInfo().description))")
+            let customTargeting = NSMutableDictionary()
+            customTargeting.addEntries(from: dfpRequest.customTargeting ?? [:])
+            customTargeting.addEntries(from: bid?.targetingInfo() ?? [:]);
+            dfpRequest.customTargeting = customTargeting as? [AnyHashable : Any]
+            print("Custom targeting : \(String(describing: customTargeting.description))")
         }
         interstitial?.load(dfpRequest)
     }

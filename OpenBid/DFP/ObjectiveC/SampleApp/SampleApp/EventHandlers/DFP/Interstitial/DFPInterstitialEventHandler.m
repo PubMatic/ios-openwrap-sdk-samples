@@ -54,7 +54,10 @@ GADInterstitialDelegate>
 - (void)dealloc {
     _interstitial.delegate = nil;
     _interstitial = nil;
+    _configBlock = nil;
 }
+
+#pragma mark - POBInterstitialEvent methods
 
 - (void)setDelegate:(id<POBInterstitialEventDelegate>)delegate {
     _delegate = delegate;
@@ -64,27 +67,48 @@ GADInterstitialDelegate>
     
     _notified = NO;
     _isAppEventExpected = NO;
+    
+    // Create DFPInterstitial and set ad unit
     _interstitial = [[DFPInterstitial alloc]
                      initWithAdUnitID:self.adUnitId];
+    
+    // Set delegates on DFPInterstitial instance, these should not be removed/overridden else event handler will not work as expected.
     _interstitial.delegate = self;
     _interstitial.appEventDelegate = self;
 
+    // Create DFP ad request
     DFPRequest *dfpRequest = [[DFPRequest alloc] init];
+    
+    // Call configuration block if set. it can be used to configure DFP banner and ad request
+    if (self.configBlock) {
+        self.configBlock(_interstitial, dfpRequest);
+    }
+    
+    if (!(_interstitial.appEventDelegate == self ||
+          _interstitial.delegate == self)) {
+        NSLog(@"Do not set DFP delegates. These are used by DFPInterstitialEventHandler internally.");
+    }
+
+    // If bid is valid, add bid related custom targetting on DFP ad request
     if (bid) {
         if (bid.status.boolValue) {
             _isAppEventExpected = YES;
         }
-        [dfpRequest setCustomTargeting:[bid targetingInfo]];
-        NSLog(@"Bid details : %@", [bid.targetingInfo description]);
+        NSMutableDictionary * customTargeting = [NSMutableDictionary dictionaryWithDictionary:dfpRequest.customTargeting];
+        [customTargeting addEntriesFromDictionary:[bid targetingInfo]];
+        [dfpRequest setCustomTargeting:[NSDictionary dictionaryWithDictionary:customTargeting]];
+        NSLog(@"Custom targeting : %@", [customTargeting description]);
     }
+    
+    // Load ad request
     [_interstitial loadRequest:dfpRequest];
 }
-
 
 -(void)showFromViewController:(UIViewController *)controller{
     [self.interstitial presentFromRootViewController:controller];
 }
 
+#pragma mark - GADAppEventDelegate methods
 /// Called when the interstitial receives an app event.
 - (void)interstitial:(GADInterstitial *)interstitial
   didReceiveAppEvent:(NSString *)name
@@ -108,11 +132,13 @@ GADInterstitialDelegate>
     }
 }
 
+#pragma mark - GADInterstitialDelegate methods
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad{
     if (_notified) {
         return;
     }
     
+    // If OpenBid SDK have provided non-zero bid price, expect for app event for fixed time interval, otherwise consider as DFP has won & serving its own ad
     if (!_isAppEventExpected) {
         if (!self.notified) {
             [self.delegate adServerDidWin];
@@ -122,13 +148,6 @@ GADInterstitialDelegate>
         // Timer to synchronize did recieve and app event callback as their sequence is not fixed
         [self.timer invalidate];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:SYNC_TIMEOUT_INTEREVAL target:self selector:@selector(syncTimetAction) userInfo:nil repeats:NO];
-    }
-}
-
-- (void)syncTimetAction{
-    if (!self.notified) {
-        [self.delegate adServerDidWin];
-        self.notified = YES;
     }
 }
 
@@ -190,6 +209,14 @@ GADInterstitialDelegate>
 
 - (void)interstitialWillLeaveApplication:(GADInterstitial *)ad{
     [self.delegate willLeaveApp];
+}
+#pragma mark -
+
+- (void)syncTimetAction{
+    if (!self.notified) {
+        [self.delegate adServerDidWin];
+        self.notified = YES;
+    }
 }
 
 @end
