@@ -10,7 +10,7 @@
 		24BBBD5E8E4238BA80A9735C /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E74483EAB72F4527C2B9E61B /* libPods-SampleApp.a */; };
 		3E7AF7F021CA537300C31F40 /* DFPBannerEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7EF21CA537300C31F40 /* DFPBannerEventHandler.m */; };
 		3E7AF7F321CA537900C31F40 /* DFPInterstitialEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F121CA537900C31F40 /* DFPInterstitialEventHandler.m */; };
-		3E7AF7F621CA538300C31F40 /* BannerViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F421CA538300C31F40 /* BannerViewConntroller.m */; };
+		3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F421CA538300C31F40 /* BannerViewController.m */; };
 		3E7AF7F921CA538A00C31F40 /* InsterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F721CA538900C31F40 /* InsterstitialViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
@@ -24,8 +24,8 @@
 		3E7AF7EF21CA537300C31F40 /* DFPBannerEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPBannerEventHandler.m; sourceTree = "<group>"; };
 		3E7AF7F121CA537900C31F40 /* DFPInterstitialEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPInterstitialEventHandler.m; sourceTree = "<group>"; };
 		3E7AF7F221CA537900C31F40 /* DFPInterstitialEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitialEventHandler.h; sourceTree = "<group>"; };
-		3E7AF7F421CA538300C31F40 /* BannerViewConntroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewConntroller.m; sourceTree = "<group>"; };
-		3E7AF7F521CA538300C31F40 /* BannerViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewConntroller.h; sourceTree = "<group>"; };
+		3E7AF7F421CA538300C31F40 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		3E7AF7F521CA538300C31F40 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		3E7AF7F721CA538900C31F40 /* InsterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterstitialViewController.m; sourceTree = "<group>"; };
 		3E7AF7F821CA538A00C31F40 /* InsterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterstitialViewController.h; sourceTree = "<group>"; };
 		B7A2A26E1BEFE3254E4BC730 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 		3E7AF7EA21CA52DE00C31F40 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				3E7AF7F521CA538300C31F40 /* BannerViewConntroller.h */,
-				3E7AF7F421CA538300C31F40 /* BannerViewConntroller.m */,
+				3E7AF7F521CA538300C31F40 /* BannerViewController.h */,
+				3E7AF7F421CA538300C31F40 /* BannerViewController.m */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -295,11 +295,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
-				"${PODS_ROOT}/../../../../../../PubMaticSDK/PubMaticSDK/Webrendering/Resources/mraid.js",
+				"${PODS_ROOT}/../../../../../../PubMaticSDK/PubMaticSDK/Webrendering/Resources/pmmraid.js",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mraid.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pmmraid.js",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -313,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E7AF7F621CA538300C31F40 /* BannerViewConntroller.m in Sources */,
+				3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */,
 				3E7AF7F021CA537300C31F40 /* DFPBannerEventHandler.m in Sources */,
 				3E7AF7F921CA538A00C31F40 /* InsterstitialViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,

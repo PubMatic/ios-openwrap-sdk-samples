@@ -1,0 +1,37 @@
+PODS:
+  - mopub-ios-sdk (5.4.1):
+    - mopub-ios-sdk/MoPubSDK (= 5.4.1)
+  - mopub-ios-sdk/Avid (5.4.1):
+    - mopub-ios-sdk/Core
+  - mopub-ios-sdk/Core (5.4.1)
+  - mopub-ios-sdk/Moat (5.4.1):
+    - mopub-ios-sdk/Core
+  - mopub-ios-sdk/MoPubSDK (5.4.1):
+    - mopub-ios-sdk/Avid
+    - mopub-ios-sdk/Core
+    - mopub-ios-sdk/Moat
+  - PubMaticSDK/Common (6.0.0)
+  - PubMaticSDK/OpenWrap (6.0.0):
+    - PubMaticSDK/Webrendering
+  - PubMaticSDK/Webrendering (6.0.0):
+    - PubMaticSDK/Common
+
+DEPENDENCIES:
+  - mopub-ios-sdk
+  - PubMaticSDK/OpenWrap (from `./../../../../../../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - mopub-ios-sdk
+
+EXTERNAL SOURCES:
+  PubMaticSDK:
+    :path: "./../../../../../../"
+
+SPEC CHECKSUMS:
+  mopub-ios-sdk: 320de49dd0a352ac58d33104a23853e749a84a78
+  PubMaticSDK: 746c2ce543d3dc9abf3e3abba7855af9c5405c91
+
+PODFILE CHECKSUM: 9d8f525a6a48a87ecffcc599439b0c6892d1f50a
+
+COCOAPODS: 1.5.3

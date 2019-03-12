@@ -1,0 +1,27 @@
+PODS:
+  - Google-Mobile-Ads-SDK (7.36.0)
+  - PubMaticSDK/Common (6.0.0)
+  - PubMaticSDK/OpenWrap (6.0.0):
+    - PubMaticSDK/Webrendering
+  - PubMaticSDK/Webrendering (6.0.0):
+    - PubMaticSDK/Common
+
+DEPENDENCIES:
+  - Google-Mobile-Ads-SDK (= 7.36.0)
+  - PubMaticSDK/OpenWrap (from `./../../../../../../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Google-Mobile-Ads-SDK
+
+EXTERNAL SOURCES:
+  PubMaticSDK:
+    :path: "./../../../../../../"
+
+SPEC CHECKSUMS:
+  Google-Mobile-Ads-SDK: 5bb4d2cea811842e104a24780caef63b4808e1bd
+  PubMaticSDK: 746c2ce543d3dc9abf3e3abba7855af9c5405c91
+
+PODFILE CHECKSUM: 0f33d871781d5e799e5d78a526aa19049f8c0fb9
+
+COCOAPODS: 1.5.3

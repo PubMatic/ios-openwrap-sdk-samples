@@ -193,6 +193,12 @@ class DFPInterstitialEventHandler: NSObject,POBInterstitialEvent,GADAppEventDele
     }
     
     func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        /*
+         GADInterstitialDelegate doesn't provide didClickAd callback. Since user click
+         has triggered the willLeaveApplication event, the interstitial event handler
+         can safely give didClickAd callback.
+         */
+        _delegate?.didClickAd()
         _delegate?.willLeaveApp()
     }
 }

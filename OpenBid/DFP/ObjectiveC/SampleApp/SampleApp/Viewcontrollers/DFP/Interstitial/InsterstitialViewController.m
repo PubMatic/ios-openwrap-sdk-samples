@@ -47,7 +47,7 @@
     // Create an interstitial custom event handler for your ad server. Make sure
     // you use separate event handler objects to create each interstitial ad instance.
     //For example, The code below creates an event handler for DFP ad server.
-    DFPInterstitialEventHandler *eventHandler = [[DFPInterstitialEventHandler alloc] initAdunitId:DFP_AU];
+    DFPInterstitialEventHandler *eventHandler = [[DFPInterstitialEventHandler alloc] initWithAdUnitId:DFP_AU];
     
     // Create an interstitial object
     // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement

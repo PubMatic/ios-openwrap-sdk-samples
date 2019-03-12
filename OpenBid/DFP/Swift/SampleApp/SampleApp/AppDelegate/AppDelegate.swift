@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         OpenBidSDK.setLogLevel(.all)
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
-        OpenBidSDK.setLogLevel(.all)
         OpenBidSDK.setSSLEnabled(false)
         
         // Set a valid App Store URL, containing the app id of your iOS app.

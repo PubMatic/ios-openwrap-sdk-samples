@@ -42,7 +42,7 @@ GADInterstitialDelegate>
 @end
 
 @implementation DFPInterstitialEventHandler
-- (instancetype)initAdunitId:(NSString *)adUnitId {
+- (instancetype)initWithAdUnitId:(NSString *)adUnitId {
     
     self = [super init];
     if (self) {
@@ -208,6 +208,12 @@ GADInterstitialDelegate>
 }
 
 - (void)interstitialWillLeaveApplication:(GADInterstitial *)ad{
+    /*
+     GADInterstitialDelegate doesn't provide didClickAd callback. Since user click
+     has triggered the willLeaveApplication event, the interstitial event handler
+     can safely give didClickAd callback.
+     */
+    [self.delegate didClickAd];
     [self.delegate willLeaveApp];
 }
 #pragma mark -

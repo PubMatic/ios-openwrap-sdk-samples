@@ -56,7 +56,7 @@ typedef void(^DFPBannerConfigBlock)(DFPBannerView *view,DFPRequest * request);
  </pre>
 
  */
-- (instancetype)initAdunitId:(NSString *)adUnitId
+- (instancetype)initWithAdUnitId:(NSString *)adUnitId
                     andSizes:(NSArray *)validSizes;
 
 /*!

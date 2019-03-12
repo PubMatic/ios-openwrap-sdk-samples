@@ -43,7 +43,7 @@ typedef void(^DFPInterstitialConfigBlock)(DFPInterstitial *interstitial,DFPReque
  Initializes and returns a event handler with the specified DFP ad unit
  @param adUnitId DFP ad unit id
  */
-- (instancetype)initAdunitId:(NSString *)adUnitId;
+- (instancetype)initWithAdUnitId:(NSString *)adUnitId;
 
 /*!
  A configBlock that is called before event handler makes ad request call to DFP SDK. It passes DFPInterstitial & DFPRequest which will be used to make ad request.

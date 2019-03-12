@@ -45,7 +45,6 @@
     [OpenBidSDK setLogLevel:POBSDKLogLevelAll];
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager requestWhenInUseAuthorization];
-    [OpenBidSDK setLogLevel:POBSDKLogLevelAll];
     [OpenBidSDK setSSLEnabled:NO];
 
     // Set a valid App Store URL, containing the app id of your iOS app.

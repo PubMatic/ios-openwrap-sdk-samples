@@ -43,7 +43,7 @@ GADAdSizeDelegate>
 @end
 
 @implementation DFPBannerEventHandler
-- (instancetype)initAdunitId:(NSString *)adUnitId
+- (instancetype)initWithAdUnitId:(NSString *)adUnitId
                     andSizes:(NSArray *)validSizes {
     
     self = [super init];
