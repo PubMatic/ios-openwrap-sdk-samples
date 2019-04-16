@@ -1,7 +1,7 @@
 platform :ios, '9.0'
 
 def required_pods
-    pod 'OpenBidSDK', '1.1.0'
+    pod 'OpenBidSDK'
     pod 'mopub-ios-sdk', '5.5.0'
 end
 

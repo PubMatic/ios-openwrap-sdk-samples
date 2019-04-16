@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PubMatic SDK App-->
+        <scene sceneID="6Sc-yH-XyC">
+            <objects>
+                <tableViewController title="PubMatic SDK App" id="JnX-Vj-9s7" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="yHt-5M-NRp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        <sections>
+                            <tableViewSection headerTitle="Other Ad Server" id="HYV-xo-Yqv">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Up8-zD-rJ3" style="IBUITableViewCellStyleDefault" id="ysS-bT-6Hd">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ysS-bT-6Hd" id="VgK-nC-6I8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Banner Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Up8-zD-rJ3">
+                                                    <rect key="frame" x="15" y="0.0" width="344" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wt2-gH-SPb" kind="show" id="Qmp-x5-rFT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ohQ-A6-L8I" style="IBUITableViewCellStyleDefault" id="lun-Bt-ykC">
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lun-Bt-ykC" id="0cU-Ts-Dnr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ohQ-A6-L8I">
+                                                    <rect key="frame" x="15" y="0.0" width="344" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ih6-5U-zay" kind="show" id="y3m-Ug-TUi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="JnX-Vj-9s7" id="OME-vR-ug5"/>
+                            <outlet property="delegate" destination="JnX-Vj-9s7" id="css-mM-hnn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="PubMatic OpenBid SDK" id="MJV-5m-pWV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="w9v-x1-THk"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZu-hs-utn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-476" y="1039"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9zW-kg-0vM">
+            <objects>
+                <navigationController id="goI-f8-WKM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PgD-8k-bWl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JnX-Vj-9s7" kind="relationship" relationship="rootViewController" id="CV2-lx-1Jm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-XS-kEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1497" y="1039"/>
+        </scene>
+        <!--OtherAS Banner-->
+        <scene sceneID="808-Sb-8p6">
+            <objects>
+                <viewController title="Banner Ad" id="wt2-gH-SPb" userLabel="OtherAS Banner" customClass="BannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OOj-R9-XBQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wID-q5-kPQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Uc-BJ-yg7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eee-yJ-gHP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="707"/>
+        </scene>
+        <!--OtherAS Interstitial-->
+        <scene sceneID="ccw-Ju-JKT">
+            <objects>
+                <viewController title="Interstitial Ad" id="Ih6-5U-zay" userLabel="OtherAS Interstitial" customClass="InsterstitialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="weR-IP-7Xf"/>
+                        <viewControllerLayoutGuide type="bottom" id="vz4-5r-CFF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V5b-w8-bZG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-lx-HxE">
+                                <rect key="frame" x="142.5" y="144" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="IlZ-Xb-NJS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="UAJ-s9-bs5"/>
+                                </constraints>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="loadAdAction:" destination="Ih6-5U-zay" eventType="touchUpInside" id="tt4-CS-B6C"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJv-Ic-uah">
+                                <rect key="frame" x="142.5" y="205" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Yk3-E1-9Sq"/>
+                                    <constraint firstAttribute="height" constant="34" id="haH-XV-Bn1"/>
+                                </constraints>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdAction:" destination="Ih6-5U-zay" eventType="touchUpInside" id="eJj-zZ-asa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TJv-Ic-uah" firstAttribute="top" secondItem="Ega-lx-HxE" secondAttribute="bottom" constant="27" id="4QI-kf-9lz"/>
+                            <constraint firstItem="Ega-lx-HxE" firstAttribute="centerX" secondItem="V5b-w8-bZG" secondAttribute="centerX" id="6rj-q1-kJN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TJv-Ic-uah" secondAttribute="trailing" constant="20" symbolic="YES" id="pxO-0m-9cM"/>
+                            <constraint firstItem="Ega-lx-HxE" firstAttribute="top" secondItem="weR-IP-7Xf" secondAttribute="bottom" constant="80" id="ski-kn-96X"/>
+                            <constraint firstItem="TJv-Ic-uah" firstAttribute="leading" secondItem="Ega-lx-HxE" secondAttribute="leading" id="vUS-Ck-J7o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showAdButton" destination="TJv-Ic-uah" id="c88-Dv-Tk7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUg-JP-oth" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="1413"/>
+        </scene>
+    </scenes>
+</document>
