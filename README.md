@@ -11,10 +11,12 @@ for documentation on using OpenBid SDK.
 
 ## Sample Applications
 
-| Language | Samples |
+| Ad Server | Samples |
 | ------------- | ------------- |
-|   Swift    | [Banner/Interstitial Samples](./OpenBid/DFP/Swift/SampleApp/) |
-|   Objective-C    | [Banner/Interstitial Samples](./OpenBid/DFP/ObjectiveC/SampleApp/) |
+|   DFP    | [Banner/Interstitial Samples](./OpenBid/DFP/) |
+|   MoPub    | [Banner/Interstitial Samples](./OpenBid/Mopub/) |
+|   OpenWrap(Programmatic Only)    | [Banner/Interstitial Samples](./OpenBid/OpenWrap/) |
+|   Other Ad Server    | [Banner/Interstitial Samples](./OpenBid/OtherAdServer/) |
 
 
 Each iOS sample application includes a Podfile for integrating dependencies.
