@@ -1,6 +1,5 @@
 
 
-
 #import "MoPubInterstitialEventHandler.h"
 #import <MPError.h>
 
@@ -138,6 +137,7 @@
             
         case MOPUBErrorNoRenderer:
             eventError = [self eventError:error withErrorCode:POBErrorRenderError];
+            break;
             
         default:
             eventError = error;
