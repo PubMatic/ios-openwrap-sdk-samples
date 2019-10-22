@@ -13,9 +13,10 @@
 		20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20364F7021AFB03900F9D5DD /* AppDelegate.swift */; };
 		21CF3B4F2244BAF40080211E /* CustomBannerEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B4C2244BAF40080211E /* CustomBannerEventHandler.swift */; };
 		21CF3B502244BAF40080211E /* CustomInterstitialEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B4E2244BAF40080211E /* CustomInterstitialEventHandler.swift */; };
-		21CF3B552244BBCC0080211E /* InsterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B522244BBCC0080211E /* InsterstitialViewController.swift */; };
+		21CF3B552244BBCC0080211E /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B522244BBCC0080211E /* InterstitialViewController.swift */; };
 		21CF3B562244BBCC0080211E /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B542244BBCC0080211E /* BannerViewController.swift */; };
 		21CF3B662248D4E90080211E /* DummyAdServerSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B642248D4E90080211E /* DummyAdServerSDK.m */; };
+		3E9206292354506600460561 /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9206282354506600460561 /* VideoInterstitialViewController.swift */; };
 		C5AE2D669CCE177D5F4775AA /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B14ECF7403084E5E10D592 /* libPods-SampleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -29,11 +30,12 @@
 		2059D79321E5EC6300CAB869 /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		21CF3B4C2244BAF40080211E /* CustomBannerEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBannerEventHandler.swift; sourceTree = "<group>"; };
 		21CF3B4E2244BAF40080211E /* CustomInterstitialEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInterstitialEventHandler.swift; sourceTree = "<group>"; };
-		21CF3B522244BBCC0080211E /* InsterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsterstitialViewController.swift; sourceTree = "<group>"; };
+		21CF3B522244BBCC0080211E /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		21CF3B542244BBCC0080211E /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		21CF3B642248D4E90080211E /* DummyAdServerSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyAdServerSDK.m; path = ../../../../../ObjectiveC/SampleApp/SampleApp/Viewcontrollers/DummyAdServer/DummyAdServerSDK.m; sourceTree = "<group>"; };
 		21CF3B652248D4E90080211E /* DummyAdServerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyAdServerSDK.h; path = ../../../../../ObjectiveC/SampleApp/SampleApp/Viewcontrollers/DummyAdServer/DummyAdServerSDK.h; sourceTree = "<group>"; };
 		3A050E9658E3E1A44077E3B8 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		3E9206282354506600460561 /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		53B14ECF7403084E5E10D592 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFEA140DCC041AF21F8F1CA /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				21CF3B4A2244BA880080211E /* EventHandlers */,
 				21CF3B532244BBCC0080211E /* Banner */,
 				21CF3B512244BBCC0080211E /* Interstitial */,
+				3E9206272354504100460561 /* VideoInterstitial */,
 			);
 			path = DummyAdServer;
 			sourceTree = "<group>";
@@ -146,7 +149,7 @@
 		21CF3B512244BBCC0080211E /* Interstitial */ = {
 			isa = PBXGroup;
 			children = (
-				21CF3B522244BBCC0080211E /* InsterstitialViewController.swift */,
+				21CF3B522244BBCC0080211E /* InterstitialViewController.swift */,
 			);
 			path = Interstitial;
 			sourceTree = "<group>";
@@ -157,6 +160,14 @@
 				21CF3B542244BBCC0080211E /* BannerViewController.swift */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		3E9206272354504100460561 /* VideoInterstitial */ = {
+			isa = PBXGroup;
+			children = (
+				3E9206282354506600460561 /* VideoInterstitialViewController.swift */,
+			);
+			path = VideoInterstitial;
 			sourceTree = "<group>";
 		};
 		8BBF4B950763C91ECCFA16EA /* Pods */ = {
@@ -290,11 +301,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
-				21CF3B552244BBCC0080211E /* InsterstitialViewController.swift in Sources */,
+				21CF3B552244BBCC0080211E /* InterstitialViewController.swift in Sources */,
 				21CF3B502244BAF40080211E /* CustomInterstitialEventHandler.swift in Sources */,
 				21CF3B4F2244BAF40080211E /* CustomBannerEventHandler.swift in Sources */,
 				21CF3B562244BBCC0080211E /* BannerViewController.swift in Sources */,
 				21CF3B662248D4E90080211E /* DummyAdServerSDK.m in Sources */,
+				3E9206292354506600460561 /* VideoInterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,11 +24,11 @@
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xSp-t8-gQp" id="LvO-0h-a3d">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Banner Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GbS-Ma-dzs">
-                                                    <rect key="frame" x="15" y="0.0" width="344" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -47,11 +45,11 @@
                                         <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EJA-L3-Khb" id="iMo-d1-Ap2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q55-qa-jqf">
-                                                    <rect key="frame" x="15" y="0.0" width="344" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -62,6 +60,27 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="dFq-Gq-zKD" kind="show" id="rBL-4N-tZX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="0rQ-7f-urC" style="IBUITableViewCellStyleDefault" id="VT8-Aw-Sqb">
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VT8-Aw-Sqb" id="oAw-9l-175">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Video Interstitial Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0rQ-7f-urC">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Lna-g8-Lcu" kind="show" id="wWB-vT-NO2"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -85,7 +104,7 @@
             <objects>
                 <navigationController id="b0q-C6-PIb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BGq-vk-hds">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -113,12 +132,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P13-y0-Xam" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="522"/>
+            <point key="canvasLocation" x="73" y="2"/>
         </scene>
         <!--OtherAS Interstitial-->
         <scene sceneID="VDN-NL-bIg">
             <objects>
-                <viewController title="Interstitial Ad" id="dFq-Gq-zKD" userLabel="OtherAS Interstitial" customClass="InsterstitialViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Interstitial Ad" id="dFq-Gq-zKD" userLabel="OtherAS Interstitial" customClass="InterstitialViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XgF-oA-Cqp"/>
                         <viewControllerLayoutGuide type="bottom" id="cEh-y4-mNs"/>
@@ -128,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUR-7c-QSI">
-                                <rect key="frame" x="142.5" y="154" width="90" height="34"/>
+                                <rect key="frame" x="142.5" y="134" width="90" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="K0K-ZK-vz5"/>
@@ -140,7 +159,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edy-1x-AiX">
-                                <rect key="frame" x="142.5" y="215" width="90" height="34"/>
+                                <rect key="frame" x="142.5" y="195" width="90" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="BFY-8v-fme"/>
@@ -168,7 +187,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfn-bM-IZc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="1216"/>
+            <point key="canvasLocation" x="73" y="752"/>
+        </scene>
+        <!--Video Interstitial Ad-->
+        <scene sceneID="36d-8S-Lq0">
+            <objects>
+                <viewController title="Video Interstitial Ad" id="Lna-g8-Lcu" customClass="VideoInterstitialViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q6P-tr-ZdW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl6-rF-5tb">
+                                <rect key="frame" x="142.5" y="124" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="fkR-fE-BBb"/>
+                                    <constraint firstAttribute="height" constant="34" id="iuE-tB-iL1"/>
+                                </constraints>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="loadAdAction:" destination="dFq-Gq-zKD" eventType="touchUpInside" id="6v2-j6-wpQ"/>
+                                    <action selector="loadAdAction:" destination="Lna-g8-Lcu" eventType="touchUpInside" id="Mnc-5q-wzT"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWB-4F-UZl">
+                                <rect key="frame" x="142.5" y="185" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="XLj-yj-iru"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="nFz-xc-5YM"/>
+                                </constraints>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdAction:" destination="Lna-g8-Lcu" eventType="touchUpInside" id="Qjg-j0-z2v"/>
+                                    <action selector="showAdAction:" destination="dFq-Gq-zKD" eventType="touchUpInside" id="lmn-Jt-ZcG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GWB-4F-UZl" firstAttribute="height" secondItem="dl6-rF-5tb" secondAttribute="height" id="77J-WW-Afz"/>
+                            <constraint firstItem="GWB-4F-UZl" firstAttribute="top" secondItem="dl6-rF-5tb" secondAttribute="bottom" constant="27" id="ESc-FD-phB"/>
+                            <constraint firstItem="GWB-4F-UZl" firstAttribute="centerX" secondItem="dl6-rF-5tb" secondAttribute="centerX" id="O0T-3p-nwW"/>
+                            <constraint firstItem="GWB-4F-UZl" firstAttribute="width" secondItem="dl6-rF-5tb" secondAttribute="width" id="nRc-3h-61x"/>
+                            <constraint firstItem="dl6-rF-5tb" firstAttribute="top" secondItem="3CQ-UE-gQS" secondAttribute="top" constant="80" id="vmu-wy-lFP"/>
+                            <constraint firstItem="dl6-rF-5tb" firstAttribute="centerX" secondItem="q6P-tr-ZdW" secondAttribute="centerX" id="vzF-6I-VDJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3CQ-UE-gQS"/>
+                    </view>
+                    <connections>
+                        <outlet property="showAdButton" destination="GWB-4F-UZl" id="txM-R4-wgK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaa-GC-hDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="1492"/>
         </scene>
     </scenes>
 </document>

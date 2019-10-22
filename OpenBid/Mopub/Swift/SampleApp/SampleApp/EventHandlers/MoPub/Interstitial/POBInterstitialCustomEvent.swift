@@ -65,4 +65,8 @@ class POBInterstitialCustomEvent: MPInterstitialCustomEvent, POBInterstitialRend
     func viewControllerForPresentingModal() -> UIViewController! {
         return viewController!
     }
+    
+    deinit {
+        currentRenderer = nil
+    }
 }

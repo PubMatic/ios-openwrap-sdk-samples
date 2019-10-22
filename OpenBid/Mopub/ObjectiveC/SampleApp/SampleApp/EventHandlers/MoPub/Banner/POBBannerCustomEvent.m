@@ -54,4 +54,8 @@
     return [self.delegate viewControllerForPresentingModalView];
 }
 
+- (void)dealloc {
+    _bannerRenderer = nil;
+}
+
 @end

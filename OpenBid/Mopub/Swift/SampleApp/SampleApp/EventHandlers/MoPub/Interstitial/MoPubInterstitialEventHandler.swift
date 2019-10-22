@@ -30,31 +30,30 @@ class MoPubInterstitialEventHandler: NSObject, POBInterstitialEvent, MPInterstit
     init(_ adUnitId: String) {
         super.init()
         self.adUnitId = adUnitId
-        self.interstitial = MPInterstitialAdController(forAdUnitId: self.adUnitId)
-        
-        // Set delegates on MPAdView instance, these should not be removed/overridden else event handler will not work as expected.
-        self.interstitial?.delegate = self
     }
 
     deinit {
-        interstitial?.delegate = nil
-        interstitial = nil
+        if interstitial != nil {
+            MPInterstitialAdController.removeSharedInterstitialAdController(interstitial)
+            interstitial?.delegate = nil
+            interstitial = nil
+        }
         _delegate = nil
         configBlock = nil
     }
 
     // MARK: - POBInterstitialEvent
-    func setDelegate(_ delegate: POBInterstitialEventDelegate?) {
+    func setDelegate(_ delegate: POBInterstitialEventDelegate) {
         _delegate = delegate
     }
     
     func requestAd(with bid: POBBid?) {
         
-        interstitial?.keywords = nil;
+        interstitial = MPInterstitialAdController(forAdUnitId: adUnitId)
 
-        if !(interstitial?.delegate is MoPubInterstitialEventHandler) {
-            NSLog("Do not set Mopub delegate. These are used by MoPubInterstitialEventHandler internally.");
-        }
+        // Set delegates on MPAdView instance, these should not be removed/overridden else event handler will not work as expected.
+        interstitial?.delegate = self
+        interstitial?.keywords = nil;
 
         // If bid is valid, add bid related keywords on Mopub view
         if bid != nil {
@@ -73,6 +72,11 @@ class MoPubInterstitialEventHandler: NSObject, POBInterstitialEvent, MPInterstit
                 localExtras["pob_bid"] = bid
             }
             interstitial?.localExtras = localExtras
+        }
+        // NOTE: Please do not remove this code. Need to reset MoPub interstitial delegate to MoPubInterstitialEventHandler as these are used by MoPubInterstitialEventHandler internally. Changing the mopub delegate to other instance may break the callback mechanism.
+        if !(interstitial?.delegate is MoPubInterstitialEventHandler) {
+            NSLog("Resetting MoPub interstitial delegate to MoPubInterstitialEventHandler as these are used by MoPubInterstitialEventHandler internally.");
+            interstitial?.delegate = self
         }
         interstitial?.loadAd()
     }

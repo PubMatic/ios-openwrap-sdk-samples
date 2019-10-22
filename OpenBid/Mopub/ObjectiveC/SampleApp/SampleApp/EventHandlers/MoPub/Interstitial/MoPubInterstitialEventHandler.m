@@ -19,19 +19,16 @@
     self = [super init];
     if (self) {
         _adUnitId = adUnitId;
-        
-        // Initialize MPInterstitialAdController
-        _interstitial = [MPInterstitialAdController interstitialAdControllerForAdUnitId:_adUnitId];
-        
-        // Set delegates on MPAdView instance, these should not be removed/overridden else event handler will not work as expected.
-        _interstitial.delegate = self;
     }
     return self;
 }
 
 - (void)dealloc {
-    _interstitial.delegate = nil;
-    _interstitial = nil;
+    if (_interstitial) {
+        [MPInterstitialAdController removeSharedInterstitialAdController:_interstitial];
+        _interstitial.delegate = nil;
+        _interstitial = nil;
+    }
     _delegate = nil;
     _configBlock = nil;
 }
@@ -40,11 +37,13 @@
 
 - (void)requestAdWithBid:(POBBid *)bid {
     
+    // Initialize MPInterstitialAdController
+    _interstitial = [MPInterstitialAdController interstitialAdControllerForAdUnitId:_adUnitId];
+    
+    // Set delegates on MPAdView instance, these should not be removed/overridden else event handler will not work as expected.
+    _interstitial.delegate = self;
     _interstitial.keywords = nil;
-    if (_interstitial.delegate != self) {
-        NSLog(@"Do not set Mopub delegate. It is used by MoPubInterstitialEventHandler internally.");
-    }
-
+    
     // If bid is valid, add bid related keywords on Mopub view
     if (bid) {
         if (self.configBlock) {
@@ -62,6 +61,11 @@
         self.interstitial.localExtras = localExtras;
     }
 
+    // NOTE: Please do not remove this code. Need to reset MoPub interstitial delegate to MoPubInterstitialEventHandler as these are used by MoPubInterstitialEventHandler internally. Changing the mopub delegate to other instance may break the callback mechanism.
+    if (self.interstitial.delegate != self) {
+        NSLog(@"Resetting MoPub interstitial delegate to MoPubInterstitialEventHandler as these are used by MoPubInterstitialEventHandler internally.");
+        self.interstitial.delegate = self;
+    }
     [self.interstitial loadAd];
 }
 

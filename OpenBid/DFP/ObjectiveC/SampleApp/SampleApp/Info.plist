@@ -37,6 +37,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>GADIsAdManagerApp</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

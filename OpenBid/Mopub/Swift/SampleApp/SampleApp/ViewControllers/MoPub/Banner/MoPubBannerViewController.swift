@@ -17,7 +17,8 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
         // Create a banner custom event handler for your ad server. Make
         // sure you use separate event handler objects to create each interstitial
         // For example, The code below creates an event handler for MoPub ad server.
-        let eventHandler = MoPubBannerEventHandler(adUnitId: moPubAdunit, size: MOPUB_BANNER_SIZE)
+        let bannerSize = CGSize(width: 320, height: kMPPresetMaxAdSize50Height.height)
+        let eventHandler = MoPubBannerEventHandler(adUnitId: moPubAdunit, size: bannerSize)
         
         // Create a banner view
         // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
@@ -27,7 +28,7 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
         self.bannerView?.delegate = self
         
         // Add the banner view to your view hierarchy
-        addBannerToView(banner: self.bannerView!, adSize: MOPUB_BANNER_SIZE)
+        addBannerToView(banner: self.bannerView!, adSize: bannerSize)
 
         // Load Ad
         self.bannerView?.loadAd()
@@ -48,7 +49,7 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
     }
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(bannerView.creativeSize) ")
+        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize)) ")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.

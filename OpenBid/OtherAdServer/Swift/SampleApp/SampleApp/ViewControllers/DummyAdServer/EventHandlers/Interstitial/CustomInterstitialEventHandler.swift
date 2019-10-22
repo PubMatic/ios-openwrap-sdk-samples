@@ -18,7 +18,7 @@ class CustomInterstitialEventHandler: NSObject,POBInterstitialEvent, DummyAdServ
     }
     
     // MARK: - POBInterstitialEvent
-    func setDelegate(_ delegate: POBInterstitialEventDelegate?) {
+    func setDelegate(_ delegate: POBInterstitialEventDelegate) {
         _delegate = delegate
     }
 

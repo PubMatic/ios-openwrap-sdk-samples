@@ -19,7 +19,7 @@ class CustomBannerEventHandler: NSObject,POBBannerEvent, DummyAdServerDelegate {
     
     // MARK: - POBBannerEvent
     
-    func setDelegate(_ delegate: POBBannerEventDelegate!) {
+    func setDelegate(_ delegate: POBBannerEventDelegate) {
         _delegate = delegate
     }
 

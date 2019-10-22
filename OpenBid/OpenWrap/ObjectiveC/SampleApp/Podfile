@@ -8,4 +8,3 @@ end
 target 'SampleApp' do
     required_pods
 end
-

@@ -26,8 +26,15 @@ class MoPubBannerEventHandler: NSObject,POBBannerEvent,MPAdViewDelegate {
      */
     init(adUnitId:String, size:CGSize) {
         super.init()
-        adSize = size
-        bannerView = MPAdView(adUnitId: adUnitId, size: size)
+        // Create a MoPub Banner
+        bannerView = MPAdView(adUnitId: adUnitId)
+        bannerView?.maxAdSize = size
+        adSize = bannerView?.adContentViewSize()
+        
+        // Set banner view frame
+        var frame = bannerView?.frame
+        frame?.size = size
+        bannerView?.frame = frame ?? CGRect.zero
         
         // Set delegates on MPAdView instance, these should not be removed/overridden else event handler will not work as expected.
         bannerView?.delegate = self
@@ -46,10 +53,6 @@ class MoPubBannerEventHandler: NSObject,POBBannerEvent,MPAdViewDelegate {
     func requestAd(with bid: POBBid?) {
         
         bannerView?.keywords = nil;
-        
-        if !(bannerView?.delegate is MoPubBannerEventHandler) {
-            NSLog("Do not set Mopub delegate. These are used by MoPubBannerEventHandler internally.");
-        }
 
         // If bid is valid, add bid related keywords on Mopub view
         if bid != nil {
@@ -68,10 +71,15 @@ class MoPubBannerEventHandler: NSObject,POBBannerEvent,MPAdViewDelegate {
                 bannerView?.localExtras = localExtras
             }
         }
+        // NOTE: Please do not remove this code. Need to reset MoPub banner delegate to MoPubBannerEventHandler as these are used by MoPubBannerEventHandler internally. Changing the mopub delegate to other instance may break the callbacks and the banner refresh mechanism.
+        if !(bannerView?.delegate is MoPubBannerEventHandler) {
+            NSLog("Resetting MoPub banner delegate to MoPubBannerEventHandler as these are used by MoPubBannerEventHandler internally.");
+            bannerView?.delegate = self
+        }
         bannerView?.loadAd()
     }
     
-    func setDelegate(_ delegate: POBBannerEventDelegate!) {
+    func setDelegate(_ delegate: POBBannerEventDelegate) {
         _delegate = delegate
     }
     
@@ -88,17 +96,54 @@ class MoPubBannerEventHandler: NSObject,POBBannerEvent,MPAdViewDelegate {
         return _delegate?.viewControllerForPresentingModal()
     }
     
-    func adViewDidLoadAd(_ view: MPAdView!) {
-        contentSize = view.adContentViewSize()
+    func adViewDidLoadAd(_ view: MPAdView!, adSize: CGSize) {
+        contentSize = adSize
         _delegate?.adServerDidWin(view)
     }
     
-    func adViewDidFail(toLoadAd view: MPAdView!) {
-        let failureMsg = NSLocalizedString("MoPub ad server failed to load ad", comment: "")
-        let userInfo = [NSLocalizedDescriptionKey: failureMsg,
-                        NSLocalizedFailureReasonErrorKey: failureMsg]
-        let eventError = NSError(domain: kPOBErrorDomain, code: POBErrorCode.errorNoAds.rawValue, userInfo: userInfo)
-        _delegate?.failedWithError(eventError)
+    func adView(_ view: MPAdView!, didFailToLoadAdWithError error: Error!) {
+        var eventErr = error as NSError
+        let mopubError = MOPUBErrorCode(rawValue: Int32(eventErr.code))
+        
+        switch mopubError {
+        case MOPUBErrorNoNetworkData:
+            fallthrough
+        case MOPUBErrorNoInventory:
+            fallthrough
+        case MOPUBErrorAdapterHasNoInventory:
+            // No data found in NSHTTPURL response
+            eventErr = eventError(eventErr, code: POBErrorCode.errorNoAds)
+            
+        case MOPUBErrorNetworkTimedOut:
+            eventErr = eventError(eventErr, code: POBErrorCode.errorNetworkError)
+            
+        case MOPUBErrorServerError:
+            eventErr = eventError(eventErr, code: POBErrorCode.errorServerError)
+            
+        case MOPUBErrorAdRequestTimedOut:
+            eventErr = eventError(eventErr, code: POBErrorCode.errorTimeout)
+            
+        case MOPUBErrorAdapterInvalid:
+            fallthrough
+        case MOPUBErrorAdapterNotFound:
+            eventErr = eventError(eventErr, code: POBErrorCode.signalingError)
+            
+        case MOPUBErrorAdUnitWarmingUp:
+            fallthrough
+        case MOPUBErrorSDKNotInitialized:
+            eventErr = eventError(eventErr, code: POBErrorCode.errorInternalError)
+            
+        case MOPUBErrorUnableToParseJSONAdResponse:
+            fallthrough
+        case MOPUBErrorUnexpectedNetworkResponse:
+            eventErr = eventError(eventErr, code: POBErrorCode.errorInvalidResponse)
+            
+        case MOPUBErrorNoRenderer:
+            eventErr = eventError(eventErr, code: POBErrorCode.errorRenderError)
+        default:
+            break
+        }
+        _delegate?.failedWithError(eventErr)
     }
     
     func willPresentModalView(forAd view: MPAdView!) {
@@ -111,6 +156,12 @@ class MoPubBannerEventHandler: NSObject,POBBannerEvent,MPAdViewDelegate {
     
     func willLeaveApplication(fromAd view: MPAdView!) {
         _delegate?.willLeaveApp()
+    }
+    
+    // MARK: - Helper methods
+    func eventError(_ error : NSError, code : POBErrorCode) -> NSError {
+        let eventError = NSError(domain: kPOBErrorDomain, code:code.rawValue, userInfo: error.userInfo)
+        return eventError
     }
     
     func keywords(for bid: POBBid?) -> String? {

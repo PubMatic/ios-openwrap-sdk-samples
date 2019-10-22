@@ -1,6 +1,7 @@
 
 
 #import "MoPubBannerEventHandler.h"
+#import <MPError.h>
 
 @interface MoPubBannerEventHandler()<MPAdViewDelegate>
 @property (nonatomic, strong) MPAdView *bannerView;
@@ -15,11 +16,16 @@
     self = [super init];
     if (self) {
         
-        _adSize = size;
         // Do any additional setup required for MoPub Banner Ads
         // Create a MoPub Banner
-        self.bannerView = [[MPAdView alloc] initWithAdUnitId:adUnitId
-                                                        size:size];
+        self.bannerView = [[MPAdView alloc] initWithAdUnitId:adUnitId];
+        self.bannerView.maxAdSize = size;
+        self.adSize = self.bannerView.adContentViewSize;
+        
+        // Set banner view frame
+        CGRect frame = self.bannerView.frame;
+        frame.size = self.adSize;
+        self.bannerView.frame = frame;
         
         // Set delegates on MPAdView instance, these should not be removed/overridden else event handler will not work as expected.
         self.bannerView.delegate = self;
@@ -45,10 +51,6 @@
     
     _bannerView.keywords = nil;
 
-    if (_bannerView.delegate != self) {
-        NSLog(@"Do not set Mopub delegate. It is used by MoPubBannerEventHandler internally.");
-    }
-
     // If bid is valid, add bid related keywords on Mopub view
     if (bid) {
         if (self.configBlock) {
@@ -63,6 +65,11 @@
              localExtras[@"pob_bid"] = bid;
             self.bannerView.localExtras = localExtras;
         }
+    }
+    // NOTE: Please do not remove this code. Need to reset MoPub banner delegate to MoPubBannerEventHandler as these are used by MoPubBannerEventHandler internally. Changing the mopub delegate to other instance may break the callbacks and the banner refresh mechanism.
+    if (self.bannerView.delegate != self) {
+        NSLog(@"Resetting MoPub banner delegate to MoPubBannerEventHandler as these are used by MoPubBannerEventHandler internally.");
+        self.bannerView.delegate = self;
     }
     [self.bannerView loadAd];
 }
@@ -81,20 +88,58 @@
     return [self.delegate viewControllerForPresentingModal];
 }
 
-- (void)adViewDidLoadAd:(MPAdView *)view{
-    _adContentSize = view.adContentViewSize;
+- (void)adViewDidLoadAd:(MPAdView *)view adSize:(CGSize)adSize {
+    _adContentSize = adSize;
     [self.delegate adServerDidWin:view];
 }
 
--(void)adViewDidFailToLoadAd:(MPAdView *)view{
-    NSDictionary *userInfo = @{
-                               NSLocalizedDescriptionKey: NSLocalizedString(@"MoPub ad server failed to load ad", nil),
-                               NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"MoPub ad server failed to load ad", nil)
-                               };
-    NSError *eventError = [NSError errorWithDomain:kPOBErrorDomain
-                                              code:POBErrorNoAds
-                                          userInfo:userInfo];
-    [_delegate failedWithError:eventError];
+- (void)adView:(MPAdView *)view didFailToLoadAdWithError:(NSError *)error {
+    NSError *eventError = nil;
+    switch (error.code) {
+        case MOPUBErrorNoNetworkData:
+        case MOPUBErrorNoInventory:
+        case MOPUBErrorAdapterHasNoInventory:
+            // No data found in NSHTTPURL response
+            eventError = [self eventError:error withErrorCode:POBErrorNoAds];
+            break;
+            
+        case MOPUBErrorNetworkTimedOut:
+            eventError = [self eventError:error withErrorCode:POBErrorNetworkError];
+            break;
+            
+        case MOPUBErrorServerError:
+            eventError = [self eventError:error withErrorCode:POBErrorServerError];
+            break;
+            
+        case MOPUBErrorAdRequestTimedOut:
+            eventError = [self eventError:error withErrorCode:POBErrorTimeout];
+            break;
+            
+        case MOPUBErrorAdapterInvalid:
+        case MOPUBErrorAdapterNotFound:
+            eventError = [self eventError:error withErrorCode:POBSignalingError];
+            break;
+            
+        case MOPUBErrorAdUnitWarmingUp:
+        case MOPUBErrorSDKNotInitialized:
+            eventError = [self eventError:error withErrorCode:POBErrorInternalError];
+            break;
+            
+        case MOPUBErrorUnableToParseJSONAdResponse:
+        case MOPUBErrorUnexpectedNetworkResponse:
+            eventError = [self eventError:error withErrorCode:POBErrorInvalidResponse];
+            break;
+            
+        case MOPUBErrorNoRenderer:
+            eventError = [self eventError:error withErrorCode:POBErrorRenderError];
+            break;
+            
+        default:
+            eventError = error;
+            break;
+    }
+    
+    [self.delegate failedWithError:eventError];
 }
 
 -(void)willPresentModalViewForAd:(MPAdView *)view{
@@ -108,7 +153,15 @@
 -(void)willLeaveApplicationFromAd:(MPAdView *)view{
     [self.delegate willLeaveApp];
 }
-#pragma mark -
+
+#pragma mark - Private Methods
+
+-(NSError *)eventError:(NSError *)error  withErrorCode:(POBErrorCode )code{
+    NSError *eventError = [NSError errorWithDomain:kPOBErrorDomain
+                                              code:code
+                                          userInfo:error.userInfo];
+    return eventError;
+}
 
 -(NSString *)keywordsForBid:(POBBid *)bid{
     NSMutableString *keywords = [NSMutableString new];

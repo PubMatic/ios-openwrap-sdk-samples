@@ -51,4 +51,8 @@ class POBBannerCustomEvent: MPBannerCustomEvent, POBAdRendererDelegate {
     func viewControllerForPresentingModal() -> UIViewController! {
         return self.delegate.viewControllerForPresentingModalView()
     }
+    
+    deinit {
+        bannerRenderer = nil
+    }
 }

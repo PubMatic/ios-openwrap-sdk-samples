@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		21CF3B3B224269B80080211E /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B36224269B70080211E /* BannerViewController.m */; };
-		21CF3B3C224269B80080211E /* InsterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B39224269B70080211E /* InsterstitialViewController.m */; };
+		21CF3B3C224269B80080211E /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B39224269B70080211E /* InterstitialViewController.m */; };
 		21CF3B4722426C030080211E /* CustomInterstitialEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B4322426C030080211E /* CustomInterstitialEventHandler.m */; };
 		21CF3B4822426C030080211E /* CustomBannerEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B4522426C030080211E /* CustomBannerEventHandler.m */; };
 		21CF3B602244E1C80080211E /* DummyAdServerSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF3B5F2244E1C80080211E /* DummyAdServerSDK.m */; };
 		24BBBD5E8E4238BA80A9735C /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E74483EAB72F4527C2B9E61B /* libPods-SampleApp.a */; };
+		3E920625235447A000460561 /* VideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E920624235447A000460561 /* VideoInterstitialViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
 		E60023991DC0B03300833CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60023981DC0B03300833CDB /* Assets.xcassets */; };
@@ -23,14 +24,16 @@
 /* Begin PBXFileReference section */
 		21CF3B36224269B70080211E /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		21CF3B37224269B70080211E /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
-		21CF3B39224269B70080211E /* InsterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsterstitialViewController.m; sourceTree = "<group>"; };
-		21CF3B3A224269B70080211E /* InsterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsterstitialViewController.h; sourceTree = "<group>"; };
+		21CF3B39224269B70080211E /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
+		21CF3B3A224269B70080211E /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		21CF3B4222426C030080211E /* CustomInterstitialEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInterstitialEventHandler.h; sourceTree = "<group>"; };
 		21CF3B4322426C030080211E /* CustomInterstitialEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInterstitialEventHandler.m; sourceTree = "<group>"; };
 		21CF3B4522426C030080211E /* CustomBannerEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBannerEventHandler.m; sourceTree = "<group>"; };
 		21CF3B4622426C030080211E /* CustomBannerEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBannerEventHandler.h; sourceTree = "<group>"; };
 		21CF3B5E2244E1C80080211E /* DummyAdServerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyAdServerSDK.h; sourceTree = "<group>"; };
 		21CF3B5F2244E1C80080211E /* DummyAdServerSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyAdServerSDK.m; sourceTree = "<group>"; };
+		3E920623235447A000460561 /* VideoInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoInterstitialViewController.h; sourceTree = "<group>"; };
+		3E920624235447A000460561 /* VideoInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoInterstitialViewController.m; sourceTree = "<group>"; };
 		B7A2A26E1BEFE3254E4BC730 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		E3705C508332EC8A0BEDADC8 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E60023891DC0B03300833CDB /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,7 @@
 				21CF3B4022426BBF0080211E /* EventHandlers */,
 				21CF3B35224269B70080211E /* Banner */,
 				21CF3B38224269B70080211E /* Interstitial */,
+				3E9206222354473F00460561 /* VideoInterstitial */,
 			);
 			path = DummyAdServer;
 			sourceTree = "<group>";
@@ -81,8 +85,8 @@
 		21CF3B38224269B70080211E /* Interstitial */ = {
 			isa = PBXGroup;
 			children = (
-				21CF3B39224269B70080211E /* InsterstitialViewController.m */,
-				21CF3B3A224269B70080211E /* InsterstitialViewController.h */,
+				21CF3B3A224269B70080211E /* InterstitialViewController.h */,
+				21CF3B39224269B70080211E /* InterstitialViewController.m */,
 			);
 			path = Interstitial;
 			sourceTree = "<group>";
@@ -112,6 +116,15 @@
 				21CF3B4522426C030080211E /* CustomBannerEventHandler.m */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		3E9206222354473F00460561 /* VideoInterstitial */ = {
+			isa = PBXGroup;
+			children = (
+				3E920623235447A000460561 /* VideoInterstitialViewController.h */,
+				3E920624235447A000460561 /* VideoInterstitialViewController.m */,
+			);
+			path = VideoInterstitial;
 			sourceTree = "<group>";
 		};
 		B7B0F6C5C65E456F9C414E6C /* Frameworks */ = {
@@ -240,6 +253,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -312,7 +326,8 @@
 			files = (
 				21CF3B4822426C030080211E /* CustomBannerEventHandler.m in Sources */,
 				21CF3B602244E1C80080211E /* DummyAdServerSDK.m in Sources */,
-				21CF3B3C224269B80080211E /* InsterstitialViewController.m in Sources */,
+				3E920625235447A000460561 /* VideoInterstitialViewController.m in Sources */,
+				21CF3B3C224269B80080211E /* InterstitialViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,
 				21CF3B4722426C030080211E /* CustomInterstitialEventHandler.m in Sources */,

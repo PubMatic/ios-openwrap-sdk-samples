@@ -68,4 +68,8 @@
     return _viewController;
 }
 
+- (void)dealloc {
+    _currentRenderer = nil;
+}
+
 @end

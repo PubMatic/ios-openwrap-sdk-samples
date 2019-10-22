@@ -62,7 +62,7 @@ class DFPBannerEventHandler: NSObject,POBBannerEvent,GADBannerViewDelegate,GADAp
         bannerView = nil
     }
     
-    func setDelegate(_ delegate: POBBannerEventDelegate!) {
+    func setDelegate(_ delegate: POBBannerEventDelegate) {
         _delegate = delegate
     }
 
@@ -142,7 +142,7 @@ class DFPBannerEventHandler: NSObject,POBBannerEvent,GADBannerViewDelegate,GADAp
     
     @objc func syncTimetAction() {
         if !notified {
-            _delegate?.adServerDidWin(bannerView)
+            _delegate?.adServerDidWin(bannerView!)
             notified = true
         }
     }

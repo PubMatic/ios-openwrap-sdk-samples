@@ -33,7 +33,7 @@ class DFPInterstitialEventHandler: NSObject,POBInterstitialEvent,GADAppEventDele
         interstitial = nil
     }
     
-    func setDelegate(_ delegate: POBInterstitialEventDelegate?) {
+    func setDelegate(_ delegate: POBInterstitialEventDelegate) {
         _delegate = delegate
     }
 

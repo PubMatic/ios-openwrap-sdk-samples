@@ -21,7 +21,8 @@
     // Create a banner custom event handler for your ad server. Make sure you use
     // separate event handler objects to create each banner view.
     // For example, The code below creates an event handler for MoPub ad server.
-    MoPubBannerEventHandler *eventHandler = [[MoPubBannerEventHandler alloc] initWithAdUnitId:MOPUB_AD_UNIT adSize:MOPUB_BANNER_SIZE];
+    CGSize size = CGSizeMake(320.0, kMPPresetMaxAdSize50Height.height);
+    MoPubBannerEventHandler *eventHandler = [[MoPubBannerEventHandler alloc] initWithAdUnitId:MOPUB_AD_UNIT adSize:size];
     
     // Create a banner view
     // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
@@ -35,7 +36,7 @@
     self.bannerView.delegate = self;
     
     // Add the banner view to your view hierarchy
-    [self addBannerToView:self.bannerView withSize:MOPUB_BANNER_SIZE];
+    [self addBannerToView:self.bannerView withSize:size];
     
     // Load Ad
     [self.bannerView loadAd];
