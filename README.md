@@ -1,22 +1,22 @@
-This repository consists of sample applications for PubMatic's OpenBid SDK integration. You may refer these applications to integrate PubMatic's OpenBid SDK.
+This repository consists of sample applications for PubMatic's OpenWrap SDK integration. You may refer these applications to integrate PubMatic's OpenWrap SDK.
 
-## OpenBid iOS SDK
+## OpenWrap iOS SDK
 
-Integrate PubMatic OpenBid SDK into your iOS app to monetize your app inventory using PubMatic's robust platform. With the OpenBid SDK in your app, you can use the PubMatic platform to control, monitor, and optimize your ad inventory’s financial performance. It enables mobile app developers to maximize their monetization in native iOS applications.
+Integrate PubMatic OpenWrap SDK into your iOS app to monetize your app inventory using PubMatic's robust platform. With the OpenWrap SDK in your app, you can use the PubMatic platform to control, monitor, and optimize your ad inventory’s financial performance. It enables mobile app developers to maximize their monetization in native iOS applications.
 
 ## Documentation
 
-Refer [PubMatic community pages](https://community.pubmatic.com/display/IS/About+iOS+OpenBid+SDK)
-for documentation on using OpenBid SDK.
+Refer [PubMatic community pages](https://community.pubmatic.com/display/IS/About+iOS+OpenWrap+SDK)
+for documentation on using OpenWrap SDK.
 
 ## Sample Applications
 
 | Ad Server | Samples |
 | ------------- | ------------- |
-|   DFP    | [Banner/Interstitial Samples](./OpenBid/DFP/) |
-|   MoPub    | [Banner/Interstitial Samples](./OpenBid/Mopub/) |
-|   OpenWrap(Programmatic Only)    | [Banner/Interstitial Samples](./OpenBid/OpenWrap/) |
-|   Other Ad Server    | [Banner/Interstitial Samples](./OpenBid/OtherAdServer/) |
+|   DFP    | [Banner/Interstitial Samples](./OpenWrap/Basic/DFP/) |
+|   MoPub    | [Banner/Interstitial Samples](./OpenWrap/Basic/Mopub/) |
+|   OpenWrap(Programmatic Only)    | [Banner/Interstitial Samples](./OpenWrap/Basic/NoAdServer/) |
+|   Other Ad Server    | [Banner/Interstitial Samples](./OpenWrap/Basic/OtherAdServer/) |
 
 
 Each iOS sample application includes a Podfile for integrating dependencies.
@@ -30,7 +30,7 @@ for more information on installing and updating pods.
 
 ## Downloads
 
-Please check out [releases](https://github.com/PubMatic/ios-sdk-samples/releases)
+Please check out [releases](https://github.com/PubMatic/ios-openwrap-sdk-samples/releases)
 for the latest downloads of sample apps.
 
 ## License
