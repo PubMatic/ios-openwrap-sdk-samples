@@ -6,22 +6,26 @@ Integrate PubMatic OpenWrap SDK into your iOS app to monetize your app inventory
 
 ## Documentation
 
-Refer [PubMatic community pages](https://community.pubmatic.com/display/IS/About+iOS+OpenWrap+SDK)
+Refer [PubMatic community pages](https://community.pubmatic.com/display/IS)
 for documentation on using OpenWrap SDK.
 
 ## Sample Applications
+
+### Basic
 
 | Ad Server | Samples |
 | ------------- | ------------- |
 |   DFP    | [Banner/Interstitial Samples](./OpenWrap/Basic/DFP/) |
 |   MoPub    | [Banner/Interstitial Samples](./OpenWrap/Basic/Mopub/) |
-|   OpenWrap(Programmatic Only)    | [Banner/Interstitial Samples](./OpenWrap/Basic/NoAdServer/) |
-|   Other Ad Server    | [Banner/Interstitial Samples](./OpenWrap/Basic/OtherAdServer/) |
+|   No Ad Server(Programmatic Only)    | [Banner/Interstitial Samples](./OpenWrap/Basic/NoAdServer/) |
+|   Custom Ad Server    | [Banner/Interstitial Samples](./OpenWrap/Basic/OtherAdServer/) |
 
+### Advance
+1. [Table View App](./OpenWrap/Advanced/SampleApp/)
 
 Each iOS sample application includes a Podfile for integrating dependencies.
 
-**Installation steps:**
+## Installation steps:
 1. Run `pod install --repo-update` in the same directory where the Podfile is.
 1. Open the .xcworkspace file with Xcode and run the app.
 
