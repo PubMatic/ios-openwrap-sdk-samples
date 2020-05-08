@@ -140,7 +140,7 @@ extension ViewController {
     
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Ad received with size \(String(describing: bannerView.creativeSize)) ")
+        print("Ad received with size \(String(describing: bannerView.creativeSize())) ")
         
         if adLoadState[bannerView] == false {
             // Set load state of the banner view to true

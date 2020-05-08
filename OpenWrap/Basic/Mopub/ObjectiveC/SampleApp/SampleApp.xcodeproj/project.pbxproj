@@ -9,15 +9,11 @@
 /* Begin PBXBuildFile section */
 		214A442D21DF60C5005202FB /* MoPubBannerEventHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214A442C21DF60C5005202FB /* MoPubBannerEventHandlerTests.m */; };
 		214A442F21DF7D20005202FB /* POBBannerCustomEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214A442E21DF7D20005202FB /* POBBannerCustomEventTests.m */; };
-		2155D74C21CB967700634489 /* POBBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2155D74A21CB967600634489 /* POBBannerCustomEvent.m */; };
 		216D3DFD237AF3250056AFBF /* MoPubIBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216D3DFC237AF3250056AFBF /* MoPubIBVideoViewController.m */; };
 		24BBBD5E8E4238BA80A9735C /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E74483EAB72F4527C2B9E61B /* libPods-SampleApp.a */; };
 		3E23BC0F234DBAF20022D28B /* MoPubVideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E23BC0E234DBAF20022D28B /* MoPubVideoInterstitialViewController.m */; };
-		3E7AF80E21CAADC400C31F40 /* MoPubBannerEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF80D21CAADC400C31F40 /* MoPubBannerEventHandler.m */; };
 		3E7AF81421CAADD800C31F40 /* MoPubBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF81221CAADD800C31F40 /* MoPubBannerViewController.m */; };
-		3E7AF81A21CB900D00C31F40 /* POBInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF81921CB900D00C31F40 /* POBInterstitialCustomEvent.m */; };
 		3E7DE92421DF2B4D00E70EA6 /* POBInterstitialCustomEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE92221DF2B4D00E70EA6 /* POBInterstitialCustomEventTests.m */; };
-		3ED300FA21DCD50700A89565 /* MoPubInterstitialEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED300F821DCD50700A89565 /* MoPubInterstitialEventHandler.m */; };
 		3ED300FD21DCD52600A89565 /* MoPubInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED300FB21DCD52600A89565 /* MoPubInterstitialViewController.m */; };
 		3ED3011521DCD8CF00A89565 /* MoPubInterstitialEventHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED3011321DCD8CF00A89565 /* MoPubInterstitialEventHandlerTests.m */; };
 		E31EF4182C14C4712721ED5E /* libPods-SampleAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD14525BF275FC9328B84C6 /* libPods-SampleAppTests.a */; };
@@ -39,23 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2059D79721E6005100CAB869 /* MoPubBannerEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoPubBannerEventHandler.h; sourceTree = "<group>"; };
 		214A442C21DF60C5005202FB /* MoPubBannerEventHandlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoPubBannerEventHandlerTests.m; sourceTree = "<group>"; };
 		214A442E21DF7D20005202FB /* POBBannerCustomEventTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POBBannerCustomEventTests.m; sourceTree = "<group>"; };
-		2155D74A21CB967600634489 /* POBBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POBBannerCustomEvent.m; sourceTree = "<group>"; };
-		2155D74B21CB967600634489 /* POBBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POBBannerCustomEvent.h; sourceTree = "<group>"; };
 		216D3DFB237AF3250056AFBF /* MoPubIBVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoPubIBVideoViewController.h; sourceTree = "<group>"; };
 		216D3DFC237AF3250056AFBF /* MoPubIBVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoPubIBVideoViewController.m; sourceTree = "<group>"; };
 		3E23BC0D234DBAF20022D28B /* MoPubVideoInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoPubVideoInterstitialViewController.h; sourceTree = "<group>"; };
 		3E23BC0E234DBAF20022D28B /* MoPubVideoInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoPubVideoInterstitialViewController.m; sourceTree = "<group>"; };
-		3E7AF80D21CAADC400C31F40 /* MoPubBannerEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoPubBannerEventHandler.m; sourceTree = "<group>"; };
 		3E7AF81221CAADD800C31F40 /* MoPubBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoPubBannerViewController.m; sourceTree = "<group>"; };
 		3E7AF81321CAADD800C31F40 /* MoPubBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoPubBannerViewController.h; sourceTree = "<group>"; };
-		3E7AF81821CB900D00C31F40 /* POBInterstitialCustomEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POBInterstitialCustomEvent.h; sourceTree = "<group>"; };
-		3E7AF81921CB900D00C31F40 /* POBInterstitialCustomEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POBInterstitialCustomEvent.m; sourceTree = "<group>"; };
 		3E7DE92221DF2B4D00E70EA6 /* POBInterstitialCustomEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POBInterstitialCustomEventTests.m; sourceTree = "<group>"; };
-		3ED300F821DCD50700A89565 /* MoPubInterstitialEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoPubInterstitialEventHandler.m; sourceTree = "<group>"; };
-		3ED300F921DCD50700A89565 /* MoPubInterstitialEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoPubInterstitialEventHandler.h; sourceTree = "<group>"; };
 		3ED300FB21DCD52600A89565 /* MoPubInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoPubInterstitialViewController.m; sourceTree = "<group>"; };
 		3ED300FC21DCD52600A89565 /* MoPubInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoPubInterstitialViewController.h; sourceTree = "<group>"; };
 		3ED3010221DCD79C00A89565 /* SampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,45 +110,6 @@
 				3E23BC0E234DBAF20022D28B /* MoPubVideoInterstitialViewController.m */,
 			);
 			path = VideoInterstitial;
-			sourceTree = "<group>";
-		};
-		3E7AF7E121CA528E00C31F40 /* EventHandlers */ = {
-			isa = PBXGroup;
-			children = (
-				3E7AF80621CAACEC00C31F40 /* MoPub */,
-			);
-			path = EventHandlers;
-			sourceTree = "<group>";
-		};
-		3E7AF80621CAACEC00C31F40 /* MoPub */ = {
-			isa = PBXGroup;
-			children = (
-				3E7AF80721CAACF800C31F40 /* Banner */,
-				3E7AF80821CAACFF00C31F40 /* Interstitial */,
-			);
-			path = MoPub;
-			sourceTree = "<group>";
-		};
-		3E7AF80721CAACF800C31F40 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				2155D74B21CB967600634489 /* POBBannerCustomEvent.h */,
-				2155D74A21CB967600634489 /* POBBannerCustomEvent.m */,
-				2059D79721E6005100CAB869 /* MoPubBannerEventHandler.h */,
-				3E7AF80D21CAADC400C31F40 /* MoPubBannerEventHandler.m */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
-		3E7AF80821CAACFF00C31F40 /* Interstitial */ = {
-			isa = PBXGroup;
-			children = (
-				3ED300F921DCD50700A89565 /* MoPubInterstitialEventHandler.h */,
-				3ED300F821DCD50700A89565 /* MoPubInterstitialEventHandler.m */,
-				3E7AF81821CB900D00C31F40 /* POBInterstitialCustomEvent.h */,
-				3E7AF81921CB900D00C31F40 /* POBInterstitialCustomEvent.m */,
-			);
-			path = Interstitial;
 			sourceTree = "<group>";
 		};
 		3E7AF80921CAAD1300C31F40 /* MoPub */ = {
@@ -262,7 +211,6 @@
 		E600238B1DC0B03300833CDB /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E7AF7E121CA528E00C31F40 /* EventHandlers */,
 				E60023BF1DC1CB8200833CDB /* Appdelegate */,
 				E60023C31DC1CB8200833CDB /* Viewcontrollers */,
 				E60023BE1DC1CB6E00833CDB /* Resources */,
@@ -589,16 +537,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E7AF81A21CB900D00C31F40 /* POBInterstitialCustomEvent.m in Sources */,
-				3E7AF80E21CAADC400C31F40 /* MoPubBannerEventHandler.m in Sources */,
 				3E23BC0F234DBAF20022D28B /* MoPubVideoInterstitialViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
 				3ED300FD21DCD52600A89565 /* MoPubInterstitialViewController.m in Sources */,
 				216D3DFD237AF3250056AFBF /* MoPubIBVideoViewController.m in Sources */,
 				3E7AF81421CAADD800C31F40 /* MoPubBannerViewController.m in Sources */,
-				3ED300FA21DCD50700A89565 /* MoPubInterstitialEventHandler.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,
-				2155D74C21CB967700634489 /* POBBannerCustomEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,8 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
     
     let pubId = "156276"
     let profileId:NSNumber = 1302
-    let moPubAdunit = "8aef58d0f85546ec961a7cca3ce6a7a0"
-    let owAdUnit = "8aef58d0f85546ec961a7cca3ce6a7a0"
+    let moPubAdunit = "7bb033b5e2404ab9a1f907702447b4b9"
+    let owAdUnit = "7bb033b5e2404ab9a1f907702447b4b9"
 
     var bannerView:POBBannerView?
     
@@ -18,11 +18,11 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
         // sure you use separate event handler objects to create each interstitial
         // For example, The code below creates an event handler for MoPub ad server.
         let bannerSize = CGSize(width: 320, height: kMPPresetMaxAdSize50Height.height)
-        let eventHandler = MoPubBannerEventHandler(adUnitId: moPubAdunit, size: bannerSize)
+        let eventHandler = MoPubBannerEventHandler(adUnitId: moPubAdunit, adSize: bannerSize)
         
         // Create a banner view
         // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
-        self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler)
+        self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
         self.bannerView?.delegate = self
@@ -49,7 +49,7 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
     }
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize)) ")
+        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize())) ")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.

@@ -2,10 +2,10 @@
 
 import UIKit
 
-class MoPubVideoInterstitialViewController: UIViewController, POBInterstitialDelegate {
+class MoPubVideoInterstitialViewController: UIViewController, POBInterstitialDelegate,POBInterstitialVideoDelegate {
     
-    let mopubAdUnit         = "906287c93c214f14b0baa234acdd58c7"
-    let owAdUnit            = "906287c93c214f14b0baa234acdd58c7"
+    let mopubAdUnit         = "61ea16f261fd4d55bb08eb8e9ddb52e3"
+    let owAdUnit            = "61ea16f261fd4d55bb08eb8e9ddb52e3"
     let pubId               = "156276"
     let profileId: NSNumber = 1758
     
@@ -19,14 +19,17 @@ class MoPubVideoInterstitialViewController: UIViewController, POBInterstitialDel
         // sure you use separate event handler objects to create each interstitial
         // ad instance.
         // For example, The code below creates an event handler for MoPub ad server.
-        let eventHandler = MoPubInterstitialEventHandler(mopubAdUnit)
+        let eventHandler = MoPubInterstitialEventHandler(adUnitId: mopubAdUnit)
         
         // Create an interstitial object
         // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
-        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler)
+        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
         interstitial?.delegate = self
+        
+        // Set video delegate to receive VAST based video events
+        interstitial?.videoDelegate = self;
     }
     
     
@@ -89,5 +92,12 @@ class MoPubVideoInterstitialViewController: UIViewController, POBInterstitialDel
     // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
     func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
         print("Interstitial : Ad Expired")
+    }
+    
+    //MARK: POBInterstitialVideoDelegate methods
+
+    // Notifies the delegate of VAST based video ad events
+    func interstitialDidFinishVideoPlayback(_ interstitial: POBInterstitial) {
+        print("Interstitial : Finished video playback")
     }
 }

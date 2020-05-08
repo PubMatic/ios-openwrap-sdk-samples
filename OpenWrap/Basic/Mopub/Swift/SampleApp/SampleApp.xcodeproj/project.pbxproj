@@ -14,11 +14,7 @@
 		20C273AD237D201D0042D9E4 /* MoPubIBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C273AC237D201D0042D9E4 /* MoPubIBVideoViewController.swift */; };
 		3E3F4C6B23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F4C6A23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift */; };
 		3E3F4C6D23507F67006F9659 /* MoPubInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F4C6C23507F67006F9659 /* MoPubInterstitialViewController.swift */; };
-		3E7DE93521DF3DEA00E70EA6 /* MoPubBannerEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE93421DF3DEA00E70EA6 /* MoPubBannerEventHandler.swift */; };
-		3E7DE93721DF3DF000E70EA6 /* MoPubInterstitialEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE93621DF3DF000E70EA6 /* MoPubInterstitialEventHandler.swift */; };
 		3E7DE93D21DF3E0300E70EA6 /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE93C21DF3E0300E70EA6 /* MoPubBannerViewController.swift */; };
-		3E7DE94721DF47D300E70EA6 /* POBBannerCustomEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94621DF47D200E70EA6 /* POBBannerCustomEvent.swift */; };
-		3E7DE94921DF47DA00E70EA6 /* POBInterstitialCustomEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94821DF47DA00E70EA6 /* POBInterstitialCustomEvent.swift */; };
 		C5AE2D669CCE177D5F4775AA /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B14ECF7403084E5E10D592 /* libPods-SampleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -34,11 +30,7 @@
 		3A050E9658E3E1A44077E3B8 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		3E3F4C6A23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubVideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		3E3F4C6C23507F67006F9659 /* MoPubInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialViewController.swift; sourceTree = "<group>"; };
-		3E7DE93421DF3DEA00E70EA6 /* MoPubBannerEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubBannerEventHandler.swift; sourceTree = "<group>"; };
-		3E7DE93621DF3DF000E70EA6 /* MoPubInterstitialEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialEventHandler.swift; sourceTree = "<group>"; };
 		3E7DE93C21DF3E0300E70EA6 /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
-		3E7DE94621DF47D200E70EA6 /* POBBannerCustomEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POBBannerCustomEvent.swift; sourceTree = "<group>"; };
-		3E7DE94821DF47DA00E70EA6 /* POBInterstitialCustomEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POBInterstitialCustomEvent.swift; sourceTree = "<group>"; };
 		53B14ECF7403084E5E10D592 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFEA140DCC041AF21F8F1CA /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +68,6 @@
 		20364F5221AFAF0B00F9D5DD /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E7DE92721DF3D1E00E70EA6 /* EventHandlers */,
 				20364F6721AFAF3600F9D5DD /* AppDelegate */,
 				20364F6621AFAF2A00F9D5DD /* ViewControllers */,
 				20364F6521AFAF2300F9D5DD /* Resources */,
@@ -126,41 +117,6 @@
 				3E3F4C6A23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift */,
 			);
 			path = VideoInterstitial;
-			sourceTree = "<group>";
-		};
-		3E7DE92721DF3D1E00E70EA6 /* EventHandlers */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE92B21DF3D3D00E70EA6 /* MoPub */,
-			);
-			path = EventHandlers;
-			sourceTree = "<group>";
-		};
-		3E7DE92B21DF3D3D00E70EA6 /* MoPub */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE92D21DF3D4500E70EA6 /* Banner */,
-				3E7DE92C21DF3D4200E70EA6 /* Interstitial */,
-			);
-			path = MoPub;
-			sourceTree = "<group>";
-		};
-		3E7DE92C21DF3D4200E70EA6 /* Interstitial */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE94821DF47DA00E70EA6 /* POBInterstitialCustomEvent.swift */,
-				3E7DE93621DF3DF000E70EA6 /* MoPubInterstitialEventHandler.swift */,
-			);
-			path = Interstitial;
-			sourceTree = "<group>";
-		};
-		3E7DE92D21DF3D4500E70EA6 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE94621DF47D200E70EA6 /* POBBannerCustomEvent.swift */,
-				3E7DE93421DF3DEA00E70EA6 /* MoPubBannerEventHandler.swift */,
-			);
-			path = Banner;
 			sourceTree = "<group>";
 		};
 		3E7DE93121DF3D5E00E70EA6 /* MoPub */ = {
@@ -362,14 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E7DE94921DF47DA00E70EA6 /* POBInterstitialCustomEvent.swift in Sources */,
-				3E7DE94721DF47D300E70EA6 /* POBBannerCustomEvent.swift in Sources */,
 				3E3F4C6B23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift in Sources */,
 				3E7DE93D21DF3E0300E70EA6 /* MoPubBannerViewController.swift in Sources */,
-				3E7DE93521DF3DEA00E70EA6 /* MoPubBannerEventHandler.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
 				3E3F4C6D23507F67006F9659 /* MoPubInterstitialViewController.swift in Sources */,
-				3E7DE93721DF3DF000E70EA6 /* MoPubInterstitialEventHandler.swift in Sources */,
 				20C273AD237D201D0042D9E4 /* MoPubIBVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

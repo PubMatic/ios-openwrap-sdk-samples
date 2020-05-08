@@ -2,7 +2,7 @@
 
 import UIKit
 
-class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate {
+class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,POBInterstitialVideoDelegate {
 
     let owAdUnit  = "OpenWrapInterstitialAdUnit"
     let pubId = "156276"
@@ -20,6 +20,9 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate 
         
         // Set the delegate
         interstitial?.delegate = self
+        
+        // Set video delegate to receive VAST based video events
+        interstitial?.videoDelegate = self;
     }
     
     @IBAction func loadAdAction(_ sender: Any) {
@@ -76,6 +79,13 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate 
     // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
     func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
         print("Interstitial : Ad Expired")
+    }
+
+    //MARK: POBInterstitialVideoDelegate methods
+
+    // Notifies the delegate of VAST based video ad events
+    func interstitialDidFinishVideoPlayback(_ interstitial: POBInterstitial) {
+        print("Interstitial : Finished video playback")
     }
 
     deinit {

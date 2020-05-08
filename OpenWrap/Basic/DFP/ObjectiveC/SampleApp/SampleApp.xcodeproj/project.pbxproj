@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		21C50A1E237ADFAC00F7546E /* IBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */; };
 		24BBBD5E8E4238BA80A9735C /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E74483EAB72F4527C2B9E61B /* libPods-SampleApp.a */; };
-		3E7AF7F021CA537300C31F40 /* DFPBannerEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7EF21CA537300C31F40 /* DFPBannerEventHandler.m */; };
-		3E7AF7F321CA537900C31F40 /* DFPInterstitialEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F121CA537900C31F40 /* DFPInterstitialEventHandler.m */; };
 		3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F421CA538300C31F40 /* BannerViewController.m */; };
 		3E7AF7F921CA538A00C31F40 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F721CA538900C31F40 /* InterstitialViewController.m */; };
 		3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6D414234DA8810060BA43 /* VideoInterstitialViewController.m */; };
@@ -24,10 +22,6 @@
 /* Begin PBXFileReference section */
 		21C50A1C237ADFAC00F7546E /* IBVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBVideoViewController.h; sourceTree = "<group>"; };
 		21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBVideoViewController.m; sourceTree = "<group>"; };
-		3E7AF7EE21CA537300C31F40 /* DFPBannerEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerEventHandler.h; sourceTree = "<group>"; };
-		3E7AF7EF21CA537300C31F40 /* DFPBannerEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPBannerEventHandler.m; sourceTree = "<group>"; };
-		3E7AF7F121CA537900C31F40 /* DFPInterstitialEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFPInterstitialEventHandler.m; sourceTree = "<group>"; };
-		3E7AF7F221CA537900C31F40 /* DFPInterstitialEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitialEventHandler.h; sourceTree = "<group>"; };
 		3E7AF7F421CA538300C31F40 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		3E7AF7F521CA538300C31F40 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		3E7AF7F721CA538900C31F40 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
@@ -67,41 +61,6 @@
 				21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */,
 			);
 			path = InBannerVideo;
-			sourceTree = "<group>";
-		};
-		3E7AF7E121CA528E00C31F40 /* EventHandlers */ = {
-			isa = PBXGroup;
-			children = (
-				3E7AF7E221CA529400C31F40 /* DFP */,
-			);
-			path = EventHandlers;
-			sourceTree = "<group>";
-		};
-		3E7AF7E221CA529400C31F40 /* DFP */ = {
-			isa = PBXGroup;
-			children = (
-				3E7AF7E721CA52C100C31F40 /* Banner */,
-				3E7AF7E621CA52BB00C31F40 /* Interstitial */,
-			);
-			path = DFP;
-			sourceTree = "<group>";
-		};
-		3E7AF7E621CA52BB00C31F40 /* Interstitial */ = {
-			isa = PBXGroup;
-			children = (
-				3E7AF7F221CA537900C31F40 /* DFPInterstitialEventHandler.h */,
-				3E7AF7F121CA537900C31F40 /* DFPInterstitialEventHandler.m */,
-			);
-			path = Interstitial;
-			sourceTree = "<group>";
-		};
-		3E7AF7E721CA52C100C31F40 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				3E7AF7EE21CA537300C31F40 /* DFPBannerEventHandler.h */,
-				3E7AF7EF21CA537300C31F40 /* DFPBannerEventHandler.m */,
-			);
-			path = Banner;
 			sourceTree = "<group>";
 		};
 		3E7AF7E821CA52D100C31F40 /* DFP */ = {
@@ -181,7 +140,6 @@
 		E600238B1DC0B03300833CDB /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E7AF7E121CA528E00C31F40 /* EventHandlers */,
 				E60023BF1DC1CB8200833CDB /* Appdelegate */,
 				E60023C31DC1CB8200833CDB /* Viewcontrollers */,
 				E60023BE1DC1CB6E00833CDB /* Resources */,
@@ -341,12 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */,
-				3E7AF7F021CA537300C31F40 /* DFPBannerEventHandler.m in Sources */,
 				3E7AF7F921CA538A00C31F40 /* InterstitialViewController.m in Sources */,
 				21C50A1E237ADFAC00F7546E /* IBVideoViewController.m in Sources */,
 				3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
-				3E7AF7F321CA537900C31F40 /* DFPInterstitialEventHandler.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

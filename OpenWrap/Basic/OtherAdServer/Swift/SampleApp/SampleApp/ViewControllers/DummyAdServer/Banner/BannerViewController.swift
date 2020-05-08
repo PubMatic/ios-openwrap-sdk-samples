@@ -49,7 +49,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
     }
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize)) ")
+        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize())) ")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.

@@ -15,4 +15,5 @@
 #import <MoPub.h>
 #import <MPInterstitialAdController.h>
 #import <MPInterstitialCustomEvent.h>
-
+#import <MoPubBannerEventHandler.h>
+#import <MoPubInterstitialEventHandler.h>

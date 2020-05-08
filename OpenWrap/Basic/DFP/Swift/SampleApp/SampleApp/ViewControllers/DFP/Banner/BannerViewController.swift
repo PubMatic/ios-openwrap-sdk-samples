@@ -20,11 +20,11 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
         // Create a banner custom event handler for your ad server. Make
         // sure you use separate event handler objects to create each interstitial
         // For example, The code below creates an event handler for DFP ad server.
-        let eventHandler = DFPBannerEventHandler(dfpAdUnit, andSizes: adSizes)
+        let eventHandler = DFPBannerEventHandler(adUnitId: dfpAdUnit, andSizes: adSizes)
 
         // Create a banner view
         // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
-        self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler)
+        self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
         self.bannerView?.delegate = self
@@ -53,7 +53,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
     }
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(String(describing:bannerView.creativeSize)) ")
+        print("Banner : Ad received with size \(String(describing:bannerView.creativeSize())) ")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.

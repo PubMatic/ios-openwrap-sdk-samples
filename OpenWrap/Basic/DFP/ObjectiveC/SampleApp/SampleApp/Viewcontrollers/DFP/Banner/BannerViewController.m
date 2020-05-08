@@ -1,7 +1,7 @@
 
 
 #import "BannerViewController.h"
-#import "DFPBannerEventHandler.h"
+#import <DFPBannerEventHandler.h>
 #import <POBBannerView.h>
 
 #define DFP_AU        @"/15671365/pm_sdk/PMSDK-Demo-App-Banner"

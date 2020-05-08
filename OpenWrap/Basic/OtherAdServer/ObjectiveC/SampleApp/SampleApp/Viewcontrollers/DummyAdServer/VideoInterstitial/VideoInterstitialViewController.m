@@ -8,7 +8,7 @@
 #import <POBInterstitial.h>
 #import "CustomInterstitialEventHandler.h"
 
-@interface VideoInterstitialViewController ()<POBInterstitialDelegate>
+@interface VideoInterstitialViewController ()<POBInterstitialDelegate,POBInterstitialVideoDelegate>
 @property (nonatomic) POBInterstitial *interstitial;
 @property (nonatomic) IBOutlet UIButton *showAdButton;
 @end
@@ -32,6 +32,9 @@
                          eventHandler:eventHandler];
     // Set the delegate
     self.interstitial.delegate = self;
+    
+    // Set video delegate to receive VAST based video events
+    self.interstitial.videoDelegate = self;
 }
 
 - (IBAction)loadAdAction:(id)sender {
@@ -88,6 +91,13 @@
 // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
 - (void)interstitialDidExpireAd:(POBInterstitial *)interstitial {
     NSLog(@"Interstitial : Ad Expired");
+}
+
+#pragma mark - POBInterstitialVideoDelegate
+
+// Notifies the delegate of VAST based video ad events
+- (void)interstitialDidFinishVideoPlayback:(POBInterstitial *)interstitial {
+    NSLog(@"Interstitial : Finished video playback");
 }
 
 #pragma mark - dealloc

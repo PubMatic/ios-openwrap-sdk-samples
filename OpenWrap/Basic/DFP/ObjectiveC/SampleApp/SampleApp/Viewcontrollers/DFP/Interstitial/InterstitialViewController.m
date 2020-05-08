@@ -6,7 +6,7 @@
 #define PROFILE_ID      @1165
 
 #import "InterstitialViewController.h"
-#import "DFPInterstitialEventHandler.h"
+#import <DFPInterstitialEventHandler.h>
 #import <POBInterstitial.h>
 
 @interface InterstitialViewController ()<POBInterstitialDelegate>

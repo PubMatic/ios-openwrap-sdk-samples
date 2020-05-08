@@ -19,11 +19,11 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
         // Create an interstitial custom event handler for your ad server. Make
         // sure you use separate event handler objects to create each interstitial
         // For example, The code below creates an event handler for DFP ad server.
-        let eventHandler = DFPInterstitialEventHandler(dfpAdUnit)
+        let eventHandler = DFPInterstitialEventHandler(adUnitId: dfpAdUnit)
         
         // Create an interstitial object
         // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
-        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler)
+        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
         interstitial?.delegate = self

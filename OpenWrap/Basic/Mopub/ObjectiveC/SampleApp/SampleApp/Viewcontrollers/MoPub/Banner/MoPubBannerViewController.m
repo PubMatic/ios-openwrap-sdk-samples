@@ -2,12 +2,12 @@
 
 #import "MoPubBannerViewController.h"
 #import <POBBannerView.h>
-#import "MoPubBannerEventHandler.h"
+#import <MoPubBannerEventHandler.h>
 
 #define PUB_ID          @"156276"
 #define PROFILE_ID      @1302
-#define MOPUB_AD_UNIT  @"7dd627733dab46d19755fb2da299b8c7"
-#define OW_AD_UNIT  @"7dd627733dab46d19755fb2da299b8c7"
+#define MOPUB_AD_UNIT  @"7bb033b5e2404ab9a1f907702447b4b9"
+#define OW_AD_UNIT  @"7bb033b5e2404ab9a1f907702447b4b9"
 
 @interface MoPubBannerViewController ()<POBBannerViewDelegate>
 @property (nonatomic) POBBannerView *bannerView;

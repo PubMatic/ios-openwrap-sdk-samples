@@ -3,7 +3,7 @@
 import UIKit
 import GoogleMobileAds
 
-class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate {
+class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate, POBInterstitialVideoDelegate {
 
     let dfpAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-Interstitial"
     let owAdUnit  = "/15671365/pm_sdk/PMSDK-Demo-App-Interstitial"
@@ -19,14 +19,17 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate 
         // Create an interstitial custom event handler for your ad server. Make
         // sure you use separate event handler objects to create each interstitial
         // For example, The code below creates an event handler for DFP ad server.
-        let eventHandler = DFPInterstitialEventHandler(dfpAdUnit)
+        let eventHandler = DFPInterstitialEventHandler(adUnitId: dfpAdUnit)
         
         // Create an interstitial object
         // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
-        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler)
+        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
         interstitial?.delegate = self
+        
+        // Set video delegate to receive VAST based video events
+        interstitial?.videoDelegate = self
     }
     
     @IBAction func loadAdAction(_ sender: Any) {
@@ -83,6 +86,13 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate 
     // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
     func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
         print("Interstitial : Ad Expired")
+    }
+    
+    //MARK: POBInterstitialVideoDelegate methods
+
+    // Notifies the delegate of VAST based video ad events
+    func interstitialDidFinishVideoPlayback(_ interstitial: POBInterstitial) {
+        print("Interstitial : Finished video playback")
     }
 
     deinit {

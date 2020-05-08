@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,6 @@
 		20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20364F7021AFB03900F9D5DD /* AppDelegate.swift */; };
 		20C273AA237D1D740042D9E4 /* IBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C273A9237D1D740042D9E4 /* IBVideoViewController.swift */; };
 		3E23BC0A234DB8860022D28B /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */; };
-		3E7DE93921DF3DF700E70EA6 /* DFPBannerEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE93821DF3DF700E70EA6 /* DFPBannerEventHandler.swift */; };
-		3E7DE93B21DF3DFC00E70EA6 /* DFPInterstitialEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE93A21DF3DFC00E70EA6 /* DFPInterstitialEventHandler.swift */; };
 		3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */; };
 		3E7DE94321DF3E1400E70EA6 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94221DF3E1400E70EA6 /* InterstitialViewController.swift */; };
 		C5AE2D669CCE177D5F4775AA /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B14ECF7403084E5E10D592 /* libPods-SampleApp.a */; };
@@ -31,8 +29,6 @@
 		20C273A9237D1D740042D9E4 /* IBVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBVideoViewController.swift; sourceTree = "<group>"; };
 		3A050E9658E3E1A44077E3B8 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
-		3E7DE93821DF3DF700E70EA6 /* DFPBannerEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFPBannerEventHandler.swift; sourceTree = "<group>"; };
-		3E7DE93A21DF3DFC00E70EA6 /* DFPInterstitialEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFPInterstitialEventHandler.swift; sourceTree = "<group>"; };
 		3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		3E7DE94221DF3E1400E70EA6 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		53B14ECF7403084E5E10D592 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +68,6 @@
 		20364F5221AFAF0B00F9D5DD /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E7DE92721DF3D1E00E70EA6 /* EventHandlers */,
 				20364F6721AFAF3600F9D5DD /* AppDelegate */,
 				20364F6621AFAF2A00F9D5DD /* ViewControllers */,
 				20364F6521AFAF2300F9D5DD /* Resources */,
@@ -122,39 +117,6 @@
 				3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */,
 			);
 			path = VideoInterstitial;
-			sourceTree = "<group>";
-		};
-		3E7DE92721DF3D1E00E70EA6 /* EventHandlers */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE92821DF3D2900E70EA6 /* DFP */,
-			);
-			path = EventHandlers;
-			sourceTree = "<group>";
-		};
-		3E7DE92821DF3D2900E70EA6 /* DFP */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE92A21DF3D3600E70EA6 /* Banner */,
-				3E7DE92921DF3D2F00E70EA6 /* Interstitial */,
-			);
-			path = DFP;
-			sourceTree = "<group>";
-		};
-		3E7DE92921DF3D2F00E70EA6 /* Interstitial */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE93A21DF3DFC00E70EA6 /* DFPInterstitialEventHandler.swift */,
-			);
-			path = Interstitial;
-			sourceTree = "<group>";
-		};
-		3E7DE92A21DF3D3600E70EA6 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				3E7DE93821DF3DF700E70EA6 /* DFPBannerEventHandler.swift */,
-			);
-			path = Banner;
 			sourceTree = "<group>";
 		};
 		3E7DE92E21DF3D5100E70EA6 /* DFP */ = {
@@ -276,17 +238,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
-				"${PODS_ROOT}/../../../../../../PubMaticSDK/PubMaticSDK/Webrendering/Resources/mraid.js",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mraid.js",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		55D406DF76FE09F2D47DD1D4 /* [CP] Check Pods Manifest.lock */ = {
@@ -319,8 +280,6 @@
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
 				20C273AA237D1D740042D9E4 /* IBVideoViewController.swift in Sources */,
 				3E7DE94321DF3E1400E70EA6 /* InterstitialViewController.swift in Sources */,
-				3E7DE93B21DF3DFC00E70EA6 /* DFPInterstitialEventHandler.swift in Sources */,
-				3E7DE93921DF3DF700E70EA6 /* DFPBannerEventHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

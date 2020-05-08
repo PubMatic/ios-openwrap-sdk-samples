@@ -1,14 +1,14 @@
 
-#define MOPUB_AD_UNIT   @"d77111b8b59b484c8c92cb2e73c204a6"
-#define OW_AD_UNIT      @"d77111b8b59b484c8c92cb2e73c204a6"
+#define MOPUB_AD_UNIT   @"61ea16f261fd4d55bb08eb8e9ddb52e3"
+#define OW_AD_UNIT      @"61ea16f261fd4d55bb08eb8e9ddb52e3"
 #define PUB_ID          @"156276"
 #define PROFILE_ID      @1758
 
 #import "MoPubVideoInterstitialViewController.h"
-#import "MoPubInterstitialEventHandler.h"
+#import <MoPubInterstitialEventHandler.h>
 #import <POBInterstitial.h>
 
-@interface MoPubVideoInterstitialViewController () <POBInterstitialDelegate>
+@interface MoPubVideoInterstitialViewController () <POBInterstitialDelegate,POBInterstitialVideoDelegate>
 
 @property (nonatomic) POBInterstitial *interstitial;
 @property (nonatomic) IBOutlet UIButton *showAdButton;
@@ -36,6 +36,9 @@
                                                         eventHandler:eventHandler];
     // Set the delegate
     self.interstitial.delegate = self;
+    
+    // Set video delegate to receive VAST based video events
+    self.interstitial.videoDelegate = self;
 }
 
 
@@ -104,6 +107,12 @@
     NSLog(@"Interstitial : Ad Expired");
 }
 
+#pragma mark - POBInterstitialVideoDelegate methods
+
+// Notifies the delegate of VAST based video ad events
+- (void)interstitialDidFinishVideoPlayback:(POBInterstitial *)interstitial {
+    NSLog(@"Interstitial : Finished video playback");
+}
 @end
 
 

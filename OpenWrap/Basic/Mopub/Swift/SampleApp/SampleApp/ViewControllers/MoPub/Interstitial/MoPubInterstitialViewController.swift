@@ -4,8 +4,8 @@ import UIKit
 
 class MoPubInterstitialViewController: UIViewController, POBInterstitialDelegate {
     
-    let mopubAdUnit         = "906287c93c214f14b0baa234acdd58c7"
-    let owAdUnit            = "906287c93c214f14b0baa234acdd58c7"
+    let mopubAdUnit         = "61ea16f261fd4d55bb08eb8e9ddb52e3"
+    let owAdUnit            = "61ea16f261fd4d55bb08eb8e9ddb52e3"
     let pubId               = "156276"
     let profileId: NSNumber = 1302
     
@@ -19,11 +19,11 @@ class MoPubInterstitialViewController: UIViewController, POBInterstitialDelegate
         // sure you use separate event handler objects to create each interstitial
         // ad instance.
         // For example, The code below creates an event handler for MoPub ad server.
-        let eventHandler = MoPubInterstitialEventHandler(mopubAdUnit)
+        let eventHandler = MoPubInterstitialEventHandler(adUnitId: mopubAdUnit)
         
         // Create an interstitial object
         // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
-        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler)
+        interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
         interstitial?.delegate = self
