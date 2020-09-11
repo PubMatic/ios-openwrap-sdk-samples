@@ -20,6 +20,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>GADIsAdManagerApp</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -29,6 +31,15 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Needs location access for ads</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Please allow tracking to serve relevant ads.</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>k674qkevps.skadnetwork</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -37,8 +48,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>GADIsAdManagerApp</key>
-	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
