@@ -82,7 +82,6 @@
 				E1C21100FD09844F0785240E /* Pods-SampleApp.debug.xcconfig */,
 				881D431C81472B090A0B238E /* Pods-SampleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -124,7 +123,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = Sneha;
+				ORGANIZATIONNAME = PubMatic;
 				TargetAttributes = {
 					20A6A84C23CEEF1E00D42B57 = {
 						CreatedOnToolsVersion = 11.3;

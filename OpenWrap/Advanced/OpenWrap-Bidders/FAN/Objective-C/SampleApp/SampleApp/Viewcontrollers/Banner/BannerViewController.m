@@ -18,15 +18,11 @@
 
 #import "BannerViewController.h"
 #import <POBBannerView.h>
-#import <POBFANBidder.h>
 
 #define OW_ADUNIT_ID  @"OpenWrapBannerAdUnit"
 
 #define PUB_ID          @"156276"
-#define PROFILE_ID      @1165
-
-#define FB_PLACEMENT_ID    @"2526468451010379_2526476071009617"
-#define FB_APP_ID          @"2526468451010379"
+#define PROFILE_ID      @2941
 
 @interface BannerViewController ()<POBBannerViewDelegate>
 @property (nonatomic) POBBannerView *bannerView;
@@ -36,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Create a banner view
     // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
     self.bannerView = [[POBBannerView alloc] initWithPublisherId:PUB_ID
@@ -44,17 +41,8 @@
                                                          adSizes:@[POBAdSizeMake(320, 50)]];
     // Set the delegate
     self.bannerView.delegate = self;
-    
-    NSMutableDictionary *custParams = [[NSMutableDictionary alloc] init];
-    custParams[POBBidderKey_FB_App_Id] = FB_APP_ID;
-    custParams[POBBidderKey_FB_PlacementId] = FB_PLACEMENT_ID;
-    custParams[POBBidderKey_BannerAdSize] = POBBannerAdSize320x50;
 
-    // Add bidder
-    [self.bannerView addBidderSlotInfo:custParams forBidder:POBBidderIdFAN];
-    
     self.bannerView.request.testModeEnabled = YES;
-
     // Add the banner view to your view hierarchy
     [self addBannerToView:self.bannerView withSize:CGSizeMake(320, 50)];
 
@@ -63,13 +51,21 @@
 }
 
 - (void)addBannerToView:(UIView *)bannerView withSize:(CGSize )size{
-    bannerView.frame = CGRectMake((CGRectGetWidth(self.view.bounds)-size.width)/2,
-                                       CGRectGetHeight(self.view.bounds)-size.height,
-                                       size.width, size.height);
-    bannerView.autoresizingMask = (UIViewAutoresizingFlexibleTopMargin |
-                                   UIViewAutoresizingFlexibleLeftMargin |
-                                   UIViewAutoresizingFlexibleRightMargin);
+    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:bannerView];
+    
+    [bannerView.heightAnchor constraintEqualToConstant:size.height].active = YES;
+    [bannerView.widthAnchor constraintEqualToConstant:size.width].active = YES;
+
+    if (@available(iOS 11.0, *)) {
+        UILayoutGuide * guide = self.view.safeAreaLayoutGuide;
+        [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+        [bannerView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
+    } else {
+        UILayoutGuide *margins = self.view.layoutMarginsGuide;
+        [bannerView.bottomAnchor constraintEqualToAnchor:margins.topAnchor].active = YES;
+        [bannerView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
+    }
 }
 
 #pragma mark - Banner view delegate methods

@@ -58,13 +58,21 @@
 }
 
 - (void)addBannerToView:(UIView *)bannerView withSize:(CGSize )size{
-    bannerView.frame = CGRectMake((CGRectGetWidth(self.view.bounds)-size.width)/2,
-                                  CGRectGetHeight(self.view.bounds)-size.height,
-                                  size.width, size.height);
-    bannerView.autoresizingMask = (UIViewAutoresizingFlexibleTopMargin |
-                                   UIViewAutoresizingFlexibleLeftMargin |
-                                   UIViewAutoresizingFlexibleRightMargin);
+    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:bannerView];
+    
+    [bannerView.heightAnchor constraintEqualToConstant:size.height].active = YES;
+    [bannerView.widthAnchor constraintEqualToConstant:size.width].active = YES;
+
+    if (@available(iOS 11.0, *)) {
+        UILayoutGuide * guide = self.view.safeAreaLayoutGuide;
+        [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+        [bannerView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
+    } else {
+        UILayoutGuide *margins = self.view.layoutMarginsGuide;
+        [bannerView.bottomAnchor constraintEqualToAnchor:margins.topAnchor].active = YES;
+        [bannerView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
+    }
 }
 
 #pragma mark - Banner view delegate methods

@@ -7,6 +7,6 @@ target 'SampleApp' do
 
   pod 'OpenWrapSDK'
   pod 'OpenWrapBidder/FAN'
-  pod 'FBAudienceNetwork', '5.8.0'
+  pod 'FBAudienceNetwork', '5.9.0'
 
 end

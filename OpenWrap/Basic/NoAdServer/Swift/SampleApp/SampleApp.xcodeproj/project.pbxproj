@@ -185,7 +185,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Sneha;
+				ORGANIZATIONNAME = PubMatic;
 				TargetAttributes = {
 					20364F4F21AFAF0B00F9D5DD = {
 						CreatedOnToolsVersion = 9.4.1;

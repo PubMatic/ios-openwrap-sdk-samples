@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -158,7 +158,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = Sneha;
+				ORGANIZATIONNAME = PubMatic;
 				TargetAttributes = {
 					20E20D7F24249AD600392C8C = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -225,22 +225,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
-				"${PODS_ROOT}/../../../../../../../PubMaticSDK/PubMaticSDK/OMSDK/Resources/omsdk-v1.js",
-				"${PODS_ROOT}/../../../../../../../PubMaticSDK/PubMaticSDK/Video/Resources/POBVideoResources.bundle",
-				"${PODS_ROOT}/../../../../../../../PubMaticSDK/PubMaticSDK/Webrendering/Resources/pmmraid.js",
-				"${PODS_ROOT}/../../../../../../../PubMaticSDK/PubMaticSDK/Webrendering/Resources/POBResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/omsdk-v1.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/POBVideoResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pmmraid.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/POBResources.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

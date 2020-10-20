@@ -18,16 +18,16 @@
 import UIKit
 import GoogleMobileAds
 
-class InterstitialViewController: UIViewController,POBInterstitialDelegate {
-
+class InterstitialViewController: UIViewController,POBInterstitialDelegate, POBBidEventDelegate {
+    
     let dfpAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-Interstitial"
     let owAdUnit  = "/15671365/pm_sdk/PMSDK-Demo-App-Interstitial"
     let pubId = "156276"
     let profileId : NSNumber = 1165
-
+    
     var interstitial: POBInterstitial?
     @IBOutlet var showAdButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +39,7 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
         // Create an interstitial object
         // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
-        
+        interstitial?.bidEventDelegate = self
         // Set the delegate
         interstitial?.delegate = self
     }
@@ -60,6 +60,19 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
             // Show interstitial ad
             interstitial?.show(from: self)
         }
+    }
+    
+    //MARK: Interstitial bid event delegate methods
+    func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
+        print("Interstitial : Bid received - \(String(describing: bid))")
+        
+        // bid processsing
+        bidEventObject?.proceedToLoadAd()
+    }
+    
+    func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
+        print("Interstitial : Bid failed")
+        bidEventObject.proceed(onError: POBBidEventErrorCode.other, andDescription: "Bid not used")
     }
     
     //MARK: Interstitial delegate methods
@@ -94,7 +107,11 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
     func interstitialWillLeaveApplication(_ interstitial: POBInterstitial) {
         print("Interstitial : Will leave app")
     }
-
+    
+    func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
+        print("Interstitial : Ad Expired")
+    }
+    
     deinit {
         interstitial = nil
     }

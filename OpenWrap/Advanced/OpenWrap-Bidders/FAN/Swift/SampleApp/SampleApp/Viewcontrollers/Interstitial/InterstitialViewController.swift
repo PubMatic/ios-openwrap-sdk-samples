@@ -20,12 +20,9 @@ import UIKit
 
 class InterstitialViewController: UIViewController,POBInterstitialDelegate {
 
-    let owAdUnit  = "OpenWrapInterstitialAdUnit"
+    let owAdUnit  = "NoAdServerInterstitialAdUnit"
     let pubId = "156276"
-    let profileId : NSNumber = 1165
-
-    let fb_appID = "2526468451010379"
-    let fb_placementID = "2526468451010379_2526477531009471"
+    let profileId : NSNumber = 2361
 
     var interstitial: POBInterstitial?
     @IBOutlet var showAdButton: UIButton!
@@ -40,14 +37,7 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
         // Set the delegate
         interstitial?.delegate = self
         
-        var custParams: [AnyHashable : Any] = [:]
-        custParams[POBBidderKey_FB_App_Id] = fb_appID
-        custParams[POBBidderKey_FB_PlacementId] = fb_placementID
-        
-        // Add bidder
-        self.interstitial?.addBidderSlotInfo(custParams, forBidder: POBBidderIdFAN)
-        
-        self.interstitial?.request.testModeEnabled = true
+        interstitial?.request.testModeEnabled = true
     }
     
     @IBAction func loadAdAction(_ sender: Any) {

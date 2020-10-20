@@ -18,14 +18,10 @@
 
 #define OW_ADUNIT_ID    @"OpenWrapInterstitialAdUnit"
 #define PUB_ID          @"156276"
-#define PROFILE_ID      @1165
-
-#define FB_PLACEMENT_ID    @"2526468451010379_2526477531009471"
-#define FB_APP_ID          @"2526468451010379"
+#define PROFILE_ID      @2941
 
 #import "InterstitialViewController.h"
 #import <POBInterstitial.h>
-#import <POBFANBidder.h>
 
 @interface InterstitialViewController ()<POBInterstitialDelegate>
 @property (nonatomic) POBInterstitial *interstitial;
@@ -43,17 +39,10 @@
                                  initWithPublisherId:PUB_ID
                                  profileId:PROFILE_ID
                                  adUnitId:OW_ADUNIT_ID];
+    self.interstitial.request.testModeEnabled = YES;
+
     // Set the delegate
     self.interstitial.delegate = self;
-    
-    NSMutableDictionary *custParams = [[NSMutableDictionary alloc] init];
-    custParams[POBBidderKey_FB_App_Id] = FB_APP_ID;
-    custParams[POBBidderKey_FB_PlacementId] = FB_PLACEMENT_ID;
-    
-    // Add bidder
-    [self.interstitial addBidderSlotInfo:custParams forBidder:POBBidderIdFAN];
-    
-    self.interstitial.request.testModeEnabled = YES;
 }
 
 - (IBAction)loadAdAction:(id)sender {

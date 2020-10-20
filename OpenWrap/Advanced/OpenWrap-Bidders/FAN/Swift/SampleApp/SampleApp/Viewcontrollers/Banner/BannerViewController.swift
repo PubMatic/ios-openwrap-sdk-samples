@@ -20,30 +20,20 @@ import UIKit
 
 class BannerViewController: UIViewController,POBBannerViewDelegate {
 
-    let owAdUnit = "OpenWrapBannerAdUnit"
+    let owAdUnit = "NoAdServerBannerAdUnit"
     let pubId = "156276"
-    let profileId: NSNumber = 1165
+    let profileId: NSNumber = 2361
     
-    let fb_appID = "2526468451010379"
-    let fb_placementID = "2526468451010379_2526476071009617"
-
     var bannerView: POBBannerView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Create a banner view
         // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
         self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, adSizes: [POBAdSizeMake(320, 50)])
         // Set the delegate
         self.bannerView?.delegate = self
-        
-        var custParams: [AnyHashable : Any] = [:]
-        custParams[POBBidderKey_FB_App_Id] = fb_appID
-        custParams[POBBidderKey_FB_PlacementId] = fb_placementID
-        custParams[POBBidderKey_BannerAdSize] = POBAdSizeMake(320, 50)
-
-        // Add bidder
-        self.bannerView?.addBidderSlotInfo(custParams, forBidder: POBBidderIdFAN)
         
         self.bannerView?.request.testModeEnabled = true
 
@@ -56,12 +46,25 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
     
     func addBannerToView(banner : POBBannerView?, adSize : CGSize) -> Void {
         
-        banner?.frame = CGRect(x: (self.view.bounds.size.width - adSize.width)/2
-            , y: self.view.bounds.size.height - adSize.height, width: adSize.width, height: adSize.height)
-        banner?.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin]
-        view.addSubview(banner!)
+        bannerView?.translatesAutoresizingMaskIntoConstraints = false
+        if let bannerView = bannerView {
+            view.addSubview(bannerView)
+        }
+
+        bannerView?.heightAnchor.constraint(equalToConstant: adSize.height).isActive = true
+        bannerView?.widthAnchor.constraint(equalToConstant: adSize.width).isActive = true
+
+        if #available(iOS 11.0, *) {
+            let guide = self.view.safeAreaLayoutGuide
+            bannerView?.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true;
+            bannerView?.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
+        } else {
+            let margins = self.view.layoutMarginsGuide
+            bannerView?.bottomAnchor.constraint(equalTo: margins.topAnchor).isActive = true;
+            bannerView?.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+        }
     }
-    
+
     // MARK: - Banner view delegate methods
     //Provides a view controller to use for presenting model views
     func bannerViewPresentationController() -> UIViewController {
