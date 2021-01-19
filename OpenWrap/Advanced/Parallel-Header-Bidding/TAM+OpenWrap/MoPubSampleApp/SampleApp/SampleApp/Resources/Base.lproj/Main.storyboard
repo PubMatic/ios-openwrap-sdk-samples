@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lyA-hn-4QJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MoPub Banner-->
+        <scene sceneID="k9k-hH-gdY">
+            <objects>
+                <viewController title="MoPub Banner" id="EfZ-Qb-apb" userLabel="MoPub Banner" customClass="BannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HXG-8r-0nY"/>
+                        <viewControllerLayoutGuide type="bottom" id="anM-F1-Yao"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lm7-20-4S9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="CZ4-L3-AKe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gAO-0I-ILn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5r-EM-rJD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="1039"/>
+        </scene>
+        <!--PubMatic SDK App-->
+        <scene sceneID="YJL-jD-0SF">
+            <objects>
+                <tableViewController title="PubMatic SDK App" id="c4a-xw-XwF" customClass="MainViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cGV-dR-prW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        <sections>
+                            <tableViewSection headerTitle="MoPub" id="2Dq-8C-VaA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="O3m-wb-3SF" style="IBUITableViewCellStyleDefault" id="exX-BK-MNq">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="exX-BK-MNq" id="bud-8F-p1g">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Banner Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O3m-wb-3SF">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="EfZ-Qb-apb" kind="show" id="0MN-gN-CBC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="FRx-jZ-tXJ" style="IBUITableViewCellStyleDefault" id="43c-5E-mdP">
+                                        <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="43c-5E-mdP" id="kS9-9W-JCY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FRx-jZ-tXJ">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zQ6-NS-eJk" kind="show" id="JtP-84-yV2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="c4a-xw-XwF" id="5SL-rj-HCZ"/>
+                            <outlet property="delegate" destination="c4a-xw-XwF" id="au6-IQ-oNf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="PubMatic OpenWrap SDK" id="wps-El-wwt">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="spx-ph-63g"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILJ-5Y-z1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-476" y="1039"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nfi-tP-u7m">
+            <objects>
+                <navigationController id="lyA-hn-4QJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jmo-av-3ds">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="c4a-xw-XwF" kind="relationship" relationship="rootViewController" id="9zC-yr-KpM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1Y-dO-u67" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1497" y="1039"/>
+        </scene>
+        <!--MoPub Interstitial-->
+        <scene sceneID="D3F-1g-8hC">
+            <objects>
+                <viewController title="MoPub Interstitial" id="zQ6-NS-eJk" userLabel="MoPub Interstitial" customClass="InterstitialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g9A-tB-Kbo"/>
+                        <viewControllerLayoutGuide type="bottom" id="h0u-80-ezU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WlT-Ab-6fE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMe-Ce-EqM">
+                                <rect key="frame" x="162" y="168" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="hdV-mY-zc9"/>
+                                    <constraint firstAttribute="height" constant="34" id="vNe-n8-Qgh"/>
+                                </constraints>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="loadAdAction:" destination="zQ6-NS-eJk" eventType="touchUpInside" id="4pP-ly-HAe"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM9-sb-QRp">
+                                <rect key="frame" x="162" y="229" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="LnH-ww-xLW"/>
+                                    <constraint firstAttribute="height" constant="34" id="ZZz-2I-exO"/>
+                                </constraints>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdAction:" destination="zQ6-NS-eJk" eventType="touchUpInside" id="FR1-KR-004"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NM9-sb-QRp" firstAttribute="top" secondItem="VMe-Ce-EqM" secondAttribute="bottom" constant="27" id="Lfo-vq-fVa"/>
+                            <constraint firstItem="NM9-sb-QRp" firstAttribute="leading" secondItem="VMe-Ce-EqM" secondAttribute="leading" id="LhH-Eh-lsH"/>
+                            <constraint firstItem="VMe-Ce-EqM" firstAttribute="top" secondItem="g9A-tB-Kbo" secondAttribute="bottom" constant="80" id="OLJ-e0-ERX"/>
+                            <constraint firstItem="VMe-Ce-EqM" firstAttribute="centerX" secondItem="WlT-Ab-6fE" secondAttribute="centerX" id="gcX-7H-9u5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NM9-sb-QRp" secondAttribute="trailing" constant="20" symbolic="YES" id="p5b-ni-V2M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WmC-Wc-pgg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n8m-4q-FdQ"/>
+                    <connections>
+                        <outlet property="showAdButton" destination="NM9-sb-QRp" id="poT-ci-rJp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iph-uj-cuG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718" y="252"/>
+        </scene>
+    </scenes>
+</document>

@@ -36,7 +36,6 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
         
         // Set the delegate
         interstitial?.delegate = self
-        
         interstitial?.request.testModeEnabled = true
     }
     

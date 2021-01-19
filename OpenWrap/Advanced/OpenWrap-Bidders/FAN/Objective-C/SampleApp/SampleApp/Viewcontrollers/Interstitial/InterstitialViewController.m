@@ -16,8 +16,9 @@
 */
 
 
-#define OW_ADUNIT_ID    @"OpenWrapInterstitialAdUnit"
+#define OW_ADUNIT_ID    @"NoAdServerInterstitialAdUnit"
 #define PUB_ID          @"156276"
+
 #define PROFILE_ID      @2941
 
 #import "InterstitialViewController.h"

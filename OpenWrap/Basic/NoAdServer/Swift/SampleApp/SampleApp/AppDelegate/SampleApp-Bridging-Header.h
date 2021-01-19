@@ -9,4 +9,6 @@
 #import <POBBannerView.h>
 //Interstitial Ad
 #import <POBInterstitial.h>
+//Rewarded Ad
+#import <POBRewardedAd.h>
 

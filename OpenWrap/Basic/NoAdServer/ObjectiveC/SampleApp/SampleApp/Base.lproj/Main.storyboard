@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -251,6 +251,27 @@
                                             <segue destination="OIa-Le-feY" kind="show" id="pbL-NX-CcG"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Csl-vc-Znr" style="IBUITableViewCellStyleDefault" id="lo4-9k-vbX">
+                                        <rect key="frame" x="0.0" y="231.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lo4-9k-vbX" id="fJG-e1-3wd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Rewarded Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Csl-vc-Znr">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BTZ-fE-zfg" kind="show" id="zJp-Rc-cNk"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -282,6 +303,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt2-XS-kEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1497" y="1039"/>
+        </scene>
+        <!--OpenWrap RewardedAd-->
+        <scene sceneID="1cV-uK-Lwt">
+            <objects>
+                <viewController title="Rewarded Ad" id="BTZ-fE-zfg" userLabel="OpenWrap RewardedAd" customClass="RewardedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DUh-hd-u6Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="1XH-XQ-xU0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9qE-90-dGz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-jJ-SrK">
+                                <rect key="frame" x="162" y="168" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="5QS-sm-NfJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="BAH-hc-At6"/>
+                                </constraints>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="loadAdAction:" destination="BTZ-fE-zfg" eventType="touchUpInside" id="AnA-KI-8d5"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geA-Gf-JLX">
+                                <rect key="frame" x="162" y="229" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="FQE-cf-oen"/>
+                                    <constraint firstAttribute="height" constant="34" id="iP2-HS-yLL"/>
+                                </constraints>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdAction:" destination="BTZ-fE-zfg" eventType="touchUpInside" id="Q1c-tz-knz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="geA-Gf-JLX" firstAttribute="top" secondItem="gIj-jJ-SrK" secondAttribute="bottom" constant="27" id="ZVi-1x-gfV"/>
+                            <constraint firstItem="geA-Gf-JLX" firstAttribute="leading" secondItem="gIj-jJ-SrK" secondAttribute="leading" id="byS-WK-7X4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="geA-Gf-JLX" secondAttribute="trailing" constant="20" symbolic="YES" id="lkt-c8-7JF"/>
+                            <constraint firstItem="gIj-jJ-SrK" firstAttribute="top" secondItem="DUh-hd-u6Y" secondAttribute="bottom" constant="80" id="o09-OO-lwJ"/>
+                            <constraint firstItem="gIj-jJ-SrK" firstAttribute="centerX" secondItem="9qE-90-dGz" secondAttribute="centerX" id="vY0-uL-cZr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UsW-Vr-4lM"/>
+                    <connections>
+                        <outlet property="showAdButton" destination="geA-Gf-JLX" id="unn-iy-CGg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJJ-1c-l0C" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="915"/>
         </scene>
     </scenes>
 </document>

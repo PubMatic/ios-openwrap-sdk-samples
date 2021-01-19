@@ -65,7 +65,7 @@ class IBVideoViewController: UIViewController,POBBannerViewDelegate {
             bannerView?.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
         } else {
             let margins = self.view.layoutMarginsGuide
-            bannerView?.bottomAnchor.constraint(equalTo: margins.topAnchor).isActive = true;
+            bannerView?.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true;
             bannerView?.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
         }
     }

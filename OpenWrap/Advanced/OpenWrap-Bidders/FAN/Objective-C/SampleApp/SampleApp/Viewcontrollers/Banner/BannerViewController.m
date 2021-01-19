@@ -19,9 +19,10 @@
 #import "BannerViewController.h"
 #import <POBBannerView.h>
 
-#define OW_ADUNIT_ID  @"OpenWrapBannerAdUnit"
+#define OW_ADUNIT_ID  @"NoAdServerBannerAdUnit"
 
 #define PUB_ID          @"156276"
+
 #define PROFILE_ID      @2941
 
 @interface BannerViewController ()<POBBannerViewDelegate>
@@ -63,7 +64,7 @@
         [bannerView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
     } else {
         UILayoutGuide *margins = self.view.layoutMarginsGuide;
-        [bannerView.bottomAnchor constraintEqualToAnchor:margins.topAnchor].active = YES;
+        [bannerView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = YES;
         [bannerView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
     }
 }

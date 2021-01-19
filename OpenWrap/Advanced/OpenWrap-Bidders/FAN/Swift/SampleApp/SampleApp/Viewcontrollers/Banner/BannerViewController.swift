@@ -34,7 +34,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
         self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, adSizes: [POBAdSizeMake(320, 50)])
         // Set the delegate
         self.bannerView?.delegate = self
-        
+
         self.bannerView?.request.testModeEnabled = true
 
         // Add the banner view to your view hierarchy

@@ -61,7 +61,7 @@
         [bannerView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
     } else {
         UILayoutGuide *margins = self.view.layoutMarginsGuide;
-        [bannerView.bottomAnchor constraintEqualToAnchor:margins.topAnchor].active = YES;
+        [bannerView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = YES;
         [bannerView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
     }
 }
