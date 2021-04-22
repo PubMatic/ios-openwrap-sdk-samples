@@ -78,7 +78,7 @@
     
     // Set config block on event handler instance
     __weak typeof(self) weakSelf = self;
-    [self.eventHandler setConfigBlock:^(DFPInterstitial *interstitial, DFPRequest *request, POBBid *bid) {
+    [self.eventHandler setConfigBlock:^(GAMRequest *request, POBBid *bid) {
         NSMutableDictionary * customTargeting = [NSMutableDictionary dictionaryWithDictionary:request.customTargeting];
         for (NSString *key in weakSelf.partnerTargeting) {
             [customTargeting addEntriesFromDictionary:[weakSelf.partnerTargeting valueForKey:key]];
