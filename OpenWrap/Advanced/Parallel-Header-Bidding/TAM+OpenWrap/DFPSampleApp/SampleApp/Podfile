@@ -3,10 +3,9 @@ platform :ios, '10.0'
 
 target 'SampleApp' do
  
-    pod 'Google-Mobile-Ads-SDK', '8.3.0'
-    pod 'OpenWrapSDK', '1.8.2'
-    pod 'OpenWrapEventHandler/DFP', '2.0.0'
-    # 3.4.0 version of AmazonPublisherServicesSDK requires xcode 12
-    pod 'AmazonPublisherServicesSDK', '3.4.5'
+    pod 'Google-Mobile-Ads-SDK', '8.5.0'
+    pod 'OpenWrapSDK', '2.0.0'
+    pod 'OpenWrapEventHandler/DFP', '2.2.0'
+    pod 'AmazonPublisherServicesSDK', '4.0.0'
 
 end

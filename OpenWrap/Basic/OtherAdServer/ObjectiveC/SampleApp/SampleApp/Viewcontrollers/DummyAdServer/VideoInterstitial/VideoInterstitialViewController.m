@@ -20,8 +20,8 @@
 #define PROFILE_ID      @1757
 
 #import "VideoInterstitialViewController.h"
-#import <POBInterstitial.h>
 #import "CustomInterstitialEventHandler.h"
+@import OpenWrapSDK;
 
 @interface VideoInterstitialViewController ()<POBInterstitialDelegate,POBInterstitialVideoDelegate>
 @property (nonatomic) POBInterstitial *interstitial;
@@ -79,7 +79,7 @@
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
-- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError * _Nullable)error {
+- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Interstitial : Ad failed with error : %@", error.localizedDescription);
 }
 

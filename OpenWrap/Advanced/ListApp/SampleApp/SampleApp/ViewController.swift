@@ -16,6 +16,7 @@
 */
 
 import UIKit
+import OpenWrapSDK
 
 let OW_ADUNIT_ID         = "OpenWrapBannerAdUnit"
 let PUB_ID               = "156276"
@@ -166,8 +167,8 @@ extension ViewController {
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
-    func bannerView(_ wrapperBannerView: POBBannerView, didFailToReceiveAdWithError error: Error?) {
-        print("Failed to load Ad with error : \(error?.localizedDescription ?? "")")
+    func bannerView(_ wrapperBannerView: POBBannerView, didFailToReceiveAdWithError error: Error) {
+        print("Failed to load Ad with error : \(error.localizedDescription )")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click

@@ -1,6 +1,6 @@
 //This class is compatible with OpenWrap SDK v1.5.0
 
-#import <POBBannerEvent.h>
+@import OpenWrapSDK;
 
 /*!
  This class is responsible for communication between OpenWrap banner view and banner view from your ad server SDK(in this case DummyAdServerSDK).

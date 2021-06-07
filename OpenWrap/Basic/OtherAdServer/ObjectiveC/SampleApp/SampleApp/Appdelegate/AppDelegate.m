@@ -16,7 +16,7 @@
 */
 
 #import "AppDelegate.h"
-#import <OpenWrapSDK.h>
+@import OpenWrapSDK;
 
 @interface AppDelegate ()
 @property (strong) CLLocationManager* locationManager;

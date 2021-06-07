@@ -12,23 +12,28 @@
 		20364F6D21AFB02100F9D5DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20364F6B21AFB02100F9D5DD /* Assets.xcassets */; };
 		20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20364F7021AFB03900F9D5DD /* AppDelegate.swift */; };
 		20C273AD237D201D0042D9E4 /* MoPubIBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C273AC237D201D0042D9E4 /* MoPubIBVideoViewController.swift */; };
+		219FDAFF25C8766500727004 /* MoPubRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219FDAFE25C8766500727004 /* MoPubRewardedViewController.swift */; };
 		3E3F4C6B23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F4C6A23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift */; };
 		3E3F4C6D23507F67006F9659 /* MoPubInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F4C6C23507F67006F9659 /* MoPubInterstitialViewController.swift */; };
 		3E7DE93D21DF3E0300E70EA6 /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE93C21DF3E0300E70EA6 /* MoPubBannerViewController.swift */; };
+		76D3EC3350161E5BC1DB129E /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF16826096F20B508B0A919A /* libPods-SampleApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A470F2961E88D3795F2D851 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		20364F5021AFAF0B00F9D5DD /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20364F5821AFAF0B00F9D5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20364F5D21AFAF0D00F9D5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20364F6B21AFB02100F9D5DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20364F6C21AFB02100F9D5DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20364F7021AFB03900F9D5DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2059D79321E5EC6300CAB869 /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		20C273AC237D201D0042D9E4 /* MoPubIBVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubIBVideoViewController.swift; sourceTree = "<group>"; };
+		219FDAFE25C8766500727004 /* MoPubRewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubRewardedViewController.swift; sourceTree = "<group>"; };
 		3E3F4C6A23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubVideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		3E3F4C6C23507F67006F9659 /* MoPubInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialViewController.swift; sourceTree = "<group>"; };
 		3E7DE93C21DF3E0300E70EA6 /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
+		4B454350A3BAEB112581ADEC /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		FF16826096F20B508B0A919A /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D3EC3350161E5BC1DB129E /* libPods-SampleApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +53,8 @@
 			children = (
 				20364F5221AFAF0B00F9D5DD /* SampleApp */,
 				20364F5121AFAF0B00F9D5DD /* Products */,
+				76292B8A47A426ED93CDFA09 /* Pods */,
+				FBB00F5E0C652386BA9A78B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				20364F7021AFB03900F9D5DD /* AppDelegate.swift */,
-				2059D79321E5EC6300CAB869 /* SampleApp-Bridging-Header.h */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -102,6 +109,14 @@
 				20C273AC237D201D0042D9E4 /* MoPubIBVideoViewController.swift */,
 			);
 			path = InBannerVideo;
+			sourceTree = "<group>";
+		};
+		219FDAFD25C8762D00727004 /* Rewarded */ = {
+			isa = PBXGroup;
+			children = (
+				219FDAFE25C8766500727004 /* MoPubRewardedViewController.swift */,
+			);
+			path = Rewarded;
 			sourceTree = "<group>";
 		};
 		3E3F4C6923507E45006F9659 /* VideoInterstitial */ = {
@@ -115,6 +130,7 @@
 		3E7DE93121DF3D5E00E70EA6 /* MoPub */ = {
 			isa = PBXGroup;
 			children = (
+				219FDAFD25C8762D00727004 /* Rewarded */,
 				20C273AB237D1FF50042D9E4 /* InBannerVideo */,
 				3E7DE93321DF3D6700E70EA6 /* Banner */,
 				3E7DE93221DF3D6400E70EA6 /* Interstitial */,
@@ -139,6 +155,23 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
+		76292B8A47A426ED93CDFA09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A470F2961E88D3795F2D851 /* Pods-SampleApp.debug.xcconfig */,
+				4B454350A3BAEB112581ADEC /* Pods-SampleApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FBB00F5E0C652386BA9A78B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF16826096F20B508B0A919A /* libPods-SampleApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20364F6221AFAF0D00F9D5DD /* Build configuration list for PBXNativeTarget "SampleApp" */;
 			buildPhases = (
+				6B647A4FE3FB830CBF3357BA /* [CP] Check Pods Manifest.lock */,
 				20364F4C21AFAF0B00F9D5DD /* Sources */,
 				20364F4D21AFAF0B00F9D5DD /* Frameworks */,
 				20364F4E21AFAF0B00F9D5DD /* Resources */,
+				94B7FD3B8F6130DA34C33345 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +241,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B647A4FE3FB830CBF3357BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94B7FD3B8F6130DA34C33345 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		20364F4C21AFAF0B00F9D5DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,6 +290,7 @@
 			files = (
 				3E3F4C6B23507EFC006F9659 /* MoPubVideoInterstitialViewController.swift in Sources */,
 				3E7DE93D21DF3E0300E70EA6 /* MoPubBannerViewController.swift in Sources */,
+				219FDAFF25C8766500727004 /* MoPubRewardedViewController.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
 				3E3F4C6D23507F67006F9659 /* MoPubInterstitialViewController.swift in Sources */,
 				20C273AD237D201D0042D9E4 /* MoPubIBVideoViewController.swift in Sources */,
@@ -357,6 +435,7 @@
 		};
 		20364F6321AFAF0D00F9D5DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A470F2961E88D3795F2D851 /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -371,7 +450,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pm.ow-mopub.swiftapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Development profile - wild card id";
-				SWIFT_OBJC_BRIDGING_HEADER = "SampleApp/AppDelegate/SampleApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,6 +458,7 @@
 		};
 		20364F6421AFAF0D00F9D5DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B454350A3BAEB112581ADEC /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -394,7 +473,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pm.ow-mopub.swiftapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Development profile - wild card id";
-				SWIFT_OBJC_BRIDGING_HEADER = "SampleApp/AppDelegate/SampleApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

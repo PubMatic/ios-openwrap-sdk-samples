@@ -20,7 +20,7 @@
 #define PROFILE_ID      @1757
 
 #import "VideoInterstitialViewController.h"
-#import <POBInterstitial.h>
+@import OpenWrapSDK;
 
 @interface VideoInterstitialViewController ()<POBInterstitialDelegate,POBInterstitialVideoDelegate>
 @property (nonatomic) POBInterstitial *interstitial;
@@ -72,13 +72,21 @@
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
-- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError * _Nullable)error {
-    NSLog(@"Interstitial : Ad failed with error : %@", error.localizedDescription);
+- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"Interstitial : Failed to receive ad with error : %@", error.localizedDescription);
+}
+
+- (void)interstitial:(POBInterstitial *)interstitial didFailToShowAdWithError:(NSError *)error {
+    NSLog(@"Interstitial : Failed to show ad with error : %@", error.localizedDescription);
 }
 
 // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
 - (void)interstitialWillPresentAd:(POBInterstitial * _Nonnull)interstitial {
     NSLog(@"Interstitial : Will present");
+}
+
+- (void)interstitialDidPresentAd:(POBInterstitial * _Nonnull)interstitial {
+    NSLog(@"Interstitial : Did present");
 }
 
 // Notifies the delegate that the interstitial ad has been animated off the screen.

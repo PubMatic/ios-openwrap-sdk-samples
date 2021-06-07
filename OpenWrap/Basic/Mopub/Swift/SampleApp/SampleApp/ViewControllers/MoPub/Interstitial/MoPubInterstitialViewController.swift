@@ -1,6 +1,6 @@
 /*
 * PubMatic Inc. ("PubMatic") CONFIDENTIAL
-* Unpublished Copyright (c) 2006-2020 PubMatic, All Rights Reserved.
+* Unpublished Copyright (c) 2006-2021 PubMatic, All Rights Reserved.
 *
 * NOTICE:  All information contained herein is, and remains the property of PubMatic. The intellectual and technical concepts contained
 * herein are proprietary to PubMatic and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
@@ -16,6 +16,8 @@
 */
 
 import UIKit
+import OpenWrapSDK
+import OpenWrapHandlerMoPub
 
 class MoPubInterstitialViewController: UIViewController, POBInterstitialDelegate {
     
@@ -77,13 +79,21 @@ class MoPubInterstitialViewController: UIViewController, POBInterstitialDelegate
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
-    func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error?) {
-        print("Interstitial : Ad failed with error  \(error?.localizedDescription ?? "")")
+    func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error) {
+        print("Interstitial : Failed to receive ad with error  \(error.localizedDescription )")
+    }
+    
+    func interstitial(_ interstitial: POBInterstitial, didFailToShowAdWithError error: Error) {
+        print("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
     }
     
     // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
     func interstitialWillPresentAd(_ interstitial: POBInterstitial) {
         print("Interstitial : Will present")
+    }
+    
+    func interstitialDidPresentAd(_ interstitial: POBInterstitial) {
+        print("Interstitial : Did present")
     }
     
     // Notifies the delegate that the interstitial ad has been animated off the screen.

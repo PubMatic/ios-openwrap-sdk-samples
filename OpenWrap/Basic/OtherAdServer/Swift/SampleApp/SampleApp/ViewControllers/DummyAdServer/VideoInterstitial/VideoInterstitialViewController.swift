@@ -16,6 +16,7 @@
 */
 
 import UIKit
+import OpenWrapSDK
 
 class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,POBInterstitialVideoDelegate {
 
@@ -73,8 +74,8 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
-    func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error?) {
-        print("Interstitial : Ad failed with error  \(error?.localizedDescription ?? "")")
+    func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error) {
+        print("Interstitial : Ad failed with error  \(error.localizedDescription )")
     }
     
     // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.

@@ -1,8 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
-
+use_frameworks!
 target 'SampleApp' do
-    pod 'OpenWrapSDK' 
+    pod 'OpenWrapSDK'
     pod 'OpenWrapEventHandler/MoPub'
-    pod 'mopub-ios-sdk', '5.14.1'
+    pod 'mopub-ios-sdk', '5.16.2'
 end

@@ -17,6 +17,7 @@
 
 import UIKit
 import FBAudienceNetwork
+import OpenWrapSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

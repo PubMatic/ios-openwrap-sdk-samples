@@ -16,8 +16,9 @@
 */
 
 #import "MoPubBannerViewController.h"
-#import <POBBannerView.h>
-#import <MoPubBannerEventHandler.h>
+#import <MoPub.h>
+@import OpenWrapSDK;
+@import OpenWrapHandlerMoPub;
 
 #define PUB_ID          @"156276"
 #define PROFILE_ID      @1302
@@ -88,7 +89,7 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *_Nullable)error {
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
 }
 

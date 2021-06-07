@@ -1,5 +1,6 @@
 
 import UIKit
+import OpenWrapSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

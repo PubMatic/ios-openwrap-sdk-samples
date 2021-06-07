@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05383572869281A1B2CFCD4A /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4743CE7EDC4E5688274D8B /* libPods-SampleApp.a */; };
+		1A1A2377C18A896460710E96 /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959C06B059A293AE803513CB /* Pods_SampleApp.framework */; };
 		20413F2925540CA600D37C9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20413F2825540CA600D37C9F /* AppDelegate.m */; };
-		20413F2C25540CA600D37C9F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20413F2B25540CA600D37C9F /* SceneDelegate.m */; };
 		20413F3225540CA600D37C9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20413F3025540CA600D37C9F /* Main.storyboard */; };
 		20413F3425540CAC00D37C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20413F3325540CAC00D37C9F /* Assets.xcassets */; };
 		20413F3725540CAC00D37C9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20413F3525540CAC00D37C9F /* LaunchScreen.storyboard */; };
@@ -25,8 +24,6 @@
 		20413F2425540CA600D37C9F /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20413F2725540CA600D37C9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20413F2825540CA600D37C9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		20413F2A25540CA600D37C9F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		20413F2B25540CA600D37C9F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		20413F3125540CA600D37C9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20413F3325540CAC00D37C9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20413F3625540CAC00D37C9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,7 +41,7 @@
 		20413F52255900A900D37C9F /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		20413F53255900A900D37C9F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		4C970F9B2A1C33038881A253 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		EF4743CE7EDC4E5688274D8B /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		959C06B059A293AE803513CB /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7DDD91B03949C2C54565F9 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05383572869281A1B2CFCD4A /* libPods-SampleApp.a in Frameworks */,
+				1A1A2377C18A896460710E96 /* Pods_SampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +92,6 @@
 			children = (
 				20413F2725540CA600D37C9F /* AppDelegate.h */,
 				20413F2825540CA600D37C9F /* AppDelegate.m */,
-				20413F2A25540CA600D37C9F /* SceneDelegate.h */,
-				20413F2B25540CA600D37C9F /* SceneDelegate.m */,
 			);
 			path = Appdelegate;
 			sourceTree = "<group>";
@@ -148,7 +143,7 @@
 		B3D7B47E7957253E81252FC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EF4743CE7EDC4E5688274D8B /* libPods-SampleApp.a */,
+				959C06B059A293AE803513CB /* Pods_SampleApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,7 +296,6 @@
 				20413F3A25540CAC00D37C9F /* main.m in Sources */,
 				20413F5125555FDE00D37C9F /* InterstitialViewController.m in Sources */,
 				20413F472554104800D37C9F /* BannerViewController.m in Sources */,
-				20413F2C25540CA600D37C9F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

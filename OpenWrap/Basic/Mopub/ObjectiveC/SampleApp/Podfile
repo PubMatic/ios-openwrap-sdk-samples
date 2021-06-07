@@ -1,8 +1,8 @@
 platform :ios, '10.0'
-
+use_frameworks!
 def required_pods
     pod 'OpenWrapSDK'
-    pod 'mopub-ios-sdk', '5.14.1'
+    pod 'mopub-ios-sdk', '5.16.2'
     pod 'OpenWrapEventHandler/MoPub'
 end
 

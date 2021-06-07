@@ -15,9 +15,11 @@
 * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
 */
 #import "InterstitialViewController.h"
-#import "MoPubInterstitialEventHandler.h"
-#import <POBInterstitial.h>
 #import "TAMAdLoader.h"
+
+@import OpenWrapSDK;
+@import OpenWrapHandlerMoPub;
+@import MoPubSDK;
 
 // MOPUB Ad unit id
 #define MOPUB_INTERSTITIAL_AD_UNIT  @"0acbf8049d77492cbe4a3db8c51e612f"
@@ -121,13 +123,22 @@
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
-- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError * _Nullable)error {
-    NSLog(@"Interstitial : Ad failed with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription);
+- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"Interstitial : Failed to receive ad with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription);
+}
+
+// Notifies the delegate of an error encountered while showing an ad.
+- (void)interstitial:(POBInterstitial *)interstitial didFailToShowAdWithError:(NSError *)error {
+    NSLog(@"Interstitial : Failed to show ad with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription);
 }
 
 // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
 - (void)interstitialWillPresentAd:(POBInterstitial * _Nonnull)interstitial {
     NSLog(@"Interstitial : Will present");
+}
+
+- (void)interstitialDidPresentAd:(POBInterstitial *)interstitial {
+    NSLog(@"Interstitial : Did present");
 }
 
 // Notifies the delegate that the interstitial ad has been animated off the screen.

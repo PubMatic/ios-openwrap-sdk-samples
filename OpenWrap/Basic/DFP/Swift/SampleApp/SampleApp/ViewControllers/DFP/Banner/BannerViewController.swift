@@ -16,6 +16,8 @@
 */
 
 import UIKit
+import OpenWrapSDK
+import OpenWrapHandlerDFP
 import GoogleMobileAds
 
 class BannerViewController: UIViewController,POBBannerViewDelegate {
@@ -86,8 +88,8 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView,
-                           didFailToReceiveAdWithError error: Error?) {
-        print("Banner : Ad failed with error : \(error?.localizedDescription ?? "")")
+                    didFailToReceiveAdWithError error: Error) {
+        print("Banner : Ad failed with error : \(error.localizedDescription )")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click

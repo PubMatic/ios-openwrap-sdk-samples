@@ -20,7 +20,7 @@
 #define PROFILE_ID      @1757
 
 #import "RewardedViewController.h"
-#import <POBRewardedAd.h>
+@import OpenWrapSDK;
 
 @interface RewardedViewController ()<POBRewardedAdDelegate>
 @property (nonatomic) POBRewardedAd *rewardedAd;
@@ -34,10 +34,7 @@
     
     // Create a Rewarded object
     // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
-    self.rewardedAd = [[POBRewardedAd alloc]
-                                 initWithPublisherId:PUB_ID
-                                 profileId:PROFILE_ID
-                                 adUnitId:OW_ADUNIT_ID];
+    self.rewardedAd = [POBRewardedAd rewardedAdWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID];
     // Set the delegate
     self.rewardedAd.delegate = self;
 }
@@ -70,7 +67,12 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"RewardedAd : Ad failed with error : %@", error.localizedDescription);
+    NSLog(@"RewardedAd : Failed to receive ad with error : %@", error.localizedDescription);
+}
+
+// Notifies the delegate of an error encountered while rendering an ad.
+- (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToShowAdWithError:(NSError *)error {
+    NSLog(@"RewardedAd : Failed to show ad with error : %@", error.localizedDescription);
 }
 
 // Notifies the delegate that the rewarded ad will be presented as a modal on top of the current view controller.

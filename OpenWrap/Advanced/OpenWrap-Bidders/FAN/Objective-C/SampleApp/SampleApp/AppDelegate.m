@@ -17,7 +17,7 @@
 
 #import "AppDelegate.h"
 #import <FBAudienceNetwork/FBAdSettings.h>
-#import <OpenWrapSDK.h>
+@import OpenWrapSDK;
 
 @interface AppDelegate ()
 

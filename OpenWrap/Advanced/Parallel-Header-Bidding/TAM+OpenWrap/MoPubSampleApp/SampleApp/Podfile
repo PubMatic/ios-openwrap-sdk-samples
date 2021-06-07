@@ -1,13 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
-
+use_frameworks!
 target 'SampleApp' do
  
-    # 5.14.1 version of mopub sdk requires xcode 12
-    pod 'mopub-ios-sdk', '5.13.1'
-    pod 'OpenWrapEventHandler/MoPub', '1.3.0'
-    pod 'OpenWrapSDK', '1.8.0'
-    # 3.4.0 version of AmazonPublisherServicesSDK requires xcode 12
-    pod 'AmazonPublisherServicesSDK', '3.3.2'
+    pod 'mopub-ios-sdk', '5.16.2'
+    pod 'OpenWrapSDK', '2.0.0'
+    pod 'OpenWrapEventHandler/MoPub', '2.2.0'
+    pod 'AmazonPublisherServicesSDK', '4.0.0'
 
 end

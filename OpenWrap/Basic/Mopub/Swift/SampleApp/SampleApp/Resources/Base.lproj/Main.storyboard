@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -102,6 +102,27 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="3dm-T4-fMd" kind="show" id="ffS-e5-QNH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="k8q-OQ-X6R" style="IBUITableViewCellStyleDefault" id="omt-5V-IhV">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="omt-5V-IhV" id="7kE-G6-G1Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Rewarded Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k8q-OQ-X6R">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="RoD-BX-DYQ" kind="show" id="e9I-OM-Bfn"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -281,6 +302,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMH-Xx-zdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1153" y="941"/>
+        </scene>
+        <!--MoPub Rewarded Ad-->
+        <scene sceneID="P03-Iy-L3M">
+            <objects>
+                <viewController title="MoPub Rewarded Ad" id="RoD-BX-DYQ" userLabel="MoPub Rewarded Ad" customClass="MoPubRewardedViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mqJ-2I-AuI"/>
+                        <viewControllerLayoutGuide type="bottom" id="1rn-2F-wPJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s1J-Oi-jbS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdX-uu-lpE">
+                                <rect key="frame" x="142.5" y="124" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="x8S-GV-AhR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="zSc-8e-OEe"/>
+                                </constraints>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="loadAdAction:" destination="RoD-BX-DYQ" eventType="touchUpInside" id="IdP-dC-OPo"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGN-Lm-YzT">
+                                <rect key="frame" x="142.5" y="185" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="d1D-St-9Gt"/>
+                                    <constraint firstAttribute="height" constant="34" id="wRX-sq-hLl"/>
+                                </constraints>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdAction:" destination="RoD-BX-DYQ" eventType="touchUpInside" id="jcr-fb-WMj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tGN-Lm-YzT" firstAttribute="width" secondItem="RdX-uu-lpE" secondAttribute="width" id="2gQ-ba-Ln7"/>
+                            <constraint firstItem="tGN-Lm-YzT" firstAttribute="top" secondItem="RdX-uu-lpE" secondAttribute="bottom" constant="27" id="3Ke-CG-eSw"/>
+                            <constraint firstItem="RdX-uu-lpE" firstAttribute="centerX" secondItem="s1J-Oi-jbS" secondAttribute="centerX" id="bC8-U1-p4F"/>
+                            <constraint firstItem="RdX-uu-lpE" firstAttribute="top" secondItem="mqJ-2I-AuI" secondAttribute="bottom" constant="80" id="btp-uP-1vd"/>
+                            <constraint firstItem="tGN-Lm-YzT" firstAttribute="height" secondItem="RdX-uu-lpE" secondAttribute="height" id="iIA-5s-DLJ"/>
+                            <constraint firstItem="tGN-Lm-YzT" firstAttribute="centerX" secondItem="RdX-uu-lpE" secondAttribute="centerX" id="jc9-79-BQv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CE4-D2-hKT"/>
+                    </view>
+                    <connections>
+                        <outlet property="showAdButton" destination="tGN-Lm-YzT" id="K8T-Ln-DcE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIQ-wu-6Hg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="940"/>
         </scene>
     </scenes>
 </document>

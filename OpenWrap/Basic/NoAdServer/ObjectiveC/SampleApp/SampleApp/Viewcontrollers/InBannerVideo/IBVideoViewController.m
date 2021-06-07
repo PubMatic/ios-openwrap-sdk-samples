@@ -16,7 +16,7 @@
 */
 
 #import "IBVideoViewController.h"
-#import <POBBannerView.h>
+@import OpenWrapSDK;
 
 #define OW_ADUNIT_ID  @"OpenWrapBannerAdUnit"
 
@@ -79,7 +79,7 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *_Nullable)error {
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
 }
 

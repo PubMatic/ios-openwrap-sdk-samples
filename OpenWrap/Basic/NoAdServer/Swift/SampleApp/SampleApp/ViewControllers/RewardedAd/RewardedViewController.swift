@@ -16,6 +16,7 @@
 */
 
 import UIKit
+import OpenWrapSDK
 
 class RewardedViewController: UIViewController, POBRewardedAdDelegate {
 
@@ -65,7 +66,12 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate {
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToReceiveAdWithError error: Error) {
-        print("RewardedAd : Ad failed with error  \(error.localizedDescription)")
+        print("RewardedAd : Failed to receive ad with error  \(error.localizedDescription)")
+    }
+    
+    // Notifies the delegate of an error encountered while rendering an ad.
+    func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToShowAdWithError error: Error) {
+        print("RewardedAd : Failed to show ad with error  \(error.localizedDescription)")
     }
     
     // Notifies the delegate that the rewarded ad will be presented as a modal on top of the current view controller.

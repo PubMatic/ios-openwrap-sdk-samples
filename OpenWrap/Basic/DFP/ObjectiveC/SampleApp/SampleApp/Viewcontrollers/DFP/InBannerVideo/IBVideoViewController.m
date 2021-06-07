@@ -16,8 +16,9 @@
 */
 
 #import "IBVideoViewController.h"
-#import <DFPBannerEventHandler.h>
-#import <POBBannerView.h>
+@import OpenWrapSDK;
+@import OpenWrapHandlerDFP;
+@import GoogleMobileAds;
 
 #define DFP_AU        @"/15671365/pm_sdk/PMSDK-Demo-App-Banner"
 #define OW_ADUNIT_ID  @"/15671365/pm_sdk/PMSDK-Demo-App-Banner"
@@ -88,7 +89,7 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *_Nullable)error {
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
 }
 

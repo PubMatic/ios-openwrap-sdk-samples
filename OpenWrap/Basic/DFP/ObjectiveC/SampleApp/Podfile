@@ -1,4 +1,5 @@
 platform :ios, '10.0'
+use_frameworks!
 
 def required_pods
     pod 'Google-Mobile-Ads-SDK', '8.3.0'

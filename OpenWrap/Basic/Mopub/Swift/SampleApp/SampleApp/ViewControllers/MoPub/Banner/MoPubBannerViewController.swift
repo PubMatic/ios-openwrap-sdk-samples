@@ -1,6 +1,6 @@
 /*
 * PubMatic Inc. ("PubMatic") CONFIDENTIAL
-* Unpublished Copyright (c) 2006-2020 PubMatic, All Rights Reserved.
+* Unpublished Copyright (c) 2006-2021 PubMatic, All Rights Reserved.
 *
 * NOTICE:  All information contained herein is, and remains the property of PubMatic. The intellectual and technical concepts contained
 * herein are proprietary to PubMatic and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
@@ -16,6 +16,9 @@
 */
 
 import UIKit
+import OpenWrapSDK
+import OpenWrapHandlerMoPub
+import MoPub
 
 class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
     
@@ -82,8 +85,8 @@ class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView,
-                    didFailToReceiveAdWithError error: Error?) {
-        print("Banner : Ad failed with error : \(error?.localizedDescription ?? "")")
+                    didFailToReceiveAdWithError error: Error) {
+        print("Banner : Ad failed with error : \(error.localizedDescription )")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click

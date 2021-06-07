@@ -17,7 +17,7 @@
 
 
 #import "BannerViewController.h"
-#import <POBBannerView.h>
+@import OpenWrapSDK;
 
 #define OW_ADUNIT_ID  @"NoAdServerBannerAdUnit"
 

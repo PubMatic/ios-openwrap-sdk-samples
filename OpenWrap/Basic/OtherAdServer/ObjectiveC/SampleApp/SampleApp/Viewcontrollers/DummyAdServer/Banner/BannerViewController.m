@@ -16,8 +16,8 @@
 */
 
 #import "BannerViewController.h"
-#import <POBBannerView.h>
 #import "CustomBannerEventHandler.h"
+@import OpenWrapSDK;
 
 #define DUMMY_AD_SERVER_ADUNIT_ID  @"OtherASBannerAdUnit"
 #define OW_ADUNIT_ID  @"OtherASBannerAdUnit"
@@ -88,7 +88,7 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *_Nullable)error {
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
 }
 

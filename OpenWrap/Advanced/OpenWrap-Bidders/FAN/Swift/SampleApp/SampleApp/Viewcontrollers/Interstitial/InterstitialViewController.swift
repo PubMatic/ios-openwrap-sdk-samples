@@ -17,6 +17,7 @@
 
 
 import UIKit
+import OpenWrapSDK
 
 class InterstitialViewController: UIViewController,POBInterstitialDelegate {
 

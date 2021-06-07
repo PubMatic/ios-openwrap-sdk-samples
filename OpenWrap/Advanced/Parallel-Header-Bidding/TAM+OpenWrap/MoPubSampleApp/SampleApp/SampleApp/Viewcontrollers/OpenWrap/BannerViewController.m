@@ -16,9 +16,10 @@
 */
 
 #import "BannerViewController.h"
-#import <POBBannerView.h>
-#import "MoPubBannerEventHandler.h"
 #import "TAMAdLoader.h"
+@import OpenWrapSDK;
+@import OpenWrapHandlerMoPub;
+@import MoPubSDK;
 
 // MOPUB Ad unit id
 #define MOPUB_BANNER_AD_UNIT   @"4410123febb744c3b5aae61d0ec28b04"
@@ -127,13 +128,21 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *_Nullable)error {
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
     /*!
      OpenWrap SDK will start refresh loop internally as soon as ad rendering succeeds/fails.
      To include other ad servers' bids in next refresh cycle, call loadBids on bidding manager.
     */
     [self.biddingManager loadBids];
+}
+
+- (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Will present modal");
+}
+
+- (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Will leave app");
 }
 
 #pragma mark - Bid event delegate methods

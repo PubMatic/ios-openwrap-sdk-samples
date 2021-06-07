@@ -1,6 +1,7 @@
 
 
 import UIKit
+import OpenWrapSDK
 
 /*!
  This class is responsible for communication between OpenWrap interstitial and interstitial ad from your ad server SDK(in this case DummyAdServerSDK).

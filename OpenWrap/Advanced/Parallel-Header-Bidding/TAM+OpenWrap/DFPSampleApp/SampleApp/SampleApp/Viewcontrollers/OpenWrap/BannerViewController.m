@@ -16,9 +16,10 @@
 */
 
 #import "BannerViewController.h"
-#import <POBBannerView.h>
-#import <DFPBannerEventHandler.h>
 #import "TAMAdLoader.h"
+@import OpenWrapSDK;
+@import OpenWrapHandlerDFP;
+@import GoogleMobileAds;
 
 // DFP Ad unit id
 #define DFP_AU_BANNER          @"/15671365/pm_sdk/A9_Demo"
@@ -128,13 +129,21 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *_Nullable)error {
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
     /*!
      OpenWrap SDK will start refresh loop internally as soon as ad rendering succeeds/fails.
      To include other ad servers' bids in next refresh cycle, call loadBids on bidding manager.
     */
     [self.biddingManager loadBids];
+}
+
+- (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Will present modal");
+}
+
+- (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Will leave app");
 }
 
 #pragma mark - Bid event delegate methods

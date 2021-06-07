@@ -1,6 +1,7 @@
 
 
 import UIKit
+import OpenWrapSDK
 
 class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEventDelegate {
     let owAdUnit  = "OpenWrapRewardedAdUnit"

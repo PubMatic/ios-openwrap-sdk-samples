@@ -22,7 +22,7 @@
 #define PROFILE_ID      @2941
 
 #import "InterstitialViewController.h"
-#import <POBInterstitial.h>
+@import OpenWrapSDK;
 
 @interface InterstitialViewController ()<POBInterstitialDelegate>
 @property (nonatomic) POBInterstitial *interstitial;
