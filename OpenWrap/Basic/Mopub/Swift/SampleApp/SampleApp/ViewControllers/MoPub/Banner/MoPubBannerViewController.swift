@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 import OpenWrapHandlerMoPub
-import MoPub
+import MoPubSDK
 
 class MoPubBannerViewController: UIViewController,POBBannerViewDelegate {
     

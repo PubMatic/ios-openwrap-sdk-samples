@@ -17,7 +17,7 @@
 
 import UIKit
 import OpenWrapSDK
-import MoPub
+import MoPubSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
