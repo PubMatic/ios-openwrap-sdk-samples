@@ -73,7 +73,7 @@
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
-- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError * _Nullable)error {
+- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError * )error {
     NSLog(@"Interstitial : Ad failed with error : %@", error.localizedDescription);
 }
 
