@@ -86,7 +86,7 @@
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
-didFailToReceiveAdWithError:(NSError *)error {
+didFailToReceiveAdWithError:(NSError *_Nullable)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
 }
 
