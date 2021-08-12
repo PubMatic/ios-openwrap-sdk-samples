@@ -1,6 +1,6 @@
 /*
 * PubMatic Inc. ("PubMatic") CONFIDENTIAL
-* Unpublished Copyright (c) 2006-2020 PubMatic, All Rights Reserved.
+* Unpublished Copyright (c) 2006-2021 PubMatic, All Rights Reserved.
 *
 * NOTICE:  All information contained herein is, and remains the property of PubMatic. The intellectual and technical concepts contained
 * herein are proprietary to PubMatic and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
@@ -73,8 +73,13 @@
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
-- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError * _Nullable)error {
+- (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Interstitial : Ad failed with error : %@", error.localizedDescription);
+}
+
+// Notifies the delegate of an error encountered while showing an ad
+- (void)interstitial:(POBInterstitial *)interstitial didFailToShowAdWithError:(NSError *)error {
+    NSLog(@"Interstitial : Failed to show ad with error : %@", error.localizedDescription);
 }
 
 // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.

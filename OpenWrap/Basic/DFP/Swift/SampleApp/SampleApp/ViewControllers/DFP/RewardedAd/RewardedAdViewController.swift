@@ -17,93 +17,96 @@
 
 import UIKit
 import OpenWrapSDK
+import OpenWrapHandlerDFP
 
-class RewardedViewController: UIViewController, POBRewardedAdDelegate {
+class RewardedAdViewController: UIViewController,POBRewardedAdDelegate {
+    @IBOutlet var showAdButton: UIButton!
 
-    let owAdUnit  = "OpenWrapRewardedAdUnit"
+    let dfpAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-RewardedAd"
+    let owAdUnit  = "/15671365/pm_sdk/PMSDK-Demo-App-RewardedAd"
     let pubId = "156276"
     let profileId : NSNumber = 1757
 
     var rewardedAd: POBRewardedAd?
-    @IBOutlet var showAdButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Create a RewardedAd object
-        // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
-        rewardedAd = POBRewardedAd(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit)
+
+        let eventHandler = DFPRewardedEventHandler(adUnitId: dfpAdUnit)
+
+        rewardedAd = POBRewardedAd(
+            publisherId: pubId,
+            profileId: profileId,
+            adUnitId: owAdUnit,
+            eventHandler: eventHandler!)
         
         // Set the delegate
         rewardedAd?.delegate = self
     }
     
     @IBAction func loadAdAction(_ sender: Any) {
-        // Load Ad
         rewardedAd?.loadAd()
     }
     
     @IBAction func showAdAction(_ sender: Any) {
-        self.showRewardedAd()
-    }
-    
-    // To show Rewarded ad call this function
-    func showRewardedAd() {
-        // ...
-        if (rewardedAd?.isReady)! {
-            // Show Rewarded ad
+        if ((rewardedAd?.isReady) != nil) {
+            // Show rewarded ad
             rewardedAd?.show(from: self)
         }
     }
     
-    //MARK: Rewarded delegate methods
-    
-    // Notifies the delegate that an rewarded ad has been received successfully.
+    // MARK: - POBRewardedAdDelegate
+    // Notifies the delegate that an ad has been received successfully.
     func rewardedAdDidReceive(_ rewardedAd: POBRewardedAd) {
         showAdButton.isHidden = false
         print("RewardedAd : Ad Received")
     }
-    
-    // Notifies the delegate of an error encountered while loading or rendering an ad.
+
+    // Notifies the delegate of an error encountered while loading an ad.
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToReceiveAdWithError error: Error) {
-        print("RewardedAd : Failed to receive ad with error  \(error.localizedDescription)")
+        print("RewardedAd : Failed to receive ad with error : \(error.localizedDescription)")
     }
     
-    // Notifies the delegate of an error encountered while rendering an ad.
+    // Notifies the delegate of an error encountered while showing an ad.
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToShowAdWithError error: Error) {
-        print("RewardedAd : Failed to show ad with error  \(error.localizedDescription)")
+        print("RewardedAd : Failed to show ad with error : \(error.localizedDescription)")
     }
     
-    // Notifies the delegate that the rewarded ad will be presented as a modal on top of the current view controller.
+    // Notifies the delegate that the rewardedAd ad will be presented as a modal on top of the current view controller.
     func rewardedAdWillPresent(_ rewardedAd: POBRewardedAd) {
         print("RewardedAd : Will present")
     }
-    
-    // Notifies the delegate that the rewarded ad has been animated off the screen.
+
+    func rewardedAdDidPresent(_ rewardedAd: POBRewardedAd) {
+        print("RewardedAd : Did present")
+    }
+
+    // Notifies the delegate that the rewardedAd ad has been animated off the screen.
     func rewardedAdDidDismiss(_ rewardedAd: POBRewardedAd) {
         print("RewardedAd : Dismissed")
     }
-    
+
     // Notifies the delegate of ad click
     func rewardedAdDidClick(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Ad Clicked")
+        print("RewardedAd : Ad clicked")
     }
     
     // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
     func rewardedAdWillLeaveApplication(_ rewardedAd: POBRewardedAd) {
         print("RewardedAd : Will leave app")
     }
-    
+
     // Notifies the delegate of an ad expiration. After this callback, this 'POBRewardedAd' instance is marked as invalid & will not be shown.
     func rewardedAdDidExpireAd(_ rewardedAd: POBRewardedAd) {
         print("RewardedAd : Expired")
     }
-        
+
     // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
     func rewardedAd(_ rewardedAd: POBRewardedAd, shouldReward reward: POBReward) {
         print("RewardedAd : Ad should reward \(reward.amount)(\(reward.currencyType))")
     }
-    
+
+    // MARK: - dealloc
     deinit {
         rewardedAd = nil
     }

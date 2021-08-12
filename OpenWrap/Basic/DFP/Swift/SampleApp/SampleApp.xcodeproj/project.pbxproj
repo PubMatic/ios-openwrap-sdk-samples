@@ -11,6 +11,7 @@
 		20364F5E21AFAF0D00F9D5DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20364F5C21AFAF0D00F9D5DD /* LaunchScreen.storyboard */; };
 		20364F6D21AFB02100F9D5DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20364F6B21AFB02100F9D5DD /* Assets.xcassets */; };
 		20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20364F7021AFB03900F9D5DD /* AppDelegate.swift */; };
+		2094BE512649617700C9CA84 /* RewardedAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094BE502649617700C9CA84 /* RewardedAdViewController.swift */; };
 		20C273AA237D1D740042D9E4 /* IBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C273A9237D1D740042D9E4 /* IBVideoViewController.swift */; };
 		3E23BC0A234DB8860022D28B /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */; };
 		3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */; };
@@ -26,6 +27,7 @@
 		20364F6B21AFB02100F9D5DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20364F6C21AFB02100F9D5DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20364F7021AFB03900F9D5DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2094BE502649617700C9CA84 /* RewardedAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedAdViewController.swift; sourceTree = "<group>"; };
 		20C273A9237D1D740042D9E4 /* IBVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBVideoViewController.swift; sourceTree = "<group>"; };
 		3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		2094BE4D2649615F00C9CA84 /* RewardedAd */ = {
+			isa = PBXGroup;
+			children = (
+				2094BE502649617700C9CA84 /* RewardedAdViewController.swift */,
+			);
+			path = RewardedAd;
+			sourceTree = "<group>";
+		};
 		20C273A8237D1D540042D9E4 /* InBannerVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		3E7DE92E21DF3D5100E70EA6 /* DFP */ = {
 			isa = PBXGroup;
 			children = (
+				2094BE4D2649615F00C9CA84 /* RewardedAd */,
 				20C273A8237D1D540042D9E4 /* InBannerVideo */,
 				3E7DE93021DF3D5A00E70EA6 /* Banner */,
 				3E7DE92F21DF3D5600E70EA6 /* Interstitial */,
@@ -280,6 +291,7 @@
 				3E23BC0A234DB8860022D28B /* VideoInterstitialViewController.swift in Sources */,
 				3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
+				2094BE512649617700C9CA84 /* RewardedAdViewController.swift in Sources */,
 				20C273AA237D1D740042D9E4 /* IBVideoViewController.swift in Sources */,
 				3E7DE94321DF3E1400E70EA6 /* InterstitialViewController.swift in Sources */,
 			);

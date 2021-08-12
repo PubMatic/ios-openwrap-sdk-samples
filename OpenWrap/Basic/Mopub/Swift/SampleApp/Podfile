@@ -3,6 +3,6 @@ platform :ios, '10.0'
 use_frameworks!
 target 'SampleApp' do
     pod 'OpenWrapSDK'
-    pod 'OpenWrapEventHandler/MoPub'
+    pod 'OpenWrapHandlerMoPub'
     pod 'mopub-ios-sdk', '5.16.2'
 end

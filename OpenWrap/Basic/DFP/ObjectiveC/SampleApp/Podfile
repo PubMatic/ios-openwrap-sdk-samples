@@ -4,7 +4,7 @@ use_frameworks!
 def required_pods
     pod 'Google-Mobile-Ads-SDK', '8.3.0'
     pod 'OpenWrapSDK'
-    pod 'OpenWrapEventHandler/DFP'
+    pod 'OpenWrapHandlerDFP'
 end
 
 

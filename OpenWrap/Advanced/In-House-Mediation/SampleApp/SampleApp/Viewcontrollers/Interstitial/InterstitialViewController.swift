@@ -94,6 +94,11 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBi
     func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error) {
         print("Interstitial : Ad failed with error  \(error.localizedDescription )")
     }
+    
+    // Notifies the delegate of an error encountered while showing an ad
+    func interstitial(_ interstitial: POBInterstitial, didFailToShowAdWithError error: Error) {
+        print("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
+    }
 
     deinit {
         interstitial = nil

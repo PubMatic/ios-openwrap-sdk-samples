@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,8 +20,8 @@
                     <view key="view" contentMode="scaleToFill" id="K2H-aL-W8M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="0zd-7p-63s"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwv-Oi-K0U" sceneMemberID="firstResponder"/>
@@ -39,7 +40,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-0t-iQ0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-0t-iQ0">
                                 <rect key="frame" x="142.5" y="134" width="90" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -51,7 +52,7 @@
                                     <action selector="loadAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="6ba-yv-err"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGL-XU-XE0">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGL-XU-XE0">
                                 <rect key="frame" x="142.5" y="195" width="90" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -64,7 +65,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Npl-J5-Fll"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I1H-0t-iQ0" firstAttribute="top" secondItem="4yf-NW-QR9" secondAttribute="bottom" constant="90" id="0Dd-GQ-VaT"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qGL-XU-XE0" secondAttribute="trailing" constant="20" symbolic="YES" id="QiS-m0-81T"/>
@@ -72,7 +74,6 @@
                             <constraint firstItem="qGL-XU-XE0" firstAttribute="top" secondItem="I1H-0t-iQ0" secondAttribute="bottom" constant="27" id="ei1-wY-CoW"/>
                             <constraint firstItem="qGL-XU-XE0" firstAttribute="leading" secondItem="I1H-0t-iQ0" secondAttribute="leading" id="hwM-qm-Yma"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Npl-J5-Fll"/>
                     </view>
                     <connections>
                         <outlet property="showAdButton" destination="qGL-XU-XE0" id="odS-n2-8e3"/>
@@ -89,7 +90,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="SOP-Xm-24M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         <sections>
                             <tableViewSection headerTitle="DFP" id="fzy-k0-8kS">
@@ -178,6 +179,27 @@
                                             <segue destination="TkC-t6-EDc" kind="show" id="5iX-R1-mb1"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8Q4-36-SFo" style="IBUITableViewCellStyleDefault" id="t3e-8m-wRo">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t3e-8m-wRo" id="Z26-YA-ui9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Rewarded Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Q4-36-SFo">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gy8-wH-amZ" kind="show" id="HQt-I4-pRg"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -201,8 +223,8 @@
                     <view key="view" contentMode="scaleToFill" id="uhl-ga-VSJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gGi-mb-xtK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="InBanner Video Ad" id="Ekj-9A-Z3k"/>
                 </viewController>
@@ -238,7 +260,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-Y7-ZTK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-Y7-ZTK">
                                 <rect key="frame" x="142.5" y="134" width="90" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -250,7 +272,7 @@
                                     <action selector="loadAdAction:" destination="TkC-t6-EDc" eventType="touchUpInside" id="ZI0-GB-wX6"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-at-aVG">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-at-aVG">
                                 <rect key="frame" x="142.5" y="195" width="90" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -263,7 +285,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="KZL-hT-N4x"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rsQ-at-aVG" secondAttribute="trailing" constant="20" symbolic="YES" id="3u9-IT-5U2"/>
                             <constraint firstItem="ldR-Y7-ZTK" firstAttribute="top" secondItem="5zk-q6-Vba" secondAttribute="bottom" constant="90" id="GB0-o2-5Gm"/>
@@ -271,7 +294,6 @@
                             <constraint firstItem="rsQ-at-aVG" firstAttribute="top" secondItem="ldR-Y7-ZTK" secondAttribute="bottom" constant="27" id="Z6K-sr-iFz"/>
                             <constraint firstItem="rsQ-at-aVG" firstAttribute="leading" secondItem="ldR-Y7-ZTK" secondAttribute="leading" id="fdM-Fo-xsL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KZL-hT-N4x"/>
                     </view>
                     <connections>
                         <outlet property="showAdButton" destination="rsQ-at-aVG" id="CLX-KV-2KD"/>
@@ -279,7 +301,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6I-qM-bdS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="1315"/>
+            <point key="canvasLocation" x="1340" y="1385"/>
+        </scene>
+        <!--DFP Rewarded-->
+        <scene sceneID="2mg-ST-yBy">
+            <objects>
+                <viewController title="DFP Rewarded" id="gy8-wH-amZ" userLabel="DFP Rewarded" customClass="RewardedAdViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uaj-hS-WmJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="nZq-VT-Dvl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yHh-D3-UCD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAy-Xq-uIi">
+                                <rect key="frame" x="142.5" y="134" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6DQ-tJ-gjN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="FOU-8z-r63"/>
+                                </constraints>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="loadAdAction:" destination="gy8-wH-amZ" eventType="touchUpInside" id="SZc-L4-9VC"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-RV-3Rl">
+                                <rect key="frame" x="142.5" y="195" width="90" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Tm6-Ag-uJi"/>
+                                    <constraint firstAttribute="height" constant="34" id="cc0-dL-13a"/>
+                                </constraints>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="showAdAction:" destination="gy8-wH-amZ" eventType="touchUpInside" id="YOR-o1-W6A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zju-Q1-ZZB"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UAy-Xq-uIi" firstAttribute="top" secondItem="Uaj-hS-WmJ" secondAttribute="bottom" constant="90" id="Efw-Dc-7D7"/>
+                            <constraint firstItem="Zjo-RV-3Rl" firstAttribute="leading" secondItem="UAy-Xq-uIi" secondAttribute="leading" id="FpZ-lP-dSV"/>
+                            <constraint firstItem="UAy-Xq-uIi" firstAttribute="centerX" secondItem="yHh-D3-UCD" secondAttribute="centerX" id="WWl-qW-Aka"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zjo-RV-3Rl" secondAttribute="trailing" constant="20" symbolic="YES" id="ow4-70-ezx"/>
+                            <constraint firstItem="Zjo-RV-3Rl" firstAttribute="top" secondItem="UAy-Xq-uIi" secondAttribute="bottom" constant="27" id="pyY-FS-ERb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="DFP Rewarded Ad" id="EkJ-Jo-26t"/>
+                    <connections>
+                        <outlet property="showAdButton" destination="Zjo-RV-3Rl" id="V7Y-RS-Ity"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEe-C2-p9v" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="1372"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

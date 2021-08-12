@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2094BE2C26495F9E00C9CA84 /* RewardedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2094BE2B26495F9E00C9CA84 /* RewardedAdViewController.m */; };
 		21C50A1E237ADFAC00F7546E /* IBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */; };
 		2BDB4DB8BD26AFE683215A8A /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C348F0E7FCC00043A44DC5E5 /* libPods-SampleApp.a */; };
 		3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F421CA538300C31F40 /* BannerViewController.m */; };
@@ -21,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		1D9EE9E78EA0F161754EF350 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		2094BE2A26495F9E00C9CA84 /* RewardedAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardedAdViewController.h; sourceTree = "<group>"; };
+		2094BE2B26495F9E00C9CA84 /* RewardedAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardedAdViewController.m; sourceTree = "<group>"; };
 		21C50A1C237ADFAC00F7546E /* IBVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBVideoViewController.h; sourceTree = "<group>"; };
 		21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBVideoViewController.m; sourceTree = "<group>"; };
 		3E7AF7F421CA538300C31F40 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
@@ -59,8 +62,16 @@
 				D1C1DF3259D050FAE7658A6F /* Pods-SampleApp.debug.xcconfig */,
 				1D9EE9E78EA0F161754EF350 /* Pods-SampleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2094BE2926495F7800C9CA84 /* RewardedAd */ = {
+			isa = PBXGroup;
+			children = (
+				2094BE2A26495F9E00C9CA84 /* RewardedAdViewController.h */,
+				2094BE2B26495F9E00C9CA84 /* RewardedAdViewController.m */,
+			);
+			path = RewardedAd;
 			sourceTree = "<group>";
 		};
 		21C50A1B237ADF7900F7546E /* InBannerVideo */ = {
@@ -75,6 +86,7 @@
 		3E7AF7E821CA52D100C31F40 /* DFP */ = {
 			isa = PBXGroup;
 			children = (
+				2094BE2926495F7800C9CA84 /* RewardedAd */,
 				3E7AF7EA21CA52DE00C31F40 /* Banner */,
 				21C50A1B237ADF7900F7546E /* InBannerVideo */,
 				3E7AF7E921CA52D600C31F40 /* Interstitial */,
@@ -305,6 +317,7 @@
 				3E7AF7F921CA538A00C31F40 /* InterstitialViewController.m in Sources */,
 				21C50A1E237ADFAC00F7546E /* IBVideoViewController.m in Sources */,
 				3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */,
+				2094BE2C26495F9E00C9CA84 /* RewardedAdViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,
 			);

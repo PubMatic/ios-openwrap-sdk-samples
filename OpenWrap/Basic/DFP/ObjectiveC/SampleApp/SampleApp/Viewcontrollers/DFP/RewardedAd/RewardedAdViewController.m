@@ -15,79 +15,87 @@
 * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
 */
 
-#define OW_ADUNIT_ID    @"OpenWrapRewardedAdUnit"
+#import "RewardedAdViewController.h"
+@import OpenWrapSDK;
+@import OpenWrapHandlerDFP;
+@import GoogleMobileAds;
+
+#define DFP_AU          @"/15671365/pm_sdk/PMSDK-Demo-App-RewardedAd"
+#define OW_ADUNIT_ID    @"/15671365/pm_sdk/PMSDK-Demo-App-RewardedAd"
 #define PUB_ID          @"156276"
 #define PROFILE_ID      @1757
 
-#import "RewardedViewController.h"
-@import OpenWrapSDK;
-
-@interface RewardedViewController ()<POBRewardedAdDelegate>
-@property (nonatomic) POBRewardedAd *rewardedAd;
+@interface RewardedAdViewController ()<POBRewardedAdDelegate>
+@property (strong, nonatomic) POBRewardedAd *rewardedAd;
 @property (nonatomic) IBOutlet UIButton *showAdButton;
 @end
 
-@implementation RewardedViewController
+@implementation RewardedAdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Create a rewarded ad event handler for your ad server.
+    // For example, The code below creates an event handler for DFP ad server.
+    DFPRewardedEventHandler *eventHandler = [[DFPRewardedEventHandler alloc] initWithAdUnitId:DFP_AU];
+
     // Create a Rewarded object
-    // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
-    self.rewardedAd = [POBRewardedAd rewardedAdWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID];
+    // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
+    self.rewardedAd = [POBRewardedAd rewardedAdWithPublisherId:PUB_ID
+                                                      profileId:PROFILE_ID
+                                                       adUnitId:OW_ADUNIT_ID
+                                                   eventHandler:eventHandler];
+
     // Set the delegate
     self.rewardedAd.delegate = self;
 }
 
 - (IBAction)loadAdAction:(id)sender {
-    // Load Ad
     [self.rewardedAd loadAd];
 }
 
 - (IBAction)showAdAction:(id)sender {
-    [self showRewardedAd];
-}
-
-// To show Rewarded ad call this method
-- (void)showRewardedAd{
-    // ...
     if (self.rewardedAd.isReady) {
-        // Show Rewarded ad
-        [self.rewardedAd showFromViewController:self];
-    }
+           // Show rewarded ad
+           [self.rewardedAd showFromViewController:self];
+       }
 }
 
-#pragma mark - Rewarded delegate methods
+#pragma mark - POBRewardedAdDelegate
 
-// Notifies the delegate that an rewarded ad has been received successfully.
-- (void)rewardedAdDidReceiveAd:(POBRewardedAd *)rewardedAd{
+// Notifies the delegate that an ad has been received successfully.
+- (void)rewardedAdDidReceiveAd:(POBRewardedAd *)rewardedAd {
     self.showAdButton.hidden = NO;
     NSLog(@"RewardedAd : Ad Received");
 }
 
-// Notifies the delegate of an error encountered while loading or rendering an ad.
-- (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToReceiveAdWithError:(NSError *)error{
+// Notifies the delegate of an error encountered while loading an ad.
+- (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"RewardedAd : Failed to receive ad with error : %@", error.localizedDescription);
 }
 
-// Notifies the delegate of an error encountered while rendering an ad.
+// Notifies the delegate of an error encountered while showing an ad.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToShowAdWithError:(NSError *)error {
     NSLog(@"RewardedAd : Failed to show ad with error : %@", error.localizedDescription);
 }
 
-// Notifies the delegate that the rewarded ad will be presented as a modal on top of the current view controller.
-- (void)rewardedAdWillPresentAd:(POBRewardedAd *)rewardedAd{
+// Notifies the delegate that the rewardedAd ad will be presented as a modal on top of the current view controller.
+- (void)rewardedAdWillPresentAd:(POBRewardedAd *)rewardedAd {
     NSLog(@"RewardedAd : Will present");
 }
 
-// Notifies the delegate that the rewarded ad has been animated off the screen.
-- (void)rewardedAdDidDismissAd:(POBRewardedAd *)rewardedAd{
+- (void)rewardedAdDidPresentAd:(POBRewardedAd *)rewardedAd {
+    NSLog(@"RewardedAd : Did present");
+}
+
+// Notifies the delegate that the rewardedAd ad has been animated off the screen.
+- (void)rewardedAdDidDismissAd:(POBRewardedAd *)rewardedAd {
     NSLog(@"RewardedAd : Dismissed");
 }
 
 // Notifies the delegate of ad click
 - (void)rewardedAdDidClickAd:(POBRewardedAd *)rewardedAd {
-    NSLog(@"RewardedAd : Ad Clicked");
+    NSLog(@"RewardedAd : Ad clicked");
 }
 
 // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
@@ -102,13 +110,12 @@
 
 // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd shouldReward:(POBReward *)reward {
-    NSLog(@"RewardedAd : Should reward - %@(%@)",[reward.amount stringValue],reward.currencyType);
+    NSLog(@"RewardedAd : Ad should reward - %@(%@)",[reward.amount stringValue],reward.currencyType);
 }
 
 #pragma mark - dealloc
 - (void)dealloc {
-    _rewardedAd = nil;
+    self.rewardedAd = nil;
 }
+
 @end
-
-
