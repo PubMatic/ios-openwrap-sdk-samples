@@ -34,6 +34,7 @@ class RewardedAdViewController: UIViewController,POBRewardedAdDelegate {
 
         let eventHandler = DFPRewardedEventHandler(adUnitId: dfpAdUnit)
 
+        // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
         rewardedAd = POBRewardedAd(
             publisherId: pubId,
             profileId: profileId,

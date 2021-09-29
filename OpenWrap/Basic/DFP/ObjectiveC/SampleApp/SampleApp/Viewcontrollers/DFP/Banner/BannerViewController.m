@@ -44,7 +44,7 @@
                                                                              andSizes:adSizes];
 
     // Create a banner view
-    // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+    // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
     self.bannerView = [[POBBannerView alloc]
                                  initWithPublisherId:PUB_ID
                                  profileId:PROFILE_ID

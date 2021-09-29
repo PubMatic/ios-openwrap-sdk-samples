@@ -13,10 +13,15 @@
 		200F17B025B83EF500ECD793 /* AdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F17AF25B83EF500ECD793 /* AdLoader.swift */; };
 		200F17C225B8683200ECD793 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F17C125B8683200ECD793 /* Constants.swift */; };
 		201885C825B563E000CAC69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201885C725B563E000CAC69F /* AppDelegate.swift */; };
-		201885CC25B563E000CAC69F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201885CB25B563E000CAC69F /* ViewController.swift */; };
+		201885CC25B563E000CAC69F /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201885CB25B563E000CAC69F /* BannerViewController.swift */; };
 		201885CF25B563E000CAC69F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201885CD25B563E000CAC69F /* Main.storyboard */; };
 		201885D125B563E500CAC69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201885D025B563E500CAC69F /* Assets.xcassets */; };
 		201885D425B563E500CAC69F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201885D225B563E500CAC69F /* LaunchScreen.storyboard */; };
+		3EF8645226E76A090016CE7C /* NativeAndBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8645126E76A090016CE7C /* NativeAndBannerViewController.swift */; };
+		3EF8645426E76D310016CE7C /* NativeAndBannerAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8645326E76D300016CE7C /* NativeAndBannerAdLoader.swift */; };
+		3EF8645826E782320016CE7C /* CustomNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8645626E782320016CE7C /* CustomNativeAdView.xib */; };
+		3EF8645926E782320016CE7C /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8645726E782320016CE7C /* NativeAdView.xib */; };
+		3EF8645E26E782B50016CE7C /* CustomNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8645D26E782B50016CE7C /* CustomNativeAdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +32,17 @@
 		200F17C125B8683200ECD793 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		201885C425B563E000CAC69F /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		201885C725B563E000CAC69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		201885CB25B563E000CAC69F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		201885CB25B563E000CAC69F /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		201885CE25B563E000CAC69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		201885D025B563E500CAC69F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		201885D325B563E500CAC69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		201885D525B563E500CAC69F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201885E925B57CA700CAC69F /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		3EF8645126E76A090016CE7C /* NativeAndBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAndBannerViewController.swift; sourceTree = "<group>"; };
+		3EF8645326E76D300016CE7C /* NativeAndBannerAdLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAndBannerAdLoader.swift; sourceTree = "<group>"; };
+		3EF8645626E782320016CE7C /* CustomNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNativeAdView.xib; sourceTree = "<group>"; };
+		3EF8645726E782320016CE7C /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
+		3EF8645D26E782B50016CE7C /* CustomNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNativeAdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,19 +77,40 @@
 		201885C625B563E000CAC69F /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				3EF8645A26E782390016CE7C /* Views */,
+				3EF8645526E781450016CE7C /* Resources */,
+				3EF8645326E76D300016CE7C /* NativeAndBannerAdLoader.swift */,
 				200F17AF25B83EF500ECD793 /* AdLoader.swift */,
 				200F17AA25B83ECF00ECD793 /* Bidding.swift */,
 				200F17A925B83ECF00ECD793 /* BiddingManager.swift */,
 				200F17A825B83ECF00ECD793 /* TAMAdLoader.swift */,
 				201885C725B563E000CAC69F /* AppDelegate.swift */,
-				201885CB25B563E000CAC69F /* ViewController.swift */,
+				201885CB25B563E000CAC69F /* BannerViewController.swift */,
 				201885CD25B563E000CAC69F /* Main.storyboard */,
 				201885D025B563E500CAC69F /* Assets.xcassets */,
 				201885D225B563E500CAC69F /* LaunchScreen.storyboard */,
 				201885D525B563E500CAC69F /* Info.plist */,
 				200F17C125B8683200ECD793 /* Constants.swift */,
+				3EF8645126E76A090016CE7C /* NativeAndBannerViewController.swift */,
 			);
 			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		3EF8645526E781450016CE7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3EF8645626E782320016CE7C /* CustomNativeAdView.xib */,
+				3EF8645726E782320016CE7C /* NativeAdView.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3EF8645A26E782390016CE7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EF8645D26E782B50016CE7C /* CustomNativeAdView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8CABDB18C710634204D98782 /* Pods */ = {
@@ -148,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				201885D425B563E500CAC69F /* LaunchScreen.storyboard in Resources */,
+				3EF8645826E782320016CE7C /* CustomNativeAdView.xib in Resources */,
+				3EF8645926E782320016CE7C /* NativeAdView.xib in Resources */,
 				201885D125B563E500CAC69F /* Assets.xcassets in Resources */,
 				201885CF25B563E000CAC69F /* Main.storyboard in Resources */,
 			);
@@ -180,11 +213,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201885CC25B563E000CAC69F /* ViewController.swift in Sources */,
+				201885CC25B563E000CAC69F /* BannerViewController.swift in Sources */,
 				200F17AB25B83ECF00ECD793 /* TAMAdLoader.swift in Sources */,
 				201885C825B563E000CAC69F /* AppDelegate.swift in Sources */,
+				3EF8645E26E782B50016CE7C /* CustomNativeAdView.swift in Sources */,
+				3EF8645426E76D310016CE7C /* NativeAndBannerAdLoader.swift in Sources */,
 				200F17B025B83EF500ECD793 /* AdLoader.swift in Sources */,
 				200F17C225B8683200ECD793 /* Constants.swift in Sources */,
+				3EF8645226E76A090016CE7C /* NativeAndBannerViewController.swift in Sources */,
 				200F17AC25B83ECF00ECD793 /* BiddingManager.swift in Sources */,
 				200F17AD25B83ECF00ECD793 /* Bidding.swift in Sources */,
 			);

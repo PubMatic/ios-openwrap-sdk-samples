@@ -60,14 +60,14 @@ class TAMAdLoader: NSObject, DTBAdCallback, Bidding {
         print("TAM: Failed to load ad with error :\(error)")
         let err = NSError(domain: "Failed to load ad from TAM SDK.", code: Int(error.rawValue), userInfo: nil)
         // Notify failure to bidding manager
-        delegate!.bidder(self, didFailToReceiveAdWithError: err)
+        delegate?.bidder(self, didFailToReceiveAdWithError: err)
     }
 
     func onSuccess(_ adResponse: DTBAdResponse?) {
         print("TAM: Received Response From A9 TAM SDK")
         // Pass TAM custom targeting parameters to bidding manager.
         if let custom = adResponse?.customTargeting() {
-            delegate!.bidder(self, didReceivedAdResponse: [
+            delegate?.bidder(self, didReceivedAdResponse: [
                 "TAM": custom
             ])
         }

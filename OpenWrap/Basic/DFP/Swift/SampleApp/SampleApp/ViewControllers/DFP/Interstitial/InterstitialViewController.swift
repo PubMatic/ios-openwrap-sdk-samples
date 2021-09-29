@@ -39,7 +39,7 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate, POBB
         let eventHandler = DFPInterstitialEventHandler(adUnitId: dfpAdUnit)
         
         // Create an interstitial object
-        // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+        // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         interstitial?.bidEventDelegate = self
         // Set the delegate

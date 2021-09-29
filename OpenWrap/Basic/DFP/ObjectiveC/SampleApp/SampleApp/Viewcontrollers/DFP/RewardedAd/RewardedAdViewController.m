@@ -40,7 +40,7 @@
     DFPRewardedEventHandler *eventHandler = [[DFPRewardedEventHandler alloc] initWithAdUnitId:DFP_AU];
 
     // Create a Rewarded object
-    // For test IDs refer - https://community.pubmatic.com/x/_xQ5AQ#TestandDebugYourIntegration-TestProfile/Placements
+    // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
     self.rewardedAd = [POBRewardedAd rewardedAdWithPublisherId:PUB_ID
                                                       profileId:PROFILE_ID
                                                        adUnitId:OW_ADUNIT_ID

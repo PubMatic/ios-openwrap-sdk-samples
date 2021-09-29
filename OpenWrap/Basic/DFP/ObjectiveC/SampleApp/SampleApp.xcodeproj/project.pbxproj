@@ -10,6 +10,10 @@
 		2094BE2C26495F9E00C9CA84 /* RewardedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2094BE2B26495F9E00C9CA84 /* RewardedAdViewController.m */; };
 		21C50A1E237ADFAC00F7546E /* IBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */; };
 		2BDB4DB8BD26AFE683215A8A /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C348F0E7FCC00043A44DC5E5 /* libPods-SampleApp.a */; };
+		3E35A54526D8C19B0060BD66 /* NativeBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35A54426D8C19B0060BD66 /* NativeBannerViewController.m */; };
+		3E71021C26DF61AC009398D1 /* CustomNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E71021B26DF61AC009398D1 /* CustomNativeAdView.m */; };
+		3E71022B26E0F838009398D1 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E71022926E0F838009398D1 /* NativeAdView.xib */; };
+		3E71022C26E0F838009398D1 /* CustomNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E71022A26E0F838009398D1 /* CustomNativeAdView.xib */; };
 		3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F421CA538300C31F40 /* BannerViewController.m */; };
 		3E7AF7F921CA538A00C31F40 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F721CA538900C31F40 /* InterstitialViewController.m */; };
 		3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6D414234DA8810060BA43 /* VideoInterstitialViewController.m */; };
@@ -26,6 +30,12 @@
 		2094BE2B26495F9E00C9CA84 /* RewardedAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardedAdViewController.m; sourceTree = "<group>"; };
 		21C50A1C237ADFAC00F7546E /* IBVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBVideoViewController.h; sourceTree = "<group>"; };
 		21C50A1D237ADFAC00F7546E /* IBVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBVideoViewController.m; sourceTree = "<group>"; };
+		3E35A54326D8C19B0060BD66 /* NativeBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeBannerViewController.h; sourceTree = "<group>"; };
+		3E35A54426D8C19B0060BD66 /* NativeBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeBannerViewController.m; sourceTree = "<group>"; };
+		3E71021A26DF61AC009398D1 /* CustomNativeAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNativeAdView.h; sourceTree = "<group>"; };
+		3E71021B26DF61AC009398D1 /* CustomNativeAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNativeAdView.m; sourceTree = "<group>"; };
+		3E71022926E0F838009398D1 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NativeAdView.xib; path = Assets/NativeAdView.xib; sourceTree = "<group>"; };
+		3E71022A26E0F838009398D1 /* CustomNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomNativeAdView.xib; path = Assets/CustomNativeAdView.xib; sourceTree = "<group>"; };
 		3E7AF7F421CA538300C31F40 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		3E7AF7F521CA538300C31F40 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		3E7AF7F721CA538900C31F40 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
@@ -83,9 +93,28 @@
 			path = InBannerVideo;
 			sourceTree = "<group>";
 		};
+		3E35A54226D8C17C0060BD66 /* NativeBanner */ = {
+			isa = PBXGroup;
+			children = (
+				3E35A54326D8C19B0060BD66 /* NativeBannerViewController.h */,
+				3E35A54426D8C19B0060BD66 /* NativeBannerViewController.m */,
+			);
+			path = NativeBanner;
+			sourceTree = "<group>";
+		};
+		3E71021926DF6180009398D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E71021A26DF61AC009398D1 /* CustomNativeAdView.h */,
+				3E71021B26DF61AC009398D1 /* CustomNativeAdView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3E7AF7E821CA52D100C31F40 /* DFP */ = {
 			isa = PBXGroup;
 			children = (
+				3E35A54226D8C17C0060BD66 /* NativeBanner */,
 				2094BE2926495F7800C9CA84 /* RewardedAd */,
 				3E7AF7EA21CA52DE00C31F40 /* Banner */,
 				21C50A1B237ADF7900F7546E /* InBannerVideo */,
@@ -151,6 +180,7 @@
 		E600238B1DC0B03300833CDB /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				3E71021926DF6180009398D1 /* Views */,
 				E60023BF1DC1CB8200833CDB /* Appdelegate */,
 				E60023C31DC1CB8200833CDB /* Viewcontrollers */,
 				E60023BE1DC1CB6E00833CDB /* Resources */,
@@ -170,6 +200,8 @@
 		E60023BE1DC1CB6E00833CDB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E71022A26E0F838009398D1 /* CustomNativeAdView.xib */,
+				3E71022926E0F838009398D1 /* NativeAdView.xib */,
 				E60023951DC0B03300833CDB /* Main.storyboard */,
 				E60023981DC0B03300833CDB /* Assets.xcassets */,
 				E600239A1DC0B03300833CDB /* LaunchScreen.storyboard */,
@@ -257,6 +289,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E71022B26E0F838009398D1 /* NativeAdView.xib in Resources */,
+				3E71022C26E0F838009398D1 /* CustomNativeAdView.xib in Resources */,
 				E600239C1DC0B03300833CDB /* LaunchScreen.storyboard in Resources */,
 				E60023991DC0B03300833CDB /* Assets.xcassets in Resources */,
 				E60023971DC0B03300833CDB /* Main.storyboard in Resources */,
@@ -314,8 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */,
+				3E71021C26DF61AC009398D1 /* CustomNativeAdView.m in Sources */,
 				3E7AF7F921CA538A00C31F40 /* InterstitialViewController.m in Sources */,
 				21C50A1E237ADFAC00F7546E /* IBVideoViewController.m in Sources */,
+				3E35A54526D8C19B0060BD66 /* NativeBannerViewController.m in Sources */,
 				3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */,
 				2094BE2C26495F9E00C9CA84 /* RewardedAdViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,

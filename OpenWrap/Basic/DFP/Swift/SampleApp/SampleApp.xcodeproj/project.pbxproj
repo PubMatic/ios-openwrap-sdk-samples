@@ -14,6 +14,10 @@
 		2094BE512649617700C9CA84 /* RewardedAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094BE502649617700C9CA84 /* RewardedAdViewController.swift */; };
 		20C273AA237D1D740042D9E4 /* IBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C273A9237D1D740042D9E4 /* IBVideoViewController.swift */; };
 		3E23BC0A234DB8860022D28B /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */; };
+		3E71022026DF9A92009398D1 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E71021E26DF9A92009398D1 /* NativeAdView.xib */; };
+		3E71022126DF9A92009398D1 /* CustomNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E71021F26DF9A92009398D1 /* CustomNativeAdView.xib */; };
+		3E71022326DF9AC3009398D1 /* CustomNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E71022226DF9AC3009398D1 /* CustomNativeAdView.swift */; };
+		3E71022826DFA10A009398D1 /* NativeAndBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E71022726DFA109009398D1 /* NativeAndBannerViewController.swift */; };
 		3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */; };
 		3E7DE94321DF3E1400E70EA6 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94221DF3E1400E70EA6 /* InterstitialViewController.swift */; };
 		972A5F55BD89AAFF39EA50D7 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 838EA3CDEEE5854A2619A168 /* libPods-SampleApp.a */; };
@@ -30,6 +34,10 @@
 		2094BE502649617700C9CA84 /* RewardedAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedAdViewController.swift; sourceTree = "<group>"; };
 		20C273A9237D1D740042D9E4 /* IBVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBVideoViewController.swift; sourceTree = "<group>"; };
 		3E23BC09234DB8860022D28B /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
+		3E71021E26DF9A92009398D1 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
+		3E71021F26DF9A92009398D1 /* CustomNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNativeAdView.xib; sourceTree = "<group>"; };
+		3E71022226DF9AC3009398D1 /* CustomNativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNativeAdView.swift; sourceTree = "<group>"; };
+		3E71022726DFA109009398D1 /* NativeAndBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAndBannerViewController.swift; sourceTree = "<group>"; };
 		3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		3E7DE94221DF3E1400E70EA6 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		838EA3CDEEE5854A2619A168 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +77,7 @@
 		20364F5221AFAF0B00F9D5DD /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				3E71021D26DF97C2009398D1 /* Views */,
 				20364F6721AFAF3600F9D5DD /* AppDelegate */,
 				20364F6621AFAF2A00F9D5DD /* ViewControllers */,
 				20364F6521AFAF2300F9D5DD /* Resources */,
@@ -79,6 +88,8 @@
 		20364F6521AFAF2300F9D5DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E71021F26DF9A92009398D1 /* CustomNativeAdView.xib */,
+				3E71021E26DF9A92009398D1 /* NativeAdView.xib */,
 				20364F6B21AFB02100F9D5DD /* Assets.xcassets */,
 				20364F6C21AFB02100F9D5DD /* Info.plist */,
 				20364F5721AFAF0B00F9D5DD /* Main.storyboard */,
@@ -127,9 +138,26 @@
 			path = VideoInterstitial;
 			sourceTree = "<group>";
 		};
+		3E71021D26DF97C2009398D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E71022226DF9AC3009398D1 /* CustomNativeAdView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E71022426DF9C61009398D1 /* NativeBanner */ = {
+			isa = PBXGroup;
+			children = (
+				3E71022726DFA109009398D1 /* NativeAndBannerViewController.swift */,
+			);
+			path = NativeBanner;
+			sourceTree = "<group>";
+		};
 		3E7DE92E21DF3D5100E70EA6 /* DFP */ = {
 			isa = PBXGroup;
 			children = (
+				3E71022426DF9C61009398D1 /* NativeBanner */,
 				2094BE4D2649615F00C9CA84 /* RewardedAd */,
 				20C273A8237D1D540042D9E4 /* InBannerVideo */,
 				3E7DE93021DF3D5A00E70EA6 /* Banner */,
@@ -233,6 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E71022026DF9A92009398D1 /* NativeAdView.xib in Resources */,
+				3E71022126DF9A92009398D1 /* CustomNativeAdView.xib in Resources */,
 				20364F5E21AFAF0D00F9D5DD /* LaunchScreen.storyboard in Resources */,
 				20364F6D21AFB02100F9D5DD /* Assets.xcassets in Resources */,
 				20364F5921AFAF0B00F9D5DD /* Main.storyboard in Resources */,
@@ -289,9 +319,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E23BC0A234DB8860022D28B /* VideoInterstitialViewController.swift in Sources */,
+				3E71022826DFA10A009398D1 /* NativeAndBannerViewController.swift in Sources */,
 				3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
 				2094BE512649617700C9CA84 /* RewardedAdViewController.swift in Sources */,
+				3E71022326DF9AC3009398D1 /* CustomNativeAdView.swift in Sources */,
 				20C273AA237D1D740042D9E4 /* IBVideoViewController.swift in Sources */,
 				3E7DE94321DF3E1400E70EA6 /* InterstitialViewController.swift in Sources */,
 			);
