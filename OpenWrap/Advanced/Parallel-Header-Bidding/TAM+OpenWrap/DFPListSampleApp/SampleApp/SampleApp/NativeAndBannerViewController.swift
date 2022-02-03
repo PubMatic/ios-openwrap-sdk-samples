@@ -1,6 +1,6 @@
 /*
 * PubMatic Inc. ("PubMatic") CONFIDENTIAL
-* Unpublished Copyright (c) 2006-2021 PubMatic, All Rights Reserved.
+* Unpublished Copyright (c) 2006-2022 PubMatic, All Rights Reserved.
 *
 * NOTICE:  All information contained herein is, and remains the property of PubMatic.
 * The intellectual and technical concepts contained herein are proprietary to PubMatic
@@ -127,6 +127,7 @@ extension NativeAndBannerViewController {
             // Add the banner view to this cell
             if let nativeAdView = loader.nativeAdView {
                 // Attach nativeAdView if it is present
+                nativeAdView.frame = adCell.contentView.bounds
                 adCell.contentView.addSubview(nativeAdView)
             } else {
                 // Attach bannerView if it is present

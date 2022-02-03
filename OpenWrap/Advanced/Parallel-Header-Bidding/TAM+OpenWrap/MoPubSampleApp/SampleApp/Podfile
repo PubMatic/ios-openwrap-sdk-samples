@@ -4,8 +4,8 @@ use_frameworks!
 target 'SampleApp' do
  
     pod 'mopub-ios-sdk', '5.16.2'
-    pod 'OpenWrapSDK', '2.3.1'
-    pod 'OpenWrapHandlerMoPub', '2.4.0'
+    pod 'OpenWrapSDK'
+    pod 'OpenWrapHandlerMoPub'
     pod 'AmazonPublisherServicesSDK', '4.0.0'
 
 end
