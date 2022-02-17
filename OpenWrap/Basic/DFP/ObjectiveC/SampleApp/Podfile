@@ -2,7 +2,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 def required_pods
-    pod 'Google-Mobile-Ads-SDK', '8.3.0'
+    pod 'Google-Mobile-Ads-SDK', '9.0.0'
     pod 'OpenWrapSDK'
     pod 'OpenWrapHandlerDFP'
 end

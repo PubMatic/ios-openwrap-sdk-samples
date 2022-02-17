@@ -35,7 +35,7 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let adSizes = [NSValueFromGADAdSize(kGADAdSizeMediumRectangle)]
+        let adSizes = [NSValueFromGADAdSize(GADAdSizeMediumRectangle)]
         
         // Create a native event handler for your ad server. Make
         // sure you use separate event handler objects to create each banner

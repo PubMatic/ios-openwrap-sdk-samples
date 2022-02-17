@@ -44,7 +44,7 @@ let PUB_ID = "156276"
 // profile id for banner video
 let PROFILE_ID: NSNumber = 1757
 
-let AD_SIZE: GADAdSize = kGADAdSizeMediumRectangle
+let AD_SIZE: GADAdSize = GADAdSizeMediumRectangle
 
 let MAXIMUM_FEEDS = 100
 

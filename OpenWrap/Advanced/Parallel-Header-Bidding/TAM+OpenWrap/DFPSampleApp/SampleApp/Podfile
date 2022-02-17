@@ -3,7 +3,7 @@ platform :ios, '10.0'
 
 target 'SampleApp' do
  
-    pod 'Google-Mobile-Ads-SDK', '8.5.0'
+    pod 'Google-Mobile-Ads-SDK', '9.0.0'
     pod 'OpenWrapSDK'
     pod 'OpenWrapHandlerDFP'
     pod 'AmazonPublisherServicesSDK', '4.0.0'

@@ -32,7 +32,7 @@ class IBVideoViewController: UIViewController,POBBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let adSizes = [NSValueFromGADAdSize(kGADAdSizeMediumRectangle)]
+        let adSizes = [NSValueFromGADAdSize(GADAdSizeMediumRectangle)]
         
         // Create a banner custom event handler for your ad server. Make
         // sure you use separate event handler objects to create each interstitial
@@ -47,7 +47,7 @@ class IBVideoViewController: UIViewController,POBBannerViewDelegate {
         self.bannerView?.delegate = self
 
         // Add the banner view to your view hierarchy
-        addBannerToView(banner: self.bannerView!, adSize: kGADAdSizeMediumRectangle.size)
+        addBannerToView(banner: self.bannerView!, adSize: GADAdSizeMediumRectangle.size)
         
         // Load Ad
         self.bannerView?.loadAd()

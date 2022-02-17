@@ -39,13 +39,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *adSizes = @[ NSValueFromGADAdSize(kGADAdSizeMediumRectangle) ];
+    NSArray *adSizes = @[ NSValueFromGADAdSize(GADAdSizeMediumRectangle) ];
     
     // Create a native event handler for your ad server. Make
     // sure you use separate event handler objects to create each banner
     // For example, The code below creates an event handler for GAM ad server.
     GAMNativeEventHandler * eventHandler = [[GAMNativeEventHandler alloc] initWithAdUnitId:GAM_AU
-                                                                                   adTypes:@[kGADAdLoaderAdTypeNative, kGADAdLoaderAdTypeCustomNative]
+                                                                                   adTypes:@[GADAdLoaderAdTypeNative, GADAdLoaderAdTypeCustomNative]
                                                                                    options:nil
                                                                                   andSizes:adSizes];
     // Set event handler delegate for native ad

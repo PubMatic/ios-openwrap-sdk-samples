@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *adSizes = @[ NSValueFromGADAdSize(kGADAdSizeBanner) ];
+    NSArray *adSizes = @[ NSValueFromGADAdSize(GADAdSizeBanner) ];
     
     // Create a banner custom event handler for your ad server. Make sure you use
     // separate event handler objects to create each banner view.
@@ -54,7 +54,7 @@
     self.bannerView.delegate = self;
     
     // Add the banner view to your view hierarchy
-    [self addBannerToView:self.bannerView withSize:kGADAdSizeBanner.size];
+    [self addBannerToView:self.bannerView withSize:GADAdSizeBanner.size];
 
     // Load Ad
     [self.bannerView loadAd];

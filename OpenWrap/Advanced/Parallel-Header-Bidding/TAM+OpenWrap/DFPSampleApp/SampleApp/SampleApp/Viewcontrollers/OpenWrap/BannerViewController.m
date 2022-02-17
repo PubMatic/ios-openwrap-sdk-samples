@@ -78,7 +78,7 @@
 }
 
 - (void)initializeOpenWrapBannerView {
-    NSArray *adSizes = @[ NSValueFromGADAdSize(kGADAdSizeBanner) ];
+    NSArray *adSizes = @[ NSValueFromGADAdSize(GADAdSizeBanner) ];
     
     // Create a banner custom event handler for your ad server. Make sure you use
     // separate event handler objects to create each banner view.
