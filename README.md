@@ -16,7 +16,6 @@ for documentation on using OpenWrap SDK.
 | Ad Server | Samples |
 | ------------- | ------------- |
 |   DFP    | [Banner/Interstitial Samples](./OpenWrap/Basic/DFP/) |
-|   MoPub    | [Banner/Interstitial Samples](./OpenWrap/Basic/Mopub/) |
 |   No Ad Server(Programmatic Only)    | [Banner/Interstitial Samples](./OpenWrap/Basic/NoAdServer/) |
 |   Custom Ad Server    | [Banner/Interstitial Samples](./OpenWrap/Basic/OtherAdServer/) |
 
