@@ -110,6 +110,11 @@ didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Dismissed modal");
 }
 
+// Notifies the delegate that the banner view was clicked.
+- (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Ad clicked");
+}
+
 #pragma mark - dealloc
 - (void)dealloc {
     _bannerView = nil;

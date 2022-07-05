@@ -92,6 +92,11 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
         print("Banner : Dismissed modal")
     }
 
+    // Notifies the delegate that the banner view was clicked.
+    func bannerViewDidClickAd(_ bannerView: POBBannerView) {
+        print("Banner : Ad clicked")
+    }
+
     deinit {
         bannerView = nil
     }

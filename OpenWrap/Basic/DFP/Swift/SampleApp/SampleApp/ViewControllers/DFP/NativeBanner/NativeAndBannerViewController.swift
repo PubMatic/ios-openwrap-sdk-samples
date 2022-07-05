@@ -88,11 +88,17 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
         print("Banner : Will present modal")
     }
+    
     // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
     func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
         print("Banner : Dismissed modal")
     }
     
+    // Notifies the delegate that the banner view was clicked.
+    func bannerViewDidClickAd(_ bannerView: POBBannerView) {
+        print("Banner : Ad clicked")
+    }
+
     // MARK: - POBGAMNativeAdDelegate
     // Notifies the delegate that an ad has been successfully received.
     func eventHandler(_ eventHandler: POBBannerEvent, didReceive nativeAd: GADNativeAd) {

@@ -185,6 +185,11 @@ extension ViewController {
     func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
         print("Banner view dismissed modal")
     }
+    
+    // Notifies the delegate that the banner view was clicked.
+    func bannerViewDidClickAd(_ bannerView: POBBannerView) {
+        print("Banner : Ad clicked")
+    }
 }
 
 
