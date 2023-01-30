@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+target 'SampleApp' do
+ 
+    pod 'Google-Mobile-Ads-SDK', '9.0.0'
+    pod 'OpenWrapSDK'
+    pod 'OpenWrapHandlerDFP'
+    pod 'AmazonPublisherServicesSDK', '4.0.0'
+
+end
