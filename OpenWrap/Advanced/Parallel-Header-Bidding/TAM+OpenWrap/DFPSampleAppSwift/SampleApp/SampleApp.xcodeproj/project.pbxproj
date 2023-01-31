@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,13 +12,13 @@
 		2076C8C82551257000BC07AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2076C8C72551257000BC07AF /* Assets.xcassets */; };
 		2076C8CB2551257000BC07AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2076C8C92551257000BC07AF /* LaunchScreen.storyboard */; };
 		2076C8CE2551257000BC07AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076C8CD2551257000BC07AF /* main.m */; };
-		BA62CC4428C9FE3400A8FAE5 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC4328C9FE3400A8FAE5 /* BannerViewController.swift */; };
-		BA62CC4628CA00B800A8FAE5 /* TAMAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC4528CA00B800A8FAE5 /* TAMAdLoader.swift */; };
-		BA62CC4828CA022F00A8FAE5 /* Bidding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC4728CA022F00A8FAE5 /* Bidding.swift */; };
-		BA62CC4A28CA026400A8FAE5 /* BiddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC4928CA026400A8FAE5 /* BiddingManager.swift */; };
-		BA62CC4C28CA53B200A8FAE5 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC4B28CA53B200A8FAE5 /* InterstitialViewController.swift */; };
-		BA62CC4E28CA549B00A8FAE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC4D28CA549B00A8FAE5 /* MainViewController.swift */; };
 		BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC5028CA71FC00A8FAE5 /* Constants.swift */; };
+		E276929429892F1300D86AD1 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929129892F1300D86AD1 /* BannerViewController.swift */; };
+		E276929529892F1300D86AD1 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929229892F1300D86AD1 /* InterstitialViewController.swift */; };
+		E276929629892F1300D86AD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929329892F1300D86AD1 /* MainViewController.swift */; };
+		E276929C29892F2300D86AD1 /* BiddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929829892F2300D86AD1 /* BiddingManager.swift */; };
+		E276929D29892F2300D86AD1 /* Bidding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929929892F2300D86AD1 /* Bidding.swift */; };
+		E276929E29892F2300D86AD1 /* TAMAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929B29892F2300D86AD1 /* TAMAdLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +30,14 @@
 		2076C8CA2551257000BC07AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2076C8CC2551257000BC07AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2076C8CD2551257000BC07AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BA62CC4328C9FE3400A8FAE5 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
-		BA62CC4528CA00B800A8FAE5 /* TAMAdLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMAdLoader.swift; sourceTree = "<group>"; };
-		BA62CC4728CA022F00A8FAE5 /* Bidding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bidding.swift; sourceTree = "<group>"; };
-		BA62CC4928CA026400A8FAE5 /* BiddingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiddingManager.swift; sourceTree = "<group>"; };
-		BA62CC4B28CA53B200A8FAE5 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
-		BA62CC4D28CA549B00A8FAE5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA62CC4F28CA708B00A8FAE5 /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		BA62CC5028CA71FC00A8FAE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E276929129892F1300D86AD1 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		E276929229892F1300D86AD1 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		E276929329892F1300D86AD1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E276929829892F2300D86AD1 /* BiddingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingManager.swift; sourceTree = "<group>"; };
+		E276929929892F2300D86AD1 /* Bidding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidding.swift; sourceTree = "<group>"; };
+		E276929B29892F2300D86AD1 /* TAMAdLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAMAdLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,8 @@
 		2076C8BA2551256A00BC07AF /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				E276929729892F2300D86AD1 /* OpenWrap */,
+				E276929A29892F2300D86AD1 /* TAM */,
 				BA62CC5028CA71FC00A8FAE5 /* Constants.swift */,
 				BA62CC4F28CA708B00A8FAE5 /* SampleApp-Bridging-Header.h */,
 				2076C8D62551259900BC07AF /* Viewcontrollers */,
@@ -104,30 +106,11 @@
 		2076C8D62551259900BC07AF /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				2076C8D8255125AD00BC07AF /* OpenWrap */,
-				2076C8D7255125A400BC07AF /* TAM */,
+				E276929129892F1300D86AD1 /* BannerViewController.swift */,
+				E276929229892F1300D86AD1 /* InterstitialViewController.swift */,
+				E276929329892F1300D86AD1 /* MainViewController.swift */,
 			);
 			path = Viewcontrollers;
-			sourceTree = "<group>";
-		};
-		2076C8D7255125A400BC07AF /* TAM */ = {
-			isa = PBXGroup;
-			children = (
-				BA62CC4528CA00B800A8FAE5 /* TAMAdLoader.swift */,
-			);
-			path = TAM;
-			sourceTree = "<group>";
-		};
-		2076C8D8255125AD00BC07AF /* OpenWrap */ = {
-			isa = PBXGroup;
-			children = (
-				BA62CC4328C9FE3400A8FAE5 /* BannerViewController.swift */,
-				BA62CC4728CA022F00A8FAE5 /* Bidding.swift */,
-				BA62CC4928CA026400A8FAE5 /* BiddingManager.swift */,
-				BA62CC4B28CA53B200A8FAE5 /* InterstitialViewController.swift */,
-				BA62CC4D28CA549B00A8FAE5 /* MainViewController.swift */,
-			);
-			path = OpenWrap;
 			sourceTree = "<group>";
 		};
 		36FA158931ADAE1B4F669545 /* Pods */ = {
@@ -135,6 +118,23 @@
 			children = (
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E276929729892F2300D86AD1 /* OpenWrap */ = {
+			isa = PBXGroup;
+			children = (
+				E276929829892F2300D86AD1 /* BiddingManager.swift */,
+				E276929929892F2300D86AD1 /* Bidding.swift */,
+			);
+			path = OpenWrap;
+			sourceTree = "<group>";
+		};
+		E276929A29892F2300D86AD1 /* TAM */ = {
+			isa = PBXGroup;
+			children = (
+				E276929B29892F2300D86AD1 /* TAMAdLoader.swift */,
+			);
+			path = TAM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,14 +209,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2076C8BD2551256A00BC07AF /* AppDelegate.m in Sources */,
-				BA62CC4E28CA549B00A8FAE5 /* MainViewController.swift in Sources */,
-				BA62CC4428C9FE3400A8FAE5 /* BannerViewController.swift in Sources */,
-				BA62CC4828CA022F00A8FAE5 /* Bidding.swift in Sources */,
+				E276929D29892F2300D86AD1 /* Bidding.swift in Sources */,
 				2076C8CE2551257000BC07AF /* main.m in Sources */,
-				BA62CC4A28CA026400A8FAE5 /* BiddingManager.swift in Sources */,
-				BA62CC4C28CA53B200A8FAE5 /* InterstitialViewController.swift in Sources */,
-				BA62CC4628CA00B800A8FAE5 /* TAMAdLoader.swift in Sources */,
+				E276929429892F1300D86AD1 /* BannerViewController.swift in Sources */,
+				E276929629892F1300D86AD1 /* MainViewController.swift in Sources */,
+				E276929C29892F2300D86AD1 /* BiddingManager.swift in Sources */,
 				BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */,
+				E276929E29892F2300D86AD1 /* TAMAdLoader.swift in Sources */,
+				E276929529892F1300D86AD1 /* InterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
