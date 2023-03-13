@@ -13,12 +13,12 @@
 		2076C8CB2551257000BC07AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2076C8C92551257000BC07AF /* LaunchScreen.storyboard */; };
 		2076C8CE2551257000BC07AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076C8CD2551257000BC07AF /* main.m */; };
 		BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC5028CA71FC00A8FAE5 /* Constants.swift */; };
-		E276929429892F1300D86AD1 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929129892F1300D86AD1 /* BannerViewController.swift */; };
-		E276929529892F1300D86AD1 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929229892F1300D86AD1 /* InterstitialViewController.swift */; };
-		E276929629892F1300D86AD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929329892F1300D86AD1 /* MainViewController.swift */; };
-		E276929C29892F2300D86AD1 /* BiddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929829892F2300D86AD1 /* BiddingManager.swift */; };
-		E276929D29892F2300D86AD1 /* Bidding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929929892F2300D86AD1 /* Bidding.swift */; };
-		E276929E29892F2300D86AD1 /* TAMAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276929B29892F2300D86AD1 /* TAMAdLoader.swift */; };
+		E27692862988F76B00D86AD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692832988F76A00D86AD1 /* MainViewController.swift */; };
+		E27692872988F76B00D86AD1 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692842988F76A00D86AD1 /* InterstitialViewController.swift */; };
+		E27692882988F76B00D86AD1 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692852988F76B00D86AD1 /* BannerViewController.swift */; };
+		E276928E2988F77E00D86AD1 /* TAMAdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276928A2988F77E00D86AD1 /* TAMAdLoader.swift */; };
+		E276928F2988F77E00D86AD1 /* BiddingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276928C2988F77E00D86AD1 /* BiddingManager.swift */; };
+		E27692902988F77E00D86AD1 /* Bidding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276928D2988F77E00D86AD1 /* Bidding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,12 @@
 		2076C8CD2551257000BC07AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA62CC4F28CA708B00A8FAE5 /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		BA62CC5028CA71FC00A8FAE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E276929129892F1300D86AD1 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
-		E276929229892F1300D86AD1 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
-		E276929329892F1300D86AD1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E276929829892F2300D86AD1 /* BiddingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingManager.swift; sourceTree = "<group>"; };
-		E276929929892F2300D86AD1 /* Bidding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidding.swift; sourceTree = "<group>"; };
-		E276929B29892F2300D86AD1 /* TAMAdLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAMAdLoader.swift; sourceTree = "<group>"; };
+		E27692832988F76A00D86AD1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E27692842988F76A00D86AD1 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		E27692852988F76B00D86AD1 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		E276928A2988F77E00D86AD1 /* TAMAdLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAMAdLoader.swift; sourceTree = "<group>"; };
+		E276928C2988F77E00D86AD1 /* BiddingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingManager.swift; sourceTree = "<group>"; };
+		E276928D2988F77E00D86AD1 /* Bidding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 		2076C8BA2551256A00BC07AF /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				E276929729892F2300D86AD1 /* OpenWrap */,
-				E276929A29892F2300D86AD1 /* TAM */,
+				E276928B2988F77E00D86AD1 /* OpenWrap */,
+				E27692892988F77E00D86AD1 /* TAM */,
 				BA62CC5028CA71FC00A8FAE5 /* Constants.swift */,
 				BA62CC4F28CA708B00A8FAE5 /* SampleApp-Bridging-Header.h */,
 				2076C8D62551259900BC07AF /* Viewcontrollers */,
@@ -106,9 +106,9 @@
 		2076C8D62551259900BC07AF /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				E276929129892F1300D86AD1 /* BannerViewController.swift */,
-				E276929229892F1300D86AD1 /* InterstitialViewController.swift */,
-				E276929329892F1300D86AD1 /* MainViewController.swift */,
+				E27692852988F76B00D86AD1 /* BannerViewController.swift */,
+				E27692842988F76A00D86AD1 /* InterstitialViewController.swift */,
+				E27692832988F76A00D86AD1 /* MainViewController.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -120,21 +120,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E276929729892F2300D86AD1 /* OpenWrap */ = {
+		E27692892988F77E00D86AD1 /* TAM */ = {
 			isa = PBXGroup;
 			children = (
-				E276929829892F2300D86AD1 /* BiddingManager.swift */,
-				E276929929892F2300D86AD1 /* Bidding.swift */,
-			);
-			path = OpenWrap;
-			sourceTree = "<group>";
-		};
-		E276929A29892F2300D86AD1 /* TAM */ = {
-			isa = PBXGroup;
-			children = (
-				E276929B29892F2300D86AD1 /* TAMAdLoader.swift */,
+				E276928A2988F77E00D86AD1 /* TAMAdLoader.swift */,
 			);
 			path = TAM;
+			sourceTree = "<group>";
+		};
+		E276928B2988F77E00D86AD1 /* OpenWrap */ = {
+			isa = PBXGroup;
+			children = (
+				E276928C2988F77E00D86AD1 /* BiddingManager.swift */,
+				E276928D2988F77E00D86AD1 /* Bidding.swift */,
+			);
+			path = OpenWrap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,15 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27692902988F77E00D86AD1 /* Bidding.swift in Sources */,
+				E27692882988F76B00D86AD1 /* BannerViewController.swift in Sources */,
 				2076C8BD2551256A00BC07AF /* AppDelegate.m in Sources */,
-				E276929D29892F2300D86AD1 /* Bidding.swift in Sources */,
 				2076C8CE2551257000BC07AF /* main.m in Sources */,
-				E276929429892F1300D86AD1 /* BannerViewController.swift in Sources */,
-				E276929629892F1300D86AD1 /* MainViewController.swift in Sources */,
-				E276929C29892F2300D86AD1 /* BiddingManager.swift in Sources */,
+				E276928F2988F77E00D86AD1 /* BiddingManager.swift in Sources */,
 				BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */,
-				E276929E29892F2300D86AD1 /* TAMAdLoader.swift in Sources */,
-				E276929529892F1300D86AD1 /* InterstitialViewController.swift in Sources */,
+				E276928E2988F77E00D86AD1 /* TAMAdLoader.swift in Sources */,
+				E27692862988F76B00D86AD1 /* MainViewController.swift in Sources */,
+				E27692872988F76B00D86AD1 /* InterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
