@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     // Create an interstitial object
-    // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+    // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
     self.interstitial = [[POBInterstitial alloc]
                                  initWithPublisherId:PUB_ID
                                  profileId:PROFILE_ID

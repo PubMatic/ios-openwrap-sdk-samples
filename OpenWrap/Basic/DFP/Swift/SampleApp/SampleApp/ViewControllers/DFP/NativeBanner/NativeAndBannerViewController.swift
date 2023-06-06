@@ -1,6 +1,6 @@
 /*
 * PubMatic Inc. ("PubMatic") CONFIDENTIAL
-* Unpublished Copyright (c) 2006-2022 PubMatic, All Rights Reserved.
+* Unpublished Copyright (c) 2006-2023 PubMatic, All Rights Reserved.
 *
 * NOTICE:  All information contained herein is, and remains the property of PubMatic. The intellectual and technical concepts contained
 * herein are proprietary to PubMatic and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
@@ -37,10 +37,10 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
 
         let adSizes = [NSValueFromGADAdSize(GADAdSizeMediumRectangle)]
         
-        // Create a native event handler for your ad server. Make
+        // Create a native banner event handler for your ad server. Make
         // sure you use separate event handler objects to create each banner
         // For example, The code below creates an event handler for GAM ad server.
-        let eventHandler = GAMNativeEventHandler(adUnitId: gamAdUnit, adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative], options: nil, andSizes: adSizes)
+        let eventHandler = GAMNativeBannerEventHandler(adUnitId: gamAdUnit, adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative], options: nil, andSizes: adSizes)
         
         // Set event handler delegate for native ad
         eventHandler.nativeDelegate = self
@@ -126,7 +126,7 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
         
         // Show custom native ad
         self.showCustomNativeAd(customNativeAd: customNativeAd)
-
+        
         // Record impression
         customNativeAd.recordImpression()
     }

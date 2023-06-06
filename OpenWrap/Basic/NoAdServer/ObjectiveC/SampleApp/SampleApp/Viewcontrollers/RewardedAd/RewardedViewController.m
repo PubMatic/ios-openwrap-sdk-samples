@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     // Create a Rewarded object
-    // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+    // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
     self.rewardedAd = [POBRewardedAd rewardedAdWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID];
     // Set the delegate
     self.rewardedAd.delegate = self;

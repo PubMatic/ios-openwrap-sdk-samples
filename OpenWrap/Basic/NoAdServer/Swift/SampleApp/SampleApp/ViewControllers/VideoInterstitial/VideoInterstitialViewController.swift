@@ -1,6 +1,6 @@
 /*
 * PubMatic Inc. ("PubMatic") CONFIDENTIAL
-* Unpublished Copyright (c) 2006-2022 PubMatic, All Rights Reserved.
+* Unpublished Copyright (c) 2006-2023 PubMatic, All Rights Reserved.
 *
 * NOTICE:  All information contained herein is, and remains the property of PubMatic. The intellectual and technical concepts contained
 * herein are proprietary to PubMatic and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
@@ -31,7 +31,7 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,
         super.viewDidLoad()
         
         // Create an interstitial object
-        // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+        // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit)
         
         // Set the delegate

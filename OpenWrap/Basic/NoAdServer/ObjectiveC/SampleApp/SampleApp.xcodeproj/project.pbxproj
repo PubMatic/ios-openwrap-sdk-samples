@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20C273A1237C1B4D0042D9E4 /* IBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C273A0237C1B4D0042D9E4 /* IBVideoViewController.m */; };
+		20C273A1237C1B4D0042D9E4 /* MRECVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C273A0237C1B4D0042D9E4 /* MRECVideoViewController.m */; };
 		2160C826251E147D0037E767 /* RewardedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160C825251E147D0037E767 /* RewardedViewController.m */; };
 		21C1A290226491F10052C4C6 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C1A28B226491F10052C4C6 /* BannerViewController.m */; };
 		21C1A291226491F10052C4C6 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C1A28F226491F10052C4C6 /* InterstitialViewController.m */; };
 		3E92061E2350968F00460561 /* VideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92061D2350968F00460561 /* VideoInterstitialViewController.m */; };
-		6DD1CD88F3F4D6C0AF4B8CB2 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4221EB0B4309FAF380D3353 /* libPods-SampleApp.a */; };
+		523E45F82A08F6FE0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E45F72A08F6FD0028473A /* NativeAdCustomMediumTemplateView.xib */; };
+		527986962A01B25B00CED193 /* NativeStandardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986952A01B25B00CED193 /* NativeStandardViewController.m */; };
+		527986992A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986982A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m */; };
+		B69EB02729E7CB9B00BBDB73 /* MRECDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02629E7CB9B00BBDB73 /* MRECDisplayViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
 		E60023991DC0B03300833CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60023981DC0B03300833CDB /* Assets.xcassets */; };
@@ -21,19 +24,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20C2739F237C1B4D0042D9E4 /* IBVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBVideoViewController.h; sourceTree = "<group>"; };
-		20C273A0237C1B4D0042D9E4 /* IBVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBVideoViewController.m; sourceTree = "<group>"; };
+		20C2739F237C1B4D0042D9E4 /* MRECVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECVideoViewController.h; sourceTree = "<group>"; };
+		20C273A0237C1B4D0042D9E4 /* MRECVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECVideoViewController.m; sourceTree = "<group>"; };
 		2160C824251E147D0037E767 /* RewardedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardedViewController.h; sourceTree = "<group>"; };
 		2160C825251E147D0037E767 /* RewardedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardedViewController.m; sourceTree = "<group>"; };
 		21C1A28B226491F10052C4C6 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		21C1A28C226491F10052C4C6 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		21C1A28E226491F10052C4C6 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		21C1A28F226491F10052C4C6 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
-		294A352B0AC533FD1E3F99E9 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3E92061C2350968F00460561 /* VideoInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoInterstitialViewController.h; sourceTree = "<group>"; };
 		3E92061D2350968F00460561 /* VideoInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoInterstitialViewController.m; sourceTree = "<group>"; };
-		A3BB657523928C76141F526D /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		B4221EB0B4309FAF380D3353 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523E45F72A08F6FD0028473A /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
+		527986942A01B25B00CED193 /* NativeStandardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeStandardViewController.h; sourceTree = "<group>"; };
+		527986952A01B25B00CED193 /* NativeStandardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardViewController.m; sourceTree = "<group>"; };
+		527986972A01B7B100CED193 /* NativeStandardCustomTemplateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeStandardCustomTemplateViewController.h; sourceTree = "<group>"; };
+		527986982A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardCustomTemplateViewController.m; sourceTree = "<group>"; };
+		B69EB02529E7CB9B00BBDB73 /* MRECDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECDisplayViewController.h; sourceTree = "<group>"; };
+		B69EB02629E7CB9B00BBDB73 /* MRECDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECDisplayViewController.m; sourceTree = "<group>"; };
 		E60023891DC0B03300833CDB /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E600238D1DC0B03300833CDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E60023961DC0B03300833CDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,20 +56,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD1CD88F3F4D6C0AF4B8CB2 /* libPods-SampleApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20C2739E237C1B2A0042D9E4 /* InBannerVideo */ = {
+		20C2739E237C1B2A0042D9E4 /* MRECVideo */ = {
 			isa = PBXGroup;
 			children = (
-				20C2739F237C1B4D0042D9E4 /* IBVideoViewController.h */,
-				20C273A0237C1B4D0042D9E4 /* IBVideoViewController.m */,
+				20C2739F237C1B4D0042D9E4 /* MRECVideoViewController.h */,
+				20C273A0237C1B4D0042D9E4 /* MRECVideoViewController.m */,
 			);
-			path = InBannerVideo;
+			path = MRECVideo;
 			sourceTree = "<group>";
 		};
 		2160C823251E14550037E767 /* RewardedAd */ = {
@@ -101,11 +107,45 @@
 			path = VideoInterstitial;
 			sourceTree = "<group>";
 		};
+		527986912A01B20500CED193 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				527986932A01B21400CED193 /* StandardCustomTemplate */,
+				527986922A01B20F00CED193 /* Standard */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		527986922A01B20F00CED193 /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				527986942A01B25B00CED193 /* NativeStandardViewController.h */,
+				527986952A01B25B00CED193 /* NativeStandardViewController.m */,
+			);
+			path = Standard;
+			sourceTree = "<group>";
+		};
+		527986932A01B21400CED193 /* StandardCustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				527986972A01B7B100CED193 /* NativeStandardCustomTemplateViewController.h */,
+				527986982A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m */,
+			);
+			path = StandardCustomTemplate;
+			sourceTree = "<group>";
+		};
+		B69EB02229E7CB3F00BBDB73 /* MRECDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				B69EB02529E7CB9B00BBDB73 /* MRECDisplayViewController.h */,
+				B69EB02629E7CB9B00BBDB73 /* MRECDisplayViewController.m */,
+			);
+			path = MRECDisplay;
+			sourceTree = "<group>";
+		};
 		CE0D51AC82F04DCDD0665E98 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				294A352B0AC533FD1E3F99E9 /* Pods-SampleApp.debug.xcconfig */,
-				A3BB657523928C76141F526D /* Pods-SampleApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -116,7 +156,6 @@
 				E600238B1DC0B03300833CDB /* SampleApp */,
 				E600238A1DC0B03300833CDB /* Products */,
 				CE0D51AC82F04DCDD0665E98 /* Pods */,
-				F25887FCE6F635D7658E6B5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +189,7 @@
 		E60023BE1DC1CB6E00833CDB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				523E45F72A08F6FD0028473A /* NativeAdCustomMediumTemplateView.xib */,
 				E60023951DC0B03300833CDB /* Main.storyboard */,
 				E60023981DC0B03300833CDB /* Assets.xcassets */,
 				E600239A1DC0B03300833CDB /* LaunchScreen.storyboard */,
@@ -170,21 +210,15 @@
 		E60023C31DC1CB8200833CDB /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				527986912A01B20500CED193 /* Native */,
+				B69EB02229E7CB3F00BBDB73 /* MRECDisplay */,
 				2160C823251E14550037E767 /* RewardedAd */,
-				20C2739E237C1B2A0042D9E4 /* InBannerVideo */,
+				20C2739E237C1B2A0042D9E4 /* MRECVideo */,
 				21C1A28A226491F10052C4C6 /* Banner */,
 				21C1A28D226491F10052C4C6 /* Interstitial */,
 				3E92061B2350965F00460561 /* VideoInterstitial */,
 			);
 			path = Viewcontrollers;
-			sourceTree = "<group>";
-		};
-		F25887FCE6F635D7658E6B5C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B4221EB0B4309FAF380D3353 /* libPods-SampleApp.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +228,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60023AB1DC0B03400833CDB /* Build configuration list for PBXNativeTarget "SampleApp" */;
 			buildPhases = (
-				313A4E94B78F45C1F6443FE1 /* [CP] Check Pods Manifest.lock */,
 				E60023851DC0B03300833CDB /* Sources */,
 				E60023861DC0B03300833CDB /* Frameworks */,
 				E60023871DC0B03300833CDB /* Resources */,
-				15C4DBE44D048AAB96B2BA97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E600239C1DC0B03300833CDB /* LaunchScreen.storyboard in Resources */,
+				523E45F82A08F6FE0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */,
 				E60023991DC0B03300833CDB /* Assets.xcassets in Resources */,
 				E60023971DC0B03300833CDB /* Main.storyboard in Resources */,
 			);
@@ -257,59 +290,19 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		15C4DBE44D048AAB96B2BA97 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
-				"${PODS_ROOT}/OpenWrapSDK/OpenWrapSDK/POBResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/POBResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		313A4E94B78F45C1F6443FE1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SampleApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		E60023851DC0B03300833CDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				21C1A290226491F10052C4C6 /* BannerViewController.m in Sources */,
-				20C273A1237C1B4D0042D9E4 /* IBVideoViewController.m in Sources */,
+				20C273A1237C1B4D0042D9E4 /* MRECVideoViewController.m in Sources */,
+				B69EB02729E7CB9B00BBDB73 /* MRECDisplayViewController.m in Sources */,
 				2160C826251E147D0037E767 /* RewardedViewController.m in Sources */,
 				21C1A291226491F10052C4C6 /* InterstitialViewController.m in Sources */,
+				527986992A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m in Sources */,
 				3E92061E2350968F00460561 /* VideoInterstitialViewController.m in Sources */,
+				527986962A01B25B00CED193 /* NativeStandardViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,
 			);
@@ -445,37 +438,39 @@
 		};
 		E60023AC1DC0B03400833CDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 294A352B0AC533FD1E3F99E9 /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K674QKEVPS;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K674QKEVPS;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pubmatic.ow.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "Development profile - wild card id";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Wildcard 2022 profile";
 			};
 			name = Debug;
 		};
 		E60023AD1DC0B03400833CDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3BB657523928C76141F526D /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K674QKEVPS;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K674QKEVPS;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pubmatic.ow.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "Development profile - wild card id";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Wildcard 2022 profile";
 			};
 			name = Release;
 		};

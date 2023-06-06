@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		20A6A85123CEEF1E00D42B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6A85023CEEF1E00D42B57 /* AppDelegate.swift */; };
 		20A6A85323CEEF1E00D42B57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6A85223CEEF1E00D42B57 /* SceneDelegate.swift */; };
-		20A6A85523CEEF1E00D42B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6A85423CEEF1E00D42B57 /* ViewController.swift */; };
+		20A6A85523CEEF1E00D42B57 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A6A85423CEEF1E00D42B57 /* BannerViewController.swift */; };
 		20A6A85823CEEF1E00D42B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A6A85623CEEF1E00D42B57 /* Main.storyboard */; };
 		20A6A85A23CEEF2000D42B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A6A85923CEEF2000D42B57 /* Assets.xcassets */; };
 		20A6A85D23CEEF2000D42B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A6A85B23CEEF2000D42B57 /* LaunchScreen.storyboard */; };
 		50BE52E1101AA335DB441956 /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57ED310FD69BECF4A3B784B1 /* libPods-SampleApp.a */; };
+		B6F0A47029F952F8001AD610 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A46F29F952F8001AD610 /* DataTableViewCell.swift */; };
+		B6F0A47229F9532B001AD610 /* NativeAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A47129F9532B001AD610 /* NativeAdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +23,14 @@
 		20A6A84D23CEEF1E00D42B57 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A6A85023CEEF1E00D42B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20A6A85223CEEF1E00D42B57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20A6A85423CEEF1E00D42B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20A6A85423CEEF1E00D42B57 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		20A6A85723CEEF1E00D42B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20A6A85923CEEF2000D42B57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20A6A85C23CEEF2000D42B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20A6A85E23CEEF2000D42B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57ED310FD69BECF4A3B784B1 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F0A46F29F952F8001AD610 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		B6F0A47129F9532B001AD610 /* NativeAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdViewController.swift; sourceTree = "<group>"; };
 		DEC08E8D7FE66D908C215C70 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +69,9 @@
 			children = (
 				20A6A85023CEEF1E00D42B57 /* AppDelegate.swift */,
 				20A6A85223CEEF1E00D42B57 /* SceneDelegate.swift */,
-				20A6A85423CEEF1E00D42B57 /* ViewController.swift */,
+				20A6A85423CEEF1E00D42B57 /* BannerViewController.swift */,
+				B6F0A47129F9532B001AD610 /* NativeAdViewController.swift */,
+				B6F0A46F29F952F8001AD610 /* DataTableViewCell.swift */,
 				20A6A85623CEEF1E00D42B57 /* Main.storyboard */,
 				20A6A85923CEEF2000D42B57 /* Assets.xcassets */,
 				20A6A85B23CEEF2000D42B57 /* LaunchScreen.storyboard */,
@@ -207,9 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20A6A85523CEEF1E00D42B57 /* ViewController.swift in Sources */,
+				B6F0A47229F9532B001AD610 /* NativeAdViewController.swift in Sources */,
+				20A6A85523CEEF1E00D42B57 /* BannerViewController.swift in Sources */,
 				20A6A85123CEEF1E00D42B57 /* AppDelegate.swift in Sources */,
 				20A6A85323CEEF1E00D42B57 /* SceneDelegate.swift in Sources */,
+				B6F0A47029F952F8001AD610 /* DataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +365,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +386,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
