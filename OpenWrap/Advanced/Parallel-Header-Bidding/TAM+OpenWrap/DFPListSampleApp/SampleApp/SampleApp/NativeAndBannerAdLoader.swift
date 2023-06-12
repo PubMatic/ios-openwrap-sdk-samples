@@ -119,7 +119,7 @@ class NativeAndBannerAdLoader: NSObject, POBBidEventDelegate, BiddingManagerDele
         biddingManager = BiddingManager()
 
         // Create event handler
-        let eventHandler = GAMNativeBannerEventHandler(adUnitId: gamAdUnit, adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative], options: nil, andSizes: [NSValueFromGADAdSize(adSize)])
+        let eventHandler = GAMNativeEventHandler(adUnitId: gamAdUnit, adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative], options: nil, andSizes: [NSValueFromGADAdSize(adSize)])
 
         // Create a banner view
         bannerView = POBBannerView(publisherId: pubid, profileId:

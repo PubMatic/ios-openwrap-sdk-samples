@@ -52,6 +52,10 @@ class NativeAdViewController: UIViewController, UITableViewDelegate, UITableView
         adTableView.delegate = self
         adTableView.dataSource = self
         nativeAdLoader.delegate = self
+        nativeAdLoader.request.adServerURL = "https://owsdk-stagingams.pubmatic.com:8443/sdk/php/sdkNative.php"
+        let userInfo = POBUserInfo()
+        userInfo.keywords = "atn:mediumwithrequiredparams_p:10.01"
+        OpenWrapSDK.setUserInfo(userInfo)
         // Load the data source for the feed
         loadDataSource()
         // Prefetch ads one-by-one
