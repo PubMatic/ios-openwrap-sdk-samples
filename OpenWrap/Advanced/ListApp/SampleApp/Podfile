@@ -4,5 +4,5 @@ use_frameworks!
 
 target 'SampleApp' do
   # Pods for SampleApp
-    pod 'OpenWrapSDK'
+    pod 'OpenWrapSDK', '>=3.5.0'
 end

@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     // Create a banner view
-    // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
+    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
     self.bannerView = [[POBBannerView alloc] initWithPublisherId:PUB_ID
                                                        profileId:PROFILE_ID
                                                         adUnitId:OW_ADUNIT_ID
@@ -102,6 +102,10 @@ didFailToReceiveAdWithError:(NSError *)error {
 // Notifies the delegate that the banner view was clicked.
 - (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
     NSLog(@"Banner : Ad clicked");
+}
+
+- (void)bannerViewDidRecordImpression:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Ad Impression");
 }
 
 #pragma mark - dealloc

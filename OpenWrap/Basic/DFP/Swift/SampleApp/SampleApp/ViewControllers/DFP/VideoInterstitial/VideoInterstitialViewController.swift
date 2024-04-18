@@ -39,7 +39,8 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,
         let eventHandler = DFPInterstitialEventHandler(adUnitId: dfpAdUnit)
         
         // Create an interstitial object
-        // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
@@ -118,6 +119,10 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,
     // Notifies the delegate of VAST based video ad events
     func interstitialDidFinishVideoPlayback(_ interstitial: POBInterstitial) {
         print("Interstitial : Finished video playback")
+    }
+
+    func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
+        print("Interstitial : Ad Impression")
     }
 
     deinit {

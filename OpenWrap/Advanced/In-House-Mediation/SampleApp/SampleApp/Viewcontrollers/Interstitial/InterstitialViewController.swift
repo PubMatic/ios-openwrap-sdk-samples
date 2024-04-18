@@ -17,7 +17,7 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBi
         super.viewDidLoad()
         
         // Create an interstitial object
-        // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+        // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit)
         
         // Set the delegate
@@ -98,6 +98,10 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBi
     // Notifies the delegate of an error encountered while showing an ad
     func interstitial(_ interstitial: POBInterstitial, didFailToShowAdWithError error: Error) {
         print("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
+    }
+
+    func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
+        print("Interstitial : Ad Impression")
     }
 
     deinit {

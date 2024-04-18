@@ -3,5 +3,5 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'SampleApp' do
-    pod 'OpenWrapSDK'
+    pod 'OpenWrapSDK', '>=3.5.0'
 end

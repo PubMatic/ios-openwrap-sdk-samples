@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     // Create a Rewarded object
-    // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
+    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
     self.rewardedAd = [POBRewardedAd rewardedAdWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID];
     // Set the delegate
     self.rewardedAd.delegate = self;
@@ -103,6 +103,10 @@
 // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd shouldReward:(POBReward *)reward {
     NSLog(@"RewardedAd : Should reward - %@(%@)",[reward.amount stringValue],reward.currencyType);
+}
+
+- (void)rewardedAdDidRecordImpression:(POBRewardedAd *)rewardedAd {
+    NSLog(@"RewardedAd : Ad Impression");
 }
 
 #pragma mark - dealloc

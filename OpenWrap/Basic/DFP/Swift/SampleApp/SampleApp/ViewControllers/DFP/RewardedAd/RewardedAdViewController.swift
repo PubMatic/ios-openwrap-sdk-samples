@@ -34,7 +34,8 @@ class RewardedAdViewController: UIViewController,POBRewardedAdDelegate {
 
         let eventHandler = DFPRewardedEventHandler(adUnitId: dfpAdUnit)
 
-        // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
         rewardedAd = POBRewardedAd(
             publisherId: pubId,
             profileId: profileId,
@@ -105,6 +106,10 @@ class RewardedAdViewController: UIViewController,POBRewardedAdDelegate {
     // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
     func rewardedAd(_ rewardedAd: POBRewardedAd, shouldReward reward: POBReward) {
         print("RewardedAd : Ad should reward \(reward.amount)(\(reward.currencyType))")
+    }
+
+    func rewardedAdDidRecordImpression(_ rewardedAd: POBRewardedAd) {
+        print("RewardedAd : Ad Impression")
     }
 
     // MARK: - dealloc

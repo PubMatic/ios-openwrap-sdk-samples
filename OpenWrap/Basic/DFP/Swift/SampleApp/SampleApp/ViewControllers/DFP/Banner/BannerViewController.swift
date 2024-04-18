@@ -40,7 +40,8 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
         let eventHandler = DFPBannerEventHandler(adUnitId: dfpAdUnit, andSizes: adSizes)
 
         // Create a banner view
-        // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
         self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         
         // Set the delegate
@@ -112,6 +113,10 @@ class BannerViewController: UIViewController,POBBannerViewDelegate {
         print("Banner : Ad clicked")
     }
     
+    func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
+        print("Banner : Ad Impression")
+    }
+
     deinit {
         bannerView = nil
     }

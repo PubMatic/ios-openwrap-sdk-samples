@@ -44,7 +44,7 @@
                                                                                  andSizes:adSizes];
 
     // Create a banner view
-    // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
     self.bannerView = [[POBBannerView alloc]
                        initWithPublisherId:PUB_ID
                        profileId:PROFILE_ID
@@ -56,9 +56,9 @@
     [self addBannerToView:self.bannerView withSize:GADAdSizeMediumRectangle.size];
     // Load Ad
     [self.bannerView loadAd];
-    }
+}
 
-    - (void)addBannerToView:(UIView *)bannerView withSize:(CGSize )size{
+- (void)addBannerToView:(UIView *)bannerView withSize:(CGSize )size {
     bannerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:bannerView];
 
@@ -74,48 +74,53 @@
         [bannerView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = YES;
         [bannerView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
     }
-    }
+}
 
-    #pragma mark - Banner view delegate methods
-    //Provides a view controller to use for presenting model views
-    - (UIViewController *)bannerViewPresentationController {
+#pragma mark - Banner view delegate methods
+
+//Provides a view controller to use for presenting model views
+- (UIViewController *)bannerViewPresentationController {
     return self;
-    }
+}
 
-    // Notifies the delegate that an ad has been successfully loaded and rendered.
-    - (void)bannerViewDidReceiveAd:(POBBannerView *)bannerView {
+// Notifies the delegate that an ad has been successfully loaded and rendered.
+- (void)bannerViewDidReceiveAd:(POBBannerView *)bannerView {
     NSLog(@"Banner : Ad received with size %@ ", bannerView.creativeSize);
-    }
+}
 
-    // Notifies the delegate of an error encountered while loading or rendering an ad.
-    - (void)bannerView:(POBBannerView *)bannerView
-    didFailToReceiveAdWithError:(NSError *)error {
+// Notifies the delegate of an error encountered while loading or rendering an ad.
+- (void)bannerView:(POBBannerView *)bannerView
+didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
-    }
+}
 
-    // Notifies the delegate whenever current app goes in the background due to user click
-    - (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
+// Notifies the delegate whenever current app goes in the background due to user click
+- (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
     NSLog(@"Banner : Will leave app");
-    }
+}
 
-    // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
-    - (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
+// Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
+- (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
     NSLog(@"Banner : Will present modal");
-    }
+}
 
-    // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
-    - (void)bannerViewDidDismissModal:(POBBannerView *)bannerView {
+// Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
+- (void)bannerViewDidDismissModal:(POBBannerView *)bannerView {
     NSLog(@"Banner : Dismissed modal");
-    }
+}
 
-    // Notifies the delegate that the banner view was clicked.
-    - (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
+// Notifies the delegate that the banner view was clicked.
+- (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
     NSLog(@"Banner : Ad clicked");
-    }
+}
 
-    #pragma mark - dealloc
-    - (void)dealloc {
+- (void)bannerViewDidRecordImpression:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Ad Impression");
+}
+
+#pragma mark - dealloc
+- (void)dealloc {
     _bannerView = nil;
-    }
+}
 
 @end

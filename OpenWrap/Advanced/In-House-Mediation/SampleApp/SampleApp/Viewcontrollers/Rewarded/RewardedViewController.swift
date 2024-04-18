@@ -16,7 +16,7 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEve
         super.viewDidLoad()
        
         // Create an rewarded object
-        // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+        // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
         rewardedAd = POBRewardedAd(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit)
         
         // Set the delegate
@@ -93,6 +93,11 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEve
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToReceiveAdWithError error: Error) {
         print("Rewarded Ad : Ad failed with error  \(error.localizedDescription)")
     }
+
+    func rewardedAdDidRecordImpression(_ rewardedAd: POBRewardedAd) {
+        print("Rewarded Ad : Ad Impression")
+    }
+
     deinit {
         rewardedAd = nil
     }

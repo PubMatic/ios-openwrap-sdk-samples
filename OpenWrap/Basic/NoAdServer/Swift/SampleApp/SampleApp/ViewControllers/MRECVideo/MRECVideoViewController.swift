@@ -30,7 +30,8 @@ class MRECVideoViewController: UIViewController, POBBannerViewDelegate {
         super.viewDidLoad()
 
         // Create a banner view
-        // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
         self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, adSizes: [POBAdSizeMake(300, 250)])
         // Set the delegate
         self.bannerView?.delegate = self
@@ -95,6 +96,10 @@ class MRECVideoViewController: UIViewController, POBBannerViewDelegate {
     // Notifies the delegate that the banner view was clicked.
     func bannerViewDidClickAd(_ bannerView: POBBannerView) {
         print("Banner : Ad clicked")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
+        print("Banner : Ad Impression")
     }
 
     deinit {

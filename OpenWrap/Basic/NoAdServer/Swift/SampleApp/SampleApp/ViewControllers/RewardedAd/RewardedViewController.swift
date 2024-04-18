@@ -31,7 +31,8 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate {
         super.viewDidLoad()
         
         // Create a RewardedAd object
-        // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
         rewardedAd = POBRewardedAd(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit)
         
         // Set the delegate
@@ -103,7 +104,11 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate {
     func rewardedAd(_ rewardedAd: POBRewardedAd, shouldReward reward: POBReward) {
         print("RewardedAd : Ad should reward \(reward.amount)(\(reward.currencyType))")
     }
-    
+
+    func rewardedAdDidRecordImpression(_ rewardedAd: POBRewardedAd) {
+        print("RewardedAd : Ad Impression")
+    }
+
     deinit {
         rewardedAd = nil
     }

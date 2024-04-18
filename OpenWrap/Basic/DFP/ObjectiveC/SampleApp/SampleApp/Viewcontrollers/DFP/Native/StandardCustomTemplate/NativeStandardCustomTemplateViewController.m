@@ -63,7 +63,7 @@
     eventHandler.formatIds = @[CUSTOM_FORMAT_ID];
     
     // Create the Native Ad Loader with desired template type (in this case, medium).
-    // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
     self.nativeAdLoader = [[POBNativeAdLoader alloc] initWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID templateType:POBNativeTemplateTypeMedium eventHandler:eventHandler];
     
     // Set the delegate.

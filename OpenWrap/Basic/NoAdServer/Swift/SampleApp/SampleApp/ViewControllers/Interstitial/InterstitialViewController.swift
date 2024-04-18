@@ -31,7 +31,8 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
         super.viewDidLoad()
         
         // Create an interstitial object
-        // For test IDs refer - https://community.pubmatic.com/display/IOPO/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit)
         
         // Set the delegate
@@ -95,6 +96,10 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate {
     // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
     func interstitialWillLeaveApplication(_ interstitial: POBInterstitial) {
         print("Interstitial : Will leave app")
+    }
+
+    func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
+        print("Interstitial : Ad Impression")
     }
 
     deinit {

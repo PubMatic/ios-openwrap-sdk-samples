@@ -55,7 +55,7 @@
     eventHandler.customNativeDelegate = self;
 
     // Create a banner view
-    // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
     self.bannerView = [[POBBannerView alloc]
                                  initWithPublisherId:PUB_ID
                                  profileId:PROFILE_ID
@@ -107,6 +107,10 @@ didFailToReceiveAdWithError:(NSError *)error {
 // Notifies the delegate that the banner view was clicked.
 - (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
     NSLog(@"Banner : Ad clicked");
+}
+
+- (void)bannerViewDidRecordImpression:(POBBannerView *)bannerView {
+    NSLog(@"Banner : Ad Impression");
 }
 
 #pragma mark - OW GAM Native Ad event handler Delegate

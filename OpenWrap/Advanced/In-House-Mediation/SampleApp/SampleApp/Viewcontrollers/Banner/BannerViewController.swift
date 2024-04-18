@@ -16,7 +16,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
         super.viewDidLoad()
         
         // Create a banner view
-        // For test IDs refer - https://community.pubmatic.com/x/IAI5AQ#TestandDebugYourIntegration-TestProfile/Placement
+        // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
         self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, adSizes: [POBAdSizeMake(320, 50)])
         
         // Set the delegate
@@ -87,6 +87,12 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
         print("Banner : Ad failed with error : \(error.localizedDescription )")
     }
     
+    func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
+        print("Banner : Ad Impression")
+    }
+
+    // MARK: - Private functions
+
     func addBannerToView(banner : POBBannerView?, adSize : CGSize) -> Void {
         
         banner?.frame = CGRect(x: (self.view.bounds.size.width - adSize.width)/2

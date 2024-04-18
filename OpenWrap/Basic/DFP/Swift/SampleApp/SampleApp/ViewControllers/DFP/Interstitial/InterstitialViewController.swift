@@ -39,7 +39,8 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate, POBB
         let eventHandler = DFPInterstitialEventHandler(adUnitId: dfpAdUnit)
         
         // Create an interstitial object
-        // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+        // For test IDs refer -
+        // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
         interstitial = POBInterstitial(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, eventHandler: eventHandler!)
         interstitial?.bidEventDelegate = self
         // Set the delegate
@@ -122,6 +123,10 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate, POBB
         print("Interstitial : Ad Expired")
     }
     
+    func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
+        print("Interstitial : Ad Impression")
+    }
+
     deinit {
         interstitial = nil
     }

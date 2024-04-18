@@ -68,7 +68,8 @@ extension BannerViewController {
             if index == adIndex{
                 
                 // Create a banner view
-                // For test IDs refer OpenWrap community document.
+                // For test IDs refer OpenWrap document: -
+                // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
                 let bannerView = POBBannerView(publisherId: PUB_ID, profileId: PROFILE_ID, adUnitId: OW_ADUNIT_ID, adSizes:[bannerAdSize])
                 
                 // Set the delegate
@@ -189,6 +190,10 @@ extension BannerViewController {
     // Notifies the delegate that the banner view was clicked.
     func bannerViewDidClickAd(_ bannerView: POBBannerView) {
         print("Banner : Ad clicked")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
+        print("Banner : Ad Impression")
     }
 }
 

@@ -41,7 +41,7 @@
     DFPInterstitialEventHandler *eventHandler = [[DFPInterstitialEventHandler alloc] initWithAdUnitId:DFP_AU];
     
     // Create an interstitial object
-    // For test IDs refer - https://community.pubmatic.com/display/IDFP/Test+and+debug+your+integration
+    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
     self.interstitial = [[POBInterstitial alloc]
                                  initWithPublisherId:PUB_ID
                                  profileId:PROFILE_ID
@@ -108,6 +108,10 @@
 // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
 - (void)interstitialWillLeaveApplication:(nonnull POBInterstitial *)interstitial {
     NSLog(@"Interstitial : Will leave app");
+}
+
+- (void)interstitialDidRecordImpression:(POBInterstitial *)interstitial {
+    NSLog(@"Interstitial : Ad Impression");
 }
 
 #pragma mark - dealloc
