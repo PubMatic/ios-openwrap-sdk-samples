@@ -31,14 +31,19 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
     var nativeAdLoader: POBNativeAdLoader?
     var nativeAd: POBNativeAd?
     var nativeAdView: UIView?
-    
+    @IBOutlet weak var renderAdButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Create a native event handler for your ad server.
         // For example, The code below creates an event handler for GAM ad server.
-        let eventHandler = GAMNativeEventHandler(adUnitId: gamAdUnit, adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative], options: nil, owFormatId: owFormatId)
-        
+        let eventHandler = GAMNativeEventHandler(
+            adUnitId: gamAdUnit,
+            adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative],
+            options: nil,
+            owFormatId: owFormatId)
+
         // Populate your native ad view and return it in the given rendering block.
         eventHandler.nativeRenderingBlock = {[weak self] (nativeAd: GADNativeAd) -> GADNativeAdView? in
             guard let self = self else {
@@ -61,13 +66,15 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         // Create the Native Ad Loader with desired template type (in this case, small).
         // For test IDs refer -
         // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
-        self.nativeAdLoader = POBNativeAdLoader(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, templateType: POBNativeTemplateType.small, eventHandler: eventHandler)
+        self.nativeAdLoader = POBNativeAdLoader(
+            publisherId: pubId,
+            profileId: profileId,
+            adUnitId: owAdUnit,
+            templateType: POBNativeTemplateType.small,
+            eventHandler: eventHandler)
         
         // Set the delegate.
         self.nativeAdLoader?.delegate = self
-        
-        // Load ad.
-        self.nativeAdLoader?.loadAd()
     }
     
     deinit {
@@ -76,17 +83,16 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         nativeAd = nil
     }
     
-    // MARK: - POBNativeAdLoaderDelegate
-    
-    // Notifies the delegate that an ad has been successfully loaded.
-    func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
-        print("Native : Ad received.")
-        self.nativeAd = nativeAd
-        // Set the native ad delegate.
-        self.nativeAd?.setAdDelegate(self)
-        
+    @IBAction func loadAdButtonAction(_ sender: Any) {
+        // Close previously shown native ad if any
+        closeNativeAd()
+        renderAdButton.isEnabled = false
+        nativeAdLoader?.loadAd()
+    }
+
+    @IBAction func renderAdButtonAction(_ sender: Any) {
         // Render the native ad.
-        nativeAd.renderAd(completion: { [weak self] (nativeAd: POBNativeAd, error: Error?) in
+        nativeAd?.renderAd(completion: { [weak self] (_: POBNativeAd, error: Error?) in
             guard let self = self else {
                 return
             }
@@ -99,6 +105,17 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
                 print("Native : Ad rendered.")
             }
         })
+    }
+
+    // MARK: - POBNativeAdLoaderDelegate
+
+    // Notifies the delegate that an ad has been successfully loaded.
+    func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
+        print("Native : Ad received.")
+        self.nativeAd = nativeAd
+        // Set the native ad delegate.
+        self.nativeAd?.setAdDelegate(self)
+        renderAdButton.isEnabled = true
     }
     
     // Notifies the delegate of an error encountered while loading an ad.
@@ -150,30 +167,29 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
     
     // MARK: - Supporting Methods
     
-    func addNativeAdViewToView(nativeAdView: UIView?, adSize: CGSize?) {
-        nativeAdView?.translatesAutoresizingMaskIntoConstraints = false
-        
-        if let nativeAdView = nativeAdView {
+    private func addNativeAdViewToView(nativeAdView: UIView?, adSize: CGSize?) {
+        if let nativeAdView = nativeAdView, let adSize = adSize {
             view.addSubview(nativeAdView)
-            
-            if let adSize = adSize {
-                nativeAdView.heightAnchor.constraint(equalToConstant: adSize.height).isActive = true
-                nativeAdView.widthAnchor.constraint(equalToConstant: adSize.width).isActive = true
-            }
-            
+            nativeAdView.translatesAutoresizingMaskIntoConstraints = false
+
+            // Decide layout guide based on available iOS version
+            let layoutGuide: UILayoutGuide
             if #available(iOS 11.0, *) {
-                let guide = self.view.safeAreaLayoutGuide
-                nativeAdView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-                nativeAdView.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
+                layoutGuide = view.safeAreaLayoutGuide
             } else {
-                let margins = self.view.layoutMarginsGuide
-                nativeAdView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
-                nativeAdView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+                layoutGuide = view.layoutMarginsGuide
             }
+
+            NSLayoutConstraint.activate([
+                nativeAdView.widthAnchor.constraint(equalToConstant: adSize.width),
+                nativeAdView.heightAnchor.constraint(equalToConstant: adSize.height),
+                nativeAdView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
+                nativeAdView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor)
+            ])
         }
     }
     
-    func prepareNativeAdView(nativeAd: GADNativeAd) -> GADNativeAdView? {
+    private func prepareNativeAdView(nativeAd: GADNativeAd) -> GADNativeAdView? {
         // Create and place ad in view hierarchy.
         let nibView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first
         guard let gadNativeAdView = nibView as? GADNativeAdView else {
@@ -233,7 +249,7 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         return gadNativeAdView
     }
     
-    func prepareCustomNativeAdView(customNativeAd: GADCustomNativeAd) -> CustomNativeAdView? {
+    private func prepareCustomNativeAdView(customNativeAd: GADCustomNativeAd) -> CustomNativeAdView? {
         // Add new ad view and set constraints to fill its container.
         // Create and place ad in view hierarchy.
         let nibView = Bundle.main.loadNibNamed("CustomNativeAdView", owner: nil, options: nil)?.first
@@ -246,7 +262,7 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         return gadCustomNativeAdView
     }
     
-    func imageForStars(numberOfStars: Double) -> UIImage? {
+    private func imageForStars(numberOfStars: Double) -> UIImage? {
         var imageName = "star_0"
         if numberOfStars >= 5 {
             imageName = "star_5"
@@ -261,5 +277,11 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         }
         
         return UIImage(named: imageName)
+    }
+
+    private func closeNativeAd() {
+        nativeAdView?.removeFromSuperview()
+        nativeAdView = nil
+        nativeAd = nil
     }
 }

@@ -1,4 +1,19 @@
-
+/*
+ * PubMatic Inc. ("PubMatic") CONFIDENTIAL
+ * Unpublished Copyright (c) 2006-2024 PubMatic, All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains the property of PubMatic. The intellectual and technical concepts contained
+ * herein are proprietary to PubMatic and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained
+ * from PubMatic.  Access to the source code contained herein is hereby forbidden to anyone except current PubMatic employees, managers or contractors who have executed
+ * Confidentiality and Non-disclosure agreements explicitly covering such access or to such other persons whom are directly authorized by PubMatic to access the source code and are subject to confidentiality and nondisclosure obligations with respect to the source code.
+ *
+ * The copyright notice above does not evidence any actual or intended publication or disclosure  of  this source code, which includes
+ * information that is confidential and/or proprietary, and is a trade secret, of  PubMatic.   ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC  PERFORMANCE,
+ * OR PUBLIC DISPLAY OF OR THROUGH USE  OF THIS  SOURCE CODE  WITHOUT  THE EXPRESS WRITTEN CONSENT OF PUBMATIC IS STRICTLY PROHIBITED, AND IN VIOLATION OF APPLICABLE
+ * LAWS AND INTERNATIONAL TREATIES.  THE RECEIPT OR POSSESSION OF  THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS
+ * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
+ */
 
 import UIKit
 import OpenWrapSDK
@@ -17,7 +32,11 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
         
         // Create a banner view
         // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
-        self.bannerView = POBBannerView(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, adSizes: [POBAdSizeMake(320, 50)])
+        self.bannerView = POBBannerView(
+            publisherId: pubId,
+            profileId: profileId,
+            adUnitId: owAdUnit,
+            adSizes: [POBAdSizeMake(320, 50)])
         
         // Set the delegate
         self.bannerView?.delegate = self
@@ -31,8 +50,12 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
         // Load Ad
         self.bannerView?.loadAd()
     }
-    
-    // function simulates auction
+
+    deinit {
+        bannerView = nil
+    }
+
+    // Function simulates auction
     func auctionAndProceedWithBid(bid:POBBid) {
         print("Banner : Proceeding with load ad.")
         // Check if bid is expired
@@ -46,9 +69,11 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
                 bannerView?.proceedToLoadAd()
             }else{
                 // Notify banner to proceed with auction loss error.
-                bannerView?.proceed(onError: POBBidEventErrorCode.clientSideAuctionLoss, andDescription: "Client Side Auction Loss")
+                bannerView?.proceed(
+                    onError: POBBidEventErrorCode.clientSideAuctionLoss,
+                    andDescription: "Client Side Auction Loss")
             }
-        }else{
+        } else {
             // Notify banner view to proceed with the error.
             bannerView?.proceed(onError: POBBidEventErrorCode.adExpiry, andDescription: "bid expired")
         }
@@ -93,30 +118,29 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
 
     // MARK: - Private functions
 
-    func addBannerToView(banner : POBBannerView?, adSize : CGSize) -> Void {
-        
-        banner?.frame = CGRect(x: (self.view.bounds.size.width - adSize.width)/2
-            , y: self.view.bounds.size.height - adSize.height, width: adSize.width, height: adSize.height)
-        
-        banner?.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(banner!)
-        
-        banner?.heightAnchor.constraint(equalToConstant: adSize.height).isActive = true
-        banner?.widthAnchor.constraint(equalToConstant: adSize.width).isActive = true
-        
-        // Adding safe area constraints
-        if #available(iOS 11.0, *) {
-            let layoutGuide = view.safeAreaLayoutGuide
-            banner?.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
-            banner?.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor).isActive = true
-        } else {
-            let layoutMargineGuide = view.layoutMarginsGuide
-            banner?.bottomAnchor.constraint(equalTo: layoutMargineGuide.bottomAnchor).isActive = true
-            banner?.centerXAnchor.constraint(equalTo: layoutMargineGuide.centerXAnchor).isActive = true
-        }
-    }
+    private func addBannerToView(banner: POBBannerView, adSize: CGSize) {
+        banner.frame = CGRect(
+            x: (self.view.bounds.size.width - adSize.width)/2,
+            y: self.view.bounds.size.height - adSize.height,
+            width: adSize.width,
+            height: adSize.height)
 
-    deinit {
-        bannerView = nil
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(banner)
+
+        // Decide layout guide based on available iOS version
+        let layoutGuide: UILayoutGuide
+        if #available(iOS 11.0, *) {
+            layoutGuide = view.safeAreaLayoutGuide
+        } else {
+            layoutGuide = view.layoutMarginsGuide
+        }
+
+        NSLayoutConstraint.activate([
+            banner.widthAnchor.constraint(equalToConstant: adSize.width),
+            banner.heightAnchor.constraint(equalToConstant: adSize.height),
+            banner.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
+            banner.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor)
+        ])
     }
 }

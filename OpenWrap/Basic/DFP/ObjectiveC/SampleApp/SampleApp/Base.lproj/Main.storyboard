@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -365,9 +365,50 @@
                     <view key="view" contentMode="scaleToFill" id="tYy-YR-2SV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NbJ-U9-oAU" userLabel="ButtonContainerView">
+                                <rect key="frame" x="101.5" y="112" width="211" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b5-Oo-fj8">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdButtonAction:" destination="Lxs-pF-T12" eventType="touchUpInside" id="zPE-aN-gq2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqR-fh-sO2">
+                                        <rect key="frame" x="107" y="0.0" width="104" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
+                                        <connections>
+                                            <action selector="renderAdButtonAction:" destination="Lxs-pF-T12" eventType="touchUpInside" id="LB1-M7-9zO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dqR-fh-sO2" firstAttribute="leading" secondItem="8b5-Oo-fj8" secondAttribute="trailing" constant="20" id="CVY-NP-G7R"/>
+                                    <constraint firstAttribute="bottom" secondItem="8b5-Oo-fj8" secondAttribute="bottom" id="F8J-km-9Hf"/>
+                                    <constraint firstItem="8b5-Oo-fj8" firstAttribute="leading" secondItem="NbJ-U9-oAU" secondAttribute="leading" id="IXj-w5-kOI"/>
+                                    <constraint firstItem="8b5-Oo-fj8" firstAttribute="top" secondItem="NbJ-U9-oAU" secondAttribute="top" id="KGY-6l-ZlC"/>
+                                    <constraint firstAttribute="bottom" secondItem="dqR-fh-sO2" secondAttribute="bottom" id="TiB-aR-s4U"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqR-fh-sO2" secondAttribute="trailing" id="Vyg-TB-j6T"/>
+                                    <constraint firstItem="dqR-fh-sO2" firstAttribute="top" secondItem="NbJ-U9-oAU" secondAttribute="top" id="prh-Js-fpu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NbJ-U9-oAU" firstAttribute="top" secondItem="GBi-2K-dQY" secondAttribute="bottom" constant="20" id="TV2-h8-k1L"/>
+                            <constraint firstItem="NbJ-U9-oAU" firstAttribute="centerX" secondItem="tYy-YR-2SV" secondAttribute="centerX" id="heg-qb-GEH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Native Standard Custom Template Ad" id="Ugy-sR-kd0"/>
+                    <connections>
+                        <outlet property="renderAdButton" destination="dqR-fh-sO2" id="Hg2-GQ-Mob"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRG-eg-bn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,9 +441,50 @@
                     <view key="view" contentMode="scaleToFill" id="hnY-1I-P8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtR-wd-yfL" userLabel="ButtonContainerView">
+                                <rect key="frame" x="101.5" y="112" width="211" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-0M-zOw">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdButtonAction:" destination="5fp-xj-xpn" eventType="touchUpInside" id="hjr-bF-7DZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5H-8v-ZcZ">
+                                        <rect key="frame" x="107" y="0.0" width="104" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
+                                        <connections>
+                                            <action selector="renderAdButtonAction:" destination="5fp-xj-xpn" eventType="touchUpInside" id="kae-fW-1UZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="U5H-8v-ZcZ" secondAttribute="bottom" id="2ZL-Gg-gsQ"/>
+                                    <constraint firstItem="bYq-0M-zOw" firstAttribute="leading" secondItem="mtR-wd-yfL" secondAttribute="leading" id="FK5-8V-pUd"/>
+                                    <constraint firstItem="U5H-8v-ZcZ" firstAttribute="leading" secondItem="bYq-0M-zOw" secondAttribute="trailing" constant="20" id="HfZ-Lk-bu1"/>
+                                    <constraint firstItem="U5H-8v-ZcZ" firstAttribute="top" secondItem="mtR-wd-yfL" secondAttribute="top" id="M6W-Iv-NH4"/>
+                                    <constraint firstAttribute="bottom" secondItem="bYq-0M-zOw" secondAttribute="bottom" id="RnH-UN-Ie1"/>
+                                    <constraint firstAttribute="trailing" secondItem="U5H-8v-ZcZ" secondAttribute="trailing" id="iV7-yc-OMb"/>
+                                    <constraint firstItem="bYq-0M-zOw" firstAttribute="top" secondItem="mtR-wd-yfL" secondAttribute="top" id="zGV-PE-eLV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mtR-wd-yfL" firstAttribute="centerX" secondItem="hnY-1I-P8l" secondAttribute="centerX" id="5ES-dI-d4N"/>
+                            <constraint firstItem="mtR-wd-yfL" firstAttribute="top" secondItem="muk-bN-joq" secondAttribute="bottom" constant="20" id="m2A-Ui-6fr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Native Standard Ad" id="K6J-i4-lT8"/>
+                    <connections>
+                        <outlet property="renderAdButton" destination="U5H-8v-ZcZ" id="OfO-d3-8vu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBy-iV-sxu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zw4-FG-LgD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zw4-FG-LgD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,6 +81,27 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="9VT-jk-LqR" kind="show" id="JEw-Ed-GFR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="CtK-yW-AL5" style="IBUITableViewCellStyleDefault" id="kDf-Nc-SBT">
+                                        <rect key="frame" x="0.0" y="148.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDf-Nc-SBT" id="OW6-ub-CPG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Native Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CtK-yW-AL5" userLabel="Native Ad">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="NativeAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="iez-VR-Toi" kind="show" id="BfZ-zy-hcj"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -246,6 +267,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdz-LR-tp6" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2910" y="1284"/>
+        </scene>
+        <!--OpenWrap NativeAd-->
+        <scene sceneID="S7Z-wO-x0b">
+            <objects>
+                <viewController title="Native Ad" id="iez-VR-Toi" userLabel="OpenWrap NativeAd" customClass="NativeAdViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eXp-2g-B8o"/>
+                        <viewControllerLayoutGuide type="bottom" id="dor-v4-qXq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jT5-78-yna">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrZ-NE-P2N">
+                                <rect key="frame" x="102" y="112" width="210" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy9-aJ-74b">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdButtonAction:" destination="iez-VR-Toi" eventType="touchUpInside" id="y0I-4z-kPC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDN-E4-t3X">
+                                        <rect key="frame" x="106.5" y="0.0" width="103.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Render Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
+                                        <connections>
+                                            <action selector="renderAdButtonAction:" destination="iez-VR-Toi" eventType="touchUpInside" id="SY4-DR-N52"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="IDN-E4-t3X" secondAttribute="bottom" id="02r-ux-qPo"/>
+                                    <constraint firstItem="Fy9-aJ-74b" firstAttribute="leading" secondItem="GrZ-NE-P2N" secondAttribute="leading" id="9mz-Cz-Yuj"/>
+                                    <constraint firstItem="Fy9-aJ-74b" firstAttribute="top" secondItem="GrZ-NE-P2N" secondAttribute="top" id="VfK-wt-GVE"/>
+                                    <constraint firstItem="IDN-E4-t3X" firstAttribute="leading" secondItem="Fy9-aJ-74b" secondAttribute="trailing" constant="20" id="aIN-r8-bUv"/>
+                                    <constraint firstItem="IDN-E4-t3X" firstAttribute="top" secondItem="GrZ-NE-P2N" secondAttribute="top" id="aoN-pU-Wz1"/>
+                                    <constraint firstAttribute="trailing" secondItem="IDN-E4-t3X" secondAttribute="trailing" id="bAY-g7-xIx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fy9-aJ-74b" secondAttribute="bottom" id="zwu-FR-MXO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v89-a4-lZD"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GrZ-NE-P2N" firstAttribute="centerX" secondItem="v89-a4-lZD" secondAttribute="centerX" id="Iop-yO-wct"/>
+                            <constraint firstItem="GrZ-NE-P2N" firstAttribute="top" secondItem="v89-a4-lZD" secondAttribute="top" constant="20" id="wau-Mu-vCS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Native Ad" id="3Rh-N1-jqD"/>
+                    <connections>
+                        <outlet property="renderAdButton" destination="IDN-E4-t3X" id="yZc-Y9-tbJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7J7-JA-FGd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="1284"/>
         </scene>
     </scenes>
     <resources>

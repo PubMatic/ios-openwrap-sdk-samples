@@ -28,6 +28,7 @@
 @property (nonatomic, strong) POBNativeAdLoader *nativeAdLoader;
 @property (nonatomic, strong) id<POBNativeAd> nativeAd;
 @property (nonatomic, strong) POBNativeAdView *nativeAdView;
+@property (weak, nonatomic) IBOutlet UIButton *renderAdButton;
 @end
 
 @implementation NativeStandardViewController
@@ -35,14 +36,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Create the Native Ad Loader with desired template type (in this case, small).
-    // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
-    self.nativeAdLoader = [[POBNativeAdLoader alloc] initWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID templateType:POBNativeTemplateTypeSmall];
-    
+    // For test IDs refer -
+    // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
+    self.nativeAdLoader = [[POBNativeAdLoader alloc] initWithPublisherId:PUB_ID
+                                                               profileId:PROFILE_ID
+                                                                adUnitId:OW_ADUNIT_ID
+                                                            templateType:POBNativeTemplateTypeSmall];
+
     // Set the delegate.
     self.nativeAdLoader.delegate = self;
-    
-    // Load ad.
-    [self.nativeAdLoader loadAd];
 }
 
 - (void)dealloc{
@@ -51,28 +53,42 @@
     _nativeAdLoader = nil;
 }
 
-#pragma mark - NativeAdLoaderDelegate
+#pragma mark - UI Button actions
 
-// Notifies the delegate that an ad has been successfully loaded.
-- (void)nativeAdLoader:(POBNativeAdLoader *)adLoader didReceiveAd:(id<POBNativeAd>)nativeAd{
-    self.nativeAd = nativeAd;
-    
-    // Set native ad delegate.
-    [self.nativeAd setAdDelegate:self];
-    
+- (IBAction)loadAdButtonAction:(id)sender {
+    // Close previously shown native ad if any
+    [self closeNativeAd];
+    [self.renderAdButton setEnabled:NO];
+
+    // Load ad.
+    [self.nativeAdLoader loadAd];
+}
+
+- (IBAction)renderAdButtonAction:(id)sender {
     // Render the native ad.
     __weak typeof(self) weakSelf = self;
     [self.nativeAd renderAdWithCompletion:^(id<POBNativeAd> nativeAd, NSError * _Nullable error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (error){
+        if (error) {
             NSLog(@"Native : Failed to render ad with error - %@", [error localizedDescription]);
-        }else{
+        } else {
             // Attach the native ad view.
             strongSelf.nativeAdView = [nativeAd adView];
             [strongSelf addNativeAdView];
             NSLog(@"Native : Ad rendered.");
         }
     }];
+}
+
+#pragma mark - NativeAdLoaderDelegate
+
+// Notifies the delegate that an ad has been successfully loaded.
+- (void)nativeAdLoader:(POBNativeAdLoader *)adLoader didReceiveAd:(id<POBNativeAd>)nativeAd{
+    self.nativeAd = nativeAd;
+    [self.renderAdButton setEnabled:YES];
+
+    // Set native ad delegate.
+    [self.nativeAd setAdDelegate:self];
     NSLog(@"Native : Ad received.");
 }
 
@@ -125,23 +141,30 @@
 
 #pragma mark - Supporting Methods
 
-- (void)addNativeAdView{
-    CGSize size = self.nativeAdView.frame.size;
+- (void)addNativeAdView {
     self.nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.nativeAdView];
-    
-    [self.nativeAdView.heightAnchor constraintEqualToConstant:size.height].active = YES;
-    [self.nativeAdView.widthAnchor constraintEqualToConstant:size.width].active = YES;
 
+    // Decide layout guide based on available iOS version
+    UILayoutGuide *layoutGuide;
     if (@available(iOS 11.0, *)) {
-        UILayoutGuide * guide = self.view.safeAreaLayoutGuide;
-        [self.nativeAdView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
-        [self.nativeAdView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
+        layoutGuide = self.view.safeAreaLayoutGuide;
     } else {
-        UILayoutGuide *margins = self.view.layoutMarginsGuide;
-        [self.nativeAdView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = YES;
-        [self.nativeAdView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
+        layoutGuide = self.view.layoutMarginsGuide;
     }
+
+    [NSLayoutConstraint activateConstraints:@[
+        [self.nativeAdView.widthAnchor constraintEqualToConstant:self.nativeAdView.frame.size.width],
+        [self.nativeAdView.heightAnchor constraintEqualToConstant:self.nativeAdView.frame.size.height],
+        [self.nativeAdView.bottomAnchor constraintEqualToAnchor:layoutGuide.bottomAnchor],
+        [self.nativeAdView.centerXAnchor constraintEqualToAnchor:layoutGuide.centerXAnchor]
+    ]];
+}
+
+- (void)closeNativeAd {
+    [self.nativeAdView removeFromSuperview];
+    self.nativeAdView = nil;
+    self.nativeAd = nil;
 }
 
 @end

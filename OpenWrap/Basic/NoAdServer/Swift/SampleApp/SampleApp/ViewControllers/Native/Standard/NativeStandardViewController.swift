@@ -20,6 +20,7 @@ import OpenWrapSDK
 
 class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
 
+    @IBOutlet weak var renderAdButton: UIButton!
     let owAdUnit = "OpenWrapNativeAdUnit"
     let pubId = "156276"
     let profileId: NSNumber = 1165
@@ -33,13 +34,14 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         // Create the Native Ad Loader with desired template type (in this case, small).
         // For test IDs refer -
         // https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-3#test-profileplacements
-        self.nativeAdLoader = POBNativeAdLoader(publisherId: pubId, profileId: profileId, adUnitId: owAdUnit, templateType: POBNativeTemplateType.small)
-        
+        self.nativeAdLoader = POBNativeAdLoader(
+            publisherId: pubId,
+            profileId: profileId,
+            adUnitId: owAdUnit,
+            templateType: POBNativeTemplateType.small)
+
         // Set the delegate.
         self.nativeAdLoader?.delegate = self
-        
-        // Load ad.
-        self.nativeAdLoader?.loadAd()
     }
     
     deinit {
@@ -47,15 +49,18 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
         nativeAd = nil
         nativeAdLoader = nil
     }
-    
-    // MARK: - POBNativeAdLoaderDelegate
-    
-    func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
-        print("Native : Ad received.")
-        self.nativeAd = nativeAd
-        // Set the native ad delegate.
-        self.nativeAd?.setAdDelegate(self)
-        
+
+    // MARK: UI Button actions
+
+    @IBAction func loadAdButtonAction(_ sender: Any) {
+        // Close previously shown native ad if any
+        closeNativeAd()
+        renderAdButton.isEnabled = false
+
+        nativeAdLoader?.loadAd()
+    }
+
+    @IBAction func renderAdButtonAction(_ sender: Any) {
         // Render the native ad.
         self.nativeAd?.renderAd(completion: { [weak self] (nativeAd: POBNativeAd, error: Error?) in
             guard let self = self else {
@@ -70,6 +75,16 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
                 print("Native : Ad rendered.")
             }
         })
+    }
+
+    // MARK: - POBNativeAdLoaderDelegate
+
+    func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
+        print("Native : Ad received.")
+        self.nativeAd = nativeAd
+        // Set the native ad delegate.
+        self.nativeAd?.setAdDelegate(self)
+        renderAdButton.isEnabled = true
     }
     
     // Notifies the delegate of an error encountered while loading an ad.
@@ -121,26 +136,31 @@ class NativeStandardViewController: UIViewController, POBNativeAdLoaderDelegate,
     
     // MARK: - Supporting Methods
     
-    func addNativeAdViewToView(nativeAdView: POBNativeAdView?, adSize: CGSize?) {
-        nativeAdView?.translatesAutoresizingMaskIntoConstraints = false
-        
-        if let nativeAdView = nativeAdView {
+    private func addNativeAdViewToView(nativeAdView: POBNativeAdView?, adSize: CGSize?) {
+        if let nativeAdView = nativeAdView, let adSize = adSize {
+            nativeAdView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(nativeAdView)
-            
-            if let adSize = adSize {
-                nativeAdView.heightAnchor.constraint(equalToConstant: adSize.height).isActive = true
-                nativeAdView.widthAnchor.constraint(equalToConstant: adSize.width).isActive = true
-            }
-            
+
+            // Decide layout guide based on available iOS version
+            let layoutGuide: UILayoutGuide
             if #available(iOS 11.0, *) {
-                let guide = self.view.safeAreaLayoutGuide
-                nativeAdView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-                nativeAdView.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
+                layoutGuide = view.safeAreaLayoutGuide
             } else {
-                let margins = self.view.layoutMarginsGuide
-                nativeAdView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
-                nativeAdView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
+                layoutGuide = view.layoutMarginsGuide
             }
+
+            NSLayoutConstraint.activate([
+                nativeAdView.widthAnchor.constraint(equalToConstant: adSize.width),
+                nativeAdView.heightAnchor.constraint(equalToConstant: adSize.height),
+                nativeAdView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
+                nativeAdView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor)
+            ])
         }
+    }
+
+    private func closeNativeAd() {
+        nativeAdView?.removeFromSuperview()
+        nativeAdView = nil
+        nativeAd = nil
     }
 }

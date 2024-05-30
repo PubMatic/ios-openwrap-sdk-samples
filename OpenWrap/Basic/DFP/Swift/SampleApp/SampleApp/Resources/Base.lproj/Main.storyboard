@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -339,10 +339,51 @@
                     <view key="view" contentMode="scaleToFill" id="Tny-Hf-w4C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRr-eh-EX7">
+                                <rect key="frame" x="82" y="80" width="211" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgE-J9-WMH">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdButtonAction:" destination="5lY-qy-rrX" eventType="touchUpInside" id="U2t-FO-Wj2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOM-7z-mZV">
+                                        <rect key="frame" x="107" y="0.0" width="104" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
+                                        <connections>
+                                            <action selector="renderAdButtonAction:" destination="5lY-qy-rrX" eventType="touchUpInside" id="E75-pB-6Cs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oOM-7z-mZV" firstAttribute="leading" secondItem="wgE-J9-WMH" secondAttribute="trailing" constant="20" id="4hr-Kx-pfE"/>
+                                    <constraint firstItem="wgE-J9-WMH" firstAttribute="top" secondItem="HRr-eh-EX7" secondAttribute="top" id="6af-of-wMS"/>
+                                    <constraint firstAttribute="bottom" secondItem="oOM-7z-mZV" secondAttribute="bottom" id="EaC-pv-HMR"/>
+                                    <constraint firstItem="wgE-J9-WMH" firstAttribute="leading" secondItem="HRr-eh-EX7" secondAttribute="leading" id="KsI-ad-b04"/>
+                                    <constraint firstItem="oOM-7z-mZV" firstAttribute="top" secondItem="HRr-eh-EX7" secondAttribute="top" id="MSX-xR-ekm"/>
+                                    <constraint firstAttribute="trailing" secondItem="oOM-7z-mZV" secondAttribute="trailing" id="o0e-rx-bKo"/>
+                                    <constraint firstAttribute="bottom" secondItem="wgE-J9-WMH" secondAttribute="bottom" id="z4m-qU-10n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jgV-Mv-oKb"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HRr-eh-EX7" firstAttribute="centerX" secondItem="jgV-Mv-oKb" secondAttribute="centerX" id="Q9z-J7-MbH"/>
+                            <constraint firstItem="HRr-eh-EX7" firstAttribute="top" secondItem="jgV-Mv-oKb" secondAttribute="top" constant="16" id="bow-xh-6mO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MSe-7h-FTW"/>
+                    <connections>
+                        <outlet property="renderAdButton" destination="oOM-7z-mZV" id="En5-T2-Gvp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jR-l1-u5i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,10 +396,51 @@
                     <view key="view" contentMode="scaleToFill" id="nAf-d9-YQA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xe-1Z-nuP">
+                                <rect key="frame" x="82" y="84" width="211" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atc-FT-if9">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdButtonAction:" destination="ffB-cm-hlu" eventType="touchUpInside" id="dNh-aL-YBs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppw-dr-1hv">
+                                        <rect key="frame" x="107" y="0.0" width="104" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
+                                        <connections>
+                                            <action selector="renderAdButtonAction:" destination="ffB-cm-hlu" eventType="touchUpInside" id="V2M-c6-uJz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="atc-FT-if9" firstAttribute="top" secondItem="4xe-1Z-nuP" secondAttribute="top" id="1PC-Ox-feO"/>
+                                    <constraint firstItem="atc-FT-if9" firstAttribute="leading" secondItem="4xe-1Z-nuP" secondAttribute="leading" id="Dla-LK-lvc"/>
+                                    <constraint firstItem="Ppw-dr-1hv" firstAttribute="leading" secondItem="atc-FT-if9" secondAttribute="trailing" constant="20" id="MXC-hs-430"/>
+                                    <constraint firstItem="Ppw-dr-1hv" firstAttribute="top" secondItem="4xe-1Z-nuP" secondAttribute="top" id="Y5r-nY-ahP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ppw-dr-1hv" secondAttribute="trailing" id="h3C-yg-Hex"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ppw-dr-1hv" secondAttribute="bottom" id="k7p-MG-rys"/>
+                                    <constraint firstAttribute="bottom" secondItem="atc-FT-if9" secondAttribute="bottom" id="obR-G6-G9v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7CP-tO-tdk"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4xe-1Z-nuP" firstAttribute="top" secondItem="7CP-tO-tdk" secondAttribute="top" constant="20" id="sgj-n4-Rqs"/>
+                            <constraint firstItem="4xe-1Z-nuP" firstAttribute="centerX" secondItem="7CP-tO-tdk" secondAttribute="centerX" id="x09-ZD-rvK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5ns-gL-Hw5"/>
+                    <connections>
+                        <outlet property="renderAdButton" destination="Ppw-dr-1hv" id="cSf-h4-6PS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2l-ED-opD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

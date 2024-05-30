@@ -35,6 +35,7 @@
 @property (nonatomic, strong) POBNativeAdLoader *nativeAdLoader;
 @property (nonatomic, strong) id<POBNativeAd> nativeAd;
 @property (nonatomic, strong) POBNativeAdView *nativeAdView;
+@property (weak, nonatomic) IBOutlet UIButton *renderAdButton;
 @end
 
 @implementation NativeStandardCustomTemplateViewController
@@ -44,7 +45,11 @@
     
     // Create a native event handler for your ad server.
     // For example, the code below creates an event handler for GAM ad server.
-    GAMNativeEventHandler *eventHandler = [[GAMNativeEventHandler alloc] initWithAdUnitId:GAM_AU adTypes:@[GADAdLoaderAdTypeNative, GADAdLoaderAdTypeCustomNative] options:nil owFormatId:OW_FORMAT_ID];
+    GAMNativeEventHandler *eventHandler =
+        [[GAMNativeEventHandler alloc] initWithAdUnitId:GAM_AU
+                                                adTypes:@[GADAdLoaderAdTypeNative, GADAdLoaderAdTypeCustomNative]
+                                                options:nil
+                                             owFormatId:OW_FORMAT_ID];
     
     // Populate your native ad view and return it in the given rendering block.
     __weak typeof(self) weakSelf = self;
@@ -64,13 +69,14 @@
     
     // Create the Native Ad Loader with desired template type (in this case, medium).
     // For test IDs refer - https://help.pubmatic.com/openwrap/docs/test-and-debug-your-integration-1#test-profileplacements
-    self.nativeAdLoader = [[POBNativeAdLoader alloc] initWithPublisherId:PUB_ID profileId:PROFILE_ID adUnitId:OW_ADUNIT_ID templateType:POBNativeTemplateTypeMedium eventHandler:eventHandler];
+    self.nativeAdLoader = [[POBNativeAdLoader alloc] initWithPublisherId:PUB_ID
+                                                               profileId:PROFILE_ID
+                                                                adUnitId:OW_ADUNIT_ID
+                                                            templateType:POBNativeTemplateTypeMedium
+                                                            eventHandler:eventHandler];
     
     // Set the delegate.
     self.nativeAdLoader.delegate = self;
-    
-    // Load ad.
-    [self.nativeAdLoader loadAd];
 }
 
 - (void)dealloc{
@@ -78,17 +84,16 @@
     _nativeAd = nil;
     _nativeAdLoader = nil;
 }
+- (IBAction)loadAdButtonAction:(id)sender {
+    // Close previously shown native ad if any
+    [self closeNativeAd];
+    [self.renderAdButton setEnabled:NO];
 
-#pragma mark - NativeAdLoaderDelegate
+    // Load ad.
+    [self.nativeAdLoader loadAd];
+}
 
-// Notifies the delegate that an ad has been successfully loaded.
-- (void)nativeAdLoader:(POBNativeAdLoader *)adLoader didReceiveAd:(id<POBNativeAd>)nativeAd{
-    NSLog(@"Native : Ad received.");
-    self.nativeAd = nativeAd;
-    
-    // Set native ad delegate.
-    [self.nativeAd setAdDelegate:self];
-    
+- (IBAction)renderAdButtonAction:(id)sender {
     // Get the required custom template view. Please note, NativeAdCustomMediumTemplateView is created on app side.
     // For template type POBNativeTemplateTypeSmall, use POBNativeAdSmallTemplateView class.
     // For template type POBNativeTemplateTypeMedium, use POBNativeAdMediumTemplateView class.
@@ -108,6 +113,18 @@
             NSLog(@"Native : Ad rendered.");
         }
     }];
+}
+
+#pragma mark - NativeAdLoaderDelegate
+
+// Notifies the delegate that an ad has been successfully loaded.
+- (void)nativeAdLoader:(POBNativeAdLoader *)adLoader didReceiveAd:(id<POBNativeAd>)nativeAd {
+    NSLog(@"Native : Ad received.");
+    self.nativeAd = nativeAd;
+
+    // Set native ad delegate.
+    [self.nativeAd setAdDelegate:self];
+    [self.renderAdButton setEnabled:YES];
 }
 
 // Notifies the delegate of an error encountered while loading an ad.
@@ -227,23 +244,25 @@
     return customNativeAdView;
 }
 
-- (void)addNativeAdView{
+- (void)addNativeAdView {
     CGSize size = self.nativeAdView.frame.size;
     self.nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.nativeAdView];
-    
-    [self.nativeAdView.heightAnchor constraintEqualToConstant:size.height].active = YES;
-    [self.nativeAdView.widthAnchor constraintEqualToConstant:size.width].active = YES;
 
+    // Decide layout guide based on available iOS version
+    UILayoutGuide *layoutGuide;
     if (@available(iOS 11.0, *)) {
-        UILayoutGuide * guide = self.view.safeAreaLayoutGuide;
-        [self.nativeAdView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
-        [self.nativeAdView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
+        layoutGuide = self.view.safeAreaLayoutGuide;
     } else {
-        UILayoutGuide *margins = self.view.layoutMarginsGuide;
-        [self.nativeAdView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = YES;
-        [self.nativeAdView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
+        layoutGuide = self.view.layoutMarginsGuide;
     }
+
+    [NSLayoutConstraint activateConstraints:@[
+        [self.nativeAdView.widthAnchor constraintEqualToConstant:size.width],
+        [self.nativeAdView.heightAnchor constraintEqualToConstant:size.height],
+        [self.nativeAdView.bottomAnchor constraintEqualToAnchor:layoutGuide.bottomAnchor],
+        [self.nativeAdView.centerXAnchor constraintEqualToAnchor:layoutGuide.centerXAnchor]
+    ]];
 }
 
 // Gets an image representing the number of stars.
@@ -265,6 +284,12 @@
     }
     
     return [UIImage imageNamed:imageName];
+}
+
+- (void)closeNativeAd {
+    [self.nativeAdView removeFromSuperview];
+    self.nativeAdView = nil;
+    self.nativeAd = nil;
 }
 
 @end

@@ -444,6 +444,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K674QKEVPS;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K674QKEVPS;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -463,6 +464,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K674QKEVPS;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K674QKEVPS;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
