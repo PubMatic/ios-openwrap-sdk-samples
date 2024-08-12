@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupNavigationBarAppearance()
         
         return true
     }
@@ -44,6 +45,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    // MARK: Private function
 
+    func setupNavigationBarAppearance() {
+        // Define PubMatic brand color using RGB value.
+        let navBarColor = UIColor(red: 51/255.0, green: 151/255.0, blue: 215/255.0, alpha: 1.0)
+
+        // Set the bar tint color (background color) for the navigation bar
+        UINavigationBar.appearance().barTintColor = navBarColor
+
+        // Set the tint color (color of navigation bar items) to white
+        UINavigationBar.appearance().tintColor = .white
+
+        // Define the title text attributes: white color and system font of size 16
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 16.0)
+        ]
+
+        // Apply the title text attributes to the navigation bar
+        UINavigationBar.appearance().titleTextAttributes = attributes
+
+        // Ensure the navigation bar is not translucent
+        UINavigationBar.appearance().isTranslucent = false
+
+        // Configure appearance for large titles (iOS 13+)
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            // Configure the appearance object to have an opaque background
+            appearance.configureWithOpaqueBackground()
+
+            // Set the background color of the navigation bar
+            appearance.backgroundColor = navBarColor
+
+            // Set the text attributes for the standard-sized title
+            appearance.titleTextAttributes = attributes
+
+            // Set the text attributes for the large-sized title
+            appearance.largeTitleTextAttributes = attributes
+
+            // Apply the configured appearance to the standard appearance of the navigation bar
+            UINavigationBar.appearance().standardAppearance = appearance
+
+            // Apply the same appearance to the navigation bar when it's at the scroll edge
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+    }
 }
 

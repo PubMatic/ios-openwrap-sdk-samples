@@ -24,6 +24,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupNavigationBarAppearance];
     [OpenWrapSDK setLogLevel:POBSDKLogLevelAll];
     // Set a valid App Store URL, containing the app id of your iOS app.
     POBApplicationInfo *appInfo = [[POBApplicationInfo alloc] init];
@@ -31,6 +32,56 @@
     // This application information is a global configuration & you
     // need not set this for every ad request(of any ad type)
     [OpenWrapSDK setApplicationInfo:appInfo];
+
+    // Indicates all the ad requests should be DSA compliant.
+    [OpenWrapSDK setDSAComplianceStatus:POBDSAComplianceStatusRequired];
     return YES;
 }
+
+#pragma mark - Private method
+
+- (void)setupNavigationBarAppearance {
+    // Define PubMatic brand color using RGB value.
+    UIColor *navBarColor = [UIColor colorWithRed:51/255.0 green:151/255.0 blue:215/255.0 alpha:1.0];
+    // Set the bar tint color (background color) for the navigation bar
+    [[UINavigationBar appearance] setBarTintColor:navBarColor];
+
+    // Set the tint color (color of navigation bar items) to white
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
+    // Define the title text attributes: white color and system font of size 16
+    NSDictionary *attributes = @{
+        NSForegroundColorAttributeName: [UIColor whiteColor],
+        NSFontAttributeName: [UIFont systemFontOfSize:16.0]
+    };
+
+    // Apply the title text attributes to the navigation bar
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+
+    // Ensure the navigation bar is not translucent
+    [[UINavigationBar appearance] setTranslucent:NO];
+
+    // Configure appearance for large titles (iOS 13+)
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        // Configure the appearance object to have an opaque background
+        [appearance configureWithOpaqueBackground];
+
+        // Set the background color of the navigation bar
+        appearance.backgroundColor = navBarColor;
+
+        // Set the text attributes for the standard-sized title
+        appearance.titleTextAttributes = attributes;
+
+        // Set the text attributes for the large-sized title
+        appearance.largeTitleTextAttributes = attributes;
+
+        // Apply the configured appearance to the standard appearance of the navigation bar
+        [[UINavigationBar appearance] setStandardAppearance:appearance];
+
+        // Apply the same appearance to the navigation bar when it's at the scroll edge
+        [[UINavigationBar appearance] setScrollEdgeAppearance:appearance];
+    }
+}
+
 @end

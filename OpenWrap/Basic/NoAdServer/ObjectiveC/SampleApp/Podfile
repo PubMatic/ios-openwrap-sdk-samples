@@ -2,7 +2,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 def required_pods
-    pod 'OpenWrapSDK', '>=3.5.0'
+    pod 'OpenWrapSDK', '>=3.8.0'
 end
 
 

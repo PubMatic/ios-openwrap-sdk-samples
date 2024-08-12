@@ -240,7 +240,6 @@
 }
 
 - (void)addNativeAdView {
-    CGSize size = self.nativeAdView.frame.size;
     self.nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.nativeAdView];
 

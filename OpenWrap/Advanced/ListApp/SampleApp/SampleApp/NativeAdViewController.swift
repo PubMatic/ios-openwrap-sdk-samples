@@ -61,6 +61,7 @@ class NativeAdViewController: UIViewController, UITableViewDelegate, UITableView
         // Prefetch ads one-by-one
         prefetchNextAd()
         OpenWrapSDK.setLogLevel(.all)
+        OpenWrapSDK.setDSAComplianceStatus(.required)
     }
     
     override func didReceiveMemoryWarning() {

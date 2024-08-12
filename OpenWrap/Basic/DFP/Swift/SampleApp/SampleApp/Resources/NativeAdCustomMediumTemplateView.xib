@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,7 +53,7 @@
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacy-icon" translatesAutoresizingMaskIntoConstraints="NO" id="bad-hl-AO6">
-                    <rect key="frame" x="276" y="26.5" width="16" height="15"/>
+                    <rect key="frame" x="276" y="24" width="16" height="15"/>
                     <accessibility key="accessibilityConfiguration" identifier="pob_privacy_icon"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="4Ey-S1-zUo"/>
@@ -73,6 +73,16 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title=""/>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DyT-ad-UG4">
+                    <rect key="frame" x="276" y="43" width="16" height="15"/>
+                    <accessibility key="accessibilityConfiguration" identifier="pob_dsa_info_btn" label="pob_dsa_info_btn">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="INI-L4-8ha"/>
+                        <constraint firstAttribute="width" constant="16" id="nXZ-ih-0HC"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <accessibility key="accessibilityConfiguration" identifier="pob_native_container"/>
@@ -80,8 +90,10 @@
                 <constraint firstItem="KTk-zw-Xvy" firstAttribute="top" secondItem="yJ8-g2-80M" secondAttribute="top" id="1Wj-Aw-p6d"/>
                 <constraint firstItem="yJ8-g2-80M" firstAttribute="leading" secondItem="QFc-aH-68b" secondAttribute="leading" constant="8" id="2D8-v2-HUi"/>
                 <constraint firstItem="BwI-Jf-RZR" firstAttribute="leading" secondItem="QFc-aH-68b" secondAttribute="leading" constant="8" id="4Eg-8x-5Ae"/>
+                <constraint firstAttribute="trailing" secondItem="DyT-ad-UG4" secondAttribute="trailing" constant="8" id="Agv-rr-xOb"/>
                 <constraint firstItem="HVn-4t-IHK" firstAttribute="top" secondItem="yJ8-g2-80M" secondAttribute="top" id="FL2-Kb-ocE"/>
-                <constraint firstItem="bad-hl-AO6" firstAttribute="top" secondItem="KTk-zw-Xvy" secondAttribute="bottom" constant="6.5" id="RVf-l0-qoY"/>
+                <constraint firstItem="bad-hl-AO6" firstAttribute="top" secondItem="KTk-zw-Xvy" secondAttribute="bottom" constant="4" id="GcY-UG-xKV"/>
+                <constraint firstItem="bad-hl-AO6" firstAttribute="top" secondItem="KTk-zw-Xvy" secondAttribute="bottom" constant="4" id="RVf-l0-qoY"/>
                 <constraint firstAttribute="bottom" secondItem="G6l-GB-P7f" secondAttribute="bottom" constant="5" id="SGA-aE-aUW"/>
                 <constraint firstAttribute="trailing" secondItem="bad-hl-AO6" secondAttribute="trailing" constant="8" id="UcG-4q-Xh9"/>
                 <constraint firstAttribute="trailing" secondItem="BwI-Jf-RZR" secondAttribute="trailing" constant="8" id="YlG-rY-iD5"/>
@@ -94,6 +106,7 @@
                 <constraint firstItem="G6l-GB-P7f" firstAttribute="top" secondItem="BwI-Jf-RZR" secondAttribute="bottom" constant="7" id="jjv-gJ-ruK"/>
                 <constraint firstItem="90N-OV-3cs" firstAttribute="trailing" secondItem="HVn-4t-IHK" secondAttribute="trailing" id="joP-51-AsD"/>
                 <constraint firstItem="G6l-GB-P7f" firstAttribute="leading" secondItem="BwI-Jf-RZR" secondAttribute="leading" id="lzQ-Gv-U4m"/>
+                <constraint firstItem="DyT-ad-UG4" firstAttribute="top" secondItem="bad-hl-AO6" secondAttribute="bottom" constant="4" id="qPq-Fc-bFJ"/>
                 <constraint firstItem="KTk-zw-Xvy" firstAttribute="leading" secondItem="HVn-4t-IHK" secondAttribute="trailing" constant="5" id="rTW-db-Ret"/>
                 <constraint firstItem="BwI-Jf-RZR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="90N-OV-3cs" secondAttribute="bottom" constant="4" id="rsV-z0-Dl4"/>
                 <constraint firstAttribute="trailing" secondItem="KTk-zw-Xvy" secondAttribute="trailing" constant="8" id="sjk-Ny-LER"/>
@@ -103,6 +116,7 @@
                 <outlet property="adIconImgView" destination="KTk-zw-Xvy" id="IvP-lx-Hjg"/>
                 <outlet property="ctaButton" destination="G6l-GB-P7f" id="aY9-Em-gIx"/>
                 <outlet property="descriptionLabel" destination="90N-OV-3cs" id="hxK-Ef-JY1"/>
+                <outlet property="dsaIconImgView" destination="DyT-ad-UG4" id="lgH-o0-uvR"/>
                 <outlet property="iconImgView" destination="yJ8-g2-80M" id="wcD-lY-ep0"/>
                 <outlet property="mainImgView" destination="BwI-Jf-RZR" id="nbk-eI-gcV"/>
                 <outlet property="privacyIconImgView" destination="bad-hl-AO6" id="ND9-vI-4vR"/>
