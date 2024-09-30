@@ -21,20 +21,34 @@ import OpenWrapSDK
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-     var window: UIWindow?
+    var window: UIWindow?
+    private static let pubId = "156276"
+    private static let profileId: NSNumber = 1165
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupNavigationBarAppearance()
+
+        // Set log level before initializing OpenWrapSDK for debugging purpose.
         OpenWrapSDK.setLogLevel(.all)
-        
-        // Set a valid App Store URL, containing the app id of your iOS app.
-        let appInfo = POBApplicationInfo()
-        appInfo.storeURL = URL(string: "https://itunes.apple.com/us/app/pubmatic-sdk-app/id1175273098?mt=8")!
-        // This application information is a global configuration & you
-        // need not set this for every ad request(of any ad type)
-        OpenWrapSDK.setApplicationInfo(appInfo)
-        OpenWrapSDK.setDSAComplianceStatus(.required)
+        OpenWrapSDK.setSSLEnabled(false)
+
+        let openWrapSDKConfig = OpenWrapSDKConfig(publisherId: Self.pubId, andProfileIds: [Self.profileId])
+        OpenWrapSDK.initialize(with: openWrapSDKConfig) { (success, error) in
+            if success {
+                print("OpenWrap SDK initialization successful")
+            } else if let error = error {
+                print("OpenWrap SDK initialization failed with error : \(error.localizedDescription)")
+            }
+
+            // Set a valid App Store URL, containing the app id of your iOS app.
+            let appInfo = POBApplicationInfo()
+            appInfo.storeURL = URL(string: "https://itunes.apple.com/us/app/pubmatic-sdk-app/id1175273098?mt=8")!
+            // This application information is a global configuration & you
+            // need not set this for every ad request(of any ad type)
+            OpenWrapSDK.setApplicationInfo(appInfo)
+            OpenWrapSDK.setDSAComplianceStatus(.required)
+        }
         return true
     }
 

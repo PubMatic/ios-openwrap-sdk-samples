@@ -17,6 +17,9 @@
 #import "AppDelegate.h"
 @import OpenWrapSDK;
 
+#define PUBLISHER_ID    @"156276"
+#define PROFILE_ID      @1165
+
 @interface AppDelegate ()
 
 @end
@@ -25,16 +28,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupNavigationBarAppearance];
-    [OpenWrapSDK setLogLevel:POBSDKLogLevelAll];
-    // Set a valid App Store URL, containing the app id of your iOS app.
-    POBApplicationInfo *appInfo = [[POBApplicationInfo alloc] init];
-    appInfo.storeURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/pubmatic-sdk-app/id1175273098?mt=8"];
-    // This application information is a global configuration & you
-    // need not set this for every ad request(of any ad type)
-    [OpenWrapSDK setApplicationInfo:appInfo];
 
-    // Indicates all the ad requests should be DSA compliant.
-    [OpenWrapSDK setDSAComplianceStatus:POBDSAComplianceStatusRequired];
+    // Set log level before initializing OpenWrapSDK for debugging purpose.
+    [OpenWrapSDK setLogLevel:POBSDKLogLevelAll];
+
+    // Initialize OpenWrap SDK with publisher id and profile id.
+    OpenWrapSDKConfig *openWrapSDKConfig = [[OpenWrapSDKConfig alloc] initWithPublisherId:PUBLISHER_ID
+                                                                            andProfileIds:@[PROFILE_ID]];
+    [OpenWrapSDK initializeWithConfig:openWrapSDKConfig
+                 andCompletionHandler:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"OpenWrap SDK initialization successful");
+        } else {
+            NSLog(@"OpenWrap SDK initialization failed with error : %@", error.localizedDescription);
+        }
+
+        // Set a valid App Store URL, containing the app id of your iOS app.
+        POBApplicationInfo *appInfo = [[POBApplicationInfo alloc] init];
+        appInfo.storeURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/pubmatic-sdk-app/id1175273098?mt=8"];
+        // This application information is a global configuration & you
+        // need not set this for every ad request(of any ad type)
+        [OpenWrapSDK setApplicationInfo:appInfo];
+
+        // Indicates all the ad requests should be DSA compliant.
+        [OpenWrapSDK setDSAComplianceStatus:POBDSAComplianceStatusRequired];
+    }];
     return YES;
 }
 
