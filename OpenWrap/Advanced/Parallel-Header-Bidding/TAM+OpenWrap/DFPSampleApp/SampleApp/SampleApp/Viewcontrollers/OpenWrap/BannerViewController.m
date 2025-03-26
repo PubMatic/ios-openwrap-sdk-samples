@@ -94,7 +94,7 @@
         }
         request.customTargeting = [NSDictionary dictionaryWithDictionary:customTargeting];
         [weakSelf.partnerTargeting removeAllObjects];
-        NSLog(@"Successfully added targeting from all bidders");
+        [weakSelf log:@"Successfully added targeting from all bidders"];
     }];
     // Create a banner view
     self.bannerView = [[POBBannerView alloc]
@@ -119,7 +119,7 @@
 
 // Notifies the delegate that an ad has been successfully loaded and rendered.
 - (void)bannerViewDidReceiveAd:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Ad received with size %@ ", bannerView.creativeSize);
+    [self log:@"Banner : Ad received with size %@ ", bannerView.creativeSize];
     /*!
      OpenWrap SDK will start refresh loop internally as soon as ad rendering succeeds/fails.
      To include other ad servers' bids in next refresh cycle, call loadBids on bidding manager.
@@ -130,7 +130,7 @@
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
 didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
+    [self log:@"Banner : Ad failed with error : %@", [error localizedDescription]];
     /*!
      OpenWrap SDK will start refresh loop internally as soon as ad rendering succeeds/fails.
      To include other ad servers' bids in next refresh cycle, call loadBids on bidding manager.
@@ -139,23 +139,23 @@ didFailToReceiveAdWithError:(NSError *)error {
 }
 
 - (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Will present modal");
+    [self log:@"Banner : Will present modal"];
 }
 
 - (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Will leave app");
+    [self log:@"Banner : Will leave app"];
 }
 
 #pragma mark - Bid event delegate methods
 - (void)bidEvent:(id<POBBidEvent>)bidEventObject didReceiveBid:(POBBid *)bid {
-    NSLog(@"Banner : Did receive bid");
+    [self log:@"Banner : Did receive bid"];
     // No need to pass OW's targeting info to bidding manager, as it will be passed to DFP internally.
     // Notify bidding manager that OpenWrap's success response is received.
     [self.biddingManager notifyOpenWrapBidEvent];
 }
 
 - (void)bidEvent:(id<POBBidEvent>)bidEventObject didFailToReceiveBidWithError:(NSError *)error {
-    NSLog(@"Banner : Did fail to receive bid with error - POBError{errorCode=%ld, errorMessage='%@'}", error.code, error.localizedDescription);
+    [self log:@"Banner : Did fail to receive bid with error - POBError{errorCode=%ld, errorMessage='%@'}", error.code, error.localizedDescription];
 
     // Notify bidding manager that OpenWrap's failure response is received.
     [self.biddingManager notifyOpenWrapBidEvent];
@@ -180,7 +180,7 @@ didFailToReceiveAdWithError:(NSError *)error {
      Just call proceedToLoadAd. OpenWrap SDK will have it's response saved internally
      so it can proceed accordingly.
      */
-    NSLog(@"No targeting received from any bidder");
+    [self log:@"No targeting received from any bidder"];
     [self.bannerView proceedToLoadAd];
 }
 

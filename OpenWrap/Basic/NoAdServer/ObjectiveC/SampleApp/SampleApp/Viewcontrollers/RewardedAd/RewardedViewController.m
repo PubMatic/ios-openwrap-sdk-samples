@@ -61,52 +61,52 @@
 
 // Notifies the delegate that an rewarded ad has been received successfully.
 - (void)rewardedAdDidReceiveAd:(POBRewardedAd *)rewardedAd{
-    self.showAdButton.hidden = NO;
-    NSLog(@"RewardedAd : Ad Received");
+    [self.showAdButton setEnabled:YES];
+    [self log:@"RewardedAd : Ad Received"];
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"RewardedAd : Failed to receive ad with error : %@", error.localizedDescription);
+    [self log:@"RewardedAd : Failed to receive ad with error : %@", error.localizedDescription];
 }
 
 // Notifies the delegate of an error encountered while rendering an ad.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd didFailToShowAdWithError:(NSError *)error {
-    NSLog(@"RewardedAd : Failed to show ad with error : %@", error.localizedDescription);
+    [self log:@"RewardedAd : Failed to show ad with error : %@", error.localizedDescription];
 }
 
 // Notifies the delegate that the rewarded ad will be presented as a modal on top of the current view controller.
 - (void)rewardedAdWillPresentAd:(POBRewardedAd *)rewardedAd{
-    NSLog(@"RewardedAd : Will present");
+    [self log:@"RewardedAd : Will present"];
 }
 
 // Notifies the delegate that the rewarded ad has been animated off the screen.
 - (void)rewardedAdDidDismissAd:(POBRewardedAd *)rewardedAd{
-    NSLog(@"RewardedAd : Dismissed");
+    [self log:@"RewardedAd : Dismissed"];
 }
 
 // Notifies the delegate of ad click
 - (void)rewardedAdDidClickAd:(POBRewardedAd *)rewardedAd {
-    NSLog(@"RewardedAd : Ad Clicked");
+    [self log:@"RewardedAd : Ad Clicked"];
 }
 
 // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
 - (void)rewardedAdWillLeaveApplication:(POBRewardedAd *)rewardedAd {
-    NSLog(@"RewardedAd : Will leave app");
+    [self log:@"RewardedAd : Will leave app"];
 }
 
 // Notifies the delegate of an ad expiration. After this callback, this 'POBRewardedAd' instance is marked as invalid & will not be shown.
 - (void)rewardedAdDidExpireAd:(POBRewardedAd *)rewardedAd {
-    NSLog(@"RewardedAd : Expired");
+    [self log:@"RewardedAd : Expired"];
 }
 
 // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd shouldReward:(POBReward *)reward {
-    NSLog(@"RewardedAd : Should reward - %@(%@)",[reward.amount stringValue],reward.currencyType);
+    [self log:@"RewardedAd : Should reward - %@(%@)", [reward.amount stringValue], reward.currencyType];
 }
 
 - (void)rewardedAdDidRecordImpression:(POBRewardedAd *)rewardedAd {
-    NSLog(@"RewardedAd : Ad Impression");
+    [self log:@"RewardedAd : Ad Impression"];
 }
 
 #pragma mark - dealloc

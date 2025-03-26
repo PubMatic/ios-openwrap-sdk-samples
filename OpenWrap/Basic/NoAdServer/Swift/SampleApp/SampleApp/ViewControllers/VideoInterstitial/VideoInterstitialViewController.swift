@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 
-class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,POBInterstitialVideoDelegate {
+class VideoInterstitialViewController: BaseViewController, POBInterstitialDelegate, POBInterstitialVideoDelegate {
 
     let owAdUnit  = "OpenWrapInterstitialAdUnit"
     let pubId = "156276"
@@ -64,57 +64,57 @@ class VideoInterstitialViewController: UIViewController,POBInterstitialDelegate,
     
     // Notifies the delegate that an ad has been received successfully.
     func interstitialDidReceiveAd(_ interstitial: POBInterstitial) {
-        showAdButton.isHidden = false
-        print("Interstitial : Ad Received")
+        showAdButton.isEnabled = true
+        log("Interstitial : Ad Received")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error) {
-        print("Interstitial : Failed to receive ad with error  \(error.localizedDescription )")
+        log("Interstitial : Failed to receive ad with error  \(error.localizedDescription )")
     }
     
     func interstitial(_ interstitial: POBInterstitial, didFailToShowAdWithError error: Error) {
-        print("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
+        log("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
     }
     
     // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
     func interstitialWillPresentAd(_ interstitial: POBInterstitial) {
-        print("Interstitial : Will present")
+        log("Interstitial : Will present")
     }
     
     func interstitialDidPresentAd(_ interstitial: POBInterstitial) {
-        print("Interstitial : Did present")
+        log("Interstitial : Did present")
     }
     
     // Notifies the delegate that the interstitial ad has been animated off the screen.
     func interstitialDidDismissAd(_ interstitial: POBInterstitial) {
-        print("Interstitial : Dismissed")
+        log("Interstitial : Dismissed")
     }
     
     // Notifies the delegate of ad click
     func interstitialDidClickAd(_ interstitial: POBInterstitial) {
-        print("Interstitial : Ad Clicked")
+        log("Interstitial : Ad Clicked")
     }
     
     // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
     func interstitialWillLeaveApplication(_ interstitial: POBInterstitial) {
-        print("Interstitial : Will leave app")
+        log("Interstitial : Will leave app")
     }
     
     // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
     func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
-        print("Interstitial : Ad Expired")
+        log("Interstitial : Ad Expired")
     }
 
     //MARK: POBInterstitialVideoDelegate methods
 
     // Notifies the delegate of VAST based video ad events
     func interstitialDidFinishVideoPlayback(_ interstitial: POBInterstitial) {
-        print("Interstitial : Finished video playback")
+        log("Interstitial : Finished video playback")
     }
 
     func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
-        print("Interstitial : Ad Impression")
+        log("Interstitial : Ad Impression")
     }
 
     deinit {

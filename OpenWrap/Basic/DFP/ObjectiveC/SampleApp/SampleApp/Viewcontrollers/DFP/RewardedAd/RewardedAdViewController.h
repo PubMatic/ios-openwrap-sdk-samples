@@ -17,9 +17,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BaseViewController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RewardedAdViewController : UIViewController
+@interface RewardedAdViewController : BaseViewController
 
 @end
 

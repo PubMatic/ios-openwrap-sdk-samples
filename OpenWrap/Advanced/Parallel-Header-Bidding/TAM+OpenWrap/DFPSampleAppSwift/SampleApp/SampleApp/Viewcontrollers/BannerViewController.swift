@@ -21,7 +21,7 @@ import OpenWrapHandlerDFP
 import OpenWrapSDK
 import UIKit
 
-class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEventDelegate,
+class BannerViewController: BaseViewController, POBBannerViewDelegate, POBBidEventDelegate,
     BiddingManagerDelegate {
 
     // A9 TAM slot id 320x50 banner
@@ -72,7 +72,7 @@ class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEvent
     }
 
     func initializeOpenWrapBannerView() {
-        let adSizes: [NSValue]! = [NSValueFromGADAdSize(GADAdSizeBanner)]
+        let adSizes: [NSValue]! = [nsValue(for: AdSizeBanner)]
 
         // Create a banner custom event handler for your ad server. Make sure you use
         // separate event handler objects to create each banner view.
@@ -80,19 +80,19 @@ class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEvent
         self.eventHandler = DFPBannerEventHandler(adUnitId: DFP_AD_UNIT, andSizes: adSizes)
 
         // Set config block on event handler instance
-        weak var weakSelf = self
-        eventHandler!.configBlock = { view, request, bid in
-            let customTargeting: NSMutableDictionary = request?.customTargeting as? NSMutableDictionary ?? NSMutableDictionary()
-            if let partnerTargeting = weakSelf?.partnerTargeting {
+        eventHandler.configBlock = { [weak self] _, request, _ in
+            guard let self else { return }
+            let customTargeting = request?.customTargeting as? NSMutableDictionary ?? NSMutableDictionary()
+            if let partnerTargeting {
                 for key in partnerTargeting.allKeys {
                     if let entries = partnerTargeting.value(forKey: key as? String ?? "") as? [String: String] {
                         customTargeting.addEntries(from: entries)
                     }
                 }
+                partnerTargeting.removeAllObjects()
             }
             request?.customTargeting = customTargeting as? [String: String]
-            weakSelf?.partnerTargeting?.removeAllObjects()
-            print("Successfully added targeting from all bidders")
+            log("Successfully added targeting from all bidders")
         }
         // Create a banner view
         self.bannerView = POBBannerView(
@@ -118,7 +118,7 @@ class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEvent
 
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size %@ ", bannerView.creativeSize)
+        log("Banner : Ad received with size \(bannerView.creativeSize())")
         /*!
          OpenWrap SDK will start refresh loop internally as soon as ad rendering succeeds/fails.
          To include other ad servers' bids in next refresh cycle, call loadBids on bidding manager.
@@ -128,7 +128,7 @@ class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEvent
 
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView, didFailToReceiveAdWithError error: Error) {
-        NSLog("Banner : Ad failed with error : %@", error.localizedDescription)
+        log("Banner : Ad failed with error : \(error.localizedDescription)")
         /*!
          OpenWrap SDK will start refresh loop internally as soon as ad rendering succeeds/fails.
          To include other ad servers' bids in next refresh cycle, call loadBids on bidding manager.
@@ -137,23 +137,23 @@ class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEvent
     }
 
     func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
-        NSLog("Banner : Will present modal")
+        log("Banner : Will present modal")
     }
 
     func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
-        NSLog("Banner : Will leave app")
+        log("Banner : Will leave app")
     }
 
     // MARK: - Bid event delegate methods
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
-        NSLog("Banner : Did receive bid")
+        log("Banner : Did receive bid")
         // No need to pass OW's targeting info to bidding manager, as it will be passed to DFP internally.
         // Notify bidding manager that OpenWrap's success response is received.
         self.biddingManager.notifyOpenWrapBidEvent()
     }
 
     func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
-        NSLog("Banner : Did fail to receive bid with error - %@", error.localizedDescription)
+        log("Banner : Did fail to receive bid with error - \(error.localizedDescription)")
 
         // Notify bidding manager that OpenWrap's failure response is received.
         self.biddingManager.notifyOpenWrapBidEvent()
@@ -178,7 +178,7 @@ class BannerViewController: UIViewController, POBBannerViewDelegate, POBBidEvent
          Just call proceedToLoadAd. OpenWrap SDK will have it's response saved internally
          so it can proceed accordingly.
          */
-        NSLog("No targeting received from any bidder")
+        log("No targeting received from any bidder")
         self.bannerView.proceedToLoadAd()
     }
 

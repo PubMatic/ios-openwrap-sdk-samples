@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		523E46042A0922120028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E46032A0922120028473A /* NativeAdCustomMediumTemplateView.xib */; };
 		5272F4222A02B230009A2A21 /* NativeStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272F4212A02B230009A2A21 /* NativeStandardViewController.swift */; };
 		52BE034A2A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE03492A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift */; };
+		5ABFF4822D5F026C00C9CE7A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */; };
 		B69EB02A29E7D45B00BBDB73 /* MRECDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02929E7D45B00BBDB73 /* MRECDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		523E46032A0922120028473A /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		5272F4212A02B230009A2A21 /* NativeStandardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardViewController.swift; sourceTree = "<group>"; };
 		52BE03492A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardCustomTemplateViewController.swift; sourceTree = "<group>"; };
+		5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B69EB02929E7D45B00BBDB73 /* MRECDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRECDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 		20364F5221AFAF0B00F9D5DD /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */,
 				3E71021D26DF97C2009398D1 /* Views */,
 				20364F6721AFAF3600F9D5DD /* AppDelegate */,
 				20364F6621AFAF2A00F9D5DD /* ViewControllers */,
@@ -308,6 +311,7 @@
 				52BE034A2A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift in Sources */,
 				3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
+				5ABFF4822D5F026C00C9CE7A /* BaseViewController.swift in Sources */,
 				B69EB02A29E7D45B00BBDB73 /* MRECDisplayViewController.swift in Sources */,
 				2094BE512649617700C9CA84 /* RewardedAdViewController.swift in Sources */,
 				5272F4222A02B230009A2A21 /* NativeStandardViewController.swift in Sources */,

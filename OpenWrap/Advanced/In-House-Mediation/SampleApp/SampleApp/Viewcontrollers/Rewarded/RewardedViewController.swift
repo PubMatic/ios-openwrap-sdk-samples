@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 
-class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEventDelegate {
+class RewardedViewController: BaseViewController, POBRewardedAdDelegate, POBBidEventDelegate {
     let owAdUnit  = "OpenWrapRewardedAdUnit"
     let pubId = "156276"
     let profileId: NSNumber = 1757
@@ -62,7 +62,7 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEve
     
     // Function simulates auction
     func auctionAndProceedWithBid(bid:POBBid) {
-        print("Rewarded Ad : Proceeding with load ad.")
+        log("Rewarded Ad : Proceeding with load ad.")
         // Check if bid is expired
         if !bid.isExpired() {
             // Use bid, e.g. perform auction with your in-house mediation setup
@@ -88,7 +88,7 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEve
     // Notifies the delegate that bid has been successfully received.
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
         // Make use of the received bid.
-        print("Rewarded Ad : Bid received.")
+        log("Rewarded Ad : Bid received.")
         // Notify rewarded to proceed to load the ad after using the bid.
         auctionAndProceedWithBid(bid: bid)
     }
@@ -96,24 +96,24 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate, POBBidEve
     // Notifies the delegate of an error encountered while fetching the bid.
     func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
         // Notify rewarded to proceed with the error.
-        print("Rewarded Ad : Bid failed with error : \(error.localizedDescription)")
+        log("Rewarded Ad : Bid failed with error : \(error.localizedDescription)")
         rewardedAd?.proceed(onError: POBBidEventErrorCode.other, andDescription: error.localizedDescription)
     }
     
     // MARK: Rewarded Ad delegate methods
     // Notifies the delegate that an ad has been received successfully.
     func rewardedAdDidReceive(_ rewardedAd: POBRewardedAd) {
-        showAdButton.isHidden = false
-        print("Rewarded Ad : Ad Received")
+        showAdButton.isEnabled = true
+        log("Rewarded Ad : Ad Received")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToReceiveAdWithError error: Error) {
-        print("Rewarded Ad : Ad failed with error  \(error.localizedDescription)")
+        log("Rewarded Ad : Ad failed with error  \(error.localizedDescription)")
     }
 
     func rewardedAdDidRecordImpression(_ rewardedAd: POBRewardedAd) {
-        print("Rewarded Ad : Ad Impression")
+        log("Rewarded Ad : Ad Impression")
     }
 
     deinit {

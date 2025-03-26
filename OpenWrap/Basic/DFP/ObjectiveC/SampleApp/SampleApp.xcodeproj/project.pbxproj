@@ -19,6 +19,7 @@
 		523E46022A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E46012A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib */; };
 		527986AE2A01C91800CED193 /* NativeStandardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986AD2A01C91800CED193 /* NativeStandardViewController.m */; };
 		527986B12A01D30700CED193 /* NativeStandardCustomTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986B02A01D30700CED193 /* NativeStandardCustomTemplateViewController.m */; };
+		5AA1C4B82D5F30B600114FD4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */; };
 		B69EB02E29E7D66400BBDB73 /* MRECDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02D29E7D66400BBDB73 /* MRECDisplayViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
@@ -49,6 +50,8 @@
 		527986AD2A01C91800CED193 /* NativeStandardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardViewController.m; sourceTree = "<group>"; };
 		527986AF2A01D30700CED193 /* NativeStandardCustomTemplateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeStandardCustomTemplateViewController.h; sourceTree = "<group>"; };
 		527986B02A01D30700CED193 /* NativeStandardCustomTemplateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardCustomTemplateViewController.m; sourceTree = "<group>"; };
+		5AA1C4B62D5F30B600114FD4 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B69EB02C29E7D66400BBDB73 /* MRECDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECDisplayViewController.h; sourceTree = "<group>"; };
 		B69EB02D29E7D66400BBDB73 /* MRECDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECDisplayViewController.m; sourceTree = "<group>"; };
 		E60023891DC0B03300833CDB /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +121,8 @@
 		3E7AF7E821CA52D100C31F40 /* DFP */ = {
 			isa = PBXGroup;
 			children = (
+				5AA1C4B62D5F30B600114FD4 /* BaseViewController.h */,
+				5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */,
 				527986A92A01C8B800CED193 /* Native */,
 				B69EB02B29E7D63100BBDB73 /* MRECDisplay */,
 				3E35A54226D8C17C0060BD66 /* NativeBanner */,
@@ -346,6 +351,7 @@
 				3E35A54526D8C19B0060BD66 /* NativeBannerViewController.m in Sources */,
 				527986AE2A01C91800CED193 /* NativeStandardViewController.m in Sources */,
 				3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */,
+				5AA1C4B82D5F30B600114FD4 /* BaseViewController.m in Sources */,
 				2094BE2C26495F9E00C9CA84 /* RewardedAdViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tme-sX-j9w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tme-sX-j9w">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,12 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-ob-3cd">
+                                <rect key="frame" x="5" y="97" width="404" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="bD5-6p-ZAD"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-TM-Yxn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="352" width="414" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" rowHeight="100" id="mYJ-DR-Ymu">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mYJ-DR-Ymu" id="isH-TI-SQZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -30,7 +40,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdCell" rowHeight="50" id="e3l-4s-Esc" customClass="AdCell" customModule="SampleApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="124.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e3l-4s-Esc" id="Kxn-83-JzN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -45,17 +55,21 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6jI-L0-6kO"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CK9-ob-3cd" firstAttribute="top" secondItem="6jI-L0-6kO" secondAttribute="top" constant="5" id="3FF-a6-hSc"/>
                             <constraint firstItem="6jI-L0-6kO" firstAttribute="bottom" secondItem="IHx-TM-Yxn" secondAttribute="bottom" id="CyP-2J-fJp"/>
+                            <constraint firstItem="6jI-L0-6kO" firstAttribute="trailing" secondItem="CK9-ob-3cd" secondAttribute="trailing" constant="5" id="DVJ-Dg-8cU"/>
                             <constraint firstItem="IHx-TM-Yxn" firstAttribute="leading" secondItem="6jI-L0-6kO" secondAttribute="leading" id="Skb-Af-lvd"/>
-                            <constraint firstItem="IHx-TM-Yxn" firstAttribute="top" secondItem="6jI-L0-6kO" secondAttribute="top" id="YtV-db-Dbt"/>
+                            <constraint firstItem="CK9-ob-3cd" firstAttribute="leading" secondItem="6jI-L0-6kO" secondAttribute="leading" constant="5" id="dgG-Kb-Fdq"/>
                             <constraint firstItem="6jI-L0-6kO" firstAttribute="trailing" secondItem="IHx-TM-Yxn" secondAttribute="trailing" id="e2Y-dp-VwQ"/>
+                            <constraint firstItem="IHx-TM-Yxn" firstAttribute="top" secondItem="CK9-ob-3cd" secondAttribute="bottom" constant="5" id="gfy-my-9dC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Banner Ad" id="IVE-CD-HNg"/>
                     <connections>
                         <outlet property="adTableView" destination="IHx-TM-Yxn" id="1pg-55-Sl4"/>
+                        <outlet property="logTextView" destination="CK9-ob-3cd" id="92a-iv-gsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTf-XT-vr3" sceneMemberID="firstResponder"/>
@@ -75,14 +89,14 @@
                             <tableViewSection headerTitle="DFP + TAM" id="7J1-We-lMO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6XE-Jk-gpw">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6XE-Jk-gpw" id="v6z-qq-VLf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banner Ad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmi-LY-sSg">
-                                                    <rect key="frame" x="20" y="12" width="354" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="354" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -99,14 +113,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fer-Sc-Qw5">
-                                        <rect key="frame" x="0.0" y="93.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fer-Sc-Qw5" id="5cl-nT-tPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Native + Banner Ad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3C-RR-JOY">
-                                                    <rect key="frame" x="20" y="12" width="354" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="354" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -142,7 +156,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tme-sX-j9w" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zI3-qG-yal">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -162,12 +176,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5B6-pY-bzr">
+                                <rect key="frame" x="5" y="97" width="404" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="qSe-UE-2Jo"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QXM-Wi-lzA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="352" width="414" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" rowHeight="100" id="PS7-U7-rQE">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PS7-U7-rQE" id="9EZ-RD-Y17">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -175,7 +200,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdCell" rowHeight="50" id="URR-g5-kgM" customClass="AdCell" customModule="SampleApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="124.5" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="URR-g5-kgM" id="x05-d5-slu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -190,17 +215,21 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RZs-56-A3m"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QXM-Wi-lzA" firstAttribute="leading" secondItem="RZs-56-A3m" secondAttribute="leading" id="1ls-tW-s2J"/>
+                            <constraint firstItem="5B6-pY-bzr" firstAttribute="leading" secondItem="RZs-56-A3m" secondAttribute="leading" constant="5" id="Fnh-gr-0nD"/>
+                            <constraint firstItem="5B6-pY-bzr" firstAttribute="top" secondItem="RZs-56-A3m" secondAttribute="top" constant="5" id="Waj-So-bR4"/>
+                            <constraint firstItem="QXM-Wi-lzA" firstAttribute="top" secondItem="5B6-pY-bzr" secondAttribute="bottom" constant="5" id="XUC-e8-FTG"/>
+                            <constraint firstItem="RZs-56-A3m" firstAttribute="trailing" secondItem="5B6-pY-bzr" secondAttribute="trailing" constant="5" id="aES-3s-FvD"/>
                             <constraint firstItem="RZs-56-A3m" firstAttribute="bottom" secondItem="QXM-Wi-lzA" secondAttribute="bottom" id="hDk-Pe-Doi"/>
                             <constraint firstItem="RZs-56-A3m" firstAttribute="trailing" secondItem="QXM-Wi-lzA" secondAttribute="trailing" id="hpb-qg-kJ9"/>
-                            <constraint firstItem="QXM-Wi-lzA" firstAttribute="top" secondItem="RZs-56-A3m" secondAttribute="top" id="xrk-7c-9aa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Native + Banner Ad" id="ugW-fM-hEV"/>
                     <connections>
                         <outlet property="adTableView" destination="QXM-Wi-lzA" id="W6g-uf-026"/>
+                        <outlet property="logTextView" destination="5B6-pY-bzr" id="C3X-RC-XWK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3y-Ss-dTn" sceneMemberID="firstResponder"/>
@@ -209,8 +238,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

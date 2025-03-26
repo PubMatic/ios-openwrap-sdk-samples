@@ -101,12 +101,12 @@
     [self.nativeAd renderAdWithCompletion:^(id<POBNativeAd> nativeAd, NSError * _Nullable error) {
         __strong typeof(self) strongSelf = weakSelf;
         if (error) {
-            NSLog(@"Native : Failed to render ad with error - %@", [error localizedDescription]);
+            [self log:@"Native : Failed to render ad with error - %@", [error localizedDescription]];
         } else {
             // Attach the native ad view.
             strongSelf.nativeAdView = [nativeAd adView];
             [strongSelf addNativeAdView];
-            NSLog(@"Native : Ad rendered.");
+            [self log:@"Native : Ad rendered."];
         }
     }];
 }
@@ -115,7 +115,7 @@
 
 // Notifies the delegate that an ad has been successfully loaded.
 - (void)nativeAdLoader:(POBNativeAdLoader *)adLoader didReceiveAd:(id<POBNativeAd>)nativeAd {
-    NSLog(@"Native : Ad received.");
+    [self log:@"Native : Ad received."];
     self.nativeAd = nativeAd;
     // Set native ad delegate.
     [self.nativeAd setAdDelegate:self];
@@ -124,7 +124,7 @@
 
 // Notifies the delegate of an error encountered while loading an ad.
 - (void)nativeAdLoader:(POBNativeAdLoader *)adLoader didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"Native : Failed to receive ad with error - %@", [error localizedDescription]);
+    [self log:@"Native : Failed to receive ad with error - %@", [error localizedDescription]];
 }
 
 // Returns a view controller instance to be used by ad server SDK for showing modals.
@@ -136,37 +136,37 @@
 
 // Notifies delegate that the native ad has dismissed the modal on top of the current view controller.
 - (void)nativeAdDidDismissModal:(POBNativeAdView *)adView{
-    NSLog(@"Native : Dismissed modal");
+    [self log:@"Native : Dismissed modal"];
 }
 
 // Notifies delegate that the native ad will launch a modal on top of the current view controller, as a result of user interaction.
 - (void)nativeAdWillPresentModal:(POBNativeAdView *)adView{
-    NSLog(@"Native : Will present modal");
+    [self log:@"Native : Will present modal"];
 }
 
 // Notifies delegate that the native ad have launched a modal on top of the current view controller, as a result of user interaction.
 - (void)nativeAdDidPresentModal:(POBNativeAdView *)adView {
-    NSLog(@"Native : Did present modal");
+    [self log:@"Native : Did present modal"];
 }
 
 // Notifies the delegate whenever current app goes in the background due to user click.
 - (void)nativeAdWillLeaveApplication:(POBNativeAdView *)adView{
-    NSLog(@"Native : Will leave application");
+    [self log:@"Native : Will leave application"];
 }
 
 // Informs delegate that the native ad has recorded a click.
 - (void)nativeAdDidRecordClick:(POBNativeAdView *)adView {
-    NSLog(@"Native : Ad click.");
+    [self log:@"Native : Ad click."];
 }
 
 // Informs delegate that the native ad has recorded a click for a particular asset.
 - (void)nativeAd:(POBNativeAdView *)adView didRecordClickForAsset:(NSInteger)assetId {
-    NSLog(@"Native : Recorded click for asset with Id: %ld", assetId);
+    [self log:@"Native : Recorded click for asset with Id: %ld", assetId];
 }
 
 // Informs delegate that the native ad has recorded an impression.
 - (void)nativeAdDidRecordImpression:(POBNativeAdView *)adView {
-    NSLog(@"Native : Recorded impression.");
+    [self log:@"Native : Recorded impression."];
 }
 
 #pragma mark - Supporting Methods

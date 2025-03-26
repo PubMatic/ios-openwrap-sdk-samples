@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 
-class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBidEventDelegate {
+class InterstitialViewController: BaseViewController, POBInterstitialDelegate, POBBidEventDelegate {
 
     let owAdUnit  = "OpenWrapInterstitialAdUnit"
     let pubId = "156276"
@@ -62,7 +62,7 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBi
     
     // function simulates auction
     func auctionAndProceedWithBid(bid:POBBid) {
-        print("Interstitial : Proceeding with load ad.")
+        log("Interstitial : Proceeding with load ad.")
         // Check if bid is expired
         if !bid.isExpired() {
             // Use bid, e.g. perform auction with your in-house mediation setup
@@ -86,7 +86,7 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBi
     // Notifies the delegate that bid has been successfully received.
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
         // Make use of the received bid.
-        print("Interstitial : Bid received.")
+        log("Interstitial : Bid received.")
         // Notify interstitial to proceed to load the ad after using the bid.
         auctionAndProceedWithBid(bid: bid)
     }
@@ -94,29 +94,29 @@ class InterstitialViewController: UIViewController,POBInterstitialDelegate,POBBi
     // Notifies the delegate of an error encountered while fetching the bid.
     func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
         // Notify interstitial to proceed with the error.
-        print("Interstitial : Bid failed with error : \(error.localizedDescription)")
+        log("Interstitial : Bid failed with error : \(error.localizedDescription)")
         interstitial?.proceed(onError: POBBidEventErrorCode.other, andDescription: error.localizedDescription)
     }
     
     // MARK: Interstitial delegate methods
     // Notifies the delegate that an ad has been received successfully.
     func interstitialDidReceiveAd(_ interstitial: POBInterstitial) {
-        showAdButton.isHidden = false
-        print("Interstitial : Ad Received")
+        showAdButton.isEnabled = true
+        log("Interstitial : Ad Received")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error) {
-        print("Interstitial : Ad failed with error  \(error.localizedDescription )")
+        log("Interstitial : Ad failed with error  \(error.localizedDescription )")
     }
     
     // Notifies the delegate of an error encountered while showing an ad
     func interstitial(_ interstitial: POBInterstitial, didFailToShowAdWithError error: Error) {
-        print("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
+        log("Interstitial : Failed to show ad with error  \(error.localizedDescription )")
     }
 
     func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
-        print("Interstitial : Ad Impression")
+        log("Interstitial : Ad Impression")
     }
 
     deinit {

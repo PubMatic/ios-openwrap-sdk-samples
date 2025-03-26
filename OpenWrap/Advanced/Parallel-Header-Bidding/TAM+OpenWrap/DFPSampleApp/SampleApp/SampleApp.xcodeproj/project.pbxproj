@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		2076C8E22551261400BC07AF /* BiddingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076C8E12551261400BC07AF /* BiddingManager.m */; };
 		2076C8E52551265F00BC07AF /* TAMAdLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076C8E42551265F00BC07AF /* TAMAdLoader.m */; };
 		2089394E25679F0200B0902F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089394D25679F0200B0902F /* MainViewController.m */; };
+		5AA1C4C32D5FA9CE00114FD4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4C22D5FA9CE00114FD4 /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		2076C8E42551265F00BC07AF /* TAMAdLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAMAdLoader.m; sourceTree = "<group>"; };
 		2089394C25679F0200B0902F /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2089394D25679F0200B0902F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5AA1C4C12D5FA9CE00114FD4 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5AA1C4C22D5FA9CE00114FD4 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 		2076C8D8255125AD00BC07AF /* OpenWrap */ = {
 			isa = PBXGroup;
 			children = (
+				5AA1C4C12D5FA9CE00114FD4 /* BaseViewController.h */,
+				5AA1C4C22D5FA9CE00114FD4 /* BaseViewController.m */,
 				2076C8D9255125D000BC07AF /* BannerViewController.h */,
 				2076C8DA255125D000BC07AF /* BannerViewController.m */,
 				2076C8DC255125DD00BC07AF /* InterstitialViewController.h */,
@@ -212,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2076C8BD2551256A00BC07AF /* AppDelegate.m in Sources */,
+				5AA1C4C32D5FA9CE00114FD4 /* BaseViewController.m in Sources */,
 				2076C8E22551261400BC07AF /* BiddingManager.m in Sources */,
 				2076C8CE2551257000BC07AF /* main.m in Sources */,
 				2089394E25679F0200B0902F /* MainViewController.m in Sources */,

@@ -15,6 +15,7 @@
 		523E45F82A08F6FE0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E45F72A08F6FD0028473A /* NativeAdCustomMediumTemplateView.xib */; };
 		527986962A01B25B00CED193 /* NativeStandardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986952A01B25B00CED193 /* NativeStandardViewController.m */; };
 		527986992A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986982A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m */; };
+		5A95ED9F2D5E196B005B6DF7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A95ED9E2D5E196B005B6DF7 /* BaseViewController.m */; };
 		B69EB02729E7CB9B00BBDB73 /* MRECDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02629E7CB9B00BBDB73 /* MRECDisplayViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 		527986952A01B25B00CED193 /* NativeStandardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardViewController.m; sourceTree = "<group>"; };
 		527986972A01B7B100CED193 /* NativeStandardCustomTemplateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeStandardCustomTemplateViewController.h; sourceTree = "<group>"; };
 		527986982A01B7B100CED193 /* NativeStandardCustomTemplateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardCustomTemplateViewController.m; sourceTree = "<group>"; };
+		5A95ED9D2D5E196B005B6DF7 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5A95ED9E2D5E196B005B6DF7 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B69EB02529E7CB9B00BBDB73 /* MRECDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECDisplayViewController.h; sourceTree = "<group>"; };
 		B69EB02629E7CB9B00BBDB73 /* MRECDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECDisplayViewController.m; sourceTree = "<group>"; };
 		E60023891DC0B03300833CDB /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +213,8 @@
 		E60023C31DC1CB8200833CDB /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				5A95ED9D2D5E196B005B6DF7 /* BaseViewController.h */,
+				5A95ED9E2D5E196B005B6DF7 /* BaseViewController.m */,
 				527986912A01B20500CED193 /* Native */,
 				B69EB02229E7CB3F00BBDB73 /* MRECDisplay */,
 				2160C823251E14550037E767 /* RewardedAd */,
@@ -297,6 +302,7 @@
 			files = (
 				21C1A290226491F10052C4C6 /* BannerViewController.m in Sources */,
 				20C273A1237C1B4D0042D9E4 /* MRECVideoViewController.m in Sources */,
+				5A95ED9F2D5E196B005B6DF7 /* BaseViewController.m in Sources */,
 				B69EB02729E7CB9B00BBDB73 /* MRECDisplayViewController.m in Sources */,
 				2160C826251E147D0037E767 /* RewardedViewController.m in Sources */,
 				21C1A291226491F10052C4C6 /* InterstitialViewController.m in Sources */,

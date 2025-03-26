@@ -75,57 +75,57 @@
 
 // Notifies the delegate that an ad has been received successfully.
 - (void)interstitialDidReceiveAd:(nonnull POBInterstitial *)interstitial {
-    self.showAdButton.hidden = NO;
-    NSLog(@"Interstitial : Ad Received");
+    [self.showAdButton setEnabled:YES];
+    [self log:@"Interstitial : Ad Received"];
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"Interstitial : Failed to receive ad with error : %@", error.localizedDescription);
+    [self log:@"Interstitial : Failed to receive ad with error : %@", error.localizedDescription];
 }
 
 - (void)interstitial:(POBInterstitial *)interstitial didFailToShowAdWithError:(NSError *)error {
-    NSLog(@"Interstitial : Failed to show ad with error : %@", error.localizedDescription);
+    [self log:@"Interstitial : Failed to show ad with error : %@", error.localizedDescription];
 }
 
 // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
 - (void)interstitialWillPresentAd:(POBInterstitial * _Nonnull)interstitial {
-    NSLog(@"Interstitial : Will present");
+    [self log:@"Interstitial : Will present"];
 }
 
 - (void)interstitialDidPresentAd:(POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Did present");
+    [self log:@"Interstitial : Did present"];
 }
 
 // Notifies the delegate that the interstitial ad has been animated off the screen.
 - (void)interstitialDidDismissAd:(POBInterstitial * _Nonnull)interstitial {
-    NSLog(@"Interstitial : Dismissed");
+    [self log:@"Interstitial : Dismissed"];
 }
 
 // Notifies the delegate of ad click
 - (void)interstitialDidClickAd:(POBInterstitial * _Nonnull)interstitial {
-    NSLog(@"Interstitial : Ad Clicked");
+    [self log:@"Interstitial : Ad Clicked"];
 }
 
 // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
 - (void)interstitialWillLeaveApplication:(nonnull POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Will leave app");
+    [self log:@"Interstitial : Will leave app"];
 }
 
 // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
 - (void)interstitialDidExpireAd:(POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Ad Expired");
+    [self log:@"Interstitial : Ad Expired"];
 }
 
 - (void)interstitialDidRecordImpression:(POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Ad Impression");
+    [self log:@"Interstitial : Ad Impression"];
 }
 
 #pragma mark - POBInterstitialVideoDelegate methods
 
 // Notifies the delegate of VAST based video ad events
 - (void)interstitialDidFinishVideoPlayback:(POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Finished video playback");
+    [self log:@"Interstitial : Finished video playback"];
 }
 
 #pragma mark - dealloc

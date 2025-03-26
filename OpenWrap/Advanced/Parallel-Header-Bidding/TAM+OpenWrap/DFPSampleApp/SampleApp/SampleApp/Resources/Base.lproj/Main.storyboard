@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Voa-RL-UJi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Voa-RL-UJi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,10 +19,29 @@
                     <view key="view" contentMode="scaleToFill" id="coy-Ip-occ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mWG-JX-bVO">
+                                <rect key="frame" x="5" y="97" width="404" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aUU-tF-a8W"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aUU-tF-a8W" firstAttribute="bottom" secondItem="mWG-JX-bVO" secondAttribute="bottom" constant="55" id="0AN-hm-lil"/>
+                            <constraint firstItem="aUU-tF-a8W" firstAttribute="trailing" secondItem="mWG-JX-bVO" secondAttribute="trailing" constant="5" id="B2M-iL-tHW"/>
+                            <constraint firstItem="mWG-JX-bVO" firstAttribute="top" secondItem="aUU-tF-a8W" secondAttribute="top" constant="5" id="TyL-EL-yr1"/>
+                            <constraint firstItem="mWG-JX-bVO" firstAttribute="leading" secondItem="aUU-tF-a8W" secondAttribute="leading" constant="5" id="eJh-xA-UFd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Banner Ad" id="IO2-gZ-IeV"/>
+                    <connections>
+                        <outlet property="logTextView" destination="mWG-JX-bVO" id="RXR-wQ-RX5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rz-32-a1Z" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,44 +145,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtY-qv-Dbo">
-                                <rect key="frame" x="162" y="172" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elf-Aa-2sn">
+                                <rect key="frame" x="108.5" y="112" width="197.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dml-9y-7H5">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdAction:" destination="mIv-Np-gYh" eventType="touchUpInside" id="E6F-eH-zgo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-mb-dLd">
+                                        <rect key="frame" x="106.5" y="0.0" width="91" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ShowAd"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="showAdAction:" destination="mIv-Np-gYh" eventType="touchUpInside" id="Fyn-AM-QoJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="IYo-8P-9hL"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="G47-OX-YKZ"/>
-                                    <constraint firstAttribute="height" constant="34" id="i6x-05-Og2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dml-9y-7H5" secondAttribute="bottom" id="6B7-Nj-WeS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rc1-mb-dLd" secondAttribute="trailing" id="6xi-kT-DEF"/>
+                                    <constraint firstItem="Dml-9y-7H5" firstAttribute="leading" secondItem="elf-Aa-2sn" secondAttribute="leading" id="AvF-6b-rYI"/>
+                                    <constraint firstItem="Dml-9y-7H5" firstAttribute="top" secondItem="elf-Aa-2sn" secondAttribute="top" id="KKS-Tm-A8I"/>
+                                    <constraint firstItem="Rc1-mb-dLd" firstAttribute="leading" secondItem="Dml-9y-7H5" secondAttribute="trailing" constant="20" id="KQg-gz-lOS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rc1-mb-dLd" secondAttribute="bottom" id="aaO-ol-qhZ"/>
+                                    <constraint firstItem="Rc1-mb-dLd" firstAttribute="top" secondItem="elf-Aa-2sn" secondAttribute="top" id="acS-vA-pJY"/>
                                 </constraints>
-                                <state key="normal" title="Load Ad"/>
-                                <connections>
-                                    <action selector="loadAdAction:" destination="mIv-Np-gYh" eventType="touchUpInside" id="ycD-xq-BLH"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQJ-AU-WbO">
-                                <rect key="frame" x="162" y="233" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="1Lk-c3-qZq"/>
-                                    <constraint firstAttribute="height" constant="34" id="qAM-uA-mta"/>
-                                </constraints>
-                                <state key="normal" title="Show Ad"/>
-                                <connections>
-                                    <action selector="showAdAction:" destination="mIv-Np-gYh" eventType="touchUpInside" id="OTR-73-mvu"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F8e-Pb-l5s">
+                                <rect key="frame" x="5" y="151.5" width="404" height="705.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p2b-yF-Wph"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pQJ-AU-WbO" firstAttribute="leading" secondItem="XtY-qv-Dbo" secondAttribute="leading" id="6OZ-4d-YL7"/>
-                            <constraint firstItem="XtY-qv-Dbo" firstAttribute="top" secondItem="lZb-2b-bY8" secondAttribute="bottom" constant="80" id="Gj3-HH-lp0"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pQJ-AU-WbO" secondAttribute="trailing" constant="20" symbolic="YES" id="Rvj-UE-RdU"/>
-                            <constraint firstItem="XtY-qv-Dbo" firstAttribute="centerX" secondItem="LdV-d7-V8G" secondAttribute="centerX" id="chC-VA-84r"/>
-                            <constraint firstItem="pQJ-AU-WbO" firstAttribute="top" secondItem="XtY-qv-Dbo" secondAttribute="bottom" constant="27" id="moM-2J-k4d"/>
+                            <constraint firstItem="elf-Aa-2sn" firstAttribute="top" secondItem="p2b-yF-Wph" secondAttribute="top" constant="20" id="Hvs-RM-ZuI"/>
+                            <constraint firstItem="elf-Aa-2sn" firstAttribute="centerX" secondItem="p2b-yF-Wph" secondAttribute="centerX" id="LRQ-YR-0hJ"/>
+                            <constraint firstItem="p2b-yF-Wph" firstAttribute="trailing" secondItem="F8e-Pb-l5s" secondAttribute="trailing" constant="5" id="Pfa-jP-qTh"/>
+                            <constraint firstItem="F8e-Pb-l5s" firstAttribute="leading" secondItem="p2b-yF-Wph" secondAttribute="leading" constant="5" id="hXV-Js-lS1"/>
+                            <constraint firstItem="p2b-yF-Wph" firstAttribute="bottom" secondItem="F8e-Pb-l5s" secondAttribute="bottom" constant="5" id="nl0-ET-Akf"/>
+                            <constraint firstItem="F8e-Pb-l5s" firstAttribute="top" secondItem="elf-Aa-2sn" secondAttribute="bottom" constant="5" id="w45-tu-a4m"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Interstitial Display Ad" id="oa6-8S-Ci1"/>
                     <connections>
-                        <outlet property="showAdButton" destination="pQJ-AU-WbO" id="lU2-Wz-j1R"/>
+                        <outlet property="logTextView" destination="F8e-Pb-l5s" id="k7l-Cw-fvF"/>
+                        <outlet property="showAdButton" destination="Rc1-mb-dLd" id="OTz-xD-Xep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2H-fx-c5f" sceneMemberID="firstResponder"/>
@@ -174,6 +214,12 @@
     <resources>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

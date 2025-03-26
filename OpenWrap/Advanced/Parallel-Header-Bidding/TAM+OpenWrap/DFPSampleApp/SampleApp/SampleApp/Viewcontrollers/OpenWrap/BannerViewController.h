@@ -15,8 +15,9 @@
 * TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL ANYTHING THAT IT  MAY DESCRIBE, IN WHOLE OR IN PART.
 */
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import "BiddingManager.h"
 
-@interface BannerViewController : UIViewController<BiddingManagerDelegate>
+@interface BannerViewController : BaseViewController<BiddingManagerDelegate>
 
 @end

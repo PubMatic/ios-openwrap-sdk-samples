@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		2076C8C82551257000BC07AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2076C8C72551257000BC07AF /* Assets.xcassets */; };
 		2076C8CB2551257000BC07AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2076C8C92551257000BC07AF /* LaunchScreen.storyboard */; };
 		2076C8CE2551257000BC07AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076C8CD2551257000BC07AF /* main.m */; };
+		5AA1C4C02D5F9B1B00114FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4BF2D5F9B1B00114FD4 /* BaseViewController.swift */; };
 		BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC5028CA71FC00A8FAE5 /* Constants.swift */; };
 		E27692862988F76B00D86AD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692832988F76A00D86AD1 /* MainViewController.swift */; };
 		E27692872988F76B00D86AD1 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692842988F76A00D86AD1 /* InterstitialViewController.swift */; };
@@ -30,6 +31,7 @@
 		2076C8CA2551257000BC07AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2076C8CC2551257000BC07AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2076C8CD2551257000BC07AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5AA1C4BF2D5F9B1B00114FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BA62CC4F28CA708B00A8FAE5 /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		BA62CC5028CA71FC00A8FAE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E27692832988F76A00D86AD1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		2076C8D62551259900BC07AF /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				5AA1C4BF2D5F9B1B00114FD4 /* BaseViewController.swift */,
 				E27692852988F76B00D86AD1 /* BannerViewController.swift */,
 				E27692842988F76A00D86AD1 /* InterstitialViewController.swift */,
 				E27692832988F76A00D86AD1 /* MainViewController.swift */,
@@ -213,6 +216,7 @@
 				2076C8BD2551256A00BC07AF /* AppDelegate.m in Sources */,
 				2076C8CE2551257000BC07AF /* main.m in Sources */,
 				E276928F2988F77E00D86AD1 /* BiddingManager.swift in Sources */,
+				5AA1C4C02D5F9B1B00114FD4 /* BaseViewController.swift in Sources */,
 				BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */,
 				E276928E2988F77E00D86AD1 /* TAMAdLoader.swift in Sources */,
 				E27692862988F76B00D86AD1 /* MainViewController.swift in Sources */,

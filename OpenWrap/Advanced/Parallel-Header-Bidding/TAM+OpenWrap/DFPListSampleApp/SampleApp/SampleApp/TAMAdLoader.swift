@@ -27,6 +27,7 @@
 */
 
 import UIKit
+import GoogleMobileAds
 
 /**
  Bidder class to load bids from TAM SDK.
@@ -49,7 +50,7 @@ class TAMAdLoader: NSObject, DTBAdCallback, Bidding {
 
     func loadBids() {
         print("TAM: Loading ad from A9 TAM SDK")
-        let adLoader = DTBAdLoader()
+        let adLoader = DTBAdLoader(adNetworkInfo: DTBAdNetworkInfo(networkName: DTBADNETWORK_GOOGLE_AD_MANAGER))
         adLoader.setAdSizes([adSize!])
         adLoader.loadAd(self)
     }

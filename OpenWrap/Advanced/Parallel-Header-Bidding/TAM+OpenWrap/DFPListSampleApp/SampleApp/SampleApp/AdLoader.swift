@@ -60,7 +60,7 @@ class AdLoader: NSObject, POBBidEventDelegate, BiddingManagerDelegate, POBBanner
     var profileid: NSNumber
     var owadUnitId: String
     var gamAdUnit: String
-    var adsize: GADAdSize
+    var adsize: AdSize
     var slotid: String
     // Instance of bidding manager
     var biddingManager: BiddingManager
@@ -83,7 +83,7 @@ class AdLoader: NSObject, POBBidEventDelegate, BiddingManagerDelegate, POBBanner
          owAdUnitId: String,
          gamAdUnitId: String,
          slotId: String,
-         adSize: GADAdSize) {
+         adSize: AdSize) {
 
         pubid = pubId
         profileid = profileId
@@ -97,7 +97,7 @@ class AdLoader: NSObject, POBBidEventDelegate, BiddingManagerDelegate, POBBanner
         biddingManager = BiddingManager()
         
         // Create event handler
-        let eventHandler = DFPBannerEventHandler(adUnitId: gamAdUnit, andSizes: [NSValueFromGADAdSize(adSize)])
+        let eventHandler = DFPBannerEventHandler(adUnitId: gamAdUnit, andSizes: [nsValue(for: adSize)])
         
         // Create a banner view
         bannerView = POBBannerView(publisherId: pubid, profileId:

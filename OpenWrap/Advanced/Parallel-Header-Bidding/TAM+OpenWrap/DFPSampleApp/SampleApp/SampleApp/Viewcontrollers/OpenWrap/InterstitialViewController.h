@@ -16,8 +16,9 @@
 */
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import "BiddingManager.h"
 
-@interface InterstitialViewController : UIViewController<BiddingManagerDelegate>
+@interface InterstitialViewController : BaseViewController<BiddingManagerDelegate>
 
 @end

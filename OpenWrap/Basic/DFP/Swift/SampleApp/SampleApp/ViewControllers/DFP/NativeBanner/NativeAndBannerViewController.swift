@@ -20,7 +20,7 @@ import OpenWrapSDK
 import OpenWrapHandlerDFP
 import GoogleMobileAds
 
-class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, POBGAMNativeAdDelegate, POBGAMCustomNativeAdDelegate, GADNativeAdDelegate, GADCustomNativeAdDelegate {
+class NativeAndBannerViewController: BaseViewController, POBBannerViewDelegate, POBGAMNativeAdDelegate, POBGAMCustomNativeAdDelegate, NativeAdDelegate, CustomNativeAdDelegate {
 
     let gamAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-NativeAndBanner"
     let owAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-NativeAndBanner"
@@ -35,12 +35,12 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let adSizes = [NSValueFromGADAdSize(GADAdSizeMediumRectangle)]
+        let adSizes = [nsValue(for: AdSizeMediumRectangle)]
         
         // Create a native banner event handler for your ad server. Make
         // sure you use separate event handler objects to create each banner
         // For example, The code below creates an event handler for GAM ad server.
-        let eventHandler = GAMNativeBannerEventHandler(adUnitId: gamAdUnit, adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative], options: nil, andSizes: adSizes)
+        let eventHandler = GAMNativeBannerEventHandler(adUnitId: gamAdUnit, adTypes: [AdLoaderAdType.native, AdLoaderAdType.customNative], options: nil, andSizes: adSizes)
         
         // Set event handler delegate for native ad
         eventHandler.nativeDelegate = self
@@ -67,7 +67,7 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     }
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(String(describing:bannerView.creativeSize())) ")
+        log("Banner : Ad received with size \(String(describing: bannerView.creativeSize()))")
 
         // Add the banner view to your view hierarchy.
         // You may also add it after an ad is successfully loaded.
@@ -77,37 +77,37 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView,
                     didFailToReceiveAdWithError error: Error) {
-        print("Banner : Ad failed with error : \(error.localizedDescription )")
+        log("Banner : Ad failed with error : \(error.localizedDescription)")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click
     func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
-        print("Banner : Will leave app")
+        log("Banner : Will leave app")
     }
     
     // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
     func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
-        print("Banner : Will present modal")
+        log("Banner : Will present modal")
     }
     
     // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
     func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
-        print("Banner : Dismissed modal")
+        log("Banner : Dismissed modal")
     }
     
     // Notifies the delegate that the banner view was clicked.
     func bannerViewDidClickAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad clicked")
+        log("Banner : Ad clicked")
     }
 
     func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
-        print("Banner : Ad Impression")
+        log("Banner : Ad Impression")
     }
 
     // MARK: - POBGAMNativeAdDelegate
     // Notifies the delegate that an ad has been successfully received.
-    func eventHandler(_ eventHandler: POBBannerEvent, didReceive nativeAd: GADNativeAd) {
-        print("Native : Ad received.")
+    func eventHandler(_ eventHandler: POBBannerEvent, didReceive nativeAd: NativeAd) {
+        log("Native : Ad received.")
         
         // Set GAM native ad delegate
         nativeAd.delegate = self
@@ -123,8 +123,8 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     }
     
     // Notifies the delegate that an ad has been successfully received.
-    func eventHandler(_ eventHandler: POBBannerEvent, didReceive customNativeAd: GADCustomNativeAd) {
-        print("Custom Native : Ad received.")
+    func eventHandler(_ eventHandler: POBBannerEvent, didReceive customNativeAd: CustomNativeAd) {
+        log("Custom Native : Ad received.")
         
         // Set GAM custom native ad delegate
         customNativeAd.delegate = self
@@ -136,75 +136,75 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
         customNativeAd.recordImpression()
     }
     
-    // MARK: - GADNativeAdDelegate
+    // MARK: - NativeAdDelegate
     // Called when an impression is recorded for an ad. Only called for Google ads and is not
     // supported for mediated ads.
-    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
-        print("Native : Ad recorded impression.")
+    func nativeAdDidRecordImpression(_ nativeAd: NativeAd) {
+        log("Native : Ad recorded impression.")
     }
     
     // Called when a click is recorded for an ad. Only called for Google ads and is not
     // supported for mediated ads.
-    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
-        print("Native : Ad recorded click.")
+    func nativeAdDidRecordClick(_ nativeAd: NativeAd) {
+        log("Native : Ad recorded click.")
     }
     
     // Called before presenting the user a full screen view in response to an ad action
-    func nativeAdWillPresentScreen(_ nativeAd: GADNativeAd) {
-        print("Native : Ad will present screen.")
+    func nativeAdWillPresentScreen(_ nativeAd: NativeAd) {
+        log("Native : Ad will present screen.")
     }
     
     // Called before dismissing a full screen view.
-    func nativeAdWillDismissScreen(_ nativeAd: GADNativeAd) {
-        print("Native : Ad will dismiss screen.")
+    func nativeAdWillDismissScreen(_ nativeAd: NativeAd) {
+        log("Native : Ad will dismiss screen.")
     }
     
     // Called after dismissing a full screen view
-    func nativeAdDidDismissScreen(_ nativeAd: GADNativeAd) {
-        print("Native : Ad did dismiss screen.")
+    func nativeAdDidDismissScreen(_ nativeAd: NativeAd) {
+        log("Native : Ad did dismiss screen.")
     }
     
     // Used for Mute This Ad feature. Called after the native ad is muted.
-    func nativeAdIsMuted(_ nativeAd: GADNativeAd) {
-        print("Native : Ad is muted.")
+    func nativeAdIsMuted(_ nativeAd: NativeAd) {
+        log("Native : Ad is muted.")
     }
     
-    // MARK: - GADCustomNativeAdDelegate
+    // MARK: - CustomNativeAdDelegate
     // Called when an impression is recorded for a custom native ad.
-    func customNativeAdDidRecordImpression(_ nativeAd: GADCustomNativeAd) {
-        print("Custom native : Ad recorded impression.")
+    func customNativeAdDidRecordImpression(_ nativeAd: CustomNativeAd) {
+        log("Custom native : Ad recorded impression.")
     }
     
     // Called when a click is recorded for a custom native ad.
-    func customNativeAdDidRecordClick(_ nativeAd: GADCustomNativeAd) {
-        print("Custom native : Ad recorded click.")
+    func customNativeAdDidRecordClick(_ nativeAd: CustomNativeAd) {
+        log("Custom native : Ad recorded click.")
     }
     
     // Called just before presenting the user a full screen view, such as a browser,
     // in response to clicking on an ad.
-    func customNativeAdWillPresentScreen(_ nativeAd: GADCustomNativeAd) {
-        print("Custom native : Ad will present screen.")
+    func customNativeAdWillPresentScreen(_ nativeAd: CustomNativeAd) {
+        log("Custom native : Ad will present screen.")
     }
     
     // Called just before dismissing a full screen view.
-    func customNativeAdWillDismissScreen(_ nativeAd: GADCustomNativeAd) {
-        print("Custom native : Ad will dismiss screen.")
+    func customNativeAdWillDismissScreen(_ nativeAd: CustomNativeAd) {
+        log("Custom native : Ad will dismiss screen.")
     }
     
     // Called just after dismissing a full screen view.
-    func customNativeAdDidDismissScreen(_ nativeAd: GADCustomNativeAd) {
-        print("Custom native : Ad did dismiss screen.")
+    func customNativeAdDidDismissScreen(_ nativeAd: CustomNativeAd) {
+        log("Custom native : Ad did dismiss screen.")
     }
 
     // MARK: - Helper methods
     // Show native ad
-    func showNativeAd(nativeAd: GADNativeAd) -> Void {
+    func showNativeAd(nativeAd: NativeAd) -> Void {
         // Remove previous ad view.
         nativeAdView?.removeFromSuperview()
         
         // Add new ad view and set constraints to fill its container.
         // Create and place ad in view hierarchy.
-        let gadNativeAdView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first as? GADNativeAdView
+        let gadNativeAdView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first as? NativeAdView
         if gadNativeAdView != nil {
             nativeAdView = gadNativeAdView!
             addBannerToView(banner: nativeAdView!, adSize: nativeAdView!.frame.size)
@@ -261,7 +261,7 @@ class NativeAndBannerViewController: UIViewController, POBBannerViewDelegate, PO
     }
     
     // Show custom native ad
-    func showCustomNativeAd(customNativeAd: GADCustomNativeAd) -> Void {
+    func showCustomNativeAd(customNativeAd: CustomNativeAd) {
         // Remove previous ad view.
         nativeAdView?.removeFromSuperview()
         

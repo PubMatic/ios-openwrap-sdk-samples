@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,14 +15,33 @@
                     <view key="view" contentMode="scaleToFill" id="Mw0-Z3-H3S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-9x-w3s">
+                                <rect key="frame" x="5" y="69" width="365" height="343"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qXx-2r-vDT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qXx-2r-vDT" firstAttribute="trailing" secondItem="JT8-9x-w3s" secondAttribute="trailing" constant="5" id="AKR-or-MNx"/>
+                            <constraint firstItem="JT8-9x-w3s" firstAttribute="top" secondItem="qXx-2r-vDT" secondAttribute="top" constant="5" id="EGV-LP-E6p"/>
+                            <constraint firstItem="JT8-9x-w3s" firstAttribute="leading" secondItem="qXx-2r-vDT" secondAttribute="leading" constant="5" id="bJb-6M-APW"/>
+                            <constraint firstItem="qXx-2r-vDT" firstAttribute="bottom" secondItem="JT8-9x-w3s" secondAttribute="bottom" constant="255" id="rGz-BD-Kh5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MREC Display Ad" id="QIg-wN-T9G"/>
+                    <connections>
+                        <outlet property="logTextView" destination="JT8-9x-w3s" id="XKn-hc-1sO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIB-Cp-kcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-617" y="-367"/>
+            <point key="canvasLocation" x="-1418" y="-1110"/>
         </scene>
         <!--OpenWrap Banner-->
         <scene sceneID="4Qh-JV-ZPo">
@@ -36,13 +54,32 @@
                     <view key="view" contentMode="scaleToFill" id="K2H-aL-W8M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TYo-xc-OkV">
+                                <rect key="frame" x="5" y="69" width="365" height="543"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0zd-7p-63s"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0zd-7p-63s" firstAttribute="bottom" secondItem="TYo-xc-OkV" secondAttribute="bottom" constant="55" id="N4s-DJ-T8c"/>
+                            <constraint firstItem="TYo-xc-OkV" firstAttribute="leading" secondItem="0zd-7p-63s" secondAttribute="leading" constant="5" id="Oic-Np-Liw"/>
+                            <constraint firstItem="0zd-7p-63s" firstAttribute="trailing" secondItem="TYo-xc-OkV" secondAttribute="trailing" constant="5" id="bAd-S7-y2b"/>
+                            <constraint firstItem="TYo-xc-OkV" firstAttribute="top" secondItem="0zd-7p-63s" secondAttribute="top" constant="5" id="uUg-xr-5wI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logTextView" destination="TYo-xc-OkV" id="i67-iX-2Xk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwv-Oi-K0U" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="200"/>
+            <point key="canvasLocation" x="-2239" y="-1109"/>
         </scene>
         <!--OpenWrap Interstitial-->
         <scene sceneID="XEr-sA-qCv">
@@ -56,48 +93,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-0t-iQ0">
-                                <rect key="frame" x="142.5" y="134" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rs9-pc-4N7">
+                                <rect key="frame" x="89" y="84" width="197.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-0t-iQ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="6ba-yv-err"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGL-XU-XE0">
+                                        <rect key="frame" x="106.5" y="0.0" width="91" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ShowAd"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="showAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="Wex-r2-VxQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="C6D-3I-vdc"/>
-                                    <constraint firstAttribute="height" constant="34" id="WnA-VA-4sE"/>
+                                    <constraint firstItem="qGL-XU-XE0" firstAttribute="top" secondItem="rs9-pc-4N7" secondAttribute="top" id="0Pf-Bc-XC5"/>
+                                    <constraint firstAttribute="trailing" secondItem="qGL-XU-XE0" secondAttribute="trailing" id="36Z-2B-joy"/>
+                                    <constraint firstAttribute="bottom" secondItem="qGL-XU-XE0" secondAttribute="bottom" id="50K-vH-qDS"/>
+                                    <constraint firstItem="qGL-XU-XE0" firstAttribute="leading" secondItem="I1H-0t-iQ0" secondAttribute="trailing" constant="20" id="API-ag-pnM"/>
+                                    <constraint firstItem="I1H-0t-iQ0" firstAttribute="top" secondItem="rs9-pc-4N7" secondAttribute="top" id="KyP-1A-tJb"/>
+                                    <constraint firstAttribute="bottom" secondItem="I1H-0t-iQ0" secondAttribute="bottom" id="h9c-lr-S3X"/>
+                                    <constraint firstItem="I1H-0t-iQ0" firstAttribute="leading" secondItem="rs9-pc-4N7" secondAttribute="leading" id="ry7-Du-usL"/>
                                 </constraints>
-                                <state key="normal" title="Load Ad"/>
-                                <connections>
-                                    <action selector="loadAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="6ba-yv-err"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGL-XU-XE0">
-                                <rect key="frame" x="142.5" y="195" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="u7J-2n-kPl"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="zlY-Vk-f04"/>
-                                </constraints>
-                                <state key="normal" title="Show Ad"/>
-                                <connections>
-                                    <action selector="showAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="Wex-r2-VxQ"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pi1-Bt-MKj">
+                                <rect key="frame" x="5" y="123.5" width="365" height="538.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Npl-J5-Fll"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="I1H-0t-iQ0" firstAttribute="top" secondItem="4yf-NW-QR9" secondAttribute="bottom" constant="90" id="0Dd-GQ-VaT"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qGL-XU-XE0" secondAttribute="trailing" constant="20" symbolic="YES" id="QiS-m0-81T"/>
-                            <constraint firstItem="I1H-0t-iQ0" firstAttribute="centerX" secondItem="zbA-cz-QZc" secondAttribute="centerX" id="UmS-O0-t8g"/>
-                            <constraint firstItem="qGL-XU-XE0" firstAttribute="top" secondItem="I1H-0t-iQ0" secondAttribute="bottom" constant="27" id="ei1-wY-CoW"/>
-                            <constraint firstItem="qGL-XU-XE0" firstAttribute="leading" secondItem="I1H-0t-iQ0" secondAttribute="leading" id="hwM-qm-Yma"/>
+                            <constraint firstItem="rs9-pc-4N7" firstAttribute="top" secondItem="Npl-J5-Fll" secondAttribute="top" constant="20" id="5QG-lL-0fo"/>
+                            <constraint firstItem="pi1-Bt-MKj" firstAttribute="top" secondItem="rs9-pc-4N7" secondAttribute="bottom" constant="5" id="7Gh-67-hV1"/>
+                            <constraint firstItem="Npl-J5-Fll" firstAttribute="bottom" secondItem="pi1-Bt-MKj" secondAttribute="bottom" constant="5" id="7o4-yX-Cy8"/>
+                            <constraint firstItem="rs9-pc-4N7" firstAttribute="centerX" secondItem="Npl-J5-Fll" secondAttribute="centerX" id="Ixw-Fp-gi3"/>
+                            <constraint firstItem="pi1-Bt-MKj" firstAttribute="leading" secondItem="Npl-J5-Fll" secondAttribute="leading" constant="5" id="Y0c-QP-80K"/>
+                            <constraint firstItem="Npl-J5-Fll" firstAttribute="trailing" secondItem="pi1-Bt-MKj" secondAttribute="trailing" constant="5" id="lcg-Qu-afb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logTextView" destination="pi1-Bt-MKj" id="z5w-I5-MsK"/>
                         <outlet property="showAdButton" destination="qGL-XU-XE0" id="odS-n2-8e3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSD-gB-Ha0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="882"/>
+            <point key="canvasLocation" x="-1418.4000000000001" y="-431.33433283358323"/>
         </scene>
         <!--OpenWrap Interstitial Video Ad-->
         <scene sceneID="Aso-1j-FKB">
@@ -107,51 +164,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dM-G6-TxY">
-                                <rect key="frame" x="142.5" y="124" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1b-qA-Zbh">
+                                <rect key="frame" x="89" y="84" width="197.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuE-nT-4YU">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdAction:" destination="3V9-1W-tHY" eventType="touchUpInside" id="9oV-6s-dzs"/>
+                                            <action selector="loadAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="C8q-6u-JsV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUM-99-F0o">
+                                        <rect key="frame" x="106.5" y="0.0" width="91" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ShowAd"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="showAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="u1n-Kh-UBC"/>
+                                            <action selector="showAdAction:" destination="3V9-1W-tHY" eventType="touchUpInside" id="uyy-zL-FJ7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="aI4-cv-j6y"/>
-                                    <constraint firstAttribute="height" constant="34" id="pWm-pS-OMu"/>
+                                    <constraint firstAttribute="bottom" secondItem="kuE-nT-4YU" secondAttribute="bottom" id="MpE-lJ-M5I"/>
+                                    <constraint firstItem="gUM-99-F0o" firstAttribute="top" secondItem="W1b-qA-Zbh" secondAttribute="top" id="RRZ-Wp-t8s"/>
+                                    <constraint firstItem="kuE-nT-4YU" firstAttribute="leading" secondItem="W1b-qA-Zbh" secondAttribute="leading" id="Tic-eV-chK"/>
+                                    <constraint firstItem="gUM-99-F0o" firstAttribute="leading" secondItem="kuE-nT-4YU" secondAttribute="trailing" constant="20" id="Ugr-Nm-oSb"/>
+                                    <constraint firstAttribute="bottom" secondItem="gUM-99-F0o" secondAttribute="bottom" id="er4-X9-gqt"/>
+                                    <constraint firstAttribute="trailing" secondItem="gUM-99-F0o" secondAttribute="trailing" id="i9m-sU-5lN"/>
+                                    <constraint firstItem="kuE-nT-4YU" firstAttribute="top" secondItem="W1b-qA-Zbh" secondAttribute="top" id="rvC-bL-xKU"/>
                                 </constraints>
-                                <state key="normal" title="Load Ad"/>
-                                <connections>
-                                    <action selector="loadAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="IHt-hc-TnL"/>
-                                    <action selector="loadAdAction:" destination="3V9-1W-tHY" eventType="touchUpInside" id="WYn-sk-9rr"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga2-EJ-Hcg">
-                                <rect key="frame" x="142.5" y="185" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="3Rg-oT-jW3"/>
-                                    <constraint firstAttribute="height" constant="34" id="FEi-mQ-zqZ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="Rcr-hl-5PJ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="tvP-YS-76G"/>
-                                </constraints>
-                                <state key="normal" title="Show Ad"/>
-                                <connections>
-                                    <action selector="showAdAction:" destination="zhS-Qk-4D0" eventType="touchUpInside" id="ZwG-Oz-RBG"/>
-                                    <action selector="showAdAction:" destination="3V9-1W-tHY" eventType="touchUpInside" id="h7z-AY-FJn"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MXq-FU-5Aj">
+                                <rect key="frame" x="5" y="123.5" width="365" height="538.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5gO-gn-G0O"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5dM-G6-TxY" firstAttribute="top" secondItem="5gO-gn-G0O" secondAttribute="top" constant="80" id="JZc-2j-RRn"/>
-                            <constraint firstItem="5dM-G6-TxY" firstAttribute="centerX" secondItem="dHM-tL-rKB" secondAttribute="centerX" id="NBM-vz-tR1"/>
-                            <constraint firstItem="Ga2-EJ-Hcg" firstAttribute="centerX" secondItem="5dM-G6-TxY" secondAttribute="centerX" id="ZmN-Vm-U6f"/>
-                            <constraint firstItem="Ga2-EJ-Hcg" firstAttribute="top" secondItem="5dM-G6-TxY" secondAttribute="bottom" constant="27" id="pwX-LL-EVY"/>
+                            <constraint firstItem="5gO-gn-G0O" firstAttribute="leading" secondItem="MXq-FU-5Aj" secondAttribute="leading" constant="-5" id="3Sp-78-KwV"/>
+                            <constraint firstItem="W1b-qA-Zbh" firstAttribute="top" secondItem="5gO-gn-G0O" secondAttribute="top" constant="20" id="JL6-Cx-8eU"/>
+                            <constraint firstItem="W1b-qA-Zbh" firstAttribute="centerX" secondItem="5gO-gn-G0O" secondAttribute="centerX" id="MXY-WL-AeR"/>
+                            <constraint firstItem="MXq-FU-5Aj" firstAttribute="top" secondItem="W1b-qA-Zbh" secondAttribute="bottom" constant="5" id="X96-ta-ta3"/>
+                            <constraint firstItem="MXq-FU-5Aj" firstAttribute="bottom" secondItem="5gO-gn-G0O" secondAttribute="bottom" constant="-5" id="aoz-5K-fgB"/>
+                            <constraint firstItem="5gO-gn-G0O" firstAttribute="trailing" secondItem="MXq-FU-5Aj" secondAttribute="trailing" constant="5" id="hDy-9f-5CX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="showAdButton" destination="Ga2-EJ-Hcg" id="pIY-6A-4yD"/>
+                        <outlet property="logTextView" destination="MXq-FU-5Aj" id="h85-N8-pbe"/>
+                        <outlet property="showAdButton" destination="gUM-99-F0o" id="3r9-zB-rg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ww-am-ggs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="1559"/>
+            <point key="canvasLocation" x="-610" y="-431"/>
         </scene>
         <!--OpenWrap MREC Video Ad-->
         <scene sceneID="SIC-c7-eg1">
@@ -160,14 +236,33 @@
                     <view key="view" contentMode="scaleToFill" id="hBY-BI-RfA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iuV-nd-dfM">
+                                <rect key="frame" x="5" y="69" width="375" height="343"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GdY-HC-ovu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GdY-HC-ovu" firstAttribute="bottom" secondItem="iuV-nd-dfM" secondAttribute="bottom" constant="255" id="90b-xH-UsA"/>
+                            <constraint firstItem="iuV-nd-dfM" firstAttribute="trailing" secondItem="GdY-HC-ovu" secondAttribute="trailing" constant="5" id="B5b-OU-T4v"/>
+                            <constraint firstItem="iuV-nd-dfM" firstAttribute="leading" secondItem="GdY-HC-ovu" secondAttribute="leading" constant="5" id="gd0-tU-vIA"/>
+                            <constraint firstItem="iuV-nd-dfM" firstAttribute="top" secondItem="GdY-HC-ovu" secondAttribute="top" constant="5" id="hgI-ZM-c3M"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MREC Video Ad" id="D9j-UT-QBq"/>
+                    <connections>
+                        <outlet property="logTextView" destination="iuV-nd-dfM" id="hqI-SI-Uw3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4Z-EE-CKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="475"/>
+            <point key="canvasLocation" x="-610" y="-1110"/>
         </scene>
         <!--PubMatic SDK App-->
         <scene sceneID="aY2-RL-Sz3">
@@ -363,7 +458,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwx-yX-jqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1089" y="448"/>
+            <point key="canvasLocation" x="-2238" y="-430"/>
         </scene>
         <!--Native Standard Ad-->
         <scene sceneID="XfE-US-QeN">
@@ -379,6 +474,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr2-K9-ZNZ">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
                                         <connections>
@@ -388,6 +484,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWs-AS-jHm">
                                         <rect key="frame" x="107" y="0.0" width="104" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="RenderAd"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
                                         <connections>
@@ -405,22 +502,35 @@
                                     <constraint firstItem="cr2-K9-ZNZ" firstAttribute="top" secondItem="Chk-8m-mLq" secondAttribute="top" id="r9O-dA-rPt"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXF-UO-L1H">
+                                <rect key="frame" x="5" y="124" width="365" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YTH-Od-K4f"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YTH-Od-K4f" firstAttribute="bottom" secondItem="VXF-UO-L1H" secondAttribute="bottom" constant="95" id="7bQ-8a-tqn"/>
+                            <constraint firstItem="YTH-Od-K4f" firstAttribute="trailing" secondItem="VXF-UO-L1H" secondAttribute="trailing" constant="5" id="Al1-a9-RCF"/>
                             <constraint firstItem="Chk-8m-mLq" firstAttribute="top" secondItem="YTH-Od-K4f" secondAttribute="top" constant="20" id="Ck6-KY-WmP"/>
+                            <constraint firstItem="VXF-UO-L1H" firstAttribute="top" secondItem="Chk-8m-mLq" secondAttribute="bottom" constant="5" id="US2-hI-Bgu"/>
                             <constraint firstItem="Chk-8m-mLq" firstAttribute="centerX" secondItem="YTH-Od-K4f" secondAttribute="centerX" id="quW-cP-6ic"/>
+                            <constraint firstItem="VXF-UO-L1H" firstAttribute="leading" secondItem="YTH-Od-K4f" secondAttribute="leading" constant="5" id="yDD-JH-UGE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Native Standard Ad" id="6Z7-wI-7UY"/>
                     <connections>
+                        <outlet property="logTextView" destination="VXF-UO-L1H" id="y9n-It-68G"/>
                         <outlet property="renderAdButton" destination="xWs-AS-jHm" id="EUO-Xc-ZrO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdF-O4-k8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2521" y="510"/>
+            <point key="canvasLocation" x="-1418" y="258"/>
         </scene>
         <!--Native Standard Custom Template Ad-->
         <scene sceneID="qdO-fa-NVU">
@@ -436,6 +546,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1n-zC-Yph">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
                                         <connections>
@@ -445,6 +556,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmv-NJ-KDk">
                                         <rect key="frame" x="107" y="0.0" width="104" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="RenderAd"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Render Ad"/>
                                         <connections>
@@ -462,29 +574,42 @@
                                     <constraint firstItem="nmv-NJ-KDk" firstAttribute="top" secondItem="0eA-U7-PF9" secondAttribute="top" id="sdE-9L-plB"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OEQ-41-oCv">
+                                <rect key="frame" x="5" y="124" width="365" height="288"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dq3-gG-Ib2"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OEQ-41-oCv" firstAttribute="top" secondItem="0eA-U7-PF9" secondAttribute="bottom" constant="5" id="Fb4-ul-lgC"/>
+                            <constraint firstItem="OEQ-41-oCv" firstAttribute="leading" secondItem="dq3-gG-Ib2" secondAttribute="leading" constant="5" id="Lsr-9E-oBz"/>
                             <constraint firstItem="0eA-U7-PF9" firstAttribute="top" secondItem="dq3-gG-Ib2" secondAttribute="top" constant="20" id="TgP-ha-Jxg"/>
+                            <constraint firstItem="dq3-gG-Ib2" firstAttribute="trailing" secondItem="OEQ-41-oCv" secondAttribute="trailing" constant="5" id="Xuf-lT-WPx"/>
+                            <constraint firstItem="dq3-gG-Ib2" firstAttribute="bottom" secondItem="OEQ-41-oCv" secondAttribute="bottom" constant="255" id="gXP-EG-d8m"/>
                             <constraint firstItem="0eA-U7-PF9" firstAttribute="centerX" secondItem="dq3-gG-Ib2" secondAttribute="centerX" id="p1i-aB-M4U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Native Standard Custom Template Ad" id="Wuw-is-iob"/>
                     <connections>
+                        <outlet property="logTextView" destination="OEQ-41-oCv" id="H9X-Oh-Ywz"/>
                         <outlet property="renderAdButton" destination="nmv-NJ-KDk" id="bjK-R3-UpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1c-wQ-JPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2527" y="1276"/>
+            <point key="canvasLocation" x="-610" y="258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="swq-Ts-g3l">
             <objects>
                 <navigationController id="b0q-C6-PIb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BGq-vk-hds">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -493,7 +618,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="we8-pc-G2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="818"/>
+            <point key="canvasLocation" x="-3049" y="-431"/>
         </scene>
         <!--OpenWrap Rewarded-->
         <scene sceneID="bTK-4y-Q0O">
@@ -507,54 +632,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF0-v0-xvG">
-                                <rect key="frame" x="142.5" y="134" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reO-ox-3vM">
+                                <rect key="frame" x="89" y="84" width="197.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF0-v0-xvG">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdAction:" destination="VsY-UF-Qto" eventType="touchUpInside" id="kNX-U6-dRg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-Sw-Vai">
+                                        <rect key="frame" x="106.5" y="0.0" width="91" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ShowAd"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="showAdAction:" destination="VsY-UF-Qto" eventType="touchUpInside" id="Sty-mI-qdI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="Zmw-nd-xhP"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="o2J-Qb-czd"/>
+                                    <constraint firstAttribute="trailing" secondItem="YO1-Sw-Vai" secondAttribute="trailing" id="1Xa-dN-Zvs"/>
+                                    <constraint firstItem="cF0-v0-xvG" firstAttribute="top" secondItem="reO-ox-3vM" secondAttribute="top" id="5US-qC-eYR"/>
+                                    <constraint firstItem="cF0-v0-xvG" firstAttribute="leading" secondItem="reO-ox-3vM" secondAttribute="leading" id="91f-22-8G2"/>
+                                    <constraint firstItem="YO1-Sw-Vai" firstAttribute="top" secondItem="reO-ox-3vM" secondAttribute="top" id="Kub-tV-lMu"/>
+                                    <constraint firstAttribute="bottom" secondItem="YO1-Sw-Vai" secondAttribute="bottom" id="SDa-DG-mWK"/>
+                                    <constraint firstItem="YO1-Sw-Vai" firstAttribute="leading" secondItem="cF0-v0-xvG" secondAttribute="trailing" constant="20" id="a9J-qa-H3H"/>
+                                    <constraint firstAttribute="bottom" secondItem="cF0-v0-xvG" secondAttribute="bottom" id="eVh-pl-cTx"/>
                                 </constraints>
-                                <state key="normal" title="Load Ad"/>
-                                <connections>
-                                    <action selector="loadAdAction:" destination="VsY-UF-Qto" eventType="touchUpInside" id="kNX-U6-dRg"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-Sw-Vai">
-                                <rect key="frame" x="142.5" y="195" width="90" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="TAC-vz-uUV"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="z3w-AQ-dQu"/>
-                                </constraints>
-                                <state key="normal" title="Show Ad"/>
-                                <connections>
-                                    <action selector="showAdAction:" destination="VsY-UF-Qto" eventType="touchUpInside" id="Sty-mI-qdI"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-Qy-9Fj">
+                                <rect key="frame" x="5" y="123.5" width="365" height="538.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gV0-PJ-7Bt"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YO1-Sw-Vai" secondAttribute="trailing" constant="20" symbolic="YES" id="8N6-pd-MiB"/>
-                            <constraint firstItem="YO1-Sw-Vai" firstAttribute="top" secondItem="cF0-v0-xvG" secondAttribute="bottom" constant="27" id="OpT-hi-wnt"/>
-                            <constraint firstItem="YO1-Sw-Vai" firstAttribute="leading" secondItem="cF0-v0-xvG" secondAttribute="leading" id="PFd-EX-YyQ"/>
-                            <constraint firstItem="cF0-v0-xvG" firstAttribute="top" secondItem="ZPH-N9-xVc" secondAttribute="bottom" constant="90" id="Tud-Lh-P8f"/>
-                            <constraint firstItem="cF0-v0-xvG" firstAttribute="centerX" secondItem="Hv1-gK-d6Q" secondAttribute="centerX" id="iQT-cE-gPS"/>
+                            <constraint firstItem="gV0-PJ-7Bt" firstAttribute="bottom" secondItem="x5U-Qy-9Fj" secondAttribute="bottom" constant="5" id="A9R-pc-tbl"/>
+                            <constraint firstItem="x5U-Qy-9Fj" firstAttribute="top" secondItem="reO-ox-3vM" secondAttribute="bottom" constant="5" id="Bi3-gq-fF6"/>
+                            <constraint firstItem="reO-ox-3vM" firstAttribute="centerX" secondItem="gV0-PJ-7Bt" secondAttribute="centerX" id="FYI-AG-5fV"/>
+                            <constraint firstItem="reO-ox-3vM" firstAttribute="top" secondItem="gV0-PJ-7Bt" secondAttribute="top" constant="20" id="FaX-P3-5WB"/>
+                            <constraint firstItem="x5U-Qy-9Fj" firstAttribute="leading" secondItem="gV0-PJ-7Bt" secondAttribute="leading" constant="5" id="Nyp-e0-W18"/>
+                            <constraint firstItem="gV0-PJ-7Bt" firstAttribute="trailing" secondItem="x5U-Qy-9Fj" secondAttribute="trailing" constant="5" id="sKX-HA-t8A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rewarded Ad" id="t8z-Co-vPO"/>
                     <connections>
+                        <outlet property="logTextView" destination="x5U-Qy-9Fj" id="Bas-J7-QV1"/>
                         <outlet property="showAdButton" destination="YO1-Sw-Vai" id="znK-xe-e97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KE9-ou-Pd1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="927"/>
+            <point key="canvasLocation" x="198" y="-430"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

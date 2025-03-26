@@ -20,7 +20,7 @@ import OpenWrapSDK
 import OpenWrapHandlerDFP
 import GoogleMobileAds
 
-class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
+class NativeStandardCustomTemplateViewController: BaseViewController, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
     let gamAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-Native"
     let owAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-Native"
     let pubId = "156276"
@@ -40,12 +40,12 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
         // For example, the code below creates an event handler for GAM ad server.
         let eventHandler = GAMNativeEventHandler(
             adUnitId: gamAdUnit,
-            adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative],
+            adTypes: [AdLoaderAdType.native, AdLoaderAdType.customNative],
             options: nil,
             owFormatId: owFormatId)
         
         // Populate your native ad view and return it in the given rendering block.
-        eventHandler.nativeRenderingBlock = {[weak self] (nativeAd: GADNativeAd) -> GADNativeAdView? in
+        eventHandler.nativeRenderingBlock = {[weak self] (nativeAd: NativeAd) -> NativeAdView? in
             guard let self = self else {
                 return nil
             }
@@ -53,7 +53,7 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
         }
         
         // Populate your custom native ad view and return it in the given rendering block.
-        eventHandler.customNativeRenderingBlock = {[weak self] (customNativeAd: GADCustomNativeAd) -> UIView? in
+        eventHandler.customNativeRenderingBlock = {[weak self] (customNativeAd: CustomNativeAd) -> UIView? in
             guard let self = self else {
                 return nil
             }
@@ -104,16 +104,16 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
 
         // Render the native ad with the custom template view.
         nativeAd?.renderAd(with: templateView, andCompletion: { [weak self] (_: POBNativeAd, error: Error?) in
-            if let error = error {
-                print("Native : Failed to render ad with error - \(error.localizedDescription)")
-            } else {
-                if let self = self {
-                    // Attach native ad view.
-                    self.nativeAdView = self.nativeAd?.adView()
-                    self.addNativeAdViewToView(nativeAdView: self.nativeAdView, adSize: self.nativeAdView?.frame.size)
-                    print("Native : Ad rendered.")
-                }
+            guard let self else { return }
+            if let error {
+                log("Native : Failed to render ad with error - \(error.localizedDescription)")
+                return
             }
+
+            // Attach native ad view.
+            self.nativeAdView = self.nativeAd?.adView()
+            self.addNativeAdViewToView(nativeAdView: self.nativeAdView, adSize: self.nativeAdView?.frame.size)
+            log("Native : Ad rendered.")
         })
     }
 
@@ -121,7 +121,7 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
 
     // Notifies the delegate that an ad has been successfully loaded.
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
-        print("Native : Ad received.")
+        log("Native : Ad received.")
         self.nativeAd = nativeAd
         // Set the native ad delegate.
         self.nativeAd?.setAdDelegate(self)
@@ -130,7 +130,7 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
     
     // Notifies the delegate of an error encountered while loading an ad.
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didFailToReceiveAdWithError error: Error) {
-        print("Native : Failed to receive ad with error - \(error.localizedDescription)")
+        log("Native : Failed to receive ad with error - \(error.localizedDescription)")
     }
     
     // Returns a view controller instance to be used by ad server SDK for showing modals.
@@ -142,37 +142,37 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
     
     // Informs delegate that the native ad has recorded a click.
     func nativeAdDidRecordClick(_ nativeAd: POBNativeAd) {
-        print("Native : Ad click.")
+        log("Native : Ad click.")
     }
     
     // Notifies delegate that the native ad has dismissed the modal on top of the current view controller.
     func nativeAdDidDismissModal(_ nativeAd: POBNativeAd) {
-        print("Native : Dismissed modal")
+        log("Native : Dismissed modal")
     }
     
     // Notifies delegate that the native ad will launch a modal on top of the current view controller, as a result of user interaction.
     func nativeAdWillPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native : Will present modal")
+        log("Native : Will present modal")
     }
     
     // Notifies delegate that the native ad have launched a modal on top of the current view controller, as a result of user interaction.
     func nativeAdDidPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native : Did present modal")
+        log("Native : Did present modal")
     }
     
     // Informs delegate that the native ad has recorded an impression.
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
-        print("Native : Recorded impression.")
+        log("Native : Recorded impression.")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click.
     func nativeAdWillLeaveApplication(_ nativeAd: POBNativeAd) {
-        print("Native : Will leave application")
+        log("Native : Will leave application")
     }
     
     // Informs delegate that the native ad has recorded a click for a particular asset.
     func nativeAd(_ nativeAd: POBNativeAd, didRecordClickForAsset assetId: Int) {
-        print("Native : Recorded click for asset with Id: \(assetId)")
+        log("Native : Recorded click for asset with Id: \(assetId)")
     }
     
     // MARK: - Supporting Methods
@@ -199,10 +199,10 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
         }
     }
     
-    private func prepareNativeAdView(nativeAd: GADNativeAd) -> GADNativeAdView? {
+    private func prepareNativeAdView(nativeAd: NativeAd) -> NativeAdView? {
         // Create and place ad in view hierarchy.
         let nibView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first
-        guard let gadNativeAdView = nibView as? GADNativeAdView else {
+        guard let gadNativeAdView = nibView as? NativeAdView else {
             return nil
         }
 
@@ -259,7 +259,7 @@ class NativeStandardCustomTemplateViewController: UIViewController, POBNativeAdL
         return gadNativeAdView
     }
     
-    private func prepareCustomNativeAdView(customNativeAd: GADCustomNativeAd) -> CustomNativeAdView? {
+    private func prepareCustomNativeAdView(customNativeAd: CustomNativeAd) -> CustomNativeAdView? {
         // Add new ad view and set constraints to fill its container.
         // Create and place ad in view hierarchy.
         let nibView = Bundle.main.loadNibNamed("CustomNativeAdView", owner: nil, options: nil)?.first

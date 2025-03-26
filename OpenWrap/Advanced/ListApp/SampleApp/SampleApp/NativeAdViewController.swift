@@ -36,7 +36,7 @@ class FeedItem {
     }
 }
 
-class NativeAdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
+class NativeAdViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
     
     @IBOutlet weak var adTableView: UITableView!
     // Data source for the feed
@@ -65,7 +65,7 @@ class NativeAdViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func didReceiveMemoryWarning() {
-        print("%@", "Memory warning received")
+        log("Memory warning received")
     }
     
     // Load the data source for the feed
@@ -122,7 +122,7 @@ class NativeAdViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: NativeAdLoaderDelegate
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
-        print("Native : Ad Received")
+        log("Native : Ad Received")
         // Update the data source & save the ad
         dataSource[adIndex].ad = nativeAd
         // Load next ad
@@ -132,17 +132,18 @@ class NativeAdViewController: UIViewController, UITableViewDelegate, UITableView
         }
         nativeAd.setAdDelegate(self)
         // Render ad - prepares a pre-rendered native ad view
-        nativeAd.renderAd(completion: { (_, error) in
-            if error != nil {
-                print("Native: Ad failed to show with error - POBError{errorMessage='%@'}", error?.localizedDescription as Any)
-            } else {
-                print("Native: Ad rendered")
+        nativeAd.renderAd(completion: { [weak self] (_, error) in
+            guard let self else { return }
+            if let error {
+                log("Native: Ad failed to show with error - POBError{errorMessage='\(error.localizedDescription)'}")
+                return
             }
+            log("Native: Ad rendered")
         })
     }
     
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didFailToReceiveAdWithError error: Error) {
-        print("Native : Failed to load with error - POBError{errorMessage='%@'}", error.localizedDescription)
+        log("Native : Failed to load with error - POBError{errorMessage='\(error.localizedDescription)'}")
     }
     
     func viewControllerForPresentingModal() -> UIViewController {
@@ -151,30 +152,30 @@ class NativeAdViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: NativeAdDelegate
     func nativeAdDidDismissModal(_ nativeAd: POBNativeAd) {
-        print("Native : Dismissed modal")
+        log("Native : Dismissed modal")
     }
     
     func nativeAdWillPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native : Will present modal")
+        log("Native : Will present modal")
     }
     
     func nativeAdDidPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native : Did present modal")
+        log("Native : Did present modal")
     }
     
     func nativeAdWillLeaveApplication(_ nativeAd: POBNativeAd) {
-        print("Native : App Leaving")
+        log("Native : App Leaving")
     }
     
     func nativeAdDidRecordClick(_ nativeAd: POBNativeAd) {
-        print("Native : Ad recorded clicked")
+        log("Native : Ad recorded clicked")
     }
     
     func nativeAd(_ nativeAd: POBNativeAd, didRecordClickForAsset assetId: Int) {
-        print("Native : Ad recorded clicked for asset Id- %d", assetId)
+        log("Native : Ad recorded clicked for asset Id- \(assetId)")
     }
     
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
-        print("Native : Ad recorded impression")
+        log("Native : Ad recorded impression")
     }
 }

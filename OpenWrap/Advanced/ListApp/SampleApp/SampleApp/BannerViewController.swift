@@ -22,7 +22,7 @@ let OW_ADUNIT_ID         = "OpenWrapBannerAdUnit"
 let PUB_ID               = "156276"
 let PROFILE_ID: NSNumber = 1757
 
-class BannerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, POBBannerViewDelegate {
+class BannerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, POBBannerViewDelegate {
     
     @IBOutlet weak var adTableView: UITableView!
     var dataSource      = [AnyObject]()
@@ -55,7 +55,7 @@ class BannerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        NSLog("%@", "warning received")
+        log("warning received")
     }
 }
 
@@ -159,7 +159,7 @@ extension BannerViewController {
     
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Ad received with size \(String(describing: bannerView.creativeSize())) ")
+        log("Ad received with size \(String(describing: bannerView.creativeSize())) ")
         
         if adLoadState[bannerView] == false {
             // Set load state of the banner view to true
@@ -169,31 +169,31 @@ extension BannerViewController {
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ wrapperBannerView: POBBannerView, didFailToReceiveAdWithError error: Error) {
-        print("Failed to load Ad with error : \(error.localizedDescription )")
+        log("Failed to load Ad with error : \(error.localizedDescription )")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click
     func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
-        print("Banner view will leave Application")
+        log("Banner view will leave Application")
     }
     
     // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
     func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
-        print("Banner view will present modal")
+        log("Banner view will present modal")
     }
     
     // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
     func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
-        print("Banner view dismissed modal")
+        log("Banner view dismissed modal")
     }
     
     // Notifies the delegate that the banner view was clicked.
     func bannerViewDidClickAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad clicked")
+        log("Banner : Ad clicked")
     }
 
     func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
-        print("Banner : Ad Impression")
+        log("Banner : Ad Impression")
     }
 }
 

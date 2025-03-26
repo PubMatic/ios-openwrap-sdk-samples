@@ -30,7 +30,7 @@ import UIKit
 import OpenWrapSDK
 import OpenWrapHandlerDFP
 
-class BannerViewController: UIViewController, UITableViewDelegate,
+class BannerViewController: BaseViewController, UITableViewDelegate,
                       UITableViewDataSource, UITableViewDataSourcePrefetching,
                       AdLoaderDelegate {
     @IBOutlet weak var adTableView: UITableView!
@@ -55,7 +55,7 @@ class BannerViewController: UIViewController, UITableViewDelegate,
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        NSLog("%@", "warning received")
+        log("warning received")
     }
 }
 
@@ -154,7 +154,7 @@ extension BannerViewController {
 // MARK: - AdLoader Delegate
 extension BannerViewController {
     func adLoaderDidReceiveAd(adLoader: AdLoader) {
-        print("Ad received with size \(String(describing: adLoader.bannerView.creativeSize())) ")
+        log("Ad received with size \(String(describing: adLoader.bannerView.creativeSize())) ")
         adLoader.bannerView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: adLoader.bannerView.creativeSize().cgSize())
         adLoader.bannerView.center = CGPoint(x: view.bounds.width / 2, y: (adLoader.bannerView.center.y))
         let indexPath = IndexPath(item: adLoader.bannerView.tag, section: 0)
@@ -164,7 +164,7 @@ extension BannerViewController {
     }
     
     func adDidFail(bannerView: POBBannerView, error: NSError) {
-        print("Failed to load Ad with error: \(error.localizedDescription )")
+        log("Failed to load Ad with error: \(error.localizedDescription )")
     }
     
     func viewController() -> UIViewController {

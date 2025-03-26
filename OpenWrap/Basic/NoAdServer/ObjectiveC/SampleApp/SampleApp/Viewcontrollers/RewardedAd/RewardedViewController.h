@@ -17,6 +17,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RewardedViewController : UIViewController
+#import "BaseViewController.h"
+
+@interface RewardedViewController : BaseViewController
 
 @end

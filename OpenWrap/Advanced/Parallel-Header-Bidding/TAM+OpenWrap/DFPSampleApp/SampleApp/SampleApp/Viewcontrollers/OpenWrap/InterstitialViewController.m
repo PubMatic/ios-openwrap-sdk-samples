@@ -86,7 +86,7 @@
         }
         request.customTargeting = [NSDictionary dictionaryWithDictionary:customTargeting];
         [weakSelf.partnerTargeting removeAllObjects];
-        NSLog(@"Successfully added targeting from all bidders");
+        [weakSelf log:@"Successfully added targeting from all bidders"];
     }];
 
     self.interstitial = [[POBInterstitial alloc]
@@ -121,54 +121,54 @@
 #pragma mark - POBInterstitialDelegate
 // Notifies the delegate that an ad has been received successfully.
 - (void)interstitialDidReceiveAd:(nonnull POBInterstitial *)interstitial {
-    self.showAdButton.hidden = NO;
-    NSLog(@"Interstitial : Ad Received");
+    [self.showAdButton setEnabled:YES];
+    [self log:@"Interstitial : Ad Received"];
 }
 
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)interstitial:(nonnull POBInterstitial *)interstitial didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"Interstitial : Failed to receive ad with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription);
+    [self log:@"Interstitial : Failed to receive ad with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription];
 }
 
 // Notifies the delegate of an error encountered while showing an ad.
 - (void)interstitial:(POBInterstitial *)interstitial didFailToShowAdWithError:(NSError *)error {
-    NSLog(@"Interstitial : Failed to show ad with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription);
+    [self log:@"Interstitial : Failed to show ad with error - POBError{errorCode=%ld, errorMessage='%@'}", (long)error.code, error.localizedDescription];
 }
 
 // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
 - (void)interstitialWillPresentAd:(POBInterstitial * _Nonnull)interstitial {
-    NSLog(@"Interstitial : Will present");
+    [self log:@"Interstitial : Will present"];
 }
 
 - (void)interstitialDidPresentAd:(POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Did present");
+    [self log:@"Interstitial : Did present"];
 }
 
 // Notifies the delegate that the interstitial ad has been animated off the screen.
 - (void)interstitialDidDismissAd:(POBInterstitial * _Nonnull)interstitial {
-    NSLog(@"Interstitial : Dismissed");
+    [self log:@"Interstitial : Dismissed"];
 }
 
 // Notifies the delegate of ad click
 - (void)interstitialDidClickAd:(POBInterstitial * _Nonnull)interstitial {
-    NSLog(@"Interstitial : Ad Clicked");
+    [self log:@"Interstitial : Ad Clicked"];
 }
 
 // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
 - (void)interstitialWillLeaveApplication:(nonnull POBInterstitial *)interstitial {
-    NSLog(@"Interstitial : Will leave app");
+    [self log:@"Interstitial : Will leave app"];
 }
 
 #pragma mark - Bid event delegate methods
 - (void)bidEvent:(id<POBBidEvent>)bidEventObject didReceiveBid:(POBBid *)bid {
-    NSLog(@"Interstitial : Did receive bid");
+    [self log:@"Interstitial : Did receive bid"];
     // No need to pass OW's targeting info to bidding manager, as it will be passed to DFP internally.
     // Notify bidding manager that OpenWrap's success response is received.
     [self.biddingManager notifyOpenWrapBidEvent];
 }
 
 - (void)bidEvent:(id<POBBidEvent>)bidEventObject didFailToReceiveBidWithError:(NSError *)error {
-    NSLog(@"Interstitial : Did fail to receive bid with error - POBError{errorCode=%ld, errorMessage='%@'}", error.code, error.localizedDescription);
+    [self log:@"Interstitial : Did fail to receive bid with error - POBError{errorCode=%ld, errorMessage='%@'}", error.code, error.localizedDescription];
 
     // Notify bidding manager that OpenWrap's failure response is received.
     [self.biddingManager notifyOpenWrapBidEvent];
@@ -193,7 +193,7 @@
      Just call proceedToLoadAd. OpenWrap SDK will have it's response saved internally
      so it can proceed accordingly.
      */
-    NSLog(@"No targeting received from any bidder");
+    [self log:@"No targeting received from any bidder"];
     [self.interstitial proceedToLoadAd];
 }
 

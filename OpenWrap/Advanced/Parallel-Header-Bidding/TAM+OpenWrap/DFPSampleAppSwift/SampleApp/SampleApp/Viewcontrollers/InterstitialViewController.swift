@@ -20,7 +20,7 @@ import OpenWrapHandlerDFP
 import OpenWrapSDK
 import UIKit
 
-class InterstitialViewController: UIViewController, BiddingManagerDelegate, POBInterstitialDelegate,
+class InterstitialViewController: BaseViewController, BiddingManagerDelegate, POBInterstitialDelegate,
     POBBidEventDelegate {
 
     private let SLOT_UUID = "4e918ac0-5c68-4fe1-8d26-4e76e8f74831"
@@ -63,18 +63,19 @@ class InterstitialViewController: UIViewController, BiddingManagerDelegate, POBI
 
         // Set config block on event handler instance
         weak var weakSelf = self
-        eventHandler!.configBlock = { request, bid in
-            let customTargeting: NSMutableDictionary = request?.customTargeting as? NSMutableDictionary ?? NSMutableDictionary()
+        eventHandler.configBlock = { [weak self] request, _ in
+            guard let self else { return }
+            let customTargeting = request?.customTargeting as? NSMutableDictionary ?? NSMutableDictionary()
             if let partnerTargeting = weakSelf?.partnerTargeting {
                 for key in partnerTargeting.allKeys {
                     if let entries = partnerTargeting.value(forKey: key as? String ?? "") as? [String: String] {
                         customTargeting.addEntries(from: entries)
                     }
                 }
+                partnerTargeting.removeAllObjects()
             }
             request?.customTargeting = customTargeting as? [String: String]
-            weakSelf?.partnerTargeting?.removeAllObjects()
-            print("Successfully added targeting from all bidders")
+            log("Successfully added targeting from all bidders")
         }
 
         self.interstitial = POBInterstitial(
@@ -109,54 +110,54 @@ class InterstitialViewController: UIViewController, BiddingManagerDelegate, POBI
     // MARK: - POBInterstitialDelegate
     // Notifies the delegate that an ad has been received successfully.
     func interstitialDidReceiveAd(_ interstitial: POBInterstitial) {
-        self.showAdButton.isHidden = false
-        NSLog("Interstitial : Ad Received")
+        self.showAdButton.isEnabled = true
+        log("Interstitial : Ad Received")
     }
 
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func interstitial(_ interstitial: POBInterstitial, didFailToReceiveAdWithError error: Error) {
-        NSLog("Interstitial : Failed to receive ad with error - %@", error.localizedDescription)
+        log("Interstitial : Failed to receive ad with error - \(error.localizedDescription)")
     }
 
     // Notifies the delegate of an error encountered while showing an ad.
     func interstitial(_ interstitial: POBInterstitial, didFailToShowAdWithError error: Error) {
-        NSLog("Interstitial : Failed to show ad with error - %@", error.localizedDescription)
+        log("Interstitial : Failed to show ad with error - \(error.localizedDescription)")
     }
 
     // Notifies the delegate that the interstitial ad will be presented as a modal on top of the current view controller.
     func interstitialWillPresentAd(_ interstitial: POBInterstitial) {
-        NSLog("Interstitial : Will present")
+        log("Interstitial : Will present")
     }
 
     func interstitialDidPresentAd(_ interstitial: POBInterstitial) {
-        NSLog("Interstitial : Did present")
+        log("Interstitial : Did present")
     }
 
     // Notifies the delegate that the interstitial ad has been animated off the screen.
     func interstitialDidDismissAd(_ interstitial: POBInterstitial) {
-        NSLog("Interstitial : Dismissed")
+        log("Interstitial : Dismissed")
     }
 
     // Notifies the delegate of ad click
     func interstitialDidClickAd(_ interstitial: POBInterstitial) {
-        NSLog("Interstitial : Ad Clicked")
+        log("Interstitial : Ad Clicked")
     }
 
     // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
     func interstitialWillLeaveApplication(_ interstitial: POBInterstitial) {
-        NSLog("Interstitial : Will leave app")
+        log("Interstitial : Will leave app")
     }
 
     // MARK: - Bid event delegate methods
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
-        NSLog("Interstitial : Did receive bid")
+        log("Interstitial : Did receive bid")
         // No need to pass OW's targeting info to bidding manager, as it will be passed to DFP internally.
         // Notify bidding manager that OpenWrap's success response is received.
         self.biddingManager.notifyOpenWrapBidEvent()
     }
 
     func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
-        NSLog("Interstitial : Did fail to receive bid with error - %@", error.localizedDescription)
+        log("Interstitial : Did fail to receive bid with error - \(error.localizedDescription)")
 
         // Notify bidding manager that OpenWrap's failure response is received.
         self.biddingManager.notifyOpenWrapBidEvent()
@@ -181,7 +182,7 @@ class InterstitialViewController: UIViewController, BiddingManagerDelegate, POBI
          Just call proceedToLoadAd. OpenWrap SDK will have it's response saved internally
          so it can proceed accordingly.
          */
-        NSLog("No targeting received from any bidder")
+        log("No targeting received from any bidder")
         self.interstitial.proceedToLoadAd()
     }
 

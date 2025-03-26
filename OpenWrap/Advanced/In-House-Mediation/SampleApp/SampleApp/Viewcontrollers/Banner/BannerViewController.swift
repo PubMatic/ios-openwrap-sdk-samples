@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 
-class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDelegate {
+class BannerViewController: BaseViewController, POBBannerViewDelegate, POBBidEventDelegate {
 
     let owAdUnit = "OpenWrapBannerAdUnit"
     let pubId = "156276"
@@ -57,7 +57,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
 
     // Function simulates auction
     func auctionAndProceedWithBid(bid:POBBid) {
-        print("Banner : Proceeding with load ad.")
+        log("Banner : Proceeding with load ad.")
         // Check if bid is expired
         if !bid.isExpired() {
             // Use bid, e.g. perform auction with your in-house mediation setup
@@ -83,7 +83,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
     // Notifies the delegate that bid has been successfully received.
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
         // Make use of the received bid.
-        print("Banner : Bid received.")
+        log("Banner : Bid received.")
         // Notify banner view to proceed to load the ad after using the bid, e.g perform an auction
         auctionAndProceedWithBid(bid: bid)
     }
@@ -91,7 +91,7 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
     // Notifies the delegate of an error encountered while fetching the bid.
     func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
         // Notify banner view to proceed with the error.
-        print("Banner : Bid receive failed with error : \(error.localizedDescription)")
+        log("Banner : Bid receive failed with error : \(error.localizedDescription)")
         bannerView?.proceed(onError: POBBidEventErrorCode.other, andDescription: error.localizedDescription)
     }
     
@@ -103,17 +103,17 @@ class BannerViewController: UIViewController,POBBannerViewDelegate,POBBidEventDe
     
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize())) ")
+        log("Banner : Ad received with size \(String(describing: bannerView.creativeSize())) ")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView,
                     didFailToReceiveAdWithError error: Error) {
-        print("Banner : Ad failed with error : \(error.localizedDescription )")
+        log("Banner : Ad failed with error : \(error.localizedDescription )")
     }
     
     func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
-        print("Banner : Ad Impression")
+        log("Banner : Ad Impression")
     }
 
     // MARK: - Private functions

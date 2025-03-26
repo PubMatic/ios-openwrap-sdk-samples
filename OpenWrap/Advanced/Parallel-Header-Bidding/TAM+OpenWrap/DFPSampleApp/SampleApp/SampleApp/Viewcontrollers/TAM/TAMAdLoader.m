@@ -16,6 +16,7 @@
 */
 
 #import "TAMAdLoader.h"
+#import <GoogleMobileAds/GADRequest.h>
 
 #define SLOT_UUID   @"5ab6a4ae-4aa5-43f4-9da4-e30755f2b295"
 
@@ -38,7 +39,8 @@
 // Method to instruct bidder class to load the bid.
 - (void)loadBids {
     NSLog(@"TAM : Loading ad from A9 TAM SDK");
-    DTBAdLoader *adLoader = [DTBAdLoader new];
+    DTBAdNetworkInfo *const networkInfo = [[DTBAdNetworkInfo alloc] initWithNetworkName:DTBADNETWORK_GOOGLE_AD_MANAGER];
+    DTBAdLoader *adLoader = [[DTBAdLoader alloc] initWithAdNetworkInfo:networkInfo];
     [adLoader setSizes:self.adSize, nil];
     [adLoader loadAd:self];
 }

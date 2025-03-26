@@ -17,5 +17,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BannerViewController : UIViewController
+#import "BaseViewController.h"
+
+@interface BannerViewController : BaseViewController
 @end

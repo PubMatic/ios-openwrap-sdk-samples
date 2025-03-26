@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		20E6BDF424287A5A00B90FE5 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E6BDF324287A5A00B90FE5 /* InterstitialViewController.swift */; };
 		2160C81C251C689A0037E767 /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2160C81B251C689A0037E767 /* RewardedViewController.swift */; };
 		4156ADEF2BECA8BA00212E4C /* NativeAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4156ADEE2BECA8BA00212E4C /* NativeAdViewController.swift */; };
+		5AA1C4BC2D5F60BF00114FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4BB2D5F60BF00114FD4 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		20E6BDF324287A5A00B90FE5 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		2160C81B251C689A0037E767 /* RewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
 		4156ADEE2BECA8BA00212E4C /* NativeAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdViewController.swift; sourceTree = "<group>"; };
+		5AA1C4BB2D5F60BF00114FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		20E6BDEE242879FC00B90FE5 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				5AA1C4BB2D5F60BF00114FD4 /* BaseViewController.swift */,
 				415D4DC92BECA8820037DC0D /* NativeAd */,
 				20E6BDF024287A1300B90FE5 /* Banner */,
 				20E6BDEF24287A0A00B90FE5 /* Interstitial */,
@@ -200,6 +203,7 @@
 				2160C81C251C689A0037E767 /* RewardedViewController.swift in Sources */,
 				20E6BDDD242878DF00B90FE5 /* SceneDelegate.swift in Sources */,
 				4156ADEF2BECA8BA00212E4C /* NativeAdViewController.swift in Sources */,
+				5AA1C4BC2D5F60BF00114FD4 /* BaseViewController.swift in Sources */,
 				20E6BDF424287A5A00B90FE5 /* InterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,6 +22,7 @@
 		3EF8645826E782320016CE7C /* CustomNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8645626E782320016CE7C /* CustomNativeAdView.xib */; };
 		3EF8645926E782320016CE7C /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8645726E782320016CE7C /* NativeAdView.xib */; };
 		3EF8645E26E782B50016CE7C /* CustomNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8645D26E782B50016CE7C /* CustomNativeAdView.swift */; };
+		5AA1C4C52D5FAF5C00114FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4C42D5FAF5C00114FD4 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		3EF8645626E782320016CE7C /* CustomNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNativeAdView.xib; sourceTree = "<group>"; };
 		3EF8645726E782320016CE7C /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
 		3EF8645D26E782B50016CE7C /* CustomNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNativeAdView.swift; sourceTree = "<group>"; };
+		5AA1C4C42D5FAF5C00114FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				3EF8645A26E782390016CE7C /* Views */,
 				3EF8645526E781450016CE7C /* Resources */,
+				5AA1C4C42D5FAF5C00114FD4 /* BaseViewController.swift */,
 				3EF8645326E76D300016CE7C /* NativeAndBannerAdLoader.swift */,
 				200F17AF25B83EF500ECD793 /* AdLoader.swift */,
 				200F17AA25B83ECF00ECD793 /* Bidding.swift */,
@@ -194,6 +197,7 @@
 			files = (
 				201885CC25B563E000CAC69F /* BannerViewController.swift in Sources */,
 				200F17AB25B83ECF00ECD793 /* TAMAdLoader.swift in Sources */,
+				5AA1C4C52D5FAF5C00114FD4 /* BaseViewController.swift in Sources */,
 				201885C825B563E000CAC69F /* AppDelegate.swift in Sources */,
 				3EF8645E26E782B50016CE7C /* CustomNativeAdView.swift in Sources */,
 				3EF8645426E76D310016CE7C /* NativeAndBannerAdLoader.swift in Sources */,

@@ -18,7 +18,7 @@
 import Foundation
 import OpenWrapSDK
 
-class NativeStandardCustomTemplateViewController : UIViewController, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
+class NativeStandardCustomTemplateViewController: BaseViewController, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
     let owAdUnit = "OpenWrapNativeAdUnit"
     let pubId = "156276"
     let profileId: NSNumber = 1165
@@ -75,12 +75,12 @@ class NativeStandardCustomTemplateViewController : UIViewController, POBNativeAd
                 return
             }
             if let error = error {
-                print("Native : Failed to render ad with error - \(error.localizedDescription)")
+                log("Native : Failed to render ad with error - \(error.localizedDescription)")
             } else {
                 // Attach native ad view.
                 self.nativeAdView = nativeAd.adView()
                 self.addNativeAdViewToView(nativeAdView: self.nativeAdView, adSize: self.nativeAdView?.frame.size)
-                print("Native : Ad rendered.")
+                log("Native : Ad rendered.")
             }
         })
     }
@@ -89,7 +89,7 @@ class NativeStandardCustomTemplateViewController : UIViewController, POBNativeAd
 
     // Notifies the delegate that an ad has been successfully loaded.
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
-        print("Native : Ad received.")
+        log("Native : Ad received.")
         self.nativeAd = nativeAd
         // Set the native ad delegate.
         self.nativeAd?.setAdDelegate(self)
@@ -98,7 +98,7 @@ class NativeStandardCustomTemplateViewController : UIViewController, POBNativeAd
     
     // Notifies the delegate of an error encountered while loading an ad.
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didFailToReceiveAdWithError error: Error) {
-        print("Native : Failed to receive ad with error - \(error.localizedDescription)")
+        log("Native : Failed to receive ad with error - \(error.localizedDescription)")
     }
     
     // Returns a view controller instance to be used by ad server SDK for showing modals.
@@ -110,37 +110,37 @@ class NativeStandardCustomTemplateViewController : UIViewController, POBNativeAd
     
     // Informs delegate that the native ad has recorded a click.
     func nativeAdDidRecordClick(_ nativeAd: POBNativeAd) {
-        print("Native : Ad click.")
+        log("Native : Ad click.")
     }
     
     // Notifies delegate that the native ad has dismissed the modal on top of the current view controller.
     func nativeAdDidDismissModal(_ nativeAd: POBNativeAd) {
-        print("Native : Dismissed modal")
+        log("Native : Dismissed modal")
     }
     
     // Notifies delegate that the native ad will launch a modal on top of the current view controller, as a result of user interaction.
     func nativeAdWillPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native : Will present modal")
+        log("Native : Will present modal")
     }
     
     // Notifies delegate that the native ad have launched a modal on top of the current view controller, as a result of user interaction.
     func nativeAdDidPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native : Did present modal")
+        log("Native : Did present modal")
     }
     
     // Informs delegate that the native ad has recorded an impression.
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
-        print("Native : Recorded impression.")
+        log("Native : Recorded impression.")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click.
     func nativeAdWillLeaveApplication(_ nativeAd: POBNativeAd) {
-        print("Native : Will leave application")
+        log("Native : Will leave application")
     }
     
     // Informs delegate that the native ad has recorded a click for a particular asset.
     func nativeAd(_ nativeAd: POBNativeAd, didRecordClickForAsset assetId: Int) {
-        print("Native : Recorded click for asset with Id: \(assetId)")
+        log("Native : Recorded click for asset with Id: \(assetId)")
     }
     
     // MARK: - Supporting Methods

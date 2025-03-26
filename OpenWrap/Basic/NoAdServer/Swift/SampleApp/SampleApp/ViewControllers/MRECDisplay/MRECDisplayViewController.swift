@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 
-class MRECDisplayViewController: UIViewController, POBBannerViewDelegate {
+class MRECDisplayViewController: BaseViewController, POBBannerViewDelegate {
     let owAdUnit = "OpenWrapBannerAdUnit"
     let pubId = "156276"
     let profileId: NSNumber = 1165
@@ -69,36 +69,36 @@ class MRECDisplayViewController: UIViewController, POBBannerViewDelegate {
     }
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad received with size \(String(describing: bannerView.creativeSize())) ")
+        log("Banner : Ad received with size \(String(describing: bannerView.creativeSize()))")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView,
                     didFailToReceiveAdWithError error: Error) {
-        print("Banner : Ad failed with error : \(error.localizedDescription )")
+        log("Banner : Ad failed with error : \(error.localizedDescription )")
     }
     
     // Notifies the delegate whenever current app goes in the background due to user click
     func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
-        print("Banner : Will leave app")
+        log("Banner : Will leave app")
     }
     
     // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
     func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
-        print("Banner : Will present modal")
+        log("Banner : Will present modal")
     }
     // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
     func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
-        print("Banner : Dismissed modal")
+        log("Banner : Dismissed modal")
     }
 
     // Notifies the delegate that the banner view was clicked.
     func bannerViewDidClickAd(_ bannerView: POBBannerView) {
-        print("Banner : Ad clicked")
+        log("Banner : Ad clicked")
     }
 
     func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
-        print("Banner : Ad Impression")
+        log("Banner : Ad Impression")
     }
 
     deinit {

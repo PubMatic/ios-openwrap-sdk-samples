@@ -76,7 +76,7 @@
 
 // Notifies the delegate that an ad has been successfully loaded and rendered.
 - (void)bannerViewDidReceiveAd:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Ad received with size %@ ", bannerView.creativeSize);
+    [self log:@"Banner : Ad received with size %@ ", bannerView.creativeSize];
     
     // Add the banner view to your view hierarchy.
     // You may also add it after an ad is successfully loaded.
@@ -86,38 +86,38 @@
 // Notifies the delegate of an error encountered while loading or rendering an ad.
 - (void)bannerView:(POBBannerView *)bannerView
 didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"Banner : Ad failed with error : %@", [error localizedDescription]);
+    [self log:@"Banner : Ad failed with error : %@", [error localizedDescription]];
 }
 
 // Notifies the delegate whenever current app goes in the background due to user click
 - (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Will leave app");
+    [self log:@"Banner : Will leave app"];
 }
 
 // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
 - (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Will present modal");
+    [self log:@"Banner : Will present modal"];
 }
 
 // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
 - (void)bannerViewDidDismissModal:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Dismissed modal");
+    [self log:@"Banner : Dismissed modal"];
 }
 
 // Notifies the delegate that the banner view was clicked.
 - (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Ad clicked");
+    [self log:@"Banner : Ad clicked"];
 }
 
 - (void)bannerViewDidRecordImpression:(POBBannerView *)bannerView {
-    NSLog(@"Banner : Ad Impression");
+    [self log:@"Banner : Ad Impression"];
 }
 
 #pragma mark - OW GAM Native Ad event handler Delegate
 
 // Notifies the delegate that an ad has been successfully received.
 - (void)eventHandler:(id<POBBannerEvent>)eventHandler didReceiveNativeAd:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad received.");
+    [self log:@"Native : Ad received."];
     
     // Set GAM native ad delegate
     nativeAd.delegate = self;
@@ -135,7 +135,7 @@ didFailToReceiveAdWithError:(NSError *)error {
 
 // Notifies the delegate that an ad has been successfully received.
 - (void)eventHandler:(id<POBBannerEvent>)eventHandler didReceiveCustomNativeAd:(GADCustomNativeAd *)customNativeAd {
-    NSLog(@"Custom Native : Ad received.");
+    [self log:@"Custom Native : Ad received."];
     
     // Set GAM custom native ad delegate
     customNativeAd.delegate = self;
@@ -152,61 +152,61 @@ didFailToReceiveAdWithError:(NSError *)error {
 // Called when an impression is recorded for an ad. Only called for Google ads and is not
 // supported for mediated ads.
 - (void)nativeAdDidRecordImpression:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad impression recorded.");
+    [self log:@"Native : Ad impression recorded."];
 }
 
 // Called when a click is recorded for an ad. Only called for Google ads and is not
 // supported for mediated ads.
 - (void)nativeAdDidRecordClick:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad click recorded.");
+    [self log:@"Native : Ad click recorded."];
 }
 
 // Called before presenting the user a full screen view in response to an ad action
 - (void)nativeAdWillPresentScreen:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad will present screen.");
+    [self log:@"Native : Ad will present screen."];
 }
 
 // Called before dismissing a full screen view.
 - (void)nativeAdWillDismissScreen:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad will dismiss screen.");
+    [self log:@"Native : Ad will dismiss screen."];
 }
 
 // Called after dismissing a full screen view
 - (void)nativeAdDidDismissScreen:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad did dismiss screen.");
+    [self log:@"Native : Ad did dismiss screen."];
 }
 
 // Used for Mute This Ad feature. Called after the native ad is muted.
 - (void)nativeAdIsMuted:(GADNativeAd *)nativeAd {
-    NSLog(@"Native : Ad is muted.");
+    [self log:@"Native : Ad is muted."];
 }
 
 #pragma mark - GAM Custom Native Ad Delegate
 
 // Called when an impression is recorded for a custom native ad.
 - (void)customNativeAdDidRecordImpression:(GADCustomNativeAd *)nativeAd {
-    NSLog(@"Custom native : Ad recorded impression.");
+    [self log:@"Custom native : Ad recorded impression."];
 }
 
 // Called when a click is recorded for a custom native ad.
 - (void)customNativeAdDidRecordClick:(GADCustomNativeAd *)nativeAd {
-    NSLog(@"Custom native : Ad recorded click.");
+    [self log:@"Custom native : Ad recorded click."];
 }
 
 // Called just before presenting the user a full screen view, such as a browser,
 // in response to clicking on an ad.
 - (void)customNativeAdWillPresentScreen:(GADCustomNativeAd *)nativeAd {
-    NSLog(@"Custom native : Ad will present screen.");
+    [self log:@"Custom native : Ad will present screen."];
 }
 
 // Called just before dismissing a full screen view.
 - (void)customNativeAdWillDismissScreen:(GADCustomNativeAd *)nativeAd {
-    NSLog(@"Custom native : Ad will dismiss screen.");
+    [self log:@"Custom native : Ad will dismiss screen."];
 }
 
 // Called just after dismissing a full screen view.
 - (void)customNativeAdDidDismissScreen:(GADCustomNativeAd *)nativeAd {
-    NSLog(@"Custom native : Ad did dismiss screen.");
+    [self log:@"Custom native : Ad did dismiss screen."];
 }
 
 #pragma mark - Native ad rendering helpers

@@ -18,10 +18,10 @@
 import UIKit
 import OpenWrapSDK
 
-class NativeAdViewController: UIViewController,
-                                POBNativeAdLoaderDelegate,
-                                POBNativeAdDelegate,
-                                POBBidEventDelegate {
+class NativeAdViewController: BaseViewController,
+                              POBNativeAdLoaderDelegate,
+                              POBNativeAdDelegate,
+                              POBBidEventDelegate {
     @IBOutlet weak var renderAdButton: UIButton!
     private let isOWAuctionWin = true
 
@@ -63,15 +63,16 @@ class NativeAdViewController: UIViewController,
     }
 
     @IBAction func renderAdButtonAction(_ sender: UIButton) {
-        nativeAd?.renderAd(completion: { (nativeAd: POBNativeAd, error: Error?) in
+        nativeAd?.renderAd(completion: { [weak self] (nativeAd: POBNativeAd, error: Error?) in
+            guard let self else { return }
             if let error {
-                print("Native Ad : Failed to render ad with error : \(error.localizedDescription)")
-            } else {
-                let adView = nativeAd.adView()
-                self.nativeAdView = adView
-                self.addNativeAdToView(adView: adView, adSize: adView.bounds.size)
-                print("Native Ad : Ad rendered.")
+                log("Native Ad : Failed to render ad with error : \(error.localizedDescription)")
+                return
             }
+            let adView = nativeAd.adView()
+            nativeAdView = adView
+            addNativeAdToView(adView: adView, adSize: adView.bounds.size)
+            log("Native Ad : Ad rendered.")
         })
     }
 
@@ -84,7 +85,7 @@ class NativeAdViewController: UIViewController,
 
     /// Called when the native ad is received.
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didReceive nativeAd: POBNativeAd) {
-        print("Native Ad : Ad Received")
+        log("Native Ad : Ad Received")
         self.nativeAd = nativeAd
         // Set native ad delegate
         self.nativeAd?.setAdDelegate(self)
@@ -93,7 +94,7 @@ class NativeAdViewController: UIViewController,
 
     /// Called when the native ad is failed to received.
     func nativeAdLoader(_ adLoader: POBNativeAdLoader, didFailToReceiveAdWithError error: Error) {
-        print("Native Ad : Failed to receive ad with error : \(error.localizedDescription)")
+        log("Native Ad : Failed to receive ad with error : \(error.localizedDescription)")
     }
 
     // MARK: POBBidEventDelegate
@@ -101,7 +102,7 @@ class NativeAdViewController: UIViewController,
     /// Called when the bid has been successfully received.
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
         // Make use of the received bid,  e.g. perform auction with your setup
-        print("Native Ad : Bid received")
+        log("Native Ad : Bid received")
         self.bidEventObject = bidEventObject
         // Notify rewarded to proceed to load the ad after using the bid.
         auctionAndProceedWithBid(bid)
@@ -110,7 +111,7 @@ class NativeAdViewController: UIViewController,
     /// Called when an error encountered while fetching the bid.
     func bidEvent(_ bidEventObject: POBBidEvent!, didFailToReceiveBidWithError error: Error!) {
         // Notify native ad to proceed on the error.
-        print("Native Ad : Bid receive failed with error : \(error.localizedDescription)")
+        log("Native Ad : Bid receive failed with error : \(error.localizedDescription)")
         bidEventObject.proceed(onError: .other, andDescription: error.localizedDescription)
     }
 
@@ -119,45 +120,45 @@ class NativeAdViewController: UIViewController,
     /// Called when the native ad is about to launch a modal on top of the current view controller,
     /// as a result of user interaction.
     func nativeAdWillPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native Ad : Will present modal")
+        log("Native Ad : Will present modal")
     }
 
     /// Called when the native ad has launched a modal on top of the current view controller,
     /// as a result of user interaction.
     func nativeAdDidPresentModal(_ nativeAd: POBNativeAd) {
-        print("Native Ad : Did present modal")
+        log("Native Ad : Did present modal")
     }
 
     /// Called when the native ad has dismissed the modal on top of the current view controller.
     func nativeAdDidDismissModal(_ nativeAd: POBNativeAd) {
-        print("Native Ad : Did dismiss modal")
+        log("Native Ad : Did dismiss modal")
     }
 
     /// Called when the current app goes in the background due to user click.
     func nativeAdWillLeaveApplication(_ nativeAd: POBNativeAd) {
-        print("Native Ad : Will leave application")
+        log("Native Ad : Will leave application")
     }
 
     /// Called when the native ad has recorded a click.
     func nativeAdDidRecordClick(_ nativeAd: POBNativeAd) {
-        print("Native Ad : Ad click")
+        log("Native Ad : Ad click")
     }
 
     /// Called when the native ad has recorded a click for a particular asset.
     func nativeAd(_ nativeAd: POBNativeAd, didRecordClickForAsset assetId: Int) {
-        print("Native Ad : Recorded click for asset with Id: \(assetId)")
+        log("Native Ad : Recorded click for asset with Id: \(assetId)")
     }
 
     /// Called when the native ad has recorded an impression
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
-        print("Native Ad : Ad recorded impression")
+        log("Native Ad : Ad recorded impression")
     }
 
     // MARK: Private helper methods
 
     // Function simulates auction
     private func auctionAndProceedWithBid(_ bid: POBBid) {
-        print("Native Ad : Proceeding with load ad.")
+        log("Native Ad : Proceeding with load ad.")
         // Check if bid is expired
         if !bid.isExpired() {
             // Use bid, e.g. perform auction with your in-house mediation setup

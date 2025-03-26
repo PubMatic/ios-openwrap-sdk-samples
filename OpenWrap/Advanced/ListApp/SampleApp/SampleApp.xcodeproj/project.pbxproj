@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		20A6A85823CEEF1E00D42B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A6A85623CEEF1E00D42B57 /* Main.storyboard */; };
 		20A6A85A23CEEF2000D42B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A6A85923CEEF2000D42B57 /* Assets.xcassets */; };
 		20A6A85D23CEEF2000D42B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A6A85B23CEEF2000D42B57 /* LaunchScreen.storyboard */; };
+		5AA1C4BE2D5F6E2C00114FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4BD2D5F6E2C00114FD4 /* BaseViewController.swift */; };
 		B6F0A47029F952F8001AD610 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A46F29F952F8001AD610 /* DataTableViewCell.swift */; };
 		B6F0A47229F9532B001AD610 /* NativeAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0A47129F9532B001AD610 /* NativeAdViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		20A6A85923CEEF2000D42B57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20A6A85C23CEEF2000D42B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20A6A85E23CEEF2000D42B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA1C4BD2D5F6E2C00114FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B6F0A46F29F952F8001AD610 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		B6F0A47129F9532B001AD610 /* NativeAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +65,7 @@
 			children = (
 				20A6A85023CEEF1E00D42B57 /* AppDelegate.swift */,
 				20A6A85223CEEF1E00D42B57 /* SceneDelegate.swift */,
+				5AA1C4BD2D5F6E2C00114FD4 /* BaseViewController.swift */,
 				20A6A85423CEEF1E00D42B57 /* BannerViewController.swift */,
 				B6F0A47129F9532B001AD610 /* NativeAdViewController.swift */,
 				B6F0A46F29F952F8001AD610 /* DataTableViewCell.swift */,
@@ -158,6 +161,7 @@
 				20A6A85123CEEF1E00D42B57 /* AppDelegate.swift in Sources */,
 				20A6A85323CEEF1E00D42B57 /* SceneDelegate.swift in Sources */,
 				B6F0A47029F952F8001AD610 /* DataTableViewCell.swift in Sources */,
+				5AA1C4BE2D5F6E2C00114FD4 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

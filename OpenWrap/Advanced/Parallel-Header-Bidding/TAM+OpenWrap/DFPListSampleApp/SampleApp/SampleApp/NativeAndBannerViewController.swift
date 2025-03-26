@@ -30,7 +30,7 @@ import UIKit
 import OpenWrapSDK
 import OpenWrapHandlerDFP
 
-class NativeAndBannerViewController: UIViewController, UITableViewDelegate,
+class NativeAndBannerViewController: BaseViewController, UITableViewDelegate,
                       UITableViewDataSource, UITableViewDataSourcePrefetching,
                       NativeAndBannerAdLoaderDelegate {
     @IBOutlet weak var adTableView: UITableView!
@@ -55,7 +55,7 @@ class NativeAndBannerViewController: UIViewController, UITableViewDelegate,
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        NSLog("%@", "warning received")
+        log("warning received")
     }
 }
 
@@ -161,7 +161,7 @@ extension NativeAndBannerViewController {
 extension NativeAndBannerViewController {
     // Gets called when banner ad is received successfully.
     func nativeBannerAdLoaderDidReceiveBannerAd(adLoader: NativeAndBannerAdLoader) {
-        print("Banner ad received with size \(String(describing: adLoader.bannerView.creativeSize())) ")
+        log("Banner ad received with size \(String(describing: adLoader.bannerView.creativeSize())) ")
 
         adLoader.bannerView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: adLoader.bannerView.creativeSize().cgSize())
         adLoader.bannerView.center = CGPoint(x: view.bounds.width / 2, y: (adLoader.bannerView.center.y))
@@ -174,7 +174,7 @@ extension NativeAndBannerViewController {
     // Gets called when native ad is received successfully.
     func nativeBannerAdLoaderDidReceiveNativeAd(adLoader: NativeAndBannerAdLoader) {
         if let nativeAdView = adLoader.nativeAdView {
-            print("Native ad received with size \(String(describing: nativeAdView.frame.size)) ")
+            log("Native ad received with size \(String(describing: nativeAdView.frame.size)) ")
             nativeAdView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: nativeAdView.frame.size)
             nativeAdView.center = CGPoint(x: view.bounds.width / 2, y: (nativeAdView.center.y))
             let indexPath = IndexPath(item: nativeAdView.tag, section: 0)
@@ -187,7 +187,7 @@ extension NativeAndBannerViewController {
     // Gets called when custom native ad is received successfully.
     func nativeBannerAdLoaderDidReceiveCustomNativeAd(adLoader: NativeAndBannerAdLoader) {
         if let nativeAdView = adLoader.nativeAdView {
-            print("Custom native ad received with size \(String(describing: nativeAdView.frame.size)) ")
+            log("Custom native ad received with size \(String(describing: nativeAdView.frame.size)) ")
             nativeAdView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: nativeAdView.frame.size)
             nativeAdView.center = CGPoint(x: view.bounds.width / 2, y: (nativeAdView.center.y))
             let indexPath = IndexPath(item: nativeAdView.tag, section: 0)
@@ -199,7 +199,7 @@ extension NativeAndBannerViewController {
 
     // Gets called when ad loader failed to receive ad.
     func nativeBannerAdLoaderDidFail(adLoader: NativeAndBannerAdLoader, error: NSError) {
-        print("Failed to load Ad with error: \(error.localizedDescription )")
+        log("Failed to load Ad with error: \(error.localizedDescription )")
     }
 
     // Returns UIViewController to show banner ad

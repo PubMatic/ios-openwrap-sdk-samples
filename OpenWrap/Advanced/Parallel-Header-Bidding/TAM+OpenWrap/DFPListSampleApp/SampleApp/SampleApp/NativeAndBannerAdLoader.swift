@@ -73,13 +73,12 @@ protocol NativeAndBannerAdLoaderDelegate: AnyObject {
   After the completion of whole header bidding execution this class provides either success or
   failure callback to it's listener.
  */
-class NativeAndBannerAdLoader: NSObject, POBBidEventDelegate, BiddingManagerDelegate, POBBannerViewDelegate, POBGAMNativeAdDelegate, POBGAMCustomNativeAdDelegate, GADNativeAdDelegate, GADCustomNativeAdDelegate {
-
+class NativeAndBannerAdLoader: NSObject, POBBidEventDelegate, BiddingManagerDelegate, POBBannerViewDelegate, POBGAMNativeAdDelegate, POBGAMCustomNativeAdDelegate, NativeAdDelegate, CustomNativeAdDelegate {
     var pubid: String
     var profileid: NSNumber
     var owadUnitId: String
     var gamAdUnit: String
-    var adsize: GADAdSize
+    var adsize: AdSize
     var slotid: String
     // Instance of bidding manager
     var biddingManager: BiddingManager
@@ -105,7 +104,7 @@ class NativeAndBannerAdLoader: NSObject, POBBidEventDelegate, BiddingManagerDele
          owAdUnitId: String,
          gamAdUnitId: String,
          slotId: String,
-         adSize: GADAdSize) {
+         adSize: AdSize) {
 
         pubid = pubId
         profileid = profileId
@@ -121,9 +120,9 @@ class NativeAndBannerAdLoader: NSObject, POBBidEventDelegate, BiddingManagerDele
         // Create event handler
         let eventHandler = GAMNativeBannerEventHandler(
             adUnitId: gamAdUnitId,
-            adTypes: [GADAdLoaderAdType.native, GADAdLoaderAdType.customNative],
+            adTypes: [AdLoaderAdType.native, AdLoaderAdType.customNative],
             options: nil,
-            andSizes: [NSValueFromGADAdSize(adSize)])
+            andSizes: [nsValue(for: adSize)])
 
         // Create a banner view
         bannerView = POBBannerView(publisherId: pubid, profileId:
@@ -225,10 +224,10 @@ extension NativeAndBannerAdLoader {
 
     // MARK: - Helper methods
     // Show native ad
-    func showNativeAd(nativeAd: GADNativeAd) {
+    func showNativeAd(nativeAd: NativeAd) {
         // Add new ad view and set constraints to fill its container.
         // Create and place ad in view hierarchy.
-        let gadNativeAdView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first as? GADNativeAdView
+        let gadNativeAdView = Bundle.main.loadNibNamed("NativeAdView", owner: nil, options: nil)?.first as? NativeAdView
         if gadNativeAdView != nil {
             nativeAdView = gadNativeAdView!
 
@@ -284,7 +283,7 @@ extension NativeAndBannerAdLoader {
     }
 
     // Show custom native ad
-    func showCustomNativeAd(customNativeAd: GADCustomNativeAd) {
+    func showCustomNativeAd(customNativeAd: CustomNativeAd) {
         // Add new ad view and set constraints to fill its container.
         // Create and place ad in view hierarchy.
         let customNativeAdView = Bundle.main.loadNibNamed("CustomNativeAdView", owner: nil, options: nil)?.first as? CustomNativeAdView
@@ -318,7 +317,7 @@ extension NativeAndBannerAdLoader {
 
     // MARK: POBGAMNativeAdDelegate
     // Notifies the delegate that an ad has been successfully loaded and rendered.
-    func eventHandler(_ eventHandler: POBBannerEvent, didReceive nativeAd: GADNativeAd) {
+    func eventHandler(_ eventHandler: POBBannerEvent, didReceive nativeAd: NativeAd) {
         adLoadState = true
 
         // Set GAM native ad delegate
@@ -331,16 +330,16 @@ extension NativeAndBannerAdLoader {
         delegate?.nativeBannerAdLoaderDidReceiveNativeAd(adLoader: self)
     }
 
-    // MARK: GADNativeAdDelegate
+    // MARK: NativeAdDelegate
     // Called when an impression is recorded for an ad. Only called for Google ads and is not
     // supported for mediated ads.
-    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
+    func nativeAdDidRecordImpression(_ nativeAd: NativeAd) {
         print("Native : Ad recorded impression.")
     }
 
     // Called when a click is recorded for an ad. Only called for Google ads and is not
     // supported for mediated ads.
-    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
+    func nativeAdDidRecordClick(_ nativeAd: NativeAd) {
         print("Native : Ad recorded click.")
     }
 }
@@ -353,8 +352,8 @@ extension NativeAndBannerAdLoader {
         return ["12051535"]
     }
 
-    func eventHandler(_ eventHandler: POBBannerEvent, didReceive customNativeAd: GADCustomNativeAd) {
-       adLoadState = true
+    func eventHandler(_ eventHandler: any POBBannerEvent, didReceive customNativeAd: CustomNativeAd) {
+        adLoadState = true
         // Set GAM custom native ad delegate
         customNativeAd.delegate = self
 
@@ -368,12 +367,12 @@ extension NativeAndBannerAdLoader {
         delegate?.nativeBannerAdLoaderDidReceiveCustomNativeAd(adLoader: self)
     }
 
-    // MARK: GADCustomNativeAdDelegate
-    func customNativeAdDidRecordImpression(_ nativeAd: GADCustomNativeAd) {
+    // MARK: CustomNativeAdDelegate
+    func customNativeAdDidRecordImpression(_ nativeAd: CustomNativeAd) {
         print("Custom native : Ad recorded impression.")
     }
 
-    func customNativeAdDidRecordClick(_ nativeAd: GADCustomNativeAd) {
+    func customNativeAdDidRecordClick(_ nativeAd: CustomNativeAd) {
         print("Custom native : Ad recorded click.")
     }
 }

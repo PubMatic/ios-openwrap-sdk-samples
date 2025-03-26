@@ -19,7 +19,7 @@ class CustomNativeAdView: UIView {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var clickThroughButton: UIButton!
     @IBOutlet var mainImageView: UIImageView!
-    private var customNativeAd: GADCustomNativeAd?
+    private var customNativeAd: CustomNativeAd?
     
     // MARK: - Load methods
     override func awakeFromNib() {
@@ -60,7 +60,7 @@ class CustomNativeAdView: UIView {
     }
     
     // MARK: - Public API
-    func populateCustomNativeAdView(aCustomNativeAd: GADCustomNativeAd?) {
+    func populateCustomNativeAdView(aCustomNativeAd: CustomNativeAd?) {
         guard let uCustomNativeAd = aCustomNativeAd else { return }
         customNativeAd = uCustomNativeAd
         

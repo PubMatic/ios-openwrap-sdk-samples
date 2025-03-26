@@ -18,7 +18,7 @@
 import UIKit
 import OpenWrapSDK
 
-class RewardedViewController: UIViewController, POBRewardedAdDelegate {
+class RewardedViewController: BaseViewController, POBRewardedAdDelegate {
 
     let owAdUnit  = "OpenWrapRewardedAdUnit"
     let pubId = "156276"
@@ -61,52 +61,52 @@ class RewardedViewController: UIViewController, POBRewardedAdDelegate {
     
     // Notifies the delegate that an rewarded ad has been received successfully.
     func rewardedAdDidReceive(_ rewardedAd: POBRewardedAd) {
-        showAdButton.isHidden = false
-        print("RewardedAd : Ad Received")
+        showAdButton.isEnabled = true
+        log("RewardedAd : Ad Received")
     }
     
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToReceiveAdWithError error: Error) {
-        print("RewardedAd : Failed to receive ad with error  \(error.localizedDescription)")
+        log("RewardedAd : Failed to receive ad with error  \(error.localizedDescription)")
     }
     
     // Notifies the delegate of an error encountered while rendering an ad.
     func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToShowAdWithError error: Error) {
-        print("RewardedAd : Failed to show ad with error  \(error.localizedDescription)")
+        log("RewardedAd : Failed to show ad with error  \(error.localizedDescription)")
     }
     
     // Notifies the delegate that the rewarded ad will be presented as a modal on top of the current view controller.
     func rewardedAdWillPresent(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Will present")
+        log("RewardedAd : Will present")
     }
     
     // Notifies the delegate that the rewarded ad has been animated off the screen.
     func rewardedAdDidDismiss(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Dismissed")
+        log("RewardedAd : Dismissed")
     }
     
     // Notifies the delegate of ad click
     func rewardedAdDidClick(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Ad Clicked")
+        log("RewardedAd : Ad Clicked")
     }
     
     // Notifies the delegate that a user interaction will open another app (e.g. App Store), leaving the current app.
     func rewardedAdWillLeaveApplication(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Will leave app")
+        log("RewardedAd : Will leave app")
     }
     
     // Notifies the delegate of an ad expiration. After this callback, this 'POBRewardedAd' instance is marked as invalid & will not be shown.
     func rewardedAdDidExpireAd(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Expired")
+        log("RewardedAd : Expired")
     }
         
     // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
     func rewardedAd(_ rewardedAd: POBRewardedAd, shouldReward reward: POBReward) {
-        print("RewardedAd : Ad should reward \(reward.amount)(\(reward.currencyType))")
+        log("RewardedAd : Ad should reward \(reward.amount)(\(reward.currencyType))")
     }
 
     func rewardedAdDidRecordImpression(_ rewardedAd: POBRewardedAd) {
-        print("RewardedAd : Ad Impression")
+        log("RewardedAd : Ad Impression")
     }
 
     deinit {
