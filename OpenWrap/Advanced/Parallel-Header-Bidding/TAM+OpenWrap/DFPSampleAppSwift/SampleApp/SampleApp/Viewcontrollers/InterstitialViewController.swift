@@ -148,6 +148,11 @@ class InterstitialViewController: BaseViewController, BiddingManagerDelegate, PO
         log("Interstitial : Will leave app")
     }
 
+    // Notifies the delegate that an ad impression has been recorded.
+    func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
+        log("Interstitial : Ad Impression")
+    }
+
     // MARK: - Bid event delegate methods
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
         log("Interstitial : Did receive bid")

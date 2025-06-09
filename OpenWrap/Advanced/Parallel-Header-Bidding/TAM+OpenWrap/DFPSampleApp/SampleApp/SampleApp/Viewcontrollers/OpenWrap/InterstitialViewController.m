@@ -159,6 +159,11 @@
     [self log:@"Interstitial : Will leave app"];
 }
 
+// Notifies the delegate that an ad impression has been recorded.
+- (void)interstitialDidRecordImpression:(POBInterstitial *)interstitial {
+    [self log:@"Interstitial : Ad Impression"];
+}
+
 #pragma mark - Bid event delegate methods
 - (void)bidEvent:(id<POBBidEvent>)bidEventObject didReceiveBid:(POBBid *)bid {
     [self log:@"Interstitial : Did receive bid"];

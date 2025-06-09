@@ -138,12 +138,29 @@ didFailToReceiveAdWithError:(NSError *)error {
     [self.biddingManager loadBids];
 }
 
+// Notifies the delegate whenever current app goes in the background due to user click
+- (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
+    [self log:@"Banner : Will leave app"];
+}
+
+// Notifies the delegate that the banner ad view will launch a modal on top of the current view controller, as a result of user interaction.
 - (void)bannerViewWillPresentModal:(POBBannerView *)bannerView {
     [self log:@"Banner : Will present modal"];
 }
 
-- (void)bannerViewWillLeaveApplication:(POBBannerView *)bannerView {
-    [self log:@"Banner : Will leave app"];
+// Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
+- (void)bannerViewDidDismissModal:(POBBannerView *)bannerView {
+    [self log:@"Banner : Dismissed modal"];
+}
+
+// Notifies the delegate that the banner view was clicked.
+- (void)bannerViewDidClickAd:(POBBannerView *)bannerView {
+    [self log:@"Banner : Ad clicked"];
+}
+
+// Notifies the delegate that an ad impression has been recorded.
+- (void)bannerViewDidRecordImpression:(POBBannerView *)bannerView {
+    [self log:@"Banner : Ad Impression"];
 }
 
 #pragma mark - Bid event delegate methods

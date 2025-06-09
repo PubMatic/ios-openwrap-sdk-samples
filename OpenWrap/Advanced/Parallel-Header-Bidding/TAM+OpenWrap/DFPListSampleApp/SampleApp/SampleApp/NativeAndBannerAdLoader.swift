@@ -95,6 +95,8 @@ class NativeAndBannerAdLoader: NSObject, POBBidEventDelegate, BiddingManagerDele
     // delegate property to listen ad loader callbacks
     weak var delegate: NativeAndBannerAdLoaderDelegate?
 
+    var log: ((_ message: String) -> Void)?
+
     // Flag to maintain prefetch ad state
     var prefetchAdState: Bool
     var adLoadState: Bool
@@ -201,13 +203,41 @@ extension NativeAndBannerAdLoader {
 
     // Notifies the delegate that an ad has been successfully loaded and rendered.
     func bannerViewDidReceiveAd(_ bannerView: POBBannerView) {
+        log?("Banner : Ad received with size \(String(describing: bannerView.creativeSize()))")
         adLoadState = true
         delegate?.nativeBannerAdLoaderDidReceiveBannerAd(adLoader: self)
     }
 
     // Notifies the delegate of an error encountered while loading or rendering an ad.
     func bannerView(_ bannerView: POBBannerView, didFailToReceiveAdWithError error: Error) {
+        log?("Banner : Ad failed with error : \(error.localizedDescription)")
         delegate?.nativeBannerAdLoaderDidFail(adLoader: self, error: error as NSError)
+    }
+
+    // Notifies the delegate whenever current app goes in the background due to user click
+    func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
+        log?("Banner : Will leave app")
+    }
+
+    // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller,
+    // as a result of user interaction.
+    func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
+        log?("Banner : Will present modal")
+    }
+
+    // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
+    func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
+        log?("Banner : Dismissed modal")
+    }
+
+    // Notifies the delegate that the banner view was clicked.
+    func bannerViewDidClickAd(_ bannerView: POBBannerView) {
+        log?("Banner : Ad clicked")
+    }
+
+    // Notifies the delegate that an ad impression has been recorded.
+    func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
+        log?("Banner : Ad Impression")
     }
 
     // MARK: BidEvent delegate methods

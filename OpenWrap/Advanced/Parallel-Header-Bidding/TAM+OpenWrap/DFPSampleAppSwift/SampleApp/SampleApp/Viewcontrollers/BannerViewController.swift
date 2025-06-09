@@ -136,12 +136,30 @@ class BannerViewController: BaseViewController, POBBannerViewDelegate, POBBidEve
         self.biddingManager.loadBids()
     }
 
+    // Notifies the delegate whenever current app goes in the background due to user click
+    func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
+        log("Banner : Will leave app")
+    }
+
+    // Notifies the delegate that the banner ad view will launch a modal on top of the current view controller,
+    // as a result of user interaction.
     func bannerViewWillPresentModal(_ bannerView: POBBannerView) {
         log("Banner : Will present modal")
     }
 
-    func bannerViewWillLeaveApplication(_ bannerView: POBBannerView) {
-        log("Banner : Will leave app")
+    // Notifies the delegate that the banner ad view has dismissed the modal on top of the current view controller.
+    func bannerViewDidDismissModal(_ bannerView: POBBannerView) {
+        log("Banner : Dismissed modal")
+    }
+
+    // Notifies the delegate that the banner view was clicked.
+    func bannerViewDidClickAd(_ bannerView: POBBannerView) {
+        log("Banner : Ad clicked")
+    }
+
+    // Notifies the delegate that an ad impression has been recorded.
+    func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
+        log("Banner : Ad Impression")
     }
 
     // MARK: - Bid event delegate methods

@@ -74,6 +74,7 @@ extension BannerViewController {
                                              slotId: SLOT_UUID,
                                              adSize: AD_SIZE)
                 adloader.delegate = self
+                adloader.log = self.log
                 dataSource.append(adloader)
                 adsToLoad.append(adloader)
                 adIndex += AD_INTERVAL
