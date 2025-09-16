@@ -31,7 +31,6 @@
     
     // Set log level before initializing OpenWrapSDK for debugging purpose.
     [OpenWrapSDK setLogLevel:POBSDKLogLevelAll];
-    [OpenWrapSDK setSSLEnabled:NO];
 
     // Initialize OpenWrap SDK with publisher id and profile id.
     OpenWrapSDKConfig *openWrapSDKConfig = [[OpenWrapSDKConfig alloc] initWithPublisherId:PUBLISHER_ID

@@ -34,7 +34,6 @@
 
     // Set log level before initializing OpenWrapSDK for debugging purpose.
     [OpenWrapSDK setLogLevel:POBSDKLogLevelAll];
-    [OpenWrapSDK setSSLEnabled:NO];
 
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager requestWhenInUseAuthorization];

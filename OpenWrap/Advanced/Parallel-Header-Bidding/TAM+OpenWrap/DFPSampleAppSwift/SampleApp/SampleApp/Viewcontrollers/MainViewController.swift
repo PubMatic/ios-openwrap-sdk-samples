@@ -23,7 +23,6 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         OpenWrapSDK.setLogLevel(POBSDKLogLevel.all)
-        OpenWrapSDK.setSSLEnabled(true)
         // Global settings for DTBAds
         DTBAds.sharedInstance().setAppKey(APP_KEY)
 

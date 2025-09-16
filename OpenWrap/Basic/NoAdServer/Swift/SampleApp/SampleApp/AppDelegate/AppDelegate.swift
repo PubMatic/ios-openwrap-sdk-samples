@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Set log level before initializing OpenWrapSDK for debugging purpose.
         OpenWrapSDK.setLogLevel(.all)
-        OpenWrapSDK.setSSLEnabled(false)
 
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()

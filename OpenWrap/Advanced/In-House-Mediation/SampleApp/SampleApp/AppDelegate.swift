@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Set log level before initializing OpenWrapSDK for debugging purpose.
         OpenWrapSDK.setLogLevel(.all)
-        OpenWrapSDK.setSSLEnabled(false)
 
         let openWrapSDKConfig = OpenWrapSDKConfig(publisherId: Self.pubId, andProfileIds: [Self.profileId])
         OpenWrapSDK.initialize(with: openWrapSDKConfig) { (success, error) in
