@@ -118,6 +118,10 @@ didFailToReceiveAdWithError:(NSError *)error {
     [self log:@"Banner : Ad Impression"];
 }
 
+- (void)bannerView:(POBBannerView *)bannerView willChangeAdSizeTo:(POBAdSize *)size {
+    [self log:@"Banner : Will change Ad size to %@", size];
+}
+
 #pragma mark - dealloc
 - (void)dealloc {
     _bannerView = nil;

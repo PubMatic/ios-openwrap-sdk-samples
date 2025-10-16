@@ -114,6 +114,10 @@ class MRECDisplayViewController: BaseViewController, POBBannerViewDelegate {
         log("Banner : Ad Impression")
     }
 
+    func bannerView(_ bannerView: POBBannerView, willChangeAdSizeTo size: POBAdSize) {
+        log("Banner : Will change Ad size to \(size)")
+    }
+
     deinit {
         bannerView = nil
     }
