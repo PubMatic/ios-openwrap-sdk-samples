@@ -16,10 +16,10 @@
 		3E7AF7F621CA538300C31F40 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F421CA538300C31F40 /* BannerViewController.m */; };
 		3E7AF7F921CA538A00C31F40 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AF7F721CA538900C31F40 /* InterstitialViewController.m */; };
 		3ED6D415234DA8810060BA43 /* VideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6D414234DA8810060BA43 /* VideoInterstitialViewController.m */; };
-		523E46022A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E46012A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib */; };
 		527986AE2A01C91800CED193 /* NativeStandardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986AD2A01C91800CED193 /* NativeStandardViewController.m */; };
 		527986B12A01D30700CED193 /* NativeStandardCustomTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986B02A01D30700CED193 /* NativeStandardCustomTemplateViewController.m */; };
 		5AA1C4B82D5F30B600114FD4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */; };
+		62B5A66B2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B5A66A2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib */; };
 		B69EB02E29E7D66400BBDB73 /* MRECDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02D29E7D66400BBDB73 /* MRECDisplayViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
@@ -45,13 +45,13 @@
 		3E7AF7F821CA538A00C31F40 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		3ED6D413234DA8810060BA43 /* VideoInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoInterstitialViewController.h; sourceTree = "<group>"; };
 		3ED6D414234DA8810060BA43 /* VideoInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoInterstitialViewController.m; sourceTree = "<group>"; };
-		523E46012A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		527986AC2A01C91800CED193 /* NativeStandardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeStandardViewController.h; sourceTree = "<group>"; };
 		527986AD2A01C91800CED193 /* NativeStandardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardViewController.m; sourceTree = "<group>"; };
 		527986AF2A01D30700CED193 /* NativeStandardCustomTemplateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeStandardCustomTemplateViewController.h; sourceTree = "<group>"; };
 		527986B02A01D30700CED193 /* NativeStandardCustomTemplateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStandardCustomTemplateViewController.m; sourceTree = "<group>"; };
 		5AA1C4B62D5F30B600114FD4 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		62B5A66A2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		B69EB02C29E7D66400BBDB73 /* MRECDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECDisplayViewController.h; sourceTree = "<group>"; };
 		B69EB02D29E7D66400BBDB73 /* MRECDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECDisplayViewController.m; sourceTree = "<group>"; };
 		E60023891DC0B03300833CDB /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,7 +238,7 @@
 		E60023BE1DC1CB6E00833CDB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				523E46012A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib */,
+				62B5A66A2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib */,
 				3E71022A26E0F838009398D1 /* CustomNativeAdView.xib */,
 				3E71022926E0F838009398D1 /* NativeAdView.xib */,
 				E60023951DC0B03300833CDB /* Main.storyboard */,
@@ -330,7 +330,7 @@
 				3E71022C26E0F838009398D1 /* CustomNativeAdView.xib in Resources */,
 				E600239C1DC0B03300833CDB /* LaunchScreen.storyboard in Resources */,
 				E60023991DC0B03300833CDB /* Assets.xcassets in Resources */,
-				523E46022A0921CA0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */,
+				62B5A66B2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */,
 				E60023971DC0B03300833CDB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

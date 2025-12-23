@@ -16,10 +16,10 @@
 		21C1A28822648F810052C4C6 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1A28522648F810052C4C6 /* BannerViewController.swift */; };
 		21C1A28922648F810052C4C6 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1A28722648F810052C4C6 /* InterstitialViewController.swift */; };
 		3E920621235442D600460561 /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E920620235442D600460561 /* VideoInterstitialViewController.swift */; };
-		523E46002A09218D0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E45FF2A09218D0028473A /* NativeAdCustomMediumTemplateView.xib */; };
 		5272F41F2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272F41E2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift */; };
 		527986BA2A022DCD00CED193 /* NativeStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527986B92A022DCD00CED193 /* NativeStandardViewController.swift */; };
 		5A89A91C2D5B56AA001F8857 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89A91B2D5B56AA001F8857 /* BaseViewController.swift */; };
+		62B5A6692ED5D350007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B5A6682ED5D350007307E9 /* NativeAdCustomMediumTemplateView.xib */; };
 		B69EB02129E7C6E800BBDB73 /* MRECDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02029E7C6E800BBDB73 /* MRECDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +35,10 @@
 		21C1A28522648F810052C4C6 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		21C1A28722648F810052C4C6 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		3E920620235442D600460561 /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
-		523E45FF2A09218D0028473A /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		5272F41E2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardCustomTemplateViewController.swift; sourceTree = "<group>"; };
 		527986B92A022DCD00CED193 /* NativeStandardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardViewController.swift; sourceTree = "<group>"; };
 		5A89A91B2D5B56AA001F8857 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		62B5A6682ED5D350007307E9 /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		B69EB02029E7C6E800BBDB73 /* MRECDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRECDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 		20364F6521AFAF2300F9D5DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				523E45FF2A09218D0028473A /* NativeAdCustomMediumTemplateView.xib */,
+				62B5A6682ED5D350007307E9 /* NativeAdCustomMediumTemplateView.xib */,
 				20364F6B21AFB02100F9D5DD /* Assets.xcassets */,
 				20364F6C21AFB02100F9D5DD /* Info.plist */,
 				20364F5721AFAF0B00F9D5DD /* Main.storyboard */,
@@ -254,7 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523E46002A09218D0028473A /* NativeAdCustomMediumTemplateView.xib in Resources */,
+				62B5A6692ED5D350007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */,
 				20364F5E21AFAF0D00F9D5DD /* LaunchScreen.storyboard in Resources */,
 				20364F6D21AFB02100F9D5DD /* Assets.xcassets in Resources */,
 				20364F5921AFAF0B00F9D5DD /* Main.storyboard in Resources */,

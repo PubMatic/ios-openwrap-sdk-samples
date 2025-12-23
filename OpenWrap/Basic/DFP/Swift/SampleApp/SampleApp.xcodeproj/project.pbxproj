@@ -20,10 +20,10 @@
 		3E71022826DFA10A009398D1 /* NativeAndBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E71022726DFA109009398D1 /* NativeAndBannerViewController.swift */; };
 		3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */; };
 		3E7DE94321DF3E1400E70EA6 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DE94221DF3E1400E70EA6 /* InterstitialViewController.swift */; };
-		523E46042A0922120028473A /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E46032A0922120028473A /* NativeAdCustomMediumTemplateView.xib */; };
 		5272F4222A02B230009A2A21 /* NativeStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272F4212A02B230009A2A21 /* NativeStandardViewController.swift */; };
 		52BE034A2A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE03492A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift */; };
 		5ABFF4822D5F026C00C9CE7A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */; };
+		62B5A66D2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B5A66C2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib */; };
 		B69EB02A29E7D45B00BBDB73 /* MRECDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02929E7D45B00BBDB73 /* MRECDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +43,10 @@
 		3E71022726DFA109009398D1 /* NativeAndBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAndBannerViewController.swift; sourceTree = "<group>"; };
 		3E7DE94021DF3E0E00E70EA6 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		3E7DE94221DF3E1400E70EA6 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
-		523E46032A0922120028473A /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		5272F4212A02B230009A2A21 /* NativeStandardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardViewController.swift; sourceTree = "<group>"; };
 		52BE03492A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardCustomTemplateViewController.swift; sourceTree = "<group>"; };
 		5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		62B5A66C2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
 		B69EB02929E7D45B00BBDB73 /* MRECDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRECDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +93,7 @@
 		20364F6521AFAF2300F9D5DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				523E46032A0922120028473A /* NativeAdCustomMediumTemplateView.xib */,
+				62B5A66C2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib */,
 				3E71021F26DF9A92009398D1 /* CustomNativeAdView.xib */,
 				3E71021E26DF9A92009398D1 /* NativeAdView.xib */,
 				20364F6B21AFB02100F9D5DD /* Assets.xcassets */,
@@ -294,7 +294,7 @@
 				3E71022126DF9A92009398D1 /* CustomNativeAdView.xib in Resources */,
 				20364F5E21AFAF0D00F9D5DD /* LaunchScreen.storyboard in Resources */,
 				20364F6D21AFB02100F9D5DD /* Assets.xcassets in Resources */,
-				523E46042A0922120028473A /* NativeAdCustomMediumTemplateView.xib in Resources */,
+				62B5A66D2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */,
 				20364F5921AFAF0B00F9D5DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
