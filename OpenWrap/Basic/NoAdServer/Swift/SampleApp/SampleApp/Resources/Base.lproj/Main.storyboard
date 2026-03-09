@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b0q-C6-PIb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-9x-w3s">
-                                <rect key="frame" x="5" y="69" width="365" height="343"/>
+                                <rect key="frame" x="5" y="79" width="365" height="333"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -56,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TYo-xc-OkV">
-                                <rect key="frame" x="5" y="69" width="365" height="543"/>
+                                <rect key="frame" x="5" y="79" width="365" height="533"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -94,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rs9-pc-4N7">
-                                <rect key="frame" x="89" y="84" width="197.5" height="34.5"/>
+                                <rect key="frame" x="89" y="94" width="197.5" height="34.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1H-0t-iQ0">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
@@ -128,7 +129,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pi1-Bt-MKj">
-                                <rect key="frame" x="5" y="123.5" width="365" height="538.5"/>
+                                <rect key="frame" x="5" y="133.5" width="365" height="528.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -165,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1b-qA-Zbh">
-                                <rect key="frame" x="89" y="84" width="197.5" height="34.5"/>
+                                <rect key="frame" x="89" y="94" width="197.5" height="34.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuE-nT-4YU">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
@@ -201,7 +202,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MXq-FU-5Aj">
-                                <rect key="frame" x="5" y="123.5" width="365" height="538.5"/>
+                                <rect key="frame" x="5" y="133.5" width="365" height="528.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -238,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iuV-nd-dfM">
-                                <rect key="frame" x="5" y="69" width="375" height="343"/>
+                                <rect key="frame" x="5" y="79" width="375" height="333"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -277,14 +278,14 @@
                             <tableViewSection headerTitle="OpenWrap only Config" id="fzy-k0-8kS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="xnM-r6-5WT" style="IBUITableViewCellStyleDefault" id="9pJ-C0-BcQ">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9pJ-C0-BcQ" id="IUg-17-q43">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Banner Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xnM-r6-5WT">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -298,14 +299,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="yuC-6l-q3c" style="IBUITableViewCellStyleDefault" id="ufd-cL-eD3">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ufd-cL-eD3" id="kMm-5h-cIo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="MREC Display Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yuC-6l-q3c">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -319,14 +320,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="PIb-OK-qOl" style="IBUITableViewCellStyleDefault" id="EQb-EN-VwL">
-                                        <rect key="frame" x="0.0" y="142.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="157.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EQb-EN-VwL" id="5T8-cF-afZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="MREC Video Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PIb-OK-qOl">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -340,14 +341,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="PEx-63-fGa" style="IBUITableViewCellStyleDefault" id="lrC-UD-2yE">
-                                        <rect key="frame" x="0.0" y="186" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="208.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lrC-UD-2yE" id="bz1-B1-oQi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Display Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PEx-63-fGa">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -361,14 +362,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="c8O-y8-s1D" style="IBUITableViewCellStyleDefault" id="0gl-c3-36C">
-                                        <rect key="frame" x="0.0" y="229.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0gl-c3-36C" id="qQv-Yk-jCn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Video Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c8O-y8-s1D">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -382,14 +383,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ini-p6-kkd" style="IBUITableViewCellStyleDefault" id="hCG-Dh-Tyy">
-                                        <rect key="frame" x="0.0" y="273" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="310.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hCG-Dh-Tyy" id="Y94-eg-bhb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Rewarded Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ini-p6-kkd">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -398,19 +399,16 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="VsY-UF-Qto" kind="show" id="qop-hq-vaA"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="qhP-rz-Zrm" style="IBUITableViewCellStyleDefault" id="2qd-uF-3kh">
-                                        <rect key="frame" x="0.0" y="316.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="361.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2qd-uF-3kh" id="iqS-72-jhZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Native Ad - Standard Template" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qhP-rz-Zrm">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -424,14 +422,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="hfp-uS-inI" style="IBUITableViewCellStyleDefault" id="qz1-a8-o19">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="412.5" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qz1-a8-o19" id="VUO-Pu-IKa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Native Ad - Customized Template" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hfp-uS-inI">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -442,6 +440,48 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="xV2-cN-B0e" kind="show" id="cWN-VS-HWK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="f9t-eb-ytf" style="IBUITableViewCellStyleDefault" id="UhS-nv-cML">
+                                        <rect key="frame" x="0.0" y="463.5" width="375" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UhS-nv-cML" id="ioB-6l-Xi3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Open Display Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f9t-eb-ytf">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SnP-vH-r1t" kind="show" id="fwh-Hf-P6M"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Les-qu-DAy" style="IBUITableViewCellStyleDefault" id="uRP-BC-7jI">
+                                        <rect key="frame" x="0.0" y="514.5" width="375" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRP-BC-7jI" id="l3i-Lf-QpU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Open Video Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Les-qu-DAy">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VVG-SO-HEH" kind="show" id="VnO-9c-t8r"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -469,7 +509,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-8m-mLq" userLabel="ButtonContainerView">
-                                <rect key="frame" x="82" y="84" width="211" height="35"/>
+                                <rect key="frame" x="82" y="94" width="211" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr2-K9-ZNZ">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
@@ -503,7 +543,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXF-UO-L1H">
-                                <rect key="frame" x="5" y="124" width="365" height="448"/>
+                                <rect key="frame" x="5" y="134" width="365" height="438"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -541,7 +581,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eA-U7-PF9" userLabel="ButtonContainerView">
-                                <rect key="frame" x="82" y="84" width="211" height="35"/>
+                                <rect key="frame" x="82" y="94" width="211" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1n-zC-Yph">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
@@ -575,7 +615,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OEQ-41-oCv">
-                                <rect key="frame" x="5" y="124" width="365" height="288"/>
+                                <rect key="frame" x="5" y="134" width="365" height="278"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -609,7 +649,7 @@
             <objects>
                 <navigationController id="b0q-C6-PIb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BGq-vk-hds">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -633,7 +673,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reO-ox-3vM">
-                                <rect key="frame" x="89" y="84" width="197.5" height="34.5"/>
+                                <rect key="frame" x="89" y="40" width="197.5" height="34.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF0-v0-xvG">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
@@ -667,7 +707,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-Qy-9Fj">
-                                <rect key="frame" x="5" y="123.5" width="365" height="538.5"/>
+                                <rect key="frame" x="5" y="79.5" width="365" height="582.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -694,7 +734,159 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KE9-ou-Pd1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="-430"/>
+            <point key="canvasLocation" x="198" y="276"/>
+        </scene>
+        <!--OpenWrap App Open Display Ad-->
+        <scene sceneID="GCu-yw-Qzj">
+            <objects>
+                <viewController title="Rewarded Ad" id="SnP-vH-r1t" userLabel="OpenWrap App Open Display Ad" customClass="AppOpenAdViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aOE-GX-eV0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Afd-Km-j5w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="niu-fi-qP8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWf-48-vG5">
+                                <rect key="frame" x="89" y="94" width="197.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dva-in-ZPB">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdAction:" destination="SnP-vH-r1t" eventType="touchUpInside" id="cG2-WC-6Am"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suy-dU-Bdg">
+                                        <rect key="frame" x="106.5" y="0.0" width="91" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ShowAd"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="showAdAction:" destination="SnP-vH-r1t" eventType="touchUpInside" id="oMs-4w-c1S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dva-in-ZPB" secondAttribute="bottom" id="8Fb-aB-Qhx"/>
+                                    <constraint firstAttribute="trailing" secondItem="suy-dU-Bdg" secondAttribute="trailing" id="Cmt-uz-heb"/>
+                                    <constraint firstItem="suy-dU-Bdg" firstAttribute="top" secondItem="BWf-48-vG5" secondAttribute="top" id="Zx2-g2-7Bf"/>
+                                    <constraint firstItem="dva-in-ZPB" firstAttribute="top" secondItem="BWf-48-vG5" secondAttribute="top" id="b9F-gv-Xpd"/>
+                                    <constraint firstAttribute="bottom" secondItem="suy-dU-Bdg" secondAttribute="bottom" id="dfU-gC-WiS"/>
+                                    <constraint firstItem="suy-dU-Bdg" firstAttribute="leading" secondItem="dva-in-ZPB" secondAttribute="trailing" constant="20" id="gE6-z3-i4E"/>
+                                    <constraint firstItem="dva-in-ZPB" firstAttribute="leading" secondItem="BWf-48-vG5" secondAttribute="leading" id="stx-aC-oWh"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-uZ-35H">
+                                <rect key="frame" x="5" y="133.5" width="365" height="528.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pGA-GW-7hs"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BWf-48-vG5" firstAttribute="top" secondItem="pGA-GW-7hs" secondAttribute="top" constant="20" id="0nP-da-ZBx"/>
+                            <constraint firstItem="BWf-48-vG5" firstAttribute="centerX" secondItem="pGA-GW-7hs" secondAttribute="centerX" id="1Ao-rn-rMn"/>
+                            <constraint firstItem="DDp-uZ-35H" firstAttribute="leading" secondItem="pGA-GW-7hs" secondAttribute="leading" constant="5" id="UDy-MO-lPO"/>
+                            <constraint firstItem="pGA-GW-7hs" firstAttribute="trailing" secondItem="DDp-uZ-35H" secondAttribute="trailing" constant="5" id="c25-Zw-YeF"/>
+                            <constraint firstItem="DDp-uZ-35H" firstAttribute="top" secondItem="BWf-48-vG5" secondAttribute="bottom" constant="5" id="cfU-Ut-ih7"/>
+                            <constraint firstItem="pGA-GW-7hs" firstAttribute="bottom" secondItem="DDp-uZ-35H" secondAttribute="bottom" constant="5" id="uZh-tS-isI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="App Open Display Ad" id="JEX-5F-rGJ"/>
+                    <connections>
+                        <outlet property="logTextView" destination="DDp-uZ-35H" id="TeA-2n-v1w"/>
+                        <outlet property="showAdButton" destination="suy-dU-Bdg" id="bHg-76-xm9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBm-EC-mWn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1418" y="986"/>
+        </scene>
+        <!--OpenWrap App Open Video Ad-->
+        <scene sceneID="X9F-ko-xoG">
+            <objects>
+                <viewController title="Rewarded Ad" id="VVG-SO-HEH" userLabel="OpenWrap App Open Video Ad" customClass="VideoAppOpenAdViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P3O-gl-ORQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="TXi-23-N47"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pHd-UU-jtM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJy-bb-JG9">
+                                <rect key="frame" x="89" y="94" width="197.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIz-ia-rew">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LoadAd"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="loadAdAction:" destination="VVG-SO-HEH" eventType="touchUpInside" id="m59-ml-7KY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGS-SJ-XOv">
+                                        <rect key="frame" x="106.5" y="0.0" width="91" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ShowAd"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="showAdAction:" destination="VVG-SO-HEH" eventType="touchUpInside" id="xzf-rb-JLa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nGS-SJ-XOv" firstAttribute="top" secondItem="cJy-bb-JG9" secondAttribute="top" id="1FY-5d-e2z"/>
+                                    <constraint firstAttribute="trailing" secondItem="nGS-SJ-XOv" secondAttribute="trailing" id="Ah5-wk-Or8"/>
+                                    <constraint firstItem="nGS-SJ-XOv" firstAttribute="leading" secondItem="hIz-ia-rew" secondAttribute="trailing" constant="20" id="CbF-fb-d8Q"/>
+                                    <constraint firstItem="hIz-ia-rew" firstAttribute="top" secondItem="cJy-bb-JG9" secondAttribute="top" id="N2P-jU-2ul"/>
+                                    <constraint firstAttribute="bottom" secondItem="nGS-SJ-XOv" secondAttribute="bottom" id="OJM-XQ-m3I"/>
+                                    <constraint firstAttribute="bottom" secondItem="hIz-ia-rew" secondAttribute="bottom" id="QUA-p5-JAi"/>
+                                    <constraint firstItem="hIz-ia-rew" firstAttribute="leading" secondItem="cJy-bb-JG9" secondAttribute="leading" id="pjb-fV-RRp"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ad transition logs." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MMa-zn-AID">
+                                <rect key="frame" x="5" y="133.5" width="365" height="528.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log_text_view"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fTA-9Y-9l9"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cJy-bb-JG9" firstAttribute="top" secondItem="fTA-9Y-9l9" secondAttribute="top" constant="20" id="4u7-b2-GcQ"/>
+                            <constraint firstItem="MMa-zn-AID" firstAttribute="top" secondItem="cJy-bb-JG9" secondAttribute="bottom" constant="5" id="aXW-Ey-byQ"/>
+                            <constraint firstItem="cJy-bb-JG9" firstAttribute="centerX" secondItem="fTA-9Y-9l9" secondAttribute="centerX" id="dJb-bI-LDB"/>
+                            <constraint firstItem="fTA-9Y-9l9" firstAttribute="trailing" secondItem="MMa-zn-AID" secondAttribute="trailing" constant="5" id="eCE-8u-BO3"/>
+                            <constraint firstItem="fTA-9Y-9l9" firstAttribute="bottom" secondItem="MMa-zn-AID" secondAttribute="bottom" constant="5" id="pOX-ro-uEb"/>
+                            <constraint firstItem="MMa-zn-AID" firstAttribute="leading" secondItem="fTA-9Y-9l9" secondAttribute="leading" constant="5" id="uOj-bd-foG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="App Open Video Ad" id="i2x-lY-xAg"/>
+                    <connections>
+                        <outlet property="logTextView" destination="MMa-zn-AID" id="5Tx-pa-itX"/>
+                        <outlet property="showAdButton" destination="nGS-SJ-XOv" id="doG-QP-4Bv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgj-nW-dQ2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="986"/>
         </scene>
     </scenes>
     <resources>

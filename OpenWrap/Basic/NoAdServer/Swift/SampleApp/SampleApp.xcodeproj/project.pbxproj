@@ -15,6 +15,8 @@
 		21AC0FC7251E1BFF00D36FA7 /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC0FC6251E1BFF00D36FA7 /* RewardedViewController.swift */; };
 		21C1A28822648F810052C4C6 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1A28522648F810052C4C6 /* BannerViewController.swift */; };
 		21C1A28922648F810052C4C6 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1A28722648F810052C4C6 /* InterstitialViewController.swift */; };
+		25E6E8892EB3852F000F3B94 /* AppOpenAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E6E8882EB3852F000F3B94 /* AppOpenAdViewController.swift */; };
+		25E6E88C2EB386D0000F3B94 /* VideoAppOpenAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E6E88B2EB386D0000F3B94 /* VideoAppOpenAdViewController.swift */; };
 		3E920621235442D600460561 /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E920620235442D600460561 /* VideoInterstitialViewController.swift */; };
 		5272F41F2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272F41E2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift */; };
 		527986BA2A022DCD00CED193 /* NativeStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527986B92A022DCD00CED193 /* NativeStandardViewController.swift */; };
@@ -34,6 +36,8 @@
 		21AC0FC6251E1BFF00D36FA7 /* RewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
 		21C1A28522648F810052C4C6 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		21C1A28722648F810052C4C6 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		25E6E8882EB3852F000F3B94 /* AppOpenAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdViewController.swift; sourceTree = "<group>"; };
+		25E6E88B2EB386D0000F3B94 /* VideoAppOpenAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAppOpenAdViewController.swift; sourceTree = "<group>"; };
 		3E920620235442D600460561 /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		5272F41E2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardCustomTemplateViewController.swift; sourceTree = "<group>"; };
 		527986B92A022DCD00CED193 /* NativeStandardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		20364F6621AFAF2A00F9D5DD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25E6E88A2EB386A3000F3B94 /* VideoAppOpenAd */,
+				25E6E8872EB3850A000F3B94 /* AppOpenAd */,
 				5A89A91B2D5B56AA001F8857 /* BaseViewController.swift */,
 				527986B62A022D7B00CED193 /* Native */,
 				B69EB01F29E7C6BB00BBDB73 /* MRECDisplay */,
@@ -145,6 +151,22 @@
 				21C1A28722648F810052C4C6 /* InterstitialViewController.swift */,
 			);
 			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		25E6E8872EB3850A000F3B94 /* AppOpenAd */ = {
+			isa = PBXGroup;
+			children = (
+				25E6E8882EB3852F000F3B94 /* AppOpenAdViewController.swift */,
+			);
+			path = AppOpenAd;
+			sourceTree = "<group>";
+		};
+		25E6E88A2EB386A3000F3B94 /* VideoAppOpenAd */ = {
+			isa = PBXGroup;
+			children = (
+				25E6E88B2EB386D0000F3B94 /* VideoAppOpenAdViewController.swift */,
+			);
+			path = VideoAppOpenAd;
 			sourceTree = "<group>";
 		};
 		3E92061F23543F8900460561 /* VideoInterstitial */ = {
@@ -271,12 +293,14 @@
 				21C1A28922648F810052C4C6 /* InterstitialViewController.swift in Sources */,
 				B69EB02129E7C6E800BBDB73 /* MRECDisplayViewController.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
+				25E6E88C2EB386D0000F3B94 /* VideoAppOpenAdViewController.swift in Sources */,
 				21AC0FC7251E1BFF00D36FA7 /* RewardedViewController.swift in Sources */,
 				527986BA2A022DCD00CED193 /* NativeStandardViewController.swift in Sources */,
 				5A89A91C2D5B56AA001F8857 /* BaseViewController.swift in Sources */,
 				5272F41F2A029B32009A2A21 /* NativeStandardCustomTemplateViewController.swift in Sources */,
 				20C273A7237C24170042D9E4 /* MRECVideoViewController.swift in Sources */,
 				3E920621235442D600460561 /* VideoInterstitialViewController.swift in Sources */,
+				25E6E8892EB3852F000F3B94 /* AppOpenAdViewController.swift in Sources */,
 				21C1A28822648F810052C4C6 /* BannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

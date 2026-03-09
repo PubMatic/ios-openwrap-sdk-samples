@@ -36,8 +36,13 @@ class FeedItem {
     }
 }
 
-class NativeAdViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
-    
+class NativeAdViewController: BaseViewController,
+                              UITableViewDelegate,
+                              UITableViewDataSource,
+                              POBNativeAdLoaderDelegate,
+                              POBNativeAdDelegate,
+                              POBNativeAdVideoDelegate {
+
     @IBOutlet weak var adTableView: UITableView!
     // Data source for the feed
     var dataSource          = [FeedItem]()
@@ -131,6 +136,8 @@ class NativeAdViewController: BaseViewController, UITableViewDelegate, UITableVi
             adIndex += adRecurrence
         }
         nativeAd.setAdDelegate(self)
+        // Set the native ad video delegate to receive video related callbacks
+        nativeAd.setVideoDelegate(self)
         // Render ad - prepares a pre-rendered native ad view
         nativeAd.renderAd(completion: { [weak self] (_, error) in
             guard let self else { return }
@@ -177,5 +184,31 @@ class NativeAdViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
         log("Native : Ad recorded impression")
+    }
+
+    // MARK: - POBNativeAdVideoDelegate
+
+    func nativeAdDidStartVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video started")
+    }
+
+    func nativeAdDidFinishVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video playback finished")
+    }
+
+    func nativeAdDidPauseVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video paused")
+    }
+
+    func nativeAdDidResumeVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video resumed")
+    }
+
+    func nativeAd(_ nativeAd: any POBNativeAd, didChangeAudioState isMuted: Bool) {
+        if isMuted {
+            log("Native : Video muted")
+        } else {
+            log("Native : Video unmuted")
+        }
     }
 }

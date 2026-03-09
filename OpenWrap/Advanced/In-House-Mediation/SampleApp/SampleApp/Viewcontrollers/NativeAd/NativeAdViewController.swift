@@ -21,7 +21,8 @@ import OpenWrapSDK
 class NativeAdViewController: BaseViewController,
                               POBNativeAdLoaderDelegate,
                               POBNativeAdDelegate,
-                              POBBidEventDelegate {
+                              POBBidEventDelegate,
+                              POBNativeAdVideoDelegate {
     @IBOutlet weak var renderAdButton: UIButton!
     private let isOWAuctionWin = true
 
@@ -89,6 +90,8 @@ class NativeAdViewController: BaseViewController,
         self.nativeAd = nativeAd
         // Set native ad delegate
         self.nativeAd?.setAdDelegate(self)
+        // Set the native ad video delegate to receive video related callbacks
+        self.nativeAd?.setVideoDelegate(self)
         renderAdButton.isEnabled = true
     }
 
@@ -152,6 +155,32 @@ class NativeAdViewController: BaseViewController,
     /// Called when the native ad has recorded an impression
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
         log("Native Ad : Ad recorded impression")
+    }
+
+    // MARK: - POBNativeAdVideoDelegate
+
+    func nativeAdDidStartVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video started")
+    }
+
+    func nativeAdDidFinishVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video playback finished")
+    }
+
+    func nativeAdDidPauseVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video paused")
+    }
+
+    func nativeAdDidResumeVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video resumed")
+    }
+
+    func nativeAd(_ nativeAd: any POBNativeAd, didChangeAudioState isMuted: Bool) {
+        if isMuted {
+            log("Native : Video muted")
+        } else {
+            log("Native : Video unmuted")
+        }
     }
 
     // MARK: Private helper methods

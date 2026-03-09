@@ -20,7 +20,10 @@ import OpenWrapSDK
 import OpenWrapHandlerDFP
 import GoogleMobileAds
 
-class NativeStandardCustomTemplateViewController: BaseViewController, POBNativeAdLoaderDelegate, POBNativeAdDelegate {
+class NativeStandardCustomTemplateViewController: BaseViewController,
+                                                  POBNativeAdLoaderDelegate,
+                                                  POBNativeAdDelegate,
+                                                  POBNativeAdVideoDelegate {
     let gamAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-Native"
     let owAdUnit = "/15671365/pm_sdk/PMSDK-Demo-App-Native"
     let pubId = "156276"
@@ -125,6 +128,8 @@ class NativeStandardCustomTemplateViewController: BaseViewController, POBNativeA
         self.nativeAd = nativeAd
         // Set the native ad delegate.
         self.nativeAd?.setAdDelegate(self)
+        // Set the native ad video delegate to receive video related callbacks
+        self.nativeAd?.setVideoDelegate(self)
         renderAdButton.isEnabled = true
     }
     
@@ -174,7 +179,33 @@ class NativeStandardCustomTemplateViewController: BaseViewController, POBNativeA
     func nativeAd(_ nativeAd: POBNativeAd, didRecordClickForAsset assetId: Int) {
         log("Native : Recorded click for asset with Id: \(assetId)")
     }
-    
+
+    // MARK: - POBNativeAdVideoDelegate
+
+    func nativeAdDidStartVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video started")
+    }
+
+    func nativeAdDidFinishVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video playback finished")
+    }
+
+    func nativeAdDidPauseVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video paused")
+    }
+
+    func nativeAdDidResumeVideo(_ nativeAd: any POBNativeAd) {
+        log("Native : Video resumed")
+    }
+
+    func nativeAd(_ nativeAd: any POBNativeAd, didChangeAudioState isMuted: Bool) {
+        if isMuted {
+            log("Native : Video muted")
+        } else {
+            log("Native : Video unmuted")
+        }
+    }
+
     // MARK: - Supporting Methods
     
     private func addNativeAdViewToView(nativeAdView: UIView?, adSize: CGSize?) {

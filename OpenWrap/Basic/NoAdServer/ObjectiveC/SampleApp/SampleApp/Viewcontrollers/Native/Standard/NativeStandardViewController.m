@@ -24,7 +24,10 @@
 
 @import OpenWrapSDK;
 
-@interface NativeStandardViewController () <POBNativeAdLoaderDelegate, POBNativeAdDelegate>
+@interface NativeStandardViewController () <
+    POBNativeAdLoaderDelegate,
+    POBNativeAdDelegate,
+    POBNativeAdVideoDelegate>
 @property (nonatomic, strong) POBNativeAdLoader *nativeAdLoader;
 @property (nonatomic, strong) id<POBNativeAd> nativeAd;
 @property (nonatomic, strong) POBNativeAdView *nativeAdView;
@@ -89,6 +92,8 @@
 
     // Set native ad delegate.
     [self.nativeAd setAdDelegate:self];
+    // Set the native ad video delegate to receive video related callbacks
+    [self.nativeAd setVideoDelegate:self];
     [self log:@"Native : Ad received."];
 }
 
@@ -137,6 +142,32 @@
 // Informs delegate that the native ad has recorded an impression.
 - (void)nativeAdDidRecordImpression:(POBNativeAdView *)adView {
     [self log:@"Native : Recorded impression."];
+}
+
+#pragma mark - POBNativeAdVideoDelegate
+
+- (void)nativeAdDidStartVideo:(id<POBNativeAd>)nativeAd {
+    [self log:@"Native : Video started"];
+}
+
+- (void)nativeAdDidFinishVideo:(id<POBNativeAd>)nativeAd {
+    [self log:@"Native : Video playback finished"];
+}
+
+- (void)nativeAdDidPauseVideo:(id<POBNativeAd>)nativeAd {
+    [self log:@"Native : Video paused"];
+}
+
+- (void)nativeAdDidResumeVideo:(id<POBNativeAd>)nativeAd {
+    [self log:@"Native : Video resumed"];
+}
+
+- (void)nativeAd:(id<POBNativeAd>)nativeAd didChangeAudioState:(BOOL)isMuted {
+    if (isMuted) {
+        [self log:@"Native : Video muted"];
+    } else {
+        [self log:@"Native : Video unmuted"];
+    }
 }
 
 #pragma mark - Supporting Methods
