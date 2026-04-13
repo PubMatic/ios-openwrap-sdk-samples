@@ -82,6 +82,11 @@
     [self log:@"App Open Ad : Will present"];
 }
 
+//Notifies the delegate that the app open ad is presented as a modal on top of the current view controller.
+- (void)appOpenAdDidPresentAd:(POBAppOpenAd * _Nonnull)appOpenAd {
+    [self log:@"App Open Ad : Did present"];
+}
+
 // Notifies the delegate that the app open ad has been animated off the screen.
 - (void)appOpenAdDidDismissAd:(POBAppOpenAd * _Nonnull)appOpenAd {
     [self log:@"App Open Ad : Dismissed"];

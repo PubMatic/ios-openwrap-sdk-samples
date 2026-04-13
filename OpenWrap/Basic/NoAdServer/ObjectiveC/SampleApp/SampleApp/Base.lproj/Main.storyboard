@@ -1,5 +1,6 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goI-f8-WKM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -391,7 +392,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="MREC Display Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fy5-Md-auA">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="MREC Display Ad" label="MREC Display Ad"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -412,7 +413,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="MREC Video Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hK8-sn-pu8">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="BannerAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="MREC Video Ad"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -433,7 +434,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Display Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VCO-BP-huy">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="Interstitial Display Ad"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -454,7 +455,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Interstitial Video Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F6f-Mw-i2H">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="InterstitialAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="Interstitial Video Ad"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -496,7 +497,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Native Ad - Standard Template" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gSd-1J-MJn">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="Native Ad - Standard Template" label="Native Ad - Standard Template"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -517,7 +518,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Native Ad - Customized Template" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o1a-jJ-ir7">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="Native Ad - Customized Template" label="Native Ad - Customized Template"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -538,7 +539,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Open Display Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mf6-3K-SMF">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="App Open Display Ad" label="App Open Display Ad"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -559,7 +560,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Open Video Ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9C5-7l-Q68">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="51"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="RewardedAd" label="RewardedAd"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="App Open Video Ad" label="App Open Video Ad"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -744,7 +745,7 @@
                             <constraint firstItem="1XH-XQ-xU0" firstAttribute="top" secondItem="3eM-IU-0RL" secondAttribute="bottom" constant="5" id="YiH-YV-4zM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Rewardrd Ad" id="UsW-Vr-4lM"/>
+                    <navigationItem key="navigationItem" title="Rewarded Ad" id="UsW-Vr-4lM"/>
                     <connections>
                         <outlet property="logTextView" destination="3eM-IU-0RL" id="95l-Kq-nOU"/>
                         <outlet property="showAdButton" destination="2oP-ki-gYC" id="sqc-Vc-25U"/>
@@ -821,7 +822,7 @@
                             <constraint firstItem="Z3E-fV-bz4" firstAttribute="top" secondItem="vhQ-EP-2qp" secondAttribute="bottom" constant="5" id="ytg-dK-vbh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5z8-62-XV3"/>
+                    <navigationItem key="navigationItem" title="App Open Display Ad" id="5z8-62-XV3"/>
                     <connections>
                         <outlet property="logTextView" destination="vhQ-EP-2qp" id="cPk-kf-Ela"/>
                         <outlet property="showAdButton" destination="FeC-MZ-QEu" id="57o-Zx-a33"/>
@@ -898,7 +899,7 @@
                             <constraint firstAttribute="trailing" secondItem="iwq-Ti-HTf" secondAttribute="trailing" constant="5" id="eEV-gc-DqU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KHG-yX-YHZ"/>
+                    <navigationItem key="navigationItem" title="App Open Video Ad" id="KHG-yX-YHZ"/>
                     <connections>
                         <outlet property="logTextView" destination="iwq-Ti-HTf" id="OCv-H0-PtF"/>
                         <outlet property="showAdButton" destination="L7O-n0-PcR" id="wIw-0D-yfs"/>
