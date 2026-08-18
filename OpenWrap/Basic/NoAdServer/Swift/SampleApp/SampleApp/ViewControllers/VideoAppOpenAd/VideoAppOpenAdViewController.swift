@@ -105,12 +105,6 @@ class VideoAppOpenAdViewController: BaseViewController, POBAppOpenAdDelegate, PO
         log("App Open Ad : Ad Impression")
     }
 
-    // Notifies the delegate of an ad expiration.
-    // After this callback, this 'POBAppOpenAd' instance is marked as invalid & will not be shown.
-    func appOpenAdDidExpireAd(_ appOpenAd: POBAppOpenAd) {
-        log("App Open Ad : Ad Expired")
-    }
-
     // MARK: App Open video delegate methods
 
     // Notifies the delegate of an video ad completion.

@@ -94,12 +94,7 @@ class RewardedViewController: BaseViewController, POBRewardedAdDelegate {
     func rewardedAdWillLeaveApplication(_ rewardedAd: POBRewardedAd) {
         log("RewardedAd : Will leave app")
     }
-    
-    // Notifies the delegate of an ad expiration. After this callback, this 'POBRewardedAd' instance is marked as invalid & will not be shown.
-    func rewardedAdDidExpireAd(_ rewardedAd: POBRewardedAd) {
-        log("RewardedAd : Expired")
-    }
-        
+
     // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
     func rewardedAd(_ rewardedAd: POBRewardedAd, shouldReward reward: POBReward) {
         log("RewardedAd : Ad should reward \(reward.amount)(\(reward.currencyType))")

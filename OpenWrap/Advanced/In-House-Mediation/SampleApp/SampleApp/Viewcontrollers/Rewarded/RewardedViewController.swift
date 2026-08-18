@@ -112,6 +112,11 @@ class RewardedViewController: BaseViewController, POBRewardedAdDelegate, POBBidE
         log("Rewarded Ad : Ad failed with error  \(error.localizedDescription)")
     }
 
+    // Notifies the delegate of an error encountered while showing an ad.
+    func rewardedAd(_ rewardedAd: POBRewardedAd, didFailToShowAdWithError error: Error) {
+        log("Rewarded Ad : Failed to show ad with error  \(error.localizedDescription)")
+    }
+
     func rewardedAdDidRecordImpression(_ rewardedAd: POBRewardedAd) {
         log("Rewarded Ad : Ad Impression")
     }

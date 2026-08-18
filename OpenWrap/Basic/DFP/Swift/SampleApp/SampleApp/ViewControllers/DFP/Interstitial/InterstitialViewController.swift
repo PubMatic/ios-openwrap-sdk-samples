@@ -119,10 +119,6 @@ class InterstitialViewController: BaseViewController, POBInterstitialDelegate, P
         log("Interstitial : Will leave app")
     }
     
-    func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
-        log("Interstitial : Ad Expired")
-    }
-    
     func interstitialDidRecordImpression(_ interstitial: POBInterstitial) {
         log("Interstitial : Ad Impression")
     }

@@ -116,6 +116,11 @@ class BannerViewController: BaseViewController, POBBannerViewDelegate, POBBidEve
         log("Banner : Ad Impression")
     }
 
+    // Notifies the delegate that the rendered banner ad is no longer valid because its ad has expired.
+    func bannerViewDidExpireAd(_ bannerView: POBBannerView) {
+        log("Banner : Ad expired")
+    }
+
     // MARK: - Private functions
 
     private func addBannerToView(banner: POBBannerView, adSize: CGSize) {

@@ -103,11 +103,6 @@
     [self log:@"RewardedAd : Will leave app"];
 }
 
-// Notifies the delegate of an ad expiration. After this callback, this 'POBRewardedAd' instance is marked as invalid & will not be shown.
-- (void)rewardedAdDidExpireAd:(POBRewardedAd *)rewardedAd {
-    [self log:@"RewardedAd : Expired"];
-}
-
 // Notifies the delegate that a user will be rewarded once the ad is completely viewed.
 - (void)rewardedAd:(POBRewardedAd *)rewardedAd shouldReward:(POBReward *)reward {
     [self log:@"RewardedAd : Ad should reward - %@(%@)",[reward.amount stringValue],reward.currencyType];

@@ -109,11 +109,6 @@
     [self log:@"App Open Ad : Ad Impression"];
 }
 
-// Notifies the delegate of an ad expiration. After this callback, this 'POBAppOpenAd' instance is marked as invalid & will not be shown.
-- (void)appOpenAdDidExpireAd:(POBAppOpenAd *)appOpenAd{
-    [self log:@"App Open Ad : Expired"];
-}
-
 #pragma mark - App Open Video Ad delegate methods
 
 // Notifies the delegate of an video ad completion.

@@ -179,6 +179,11 @@
     [self log:@"Native : Recorded impression."];
 }
 
+// Informs delegate that the native ad has expired. SDK will not count this as a valid impression.
+- (void)nativeAdDidExpire:(id<POBNativeAd>)nativeAd {
+    [self log:@"Native : Ad expired"];
+}
+
 #pragma mark - POBNativeAdVideoDelegate
 
 - (void)nativeAdDidStartVideo:(id<POBNativeAd>)nativeAd {

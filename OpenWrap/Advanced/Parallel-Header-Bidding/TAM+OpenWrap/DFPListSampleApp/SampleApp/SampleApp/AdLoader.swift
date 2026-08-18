@@ -231,4 +231,9 @@ class AdLoader: NSObject, POBBidEventDelegate, BiddingManagerDelegate, POBBanner
     func bannerViewDidRecordImpression(_ bannerView: POBBannerView) {
         log?("Banner : Ad Impression")
     }
+
+    // Notifies the delegate that the rendered banner ad is no longer valid because its ad has expired.
+    func bannerViewDidExpireAd(_ bannerView: POBBannerView) {
+        log?("Banner : Ad expired")
+    }
 }

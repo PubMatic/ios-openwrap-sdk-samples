@@ -240,6 +240,11 @@ extension NativeAndBannerAdLoader {
         log?("Banner : Ad Impression")
     }
 
+    // Notifies the delegate that the rendered banner ad is no longer valid because its ad has expired.
+    func bannerViewDidExpireAd(_ bannerView: POBBannerView) {
+        log?("Banner : Ad expired")
+    }
+
     // MARK: BidEvent delegate methods
     func bidEvent(_ bidEventObject: POBBidEvent!, didReceive bid: POBBid!) {
         // No need to pass OW's targeting info to bidding manager, as it will be passed to DFP internally.

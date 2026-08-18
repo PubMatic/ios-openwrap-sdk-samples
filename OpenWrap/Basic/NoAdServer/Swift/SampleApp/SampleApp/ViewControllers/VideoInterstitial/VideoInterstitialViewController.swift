@@ -100,11 +100,6 @@ class VideoInterstitialViewController: BaseViewController, POBInterstitialDelega
     func interstitialWillLeaveApplication(_ interstitial: POBInterstitial) {
         log("Interstitial : Will leave app")
     }
-    
-    // Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
-    func interstitialDidExpireAd(_ interstitial: POBInterstitial) {
-        log("Interstitial : Ad Expired")
-    }
 
     //MARK: POBInterstitialVideoDelegate methods
 

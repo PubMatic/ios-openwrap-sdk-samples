@@ -118,6 +118,11 @@ class MRECDisplayViewController: BaseViewController, POBBannerViewDelegate {
         log("Banner : Will change Ad size to \(size)")
     }
 
+    // Notifies the delegate that the rendered banner ad is no longer valid because its ad has expired.
+    func bannerViewDidExpireAd(_ bannerView: POBBannerView) {
+        log("Banner : Ad expired")
+    }
+
     deinit {
         bannerView = nil
     }

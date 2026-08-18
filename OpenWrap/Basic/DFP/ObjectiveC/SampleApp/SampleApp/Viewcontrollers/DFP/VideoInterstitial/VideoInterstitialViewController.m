@@ -112,11 +112,6 @@
     [self log:@"Interstitial : Will leave app"];
 }
 
-// Notifies the delegate of an ad expiration. After this callback, this 'POBInterstitial' instance is marked as invalid & will not be shown.
-- (void)interstitialDidExpireAd:(POBInterstitial *)interstitial {
-    [self log:@"Interstitial : Ad Expired"];
-}
-
 - (void)interstitialDidRecordImpression:(POBInterstitial *)interstitial {
     [self log:@"Interstitial : Ad Impression"];
 }

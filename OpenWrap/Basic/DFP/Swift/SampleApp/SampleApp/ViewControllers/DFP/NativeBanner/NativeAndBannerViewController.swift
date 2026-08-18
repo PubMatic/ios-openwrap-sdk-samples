@@ -104,6 +104,11 @@ class NativeAndBannerViewController: BaseViewController, POBBannerViewDelegate, 
         log("Banner : Ad Impression")
     }
 
+    // Notifies the delegate that the rendered banner ad is no longer valid because its ad has expired.
+    func bannerViewDidExpireAd(_ bannerView: POBBannerView) {
+        log("Banner : Ad expired")
+    }
+
     // MARK: - POBGAMNativeAdDelegate
     // Notifies the delegate that an ad has been successfully received.
     func eventHandler(_ eventHandler: POBBannerEvent, didReceive nativeAd: NativeAd) {

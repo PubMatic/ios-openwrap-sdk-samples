@@ -107,6 +107,11 @@ didFailToReceiveAdWithError:(NSError *)error {
     [self log:@"Banner : Ad Impression"];
 }
 
+// Notifies the delegate that the rendered banner ad is no longer valid because its ad has expired.
+- (void)bannerViewDidExpireAd:(POBBannerView *)bannerView {
+    [self log:@"Banner : Ad expired"];
+}
+
 #pragma mark - dealloc
 - (void)dealloc {
     _bannerView = nil;

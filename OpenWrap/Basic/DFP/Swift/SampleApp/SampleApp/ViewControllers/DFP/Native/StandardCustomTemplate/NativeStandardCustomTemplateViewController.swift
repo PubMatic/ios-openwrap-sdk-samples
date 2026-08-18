@@ -169,6 +169,11 @@ class NativeStandardCustomTemplateViewController: BaseViewController,
     func nativeAdDidRecordImpression(_ nativeAd: POBNativeAd) {
         log("Native : Recorded impression.")
     }
+
+    // Informs delegate that the native ad has expired. SDK will not count this as a valid impression.
+    func nativeAdDidExpire(_ nativeAd: POBNativeAd) {
+        log("Native : Ad expired")
+    }
     
     // Notifies the delegate whenever current app goes in the background due to user click.
     func nativeAdWillLeaveApplication(_ nativeAd: POBNativeAd) {

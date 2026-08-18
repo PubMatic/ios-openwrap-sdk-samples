@@ -186,6 +186,11 @@ class NativeAdViewController: BaseViewController,
         log("Native : Ad recorded impression")
     }
 
+    // Informs delegate that the native ad has expired. SDK will not count this as a valid impression.
+    func nativeAdDidExpire(_ nativeAd: POBNativeAd) {
+        log("Native : Ad expired")
+    }
+
     // MARK: - POBNativeAdVideoDelegate
 
     func nativeAdDidStartVideo(_ nativeAd: any POBNativeAd) {
