@@ -217,14 +217,8 @@ class BannerViewController: BaseViewController, POBBannerViewDelegate, POBBidEve
         bannerView.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         bannerView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
 
-        if #available(iOS 11.0, *) {
-            let guide: UILayoutGuide! = self.view.safeAreaLayoutGuide
-            bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-            bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
-        } else {
-            let margins: UILayoutGuide! = self.view.layoutMarginsGuide
-            bannerView.bottomAnchor.constraint(equalTo: margins.topAnchor).isActive = true
-            bannerView.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        }
+        let guide = self.view.safeAreaLayoutGuide
+        bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
     }
 }

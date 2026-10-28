@@ -22,7 +22,6 @@ import OpenWrapSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var locationManager: CLLocationManager?
 
     private static let pubId = "156276"
     private static let profileId: NSNumber = 1165
@@ -32,9 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Set log level before initializing OpenWrapSDK for debugging purpose.
         OpenWrapSDK.setLogLevel(.all)
-
-        locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
 
         let openWrapSDKConfig = OpenWrapSDKConfig(publisherId: Self.pubId, andProfileIds: [Self.profileId])
         OpenWrapSDK.initialize(with: openWrapSDKConfig) { (success, error) in
@@ -55,28 +51,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
 
     // MARK: Private function
 
@@ -102,27 +89,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Ensure the navigation bar is not translucent
         UINavigationBar.appearance().isTranslucent = false
 
-        // Configure appearance for large titles (iOS 13+)
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            // Configure the appearance object to have an opaque background
-            appearance.configureWithOpaqueBackground()
+        // Configure appearance for large titles
+        let appearance = UINavigationBarAppearance()
+        // Configure the appearance object to have an opaque background
+        appearance.configureWithOpaqueBackground()
 
-            // Set the background color of the navigation bar
-            appearance.backgroundColor = navBarColor
+        // Set the background color of the navigation bar
+        appearance.backgroundColor = navBarColor
 
-            // Set the text attributes for the standard-sized title
-            appearance.titleTextAttributes = attributes
+        // Set the text attributes for the standard-sized title
+        appearance.titleTextAttributes = attributes
 
-            // Set the text attributes for the large-sized title
-            appearance.largeTitleTextAttributes = attributes
+        // Set the text attributes for the large-sized title
+        appearance.largeTitleTextAttributes = attributes
 
-            // Apply the configured appearance to the standard appearance of the navigation bar
-            UINavigationBar.appearance().standardAppearance = appearance
+        // Apply the configured appearance to the standard appearance of the navigation bar
+        UINavigationBar.appearance().standardAppearance = appearance
 
-            // Apply the same appearance to the navigation bar when it's at the scroll edge
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
+        // Apply the same appearance to the navigation bar when it's at the scroll edge
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 

@@ -290,15 +290,9 @@ class NativeAndBannerViewController: BaseViewController, POBBannerViewDelegate, 
             uBanner.heightAnchor.constraint(equalToConstant: adSize.height).isActive = true
             uBanner.widthAnchor.constraint(equalToConstant: adSize.width).isActive = true
 
-            if #available(iOS 11.0, *) {
-                let guide = self.view.safeAreaLayoutGuide
-                uBanner.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-                uBanner.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
-            } else {
-                let margins = self.view.layoutMarginsGuide
-                uBanner.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
-                uBanner.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-            }
+            let guide = self.view.safeAreaLayoutGuide
+            uBanner.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+            uBanner.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
         }
     }
     

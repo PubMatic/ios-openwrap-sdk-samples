@@ -186,13 +186,7 @@ class NativeStandardCustomTemplateViewController: BaseViewController,
             nativeAdView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(nativeAdView)
 
-            // Decide layout guide based on available iOS version
-            let layoutGuide: UILayoutGuide
-            if #available(iOS 11.0, *) {
-                layoutGuide = view.safeAreaLayoutGuide
-            } else {
-                layoutGuide = view.layoutMarginsGuide
-            }
+            let layoutGuide = view.safeAreaLayoutGuide
 
             NSLayoutConstraint.activate([
                 nativeAdView.widthAnchor.constraint(equalToConstant: adSize.width),

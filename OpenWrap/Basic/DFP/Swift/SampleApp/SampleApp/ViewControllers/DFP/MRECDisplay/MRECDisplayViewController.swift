@@ -65,15 +65,9 @@ class MRECDisplayViewController: BaseViewController, POBBannerViewDelegate {
         bannerView?.heightAnchor.constraint(equalToConstant: adSize.height).isActive = true
         bannerView?.widthAnchor.constraint(equalToConstant: adSize.width).isActive = true
 
-        if #available(iOS 11.0, *) {
-            let guide = self.view.safeAreaLayoutGuide
-            bannerView?.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-            bannerView?.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
-        } else {
-            let margins = self.view.layoutMarginsGuide
-            bannerView?.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
-            bannerView?.centerXAnchor.constraint(equalTo: margins.centerXAnchor).isActive = true
-        }
+        let guide = self.view.safeAreaLayoutGuide
+        bannerView?.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        bannerView?.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
     }
 
     // MARK: - Banner view delegate methods

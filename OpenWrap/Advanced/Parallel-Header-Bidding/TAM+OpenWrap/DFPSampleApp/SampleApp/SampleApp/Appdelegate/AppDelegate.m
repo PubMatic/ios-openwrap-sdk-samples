@@ -56,6 +56,24 @@
     return YES;
 }
 
+#pragma mark - UISceneSession lifecycle
+
+- (UISceneConfiguration *)application:(UIApplication *)application
+configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession
+                               options:(UISceneConnectionOptions *)options {
+    // Called when a new scene session is being created.
+    // Use this method to select a configuration to create the new scene with.
+    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration"
+                                          sessionRole:connectingSceneSession.role];
+}
+
+- (void)application:(UIApplication *)application
+didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
+    // Called when the user discards a scene session.
+    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+}
+
 #pragma mark - Private method
 
 - (void)setupNavigationBarAppearance {
@@ -79,27 +97,25 @@
     // Ensure the navigation bar is not translucent
     [[UINavigationBar appearance] setTranslucent:NO];
 
-    // Configure appearance for large titles (iOS 13+)
-    if (@available(iOS 13.0, *)) {
-        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
-        // Configure the appearance object to have an opaque background
-        [appearance configureWithOpaqueBackground];
+    // Configure appearance for large titles
+    UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+    // Configure the appearance object to have an opaque background
+    [appearance configureWithOpaqueBackground];
 
-        // Set the background color of the navigation bar
-        appearance.backgroundColor = navBarColor;
+    // Set the background color of the navigation bar
+    appearance.backgroundColor = navBarColor;
 
-        // Set the text attributes for the standard-sized title
-        appearance.titleTextAttributes = attributes;
+    // Set the text attributes for the standard-sized title
+    appearance.titleTextAttributes = attributes;
 
-        // Set the text attributes for the large-sized title
-        appearance.largeTitleTextAttributes = attributes;
+    // Set the text attributes for the large-sized title
+    appearance.largeTitleTextAttributes = attributes;
 
-        // Apply the configured appearance to the standard appearance of the navigation bar
-        [[UINavigationBar appearance] setStandardAppearance:appearance];
+    // Apply the configured appearance to the standard appearance of the navigation bar
+    [[UINavigationBar appearance] setStandardAppearance:appearance];
 
-        // Apply the same appearance to the navigation bar when it's at the scroll edge
-        [[UINavigationBar appearance] setScrollEdgeAppearance:appearance];
-    }
+    // Apply the same appearance to the navigation bar when it's at the scroll edge
+    [[UINavigationBar appearance] setScrollEdgeAppearance:appearance];
 }
 
 @end

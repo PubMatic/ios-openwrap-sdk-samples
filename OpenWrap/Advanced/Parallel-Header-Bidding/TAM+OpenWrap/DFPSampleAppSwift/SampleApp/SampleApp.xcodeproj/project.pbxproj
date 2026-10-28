@@ -13,6 +13,7 @@
 		2076C8CB2551257000BC07AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2076C8C92551257000BC07AF /* LaunchScreen.storyboard */; };
 		2076C8CE2551257000BC07AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2076C8CD2551257000BC07AF /* main.m */; };
 		5AA1C4C02D5F9B1B00114FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4BF2D5F9B1B00114FD4 /* BaseViewController.swift */; };
+		7F3A1CA72B4D5F6100E9A303 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A1CA62B4D5F6100E9A303 /* SceneDelegate.m */; };
 		BA62CC5128CA71FC00A8FAE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62CC5028CA71FC00A8FAE5 /* Constants.swift */; };
 		E27692862988F76B00D86AD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692832988F76A00D86AD1 /* MainViewController.swift */; };
 		E27692872988F76B00D86AD1 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27692842988F76A00D86AD1 /* InterstitialViewController.swift */; };
@@ -32,6 +33,8 @@
 		2076C8CC2551257000BC07AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2076C8CD2551257000BC07AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AA1C4BF2D5F9B1B00114FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7F3A1CA52B4D5F6100E9A303 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		7F3A1CA62B4D5F6100E9A303 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		BA62CC4F28CA708B00A8FAE5 /* SampleApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		BA62CC5028CA71FC00A8FAE5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E27692832988F76A00D86AD1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 			children = (
 				2076C8BB2551256A00BC07AF /* AppDelegate.h */,
 				2076C8BC2551256A00BC07AF /* AppDelegate.m */,
+				7F3A1CA52B4D5F6100E9A303 /* SceneDelegate.h */,
+				7F3A1CA62B4D5F6100E9A303 /* SceneDelegate.m */,
 			);
 			path = Appdelegate;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				E27692902988F77E00D86AD1 /* Bidding.swift in Sources */,
 				E27692882988F76B00D86AD1 /* BannerViewController.swift in Sources */,
 				2076C8BD2551256A00BC07AF /* AppDelegate.m in Sources */,
+				7F3A1CA72B4D5F6100E9A303 /* SceneDelegate.m in Sources */,
 				2076C8CE2551257000BC07AF /* main.m in Sources */,
 				E276928F2988F77E00D86AD1 /* BiddingManager.swift in Sources */,
 				5AA1C4C02D5F9B1B00114FD4 /* BaseViewController.swift in Sources */,
@@ -296,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -364,7 +370,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

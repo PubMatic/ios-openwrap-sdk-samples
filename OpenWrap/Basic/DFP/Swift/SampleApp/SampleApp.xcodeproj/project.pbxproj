@@ -24,6 +24,7 @@
 		52BE034A2A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BE03492A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift */; };
 		5ABFF4822D5F026C00C9CE7A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */; };
 		62B5A66D2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B5A66C2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib */; };
+		7F3A1C8F2B4D5F6100E9A2C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A1C8E2B4D5F6100E9A2C1 /* SceneDelegate.swift */; };
 		B69EB02A29E7D45B00BBDB73 /* MRECDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02929E7D45B00BBDB73 /* MRECDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		52BE03492A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeStandardCustomTemplateViewController.swift; sourceTree = "<group>"; };
 		5ABFF4812D5F026C00C9CE7A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		62B5A66C2ED5DA8B007307E9 /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
+		7F3A1C8E2B4D5F6100E9A2C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B69EB02929E7D45B00BBDB73 /* MRECDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRECDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				20364F7021AFB03900F9D5DD /* AppDelegate.swift */,
+				7F3A1C8E2B4D5F6100E9A2C1 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				52BE034A2A02D8D500762837 /* NativeStandardCustomTemplateViewController.swift in Sources */,
 				3E7DE94121DF3E0E00E70EA6 /* BannerViewController.swift in Sources */,
 				20364F7121AFB03900F9D5DD /* AppDelegate.swift in Sources */,
+				7F3A1C8F2B4D5F6100E9A2C1 /* SceneDelegate.swift in Sources */,
 				5ABFF4822D5F026C00C9CE7A /* BaseViewController.swift in Sources */,
 				B69EB02A29E7D45B00BBDB73 /* MRECDisplayViewController.swift in Sources */,
 				2094BE512649617700C9CA84 /* RewardedAdViewController.swift in Sources */,
@@ -394,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -448,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -466,7 +470,7 @@
 				DEVELOPMENT_TEAM = K674QKEVPS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +494,7 @@
 				DEVELOPMENT_TEAM = K674QKEVPS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

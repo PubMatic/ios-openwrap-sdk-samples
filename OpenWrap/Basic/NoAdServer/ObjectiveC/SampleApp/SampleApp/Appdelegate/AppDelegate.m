@@ -21,10 +21,6 @@
 #define PUBLISHER_ID    @"156276"
 #define PROFILE_ID      @1165
 
-@interface AppDelegate ()
-@property (strong) CLLocationManager* locationManager;
-@end
-
 @implementation AppDelegate
 
 
@@ -35,9 +31,6 @@
     // Set log level before initializing OpenWrapSDK for debugging purpose.
     [OpenWrapSDK setLogLevel:POBSDKLogLevelAll];
 
-    self.locationManager = [[CLLocationManager alloc] init];
-    [self.locationManager requestWhenInUseAuthorization];
-    
     // Initialize OpenWrap SDK with publisher id and profile id.
     OpenWrapSDKConfig *openWrapSDKConfig = [[OpenWrapSDKConfig alloc] initWithPublisherId:PUBLISHER_ID
                                                                             andProfileIds:@[PROFILE_ID]];
@@ -61,30 +54,22 @@
     return YES;
 }
 
+#pragma mark - UISceneSession lifecycle
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+- (UISceneConfiguration *)application:(UIApplication *)application
+configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession
+                               options:(UISceneConnectionOptions *)options {
+    // Called when a new scene session is being created.
+    // Use this method to select a configuration to create the new scene with.
+    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration"
+                                          sessionRole:connectingSceneSession.role];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (void)application:(UIApplication *)application
+didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
+    // Called when the user discards a scene session.
+    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
 #pragma mark - Private method
@@ -110,27 +95,25 @@
     // Ensure the navigation bar is not translucent
     [[UINavigationBar appearance] setTranslucent:NO];
 
-    // Configure appearance for large titles (iOS 13+)
-    if (@available(iOS 13.0, *)) {
-        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
-        // Configure the appearance object to have an opaque background
-        [appearance configureWithOpaqueBackground];
+    // Configure appearance for large titles
+    UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+    // Configure the appearance object to have an opaque background
+    [appearance configureWithOpaqueBackground];
 
-        // Set the background color of the navigation bar
-        appearance.backgroundColor = navBarColor;
+    // Set the background color of the navigation bar
+    appearance.backgroundColor = navBarColor;
 
-        // Set the text attributes for the standard-sized title
-        appearance.titleTextAttributes = attributes;
+    // Set the text attributes for the standard-sized title
+    appearance.titleTextAttributes = attributes;
 
-        // Set the text attributes for the large-sized title
-        appearance.largeTitleTextAttributes = attributes;
+    // Set the text attributes for the large-sized title
+    appearance.largeTitleTextAttributes = attributes;
 
-        // Apply the configured appearance to the standard appearance of the navigation bar
-        [[UINavigationBar appearance] setStandardAppearance:appearance];
+    // Apply the configured appearance to the standard appearance of the navigation bar
+    [[UINavigationBar appearance] setStandardAppearance:appearance];
 
-        // Apply the same appearance to the navigation bar when it's at the scroll edge
-        [[UINavigationBar appearance] setScrollEdgeAppearance:appearance];
-    }
+    // Apply the same appearance to the navigation bar when it's at the scroll edge
+    [[UINavigationBar appearance] setScrollEdgeAppearance:appearance];
 }
 
 @end

@@ -279,13 +279,7 @@
     self.nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.nativeAdView];
 
-    // Decide layout guide based on available iOS version
-    UILayoutGuide *layoutGuide;
-    if (@available(iOS 11.0, *)) {
-        layoutGuide = self.view.safeAreaLayoutGuide;
-    } else {
-        layoutGuide = self.view.layoutMarginsGuide;
-    }
+    UILayoutGuide *layoutGuide = self.view.safeAreaLayoutGuide;
 
     [NSLayoutConstraint activateConstraints:@[
         [self.nativeAdView.widthAnchor constraintEqualToConstant:self.nativeAdView.frame.size.width],

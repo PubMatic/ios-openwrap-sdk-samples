@@ -16,12 +16,16 @@
  */
 
 import UIKit
+import CoreLocation
+import AppTrackingTransparency
 
-@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private let locationManager = CLLocationManager()
+    private var hasRequestedPermissions = false
+    private var hasScheduledTrackingPermission = false
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -38,8 +42,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        // Request location, then ATT, once the scene is active so the system dialogs can be presented.
+        requestPermissionsIfNeeded()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -58,6 +62,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    // MARK: Permissions
 
+    private func requestPermissionsIfNeeded() {
+        guard !hasRequestedPermissions else { return }
+        hasRequestedPermissions = true
+
+        locationManager.delegate = self
+        if locationManager.authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+            return
+        }
+
+        // Location is already determined, so continue to ATT once the app view is available.
+        scheduleTrackingPermissionRequest()
+    }
+
+    private func scheduleTrackingPermissionRequest() {
+        guard !hasScheduledTrackingPermission else { return }
+        hasScheduledTrackingPermission = true
+
+        // Add delay of 0.5 seconds to ensure the ATT dialogue is presented once the app view is available.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.requestTrackingPermission()
+        }
+    }
+
+    private func requestTrackingPermission() {
+        guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
+
+        ATTrackingManager.requestTrackingAuthorization { status in
+            print("ATT permission status: \(status.rawValue)")
+        }
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension SceneDelegate: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        // The delegate is invoked when it is assigned, including while status is still not determined.
+        // Wait until location is resolved so the ATT dialogue is not covered by the location prompt.
+        guard hasRequestedPermissions, manager.authorizationStatus != .notDetermined else { return }
+        scheduleTrackingPermissionRequest()
+    }
 }
 

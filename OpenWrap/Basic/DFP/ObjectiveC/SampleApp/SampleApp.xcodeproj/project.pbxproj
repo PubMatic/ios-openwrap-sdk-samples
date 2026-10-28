@@ -20,6 +20,7 @@
 		527986B12A01D30700CED193 /* NativeStandardCustomTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527986B02A01D30700CED193 /* NativeStandardCustomTemplateViewController.m */; };
 		5AA1C4B82D5F30B600114FD4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */; };
 		62B5A66B2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B5A66A2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib */; };
+		7F3A1C922B4D5F6100E9A2C2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A1C912B4D5F6100E9A2C2 /* SceneDelegate.m */; };
 		B69EB02E29E7D66400BBDB73 /* MRECDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69EB02D29E7D66400BBDB73 /* MRECDisplayViewController.m */; };
 		E600238E1DC0B03300833CDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E600238D1DC0B03300833CDB /* main.m */; };
 		E60023971DC0B03300833CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60023951DC0B03300833CDB /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		5AA1C4B62D5F30B600114FD4 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		5AA1C4B72D5F30B600114FD4 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		62B5A66A2ED5D7E1007307E9 /* NativeAdCustomMediumTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdCustomMediumTemplateView.xib; sourceTree = "<group>"; };
+		7F3A1C902B4D5F6100E9A2C2 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		7F3A1C912B4D5F6100E9A2C2 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		B69EB02C29E7D66400BBDB73 /* MRECDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRECDisplayViewController.h; sourceTree = "<group>"; };
 		B69EB02D29E7D66400BBDB73 /* MRECDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRECDisplayViewController.m; sourceTree = "<group>"; };
 		E60023891DC0B03300833CDB /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +257,8 @@
 			children = (
 				E60023C01DC1CB8200833CDB /* AppDelegate.h */,
 				E60023C11DC1CB8200833CDB /* AppDelegate.m */,
+				7F3A1C902B4D5F6100E9A2C2 /* SceneDelegate.h */,
+				7F3A1C912B4D5F6100E9A2C2 /* SceneDelegate.m */,
 			);
 			path = Appdelegate;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				5AA1C4B82D5F30B600114FD4 /* BaseViewController.m in Sources */,
 				2094BE2C26495F9E00C9CA84 /* RewardedAdViewController.m in Sources */,
 				E60023C61DC1CB8200833CDB /* AppDelegate.m in Sources */,
+				7F3A1C922B4D5F6100E9A2C2 /* SceneDelegate.m in Sources */,
 				E600238E1DC0B03300833CDB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -479,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -495,7 +501,7 @@
 				DEVELOPMENT_TEAM = K674QKEVPS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pubmatic.ow.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,7 +519,7 @@
 				DEVELOPMENT_TEAM = K674QKEVPS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pubmatic.ow.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";

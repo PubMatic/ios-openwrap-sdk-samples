@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Needs location access for ads</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Please allow tracking to serve relevant ads.</string>
 	<key>UIApplicationSceneManifest</key>
@@ -67,5 +69,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

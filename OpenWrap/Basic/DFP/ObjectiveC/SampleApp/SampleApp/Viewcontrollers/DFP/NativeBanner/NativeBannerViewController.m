@@ -306,15 +306,9 @@ didFailToReceiveAdWithError:(NSError *)error {
     [bannerView.heightAnchor constraintEqualToConstant:size.height].active = YES;
     [bannerView.widthAnchor constraintEqualToConstant:size.width].active = YES;
 
-    if (@available(iOS 11.0, *)) {
-        UILayoutGuide * guide = self.view.safeAreaLayoutGuide;
-        [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
-        [bannerView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
-    } else {
-        UILayoutGuide *margins = self.view.layoutMarginsGuide;
-        [bannerView.bottomAnchor constraintEqualToAnchor:margins.bottomAnchor].active = YES;
-        [bannerView.centerXAnchor constraintEqualToAnchor:margins.centerXAnchor].active = YES;
-    }
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor].active = YES;
+    [bannerView.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor].active = YES;
 }
 
 // Gets an image representing the number of stars.
